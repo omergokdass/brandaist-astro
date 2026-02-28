@@ -1,13 +1,18 @@
 ---
-import Sidebar from '../components/Sidebar.astro';
-import Layout from '../layouts/Layout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 ---
-<Layout 
+
+<PageLayout
     title="Şemsiye Modelleri | Plaj, Bahçe ve Cafe Şemsiyesi M2 Fiyatları | Amir Branda"
     description="Amir Branda'dan açılır kapanır ayaklı şemsiye, yandan gövdeli, teleskopik, plaj, bahçe, kafe ve restoran şemsiyesi modelleri. En uygun İstanbul şemsiye fiyatları."
     ogTitle="Şemsiye Sistemleri ve Fiyatları | Amir Branda İstanbul"
+    headerTitle="Şemsiye Sistemleri"
+    headerTitleTag="h2"
+    headerSubtitle="Güneşli ve yağmurlu günlerde açık alanlarınızı konforlu hale getiren şık şemsiye modelleri."
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="tente"
 >
-<script type="application/ld+json">
+    <script slot="json-ld" type="application/ld+json" is:inline>
 {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -20,18 +25,7 @@ import Layout from '../layouts/Layout.astro';
 }
 </script>
 
-<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/style/brand/img/kategori-arkasi-pp.webp">
-    <div class="container inner pt-120 pb-120 text-center">
-        <h2 class="heading mb-0">Şemsiye Sistemleri</h2>
-        <p class="lead">Güneşli ve yağmurlu günlerde açık alanlarınızı konforlu hale getiren şık şemsiye modelleri.</p>
-    </div>
-</div>
-
-<div class="wrapper light-wrapper">
-    <div class="container inner">
-        <div class="row">
-            <div class="col-md-8">
-                <article class="post">
+<article class="post">
                     <h1 class="post-title text-center"><a href="#" name="PAGE" id="page">Profesyonel Şemsiye Çözümleri</a></h1>
                     <figure class="mb-25"><img class="w-100 img-fluid rounded mb-3 shadow-sm" style="max-height: 480px; object-fit: cover;" src="/style/brand/img/semsiye1.webp" alt="Kafe ve Restoran Şemsiyesi" loading="lazy" /></figure>
                     <div class="post-content">
@@ -123,12 +117,4 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                 </article>
                 <div class="space30"></div>
-                
-
-            </div>
-            
-            <Sidebar category="tente" />
-        </div>
-    </div>
-</div>
-</Layout>
+</PageLayout>

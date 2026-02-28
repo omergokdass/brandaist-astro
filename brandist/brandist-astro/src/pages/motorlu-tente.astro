@@ -1,13 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Sidebar from '../components/Sidebar.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 ---
-<Layout 
+
+<PageLayout
     title="Kumandalı Otomatik Motorlu Tente Fiyatları | Amir Branda"
     description="Balkon, vitrin ve teraslara kolayca uyum sağlayan, somfy / becker motorlu mafsallı ve kasetli otomatik motorlu tente imalatı."
     ogTitle="Pratik Otomatik Motorlu Tente İmalatı | Amir Branda"
+    headerTitle="Tente Çeşitlerimiz"
+    headerTitleTag="h2"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="tente"
 >
-<script type="application/ld+json">
+    <script slot="json-ld" type="application/ld+json" is:inline>
 {
   "@context": "https://schema.org/",
   "@type": "Product",
@@ -20,19 +24,8 @@ import Sidebar from '../components/Sidebar.astro';
 }
 </script>
 
-<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/style/brand/img/kategori-arkasi-pp.webp">
-    <div class="container inner pt-120 pb-120 text-center">
-        <h2 class="heading mb-0">Tente Çeşitlerimiz</h2>
-    </div>
-    <!-- /.container -->
-</div>
-<!-- /.wrapper -->
-<div class="wrapper light-wrapper">
-    <div class="container inner">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="blog classic-view">
-                    <div class="post">
+
+                    <article class="post">
                         <h1 class="post-title text-center"><a href="#" name="PAGE" id="page">Akıllı Otomatik Motorlu Tente</a></h1>
                         <figure class="mb-25"><img class="w-100 img-fluid rounded mb-3 shadow-sm" style="max-height: 480px; object-fit: cover;" src="/style/brand/img/cift-acilir-tente4.webp" alt="Kasetli motorlu otomatik tente" loading="lazy" /></figure>
                         <div class="post-content">
@@ -104,14 +97,4 @@ import Sidebar from '../components/Sidebar.astro';
                     
                 </div>
                 <!-- /.blog -->
-            </div>
-            <!--/column -->
-            <Sidebar category="tente" />
-            <!-- /column .sidebar -->
-        </div>
-        <!--/.row -->
-    </div>
-    <!-- /.container -->
-</div>
-</Layout>
-
+</PageLayout>

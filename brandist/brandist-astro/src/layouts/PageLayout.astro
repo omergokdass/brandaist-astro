@@ -1,0 +1,74 @@
+---
+import Layout from "./Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+export interface Props {
+    title: string;
+    description: string;
+    ogTitle?: string;
+    ogImage?: string;
+    headerTitle: string;
+    headerTitleTag?: string;
+    headerSubtitle?: string;
+    headerBgImage?: string;
+    sidebarCategory:
+        | "tente"
+        | "branda"
+        | "cadir"
+        | "kumas"
+        | "semsiye"
+        | string;
+}
+
+const {
+    title,
+    description,
+    ogTitle,
+    ogImage,
+    headerTitle,
+    headerTitleTag = "h1",
+    headerSubtitle,
+    headerBgImage = "/style/brand/img/kategori-arkasi-pp.webp",
+    sidebarCategory,
+} = Astro.props;
+---
+
+<Layout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    ogImage={ogImage}
+>
+    <slot name="json-ld" />
+
+    <div
+        class="wrapper image-wrapper bg-image inverse-text"
+        style={`background-image: url('${headerBgImage}');`}
+    >
+        <div class="container inner pt-120 pb-120 text-center">
+            {
+                headerTitleTag === "h1" ? (
+                    <h1 class="heading mb-0">{headerTitle}</h1>
+                ) : (
+                    <h2 class="heading mb-0">{headerTitle}</h2>
+                )
+            }
+            {headerSubtitle && <div set:html={headerSubtitle} />}
+        </div>
+    </div>
+
+    <div class="wrapper light-wrapper">
+        <div class="container inner">
+            <div class="row">
+                <div class="col-md-8">
+                    <slot />
+                </div>
+                <!--/column -->
+                <Sidebar category={sidebarCategory as any} />
+                <!-- /column .sidebar -->
+            </div>
+            <!--/.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</Layout>

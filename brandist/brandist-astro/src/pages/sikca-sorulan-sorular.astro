@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     description="Tente montajı ne kadar sürer? Şeffaf branda m2 fiyatı nedir? Tente bakımı, depo çadırı ve branda onarımı ile ilgili tüm sorularınızın cevapları Amir Branda SSS sayfasında."
     ogTitle="Sıkça Sorulan Sorular | Ucuz Branda ve Tente Fiyatları"
 >
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
         {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -98,7 +98,7 @@ import Layout from "../layouts/Layout.astro";
 
     <div
         class="wrapper image-wrapper bg-image inverse-text"
-        data-image-src="/style/brand/img/kategori-arkasi-pp.webp"
+        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
     >
         <div class="container inner pt-120 pb-120 text-center">
             <h1 class="heading mb-0">Sıkça Sorulan Sorular</h1>
@@ -619,7 +619,7 @@ import Layout from "../layouts/Layout.astro";
                         >
                             <li>
                                 <a
-                                    href="https://m.facebook.com/serinbrandatentecadirsistemleri"
+                                    href="https://www.facebook.com/amirbrandacadirtente/"
                                     target="_blank"
                                     ><i class="fa-brands fa-facebook-f"></i></a
                                 >

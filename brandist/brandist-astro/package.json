@@ -7,7 +7,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "postbuild": "node postbuild.js",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -23,6 +22,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "purgecss": "^8.0.0"
+    "purgecss": "^8.0.0",
+    "terser": "^5.46.0"
   }
 }
