@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "postbuild": "node postbuild.js",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,6 +16,13 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "astro": "^4.14.0"
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.18.0",
+    "sharp": "^0.34.5",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "purgecss": "^8.0.0"
   }
 }

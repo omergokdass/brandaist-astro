@@ -1,0 +1,19 @@
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 301 SEO Redirects for old category paths
+  # Redirects /branda/urun, /tente/urun, /cadir/urun to /urun
+  RewriteRule ^(branda|tente|cadir)/(.+)$ /$2 [R=301,L]
+
+  # Specific 301 Redirects
+  Redirect 301 /cami-kapisi /cami-kapisi-brandasi
+
+  # Serve exact file if it exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # Serve exact directory if it exists
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # If neither exists, and it's not a direct request to 404.html, serve 404.html
+  RewriteRule ^(.*)$ /404.html [L,R=404]
+</IfModule>

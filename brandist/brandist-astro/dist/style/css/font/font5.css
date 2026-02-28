@@ -1,0 +1,168 @@
+body,
+.lead,
+.lead2,
+.blockquote-footer,
+.tp-caption:not(.font-body):not(.font-title),
+.erinyen .tp-tab-title,
+.cbp-filter-item,
+.meta,
+a.more,
+.countdown p,
+.counter p {
+    font-family: 'Muli', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar,
+.btn {
+    font-family: 'Vidaloka', serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: normal;
+    font-weight: normal;
+    color: #303030;
+}
+.btn {
+	letter-spacing: 1px;
+	font-weight: normal;
+}
+h1 {
+    font-size: 30px;
+    line-height: 40px;
+}
+h2,
+.swiper-col3-full h2.post-title {
+    font-size: 28px;
+    line-height: 38px;
+}
+h3 {
+    font-size: 26px;
+    line-height: 36px;
+}
+h4 {
+    font-size: 24px;
+    line-height: 34px;
+}
+h5 {
+    font-size: 22px;
+    line-height: 32px;
+}
+h6 {
+    font-size: 20px;
+    line-height: 30px;
+}
+h1.post-title,
+.classic-view h2.post-title {
+    font-size: 30px;
+    line-height: 40px;
+}
+h2.post-title {
+    font-size: 20px;
+    line-height: 30px;
+}
+h6.post-title {
+	font-size: 18px;
+	line-height: 28px;
+}
+.heading {
+    font-size: 42px;
+    line-height: 54px;
+}
+.section-title {
+    font-size: 30px;
+    line-height: 40px;
+}
+.section-title.larger {
+    font-size: 34px;
+    line-height: 44px;
+}
+.lead {
+    font-size: 19px;
+    line-height: 31px;
+}
+.lead2 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+}
+.lead.larger {
+    font-size: 21px;
+    line-height: 33px;
+}
+.navbar-nav .nav-link {
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+.dropdown-item {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+blockquote p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+}
+blockquote.larger p {
+    font-size: 26px;
+    line-height: 38px;
+}
+.blockquote-footer {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+}
+.btn {
+    font-size: 14px;
+}
+.widget-title {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1px;
+}
+.counter p {
+	font-size: 15px;
+    line-height: 21px; 
+}
+
+.accordion-wrapper .card-header>* {
+    font-size: 15px;
+}
+::-moz-selection {
+    color: #303030;
+}
+::selection {
+    color: #303030;
+}
+
+.navbar .social-mute a i,
+.navbar-nav .nav-link,
+.btn-group .dropdown-menu .dropdown-item,
+.cocoen-drag::before,
+.social-mute a i,
+.accordion-wrapper .card-header a,
+.accordion-wrapper.lined .card-header a.collapsed,
+.popover-header,
+label:not(.custom-control-label),
+.pagination ul>li>a {
+	color: #303030;
+}
+.hamburger:before,
+.hamburger span,
+.hamburger:after {
+	background-color: #303030;
+}
+.bg-dark {
+    background-color: #303030 !important
+}

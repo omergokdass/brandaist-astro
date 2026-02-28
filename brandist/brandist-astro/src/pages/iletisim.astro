@@ -1,38 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="İletişim" description="Branda, tente ve çadır sistemleri hakkında sorularınız için Serin Branda ile iletişime geçin. Uygun fiyatlar ve teklifler alın.">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d188.1380811823427!2d28.960584893586148!3d41.02067670414327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1683324409952!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<Layout 
+    title="İletişim & Ücretsiz Keşif Hattı | Amir Branda İstanbul" 
+    description="Amir Branda'ya ulaşın. Branda fiyatları sormak, tente montajı ve branda onarım talepleriniz için İstanbul içi WhatsApp sipariş ve iletişim numaramız."
+    ogTitle="İletişim | Amir Branda Müşteri Hizmetleri"
+>
+    <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/style/brand/img/kategori-arkasi-pp.webp">
+        <div class="container inner pt-120 pb-120 text-center">
+            <h1 class="heading mb-0">İletişim</h1>
+            <p class="lead">Soru, görüş veya destek talepleriniz için bize ulaşın.</p>
+        </div>
+        <!-- /.container -->
+    </div>
+
 <div class="wrapper light-wrapper">
-    <div class="container inner">
+    <div class="container inner pt-50">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <h2 class="section-title text-center">İLETİŞİM</h2>
+                <h2 class="section-title text-center">BİZE ULAŞIN</h2>
                 <p class="text-center">İhtiyaçlarınıza özel çözümler için bizimle iletişime geçin!</p>
                 <div class="space20"></div>
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="icon icon-color color-default fs-48 mb-10"><i class="si-camping_map"></i></span>
                         <p>
-                            Hacı kadın mahallesi Atlamataşı caddesi<br>
-                            İmç 5.blok No:5335 <br>Fatih / İstanbul
-
+                            <a href="https://maps.app.goo.gl/hVhqkTaVXen2EfRM9" target="_blank" class="nocolor">Ayvansaray Mahallesi Esnaf Loncası Sokak No:27<br>Fatih / İstanbul</a>
                         </p>
                     </div>
                     <!--/column -->
                     <div class="col-md-4">
                         <span class="icon icon-color color-default fs-48 mb-10"><i class="si-phone_phone-ringing"></i></span>
                         <p>
-                            0212 533 08 91<br>
-                            0538 604 48 51<br>
-                            0505 982 58 87
+                            <a href="tel:+902125330891" class="nocolor">0212 533 08 91</a><br><a href="tel:+905386044851" class="nocolor">0 538 604 48 51</a>
                         </p>
                     </div>
                     <!--/column -->
                     <div class="col-md-4">
                         <span class="icon icon-color color-default fs-48 mb-10"><i class="si-mail_mail-2"></i></span>
                         <p>
-                            <a class="nocolor" href="mailto:tenet.ist@gmail.com">tente.ist@gmail.com</a>
+                            <a class="nocolor" href="mailto:amirbranda@hotmail.com">amirbranda@hotmail.com</a>
                         </p>
                     </div>
                     <!--/column -->
@@ -40,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
                 <!--/.row -->
                 <div class="space30"></div>
                 <div class="form-container">
-                    <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate>
+                    <form action="https://formsubmit.co/amirbranda@hotmail.com" method="POST" class="vanilla vanilla-form">
                         <div class="row text-center">
                             <div class="col-md-6 pr-10">
                                 <div class="form-group">
@@ -73,7 +80,9 @@ import Layout from '../layouts/Layout.astro';
                             <div class="col-12">
                                 <textarea name="message" class="form-control" rows="3" placeholder="Mesajınız..." required></textarea>
                                 <div class="space20"></div>
-                                <button type="submit" class="btn btn-full-rounded" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
+                                <input type="hidden" name="_next" value="https://branda.ist/iletisim">
+<input type="hidden" name="_captcha" value="true">
+<button type="submit" class="btn btn-full-rounded">Gönder</button>
                                 <footer class="notification-box"></footer>
                             </div>
                             <!--/column -->
@@ -88,6 +97,12 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <!-- /.row -->
     </div>
+    </div>
     <!-- /.container -->
+    
+    <!-- Map at the very bottom, stretching full width -->
+    <div class="map-wrapper" style="margin-bottom: -6px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4707008397445!2d28.94402467579213!3d41.036834575943274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabbd9cd4a8311%3A0xe9dd5cf9417fc1da!2sAmir%20Branda%20%C3%87ad%C4%B1r%20Tente%20Sistemleri!5e0!3m2!1str!2str!4v1772134073351!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </div>
 </Layout>

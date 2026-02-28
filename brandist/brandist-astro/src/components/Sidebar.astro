@@ -1,0 +1,152 @@
+---
+// Sidebar.astro
+import "../styles/sidebar-custom.css";
+
+export interface Props {
+    category: "tente" | "branda" | "cadir" | "kumas" | "semsiye";
+}
+
+const { category } = Astro.props;
+
+const data = {
+    tente: {
+        title: "Tente Kategorileri",
+        desc: "Amir Branda, İstanbul içi ücretsiz keşif ve uygun fiyat avantajlarıyla profesyonel tente imalatı yapmaktadır. %100 su geçirmez akrilik kumaşlı ve motorlu pergola tente sistemleri için uzman ekibimizden teklif alarak mekanınıza değer katın.",
+        links: [
+            { url: "/bioklimatik-tente", text: "Bioklimatik Tente" },
+            { url: "/cift-acilir-tente", text: "Çift Açılır Tente" },
+            { url: "/karpuz-tente", text: "Karpuz Tente" },
+            { url: "/koruklu-tente", text: "Körüklü Tente" },
+            { url: "/mafsalli-tente", text: "Mafsallı Tente" },
+            { url: "/motorlu-tente", text: "Motorlu Tente" },
+            { url: "/pergola-tente", text: "Pergola Tente" },
+            { url: "/sabit-tente", text: "Sabit Tente" },
+            { url: "/winted-tente", text: "Winted Tente" },
+            { url: "/yarasa-tente", text: "Yarasa Tente" },
+        ],
+    },
+    branda: {
+        title: "Branda Kategorileri",
+        desc: "Amir Branda, İstanbul içi ücretsiz keşif ve uygun fiyat avantajlarıyla profesyonel branda imalatı yapmaktadır. %100 su geçirmez, dayanıklı ve esnek kullanım sunan branda sistemleri için hemen uzman ekibimizden teklif alarak mekanınızı koruma altına alın.",
+        links: [
+            { url: "/araba-dolu-brandasi", text: "Araba Dolu Brandası" },
+            { url: "/beton-yorgani", text: "Beton Yorganı" },
+            { url: "/cami-kapisi-brandasi", text: "Cami Kapısı Brandası" },
+            { url: "/ceset-torbasi", text: "Ceset Torbası" },
+            {
+                url: "/fabrika-bolmeleri-kapilari",
+                text: "Fabrika Bölmeleri & Kapıları",
+            },
+            { url: "/golgelik-jut-branda", text: "Gölgelik Jüt Branda" },
+            { url: "/havuz-brandasi", text: "Havuz Brandası" },
+            {
+                url: "/kamyon-kamyonet-brandasi",
+                text: "Kamyon - Kamyonet Brandası",
+            },
+            { url: "/otopark-brandasi", text: "Otopark Brandası" },
+            { url: "/seffaf-branda", text: "Şeffaf Branda" },
+            { url: "/tekne-brandasi", text: "Tekne Brandası" },
+            { url: "/tekstil-torbasi", text: "Tekstil Torbası" },
+        ],
+    },
+    cadir: {
+        title: "Çadır Kategorileri",
+        desc: "Amir Branda, endüstriyel, tarımsal ve bireysel ihtiyaçlarınız için dayanıklı çadır sistemleri üretmektedir. İzolasyonlu, kurulumu pratik ve bütçenize uygun çadır sitemleri için hemen uzman ekibimizle iletişime geçin.",
+        links: [
+            { url: "/afet-deprem-cadiri", text: "Afet & Deprem Çadırı" },
+            { url: "/askeri-cadir", text: "Askeri Çadır" },
+            { url: "/depo-cadiri", text: "Depo Çadırı" },
+            { url: "/endustriyel-cadir", text: "Endüstriyel Çadır" },
+            { url: "/etkinlik-cadiri", text: "Etkinlik Çadırı" },
+            { url: "/fuar-cadiri", text: "Fuar Çadırı" },
+            { url: "/halisaha-spor-cadiri", text: "Halı Saha & Spor Çadırı" },
+            { url: "/hangar-cadiri", text: "Hangar Çadırı" },
+            { url: "/iftar-cadiri", text: "İftar Çadırı" },
+            { url: "/kis-bahcesi", text: "Kış Bahçesi" },
+            { url: "/kurban-hayvan-cadiri", text: "Kurban & Hayvan Çadırı" },
+            { url: "/santiye-cadiri", text: "Şantiye Çadırı" },
+            { url: "/taziye-cadiri", text: "Taziye Çadırı" },
+        ],
+    },
+    kumas: {
+        title: "Kumaş Türleri",
+        desc: "Amir Branda, dış mekan sistemlerinde uzun ömürlü ve garantili ithal/yerli kumaş çözümleri sunar. Akrilik, polyester ve blackout kumaş seçenekleriyle mekanınıza değer katın.",
+        links: [
+            { url: "/akrilik", text: "Akrilik" },
+            { url: "/blackout", text: "Blackout" },
+            { url: "/mika", text: "Mika" },
+            { url: "/polyester", text: "Polyester" },
+            { url: "/su-gecirmez-pilsa", text: "Su Geçirmez Pilsa" },
+            { url: "/semsiye-kumasi", text: "Şemsiye Kumaşı" },
+        ],
+    },
+    semsiye: {
+        title: "Şemsiye Modelleri",
+        desc: "Amir Branda olarak kafe, restoran, plaj ve bahçeleriniz için yüksek kaliteli, rüzgara dayanıklı profesyonel şemsiye sistemleri imal ediyoruz.",
+        links: [
+            { url: "/semsiye", text: "Ayaklı Açılır Kapanır Şemsiye" },
+            { url: "/semsiye", text: "Yandan Gövdeli Şemsiye" },
+            { url: "/semsiye", text: "Cafe ve Restorant Şemsiyesi" },
+            { url: "/semsiye", text: "Bahçe Şemsiyesi" },
+            { url: "/semsiye", text: "Teleskopik ve Plaj Şemsiyesi" },
+        ],
+    },
+};
+
+const currentData = data[category];
+---
+
+<aside class="col-md-4 sidebar">
+    <div class="sidebox widget">
+        <h3 class="widget-title">Hakkımızda</h3>
+        <figure class="mb-20">
+            <img
+                src="/style/brand/img/branda-logo.webp"
+                alt="Amir Branda Tente ve Çadır Sistemleri"
+                loading="lazy"
+            />
+        </figure>
+        <p>{currentData.desc}</p>
+        <ul class="social social-color social-s">
+            <li>
+                <a
+                    href="https://m.facebook.com/serinbrandatentecadirsistemleri"
+                    target="_blank"><i class="fa-brands fa-facebook-f"></i></a
+                >
+            </li>
+            <li>
+                <a href="https://tr.pinterest.com/amirbranda/" target="_blank"
+                    ><i class="fa-brands fa-pinterest"></i></a
+                >
+            </li>
+            <li>
+                <a href="https://www.instagram.com/branda.ist/" target="_blank"
+                    ><i class="fa-brands fa-instagram"></i></a
+                >
+            </li>
+            <li>
+                <a href="https://x.com/amirbrandaist" target="_blank"
+                    ><i class="fa-brands fa-twitter"></i></a
+                >
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <!-- /.widget -->
+    <div class="sidebox widget modern-sidebar-widget">
+        <h3 class="widget-title modern-widget-title">{currentData.title}</h3>
+        <ul class="list-group modern-list-group">
+            {
+                currentData.links.map((link) => (
+                    <li class="list-group-item modern-list-item">
+                        <a href={link.url}>{link.text}</a>
+                        <span class="modern-badge">
+                            <i class="fa-solid fa-chevron-right" />
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <!-- /.widget -->
+</aside>

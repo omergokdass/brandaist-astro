@@ -1,0 +1,11 @@
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Serve exact file if it exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # Serve exact directory if it exists
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # If neither exists, and it's not a direct request to 404.html, serve 404.html
+  RewriteRule ^(.*)$ /404.html [L,R=404]
+</IfModule>

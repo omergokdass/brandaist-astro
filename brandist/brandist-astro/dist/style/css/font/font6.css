@@ -1,0 +1,96 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lead,
+.lead2,
+.blockquote-footer,
+.navbar,
+.btn,
+.tp-caption:not(.font-body):not(.font-title),
+.erinyen .tp-tab-title,
+.cbp-filter-item,
+.meta,
+a.more,
+.countdown p,
+.counter p {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+body * {
+	letter-spacing: normal !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+h2.post-title {
+    font-size: 20px;
+    line-height: 30px;
+}
+.navbar-nav .nav-link,
+.dropdown-item,
+.meta,
+a.more,
+.btn,
+.blockquote-footer,
+.cbp-filter-item,
+.icon .number,
+label:not(.custom-control-label),
+.pagination ul>li>a {
+	font-weight: 600;
+}
+.meta,
+a.more,
+.cbp-filter-item,
+.btn,
+.accordion-wrapper .card-header>* {
+    font-size: 14px;
+    letter-spacing: 1px !important;
+}
+.meta * {
+	letter-spacing: 1px !important;
+}
+.meta.larger {
+	font-size: 16px;
+}
+blockquote p {
+    font-size: 19px;
+    line-height: 31px;
+}
+.navbar-nav .nav-link {
+    font-size: 17px;
+}
+.dropdown-item {
+    font-size: 15px;
+}
+blockquote.larger p {
+    font-size: 26px;
+    line-height: 40px;
+}
+.lead {
+    font-size: 20px;
+    line-height: 32px;
+}
+.lead.larger {
+    font-size: 22px;
+    line-height: 34px;
+}
+.lead2 {
+    font-size: 18px;
+    line-height: 30px;
+}
+.widget-title {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1px !important;
+}
+.btn {   
+    letter-spacing: 1px !important;
+}

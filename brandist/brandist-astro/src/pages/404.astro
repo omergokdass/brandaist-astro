@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="Sayfa Bulunamadı - 404 | Amir Branda"
+    description="Aradığınız sayfa bulunamadı. Amir Branda ile iletişime geçin veya ana sayfaya dönün."
+    ogTitle="Sayfa Bulunamadı - 404"
+>
+    <style is:global>
+        .navbar.transparent.absolute {
+            background: rgba(30, 34, 40, 1) !important;
+            position: relative !important;
+        }
+    </style>
+    <div class="wrapper light-wrapper">
+        <div class="container inner pt-120 pb-120 text-center">
+            <h1
+                class="display-1 mb-20"
+                style="font-size: 8rem; font-weight: 700; color: #4CA6E5;"
+            >
+                404
+            </h1>
+            <h2 class="display-4 mb-20">Aradığınız Sayfa Bulunamadı</h2>
+            <p class="lead mb-40">
+                Maalesef ulaşmaya çalıştığınız sayfa taşınmış, silinmiş veya
+                ismi değiştirilmiş olabilir.
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <a href="/" class="btn btn-default btn-lg mb-10 mr-10"
+                        >Ana Sayfaya Dön</a
+                    >
+                    <a
+                        href="/fiyat-listesi"
+                        class="btn btn-outline-default btn-lg mb-10"
+                        >Fiyat Listesini İncele</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

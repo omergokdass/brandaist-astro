@@ -1,0 +1,34 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lead,
+.lead2,
+.blockquote-footer,
+.navbar,
+.btn,
+.tp-caption:not(.font-body):not(.font-title),
+.erinyen .tp-tab-title,
+.cbp-filter-item,
+.meta,
+a.more,
+.countdown p,
+.counter p {
+    font-family: 'Overpass', sans-serif;
+}
+.navbar-nav .nav-link {
+    font-size: 16px;
+}
+.dropdown-item {
+    font-size: 15px;
+}
+.btn {
+    font-size: 14px;
+}
+blockquote.larger p {
+    font-size: 24px;
+    line-height: 38px;
+}
