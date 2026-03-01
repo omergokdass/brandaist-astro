@@ -7,6 +7,7 @@ export interface Props {
     description: string;
     ogTitle?: string;
     ogImage?: string;
+    ogType?: string;
     headerTitle: string;
     headerTitleTag?: string;
     headerSubtitle?: string;
@@ -25,6 +26,7 @@ const {
     description,
     ogTitle,
     ogImage,
+    ogType,
     headerTitle,
     headerTitleTag = "h1",
     headerSubtitle,
@@ -38,6 +40,7 @@ const {
     description={description}
     ogTitle={ogTitle}
     ogImage={ogImage}
+    ogType={ogType}
 >
     <slot name="json-ld" />
 

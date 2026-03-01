@@ -6,6 +6,7 @@ export interface Props {
     description?: string;
     ogTitle?: string;
     ogImage?: string;
+    ogType?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
     description = "İstanbul'un lider tente ve branda üreticisi Amir Branda ile mekanlarınızı dört mevsim yaşanabilir kılın.",
     ogTitle,
     ogImage = "https://branda.ist/images/amir-branda-logo.jpg",
+    ogType = "website",
 } = Astro.props;
 
 const pageTitle = title.includes("Amir Branda")
@@ -89,7 +91,7 @@ import "../styles/css/font/font2.css";
         <link rel="shortcut icon" href="/style/images/favicon.png" />
 
         <!-- Open Graph META -->
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:title" content={finalOgTitle} />
         <meta property="og:description" content={description} />
