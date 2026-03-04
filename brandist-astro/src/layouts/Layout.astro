@@ -7,6 +7,7 @@ export interface Props {
     ogTitle?: string;
     ogImage?: string;
     ogType?: string;
+    customCanonical?: string;
 }
 
 const {
@@ -15,15 +16,15 @@ const {
     ogTitle,
     ogImage = "https://branda.ist/images/amir-branda-logo.jpg",
     ogType = "website",
+    customCanonical,
 } = Astro.props;
 
 const pageTitle = title.includes("Amir Branda")
     ? title
     : `${title} | Amir Branda`;
-const canonicalURL = new URL(
-    Astro.url.pathname,
-    Astro.site || "https://branda.ist",
-);
+const canonicalURL =
+    customCanonical ||
+    new URL(Astro.url.pathname, Astro.site || "https://branda.ist");
 const finalOgTitle = ogTitle || pageTitle;
 
 // Breadcrumb Schema Generator
@@ -62,6 +63,83 @@ const breadcrumbSchema =
           })
         : null;
 
+// LocalBusiness Schema (HomeAndConstructionBusiness)
+const localBusinessSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    name: "Amir Branda",
+    image: "https://branda.ist/style/brand/img/logo-amir-branda.png",
+    "@id": "https://branda.ist",
+    url: "https://branda.ist",
+    telephone: "+905386044851",
+    priceRange: "₺₺",
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: "İstanbul",
+        addressLocality: "İstanbul",
+        addressRegion: "TR",
+        addressCountry: "TR",
+    },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: 41.0082,
+        longitude: 28.9784,
+    },
+    openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+        ],
+        opens: "08:30",
+        closes: "19:00",
+    },
+});
+
+// Dynamic Service Schema for Product/Service Pages
+const isServicePage =
+    ![
+        "/",
+        "/iletisim",
+        "/hakkimizda",
+        "/gizlilik-ve-cerez-politikasi",
+        "/kvkk-aydinlatma-metni",
+        "/sikca-sorulan-sorular",
+        "/blog",
+    ].includes(pathname) && !pathname.startsWith("/blog/");
+
+const serviceSchema = isServicePage
+    ? JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "Service",
+          serviceType: title.split("|")[0].trim(),
+          provider: {
+              "@type": "HomeAndConstructionBusiness",
+              name: "Amir Branda",
+              image: "https://branda.ist/style/brand/img/logo-amir-branda.png",
+          },
+          areaServed: {
+              "@type": "City",
+              name: "İstanbul",
+          },
+          description: description,
+          offers: {
+              "@type": "Offer",
+              priceSpecification: {
+                  "@type": "PriceSpecification",
+                  price: "0",
+                  priceCurrency: "TRY",
+              },
+              description:
+                  "Özel ölçü ve projeye göre fiyatlandırma. Lütfen teklif alınız.",
+              availability: "https://schema.org/InStock",
+          },
+      })
+    : null;
 import "../styles/css/bootstrap.min.css";
 import "../styles/css/plugins.css";
 
@@ -83,6 +161,7 @@ import "../styles/css/font/font2.css";
         />
         <meta name="robots" content="index, follow" />
         <meta name="description" content={description} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
         <link rel="canonical" href={canonicalURL} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
         <link
@@ -107,6 +186,36 @@ import "../styles/css/font/font2.css";
         <meta name="twitter:image" content={ogImage} />
 
         <title>{pageTitle}</title>
+
+        <!-- SEO Structured Data (JSON-LD) -->
+        {
+            breadcrumbSchema && (
+                <script
+                    is:inline
+                    type="application/ld+json"
+                    set:html={breadcrumbSchema}
+                />
+            )
+        }
+        {
+            localBusinessSchema && (
+                <script
+                    is:inline
+                    type="application/ld+json"
+                    set:html={localBusinessSchema}
+                />
+            )
+        }
+        {
+            serviceSchema && (
+                <script
+                    is:inline
+                    type="application/ld+json"
+                    set:html={serviceSchema}
+                />
+            )
+        }
+
         <link
             href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i,800,800i"
             rel="stylesheet"

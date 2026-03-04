@@ -32,7 +32,7 @@
                     >
                         Amir Branda ile
                     </h2>
-                    <p class="h2 text-white text-shadow font-weight-light">
+                    <p class="h2 text-white text-shadow font-weight-light mb-4">
                         açık havanın tadını çıkarın
                     </p>
                 </div>
@@ -61,7 +61,7 @@
                     >
                         Amir Branda ile
                     </h2>
-                    <p class="h2 text-white text-shadow font-weight-light">
+                    <p class="h2 text-white text-shadow font-weight-light mb-4">
                         yağmurlu günlerden korunun
                     </p>
                 </div>
@@ -90,7 +90,7 @@
                     >
                         Amir Branda ile
                     </h2>
-                    <p class="h2 text-white text-shadow font-weight-light">
+                    <p class="h2 text-white text-shadow font-weight-light mb-4">
                         güneşli günlerin tadını çıkarın
                     </p>
                 </div>
@@ -110,51 +110,50 @@
             style="color: white; text-shadow: 0px 0px 5px rgba(0,0,0,0.5);"
         >
         </div>
+
+        <style>
+            .hero-slider-wrapper {
+                /* Fullscreen setup handled via inline style and Bootstrap utility */
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Make sure pagination bullets are visible over dark background */
+            :global(.hero-swiper-pagination .swiper-pagination-bullet) {
+                background: #fff;
+                opacity: 0.5;
+                width: 12px;
+                height: 12px;
+            }
+            :global(.hero-swiper-pagination .swiper-pagination-bullet-active) {
+                opacity: 1;
+                background: #fff;
+        </style>
+
+        <script is:inline>
+            window.addEventListener("load", function () {
+                if (typeof Swiper !== "undefined") {
+                    new Swiper(".hero-swiper", {
+                        loop: true,
+                        effect: "fade",
+                        fadeEffect: { crossFade: true },
+                        speed: 800,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        pagination: {
+                            el: ".hero-swiper-pagination",
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: ".hero-swiper-button-next",
+                            prevEl: ".hero-swiper-button-prev",
+                        },
+                    });
+                }
+            });
+        </script>
     </div>
 </div>
-
-<style>
-    .hero-slider-wrapper {
-        /* Fullscreen setup handled via inline style and Bootstrap utility */
-    }
-    .text-shadow {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    }
-
-    /* Make sure pagination bullets are visible over dark background */
-    :global(.hero-swiper-pagination .swiper-pagination-bullet) {
-        background: #fff;
-        opacity: 0.5;
-        width: 12px;
-        height: 12px;
-    }
-    :global(.hero-swiper-pagination .swiper-pagination-bullet-active) {
-        opacity: 1;
-        background: #fff;
-    }
-</style>
-
-<script is:inline>
-    window.addEventListener("load", function () {
-        if (typeof Swiper !== "undefined") {
-            new Swiper(".hero-swiper", {
-                loop: true,
-                effect: "fade",
-                fadeEffect: { crossFade: true },
-                speed: 800,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".hero-swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".hero-swiper-button-next",
-                    prevEl: ".hero-swiper-button-prev",
-                },
-            });
-        }
-    });
-</script>
