@@ -13,7 +13,7 @@ const { images } = Astro.props;
 
 <div class="modern-gallery-container gap-3">
     {
-        images.map((img, index) => (
+        images.map((img) => (
             <a
                 href={img.src}
                 class="glightbox modern-gallery-item"
@@ -110,7 +110,7 @@ const { images } = Astro.props;
     import "glightbox/dist/css/glightbox.min.css";
 
     document.addEventListener("DOMContentLoaded", () => {
-        const lightbox = GLightbox({
+        GLightbox({
             selector: ".glightbox",
             touchNavigation: true,
             loop: true,

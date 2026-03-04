@@ -88,8 +88,15 @@ import "../styles/css/font/font2.css";
         <meta name="robots" content="index, follow" />
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalURL} />
-        <link rel="shortcut icon" href="/style/images/favicon.png" />
-
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/favicon.png?v=4"
+        />
+        <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png?v=4" />
+        <link rel="shortcut icon" href="/favicon.png?v=4" />
         <!-- Open Graph META -->
         <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonicalURL} />
@@ -266,6 +273,7 @@ import "../styles/css/font/font2.css";
         {
             breadcrumbSchema && (
                 <script
+                    is:inline
                     type="application/ld+json"
                     set:html={breadcrumbSchema}
                 />
