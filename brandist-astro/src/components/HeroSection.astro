@@ -2,22 +2,25 @@
 
 ---
 
-<div class="hero-slider-wrapper position-relative w-100 overflow-hidden">
-    <div class="swiper-container hero-swiper h-100">
+<div
+    class="hero-slider-wrapper position-relative w-100 overflow-hidden"
+    style="height: 100vh;"
+>
+    <div class="swiper hero-swiper h-100">
         <div class="swiper-wrapper">
             <!-- Slide 1 -->
             <div class="swiper-slide bg-dark position-relative">
                 <img
-                    src="style/brand/img/amir-branda-tente-montaj-istanbul.webp"
+                    src="/style/brand/img/amir-branda-tente-montaj-istanbul.webp"
                     alt="Amir Branda uzman montaj ekibi tente kurulumunda"
                     class="w-100 h-100"
                     fetchpriority="high"
                     loading="eager"
-                    style="min-height: 60vh; object-fit: cover;"
+                    style="object-fit: cover;"
                 />
                 <div
                     class="background-overlay position-absolute w-100 h-100"
-                    style="top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1;"
+                    style="top: 0; left: 0; background: rgba(0,0,0,0.1); z-index: 1;"
                 >
                 </div>
                 <div
@@ -38,15 +41,15 @@
             <!-- Slide 2 -->
             <div class="swiper-slide bg-dark position-relative">
                 <img
-                    src="style/brand/img/seffaf-kis-bahcesi-brandasi.webp"
+                    src="/style/brand/img/seffaf-kis-bahcesi-brandasi.webp"
                     alt="Kafe ve kış bahçesi için şeffaf branda kaplaması"
                     class="w-100 h-100"
                     loading="lazy"
-                    style="min-height: 60vh; object-fit: cover;"
+                    style="object-fit: cover;"
                 />
                 <div
                     class="background-overlay position-absolute w-100 h-100"
-                    style="top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1;"
+                    style="top: 0; left: 0; background: rgba(0,0,0,0.1); z-index: 1;"
                 >
                 </div>
                 <div
@@ -67,15 +70,15 @@
             <!-- Slide 3 -->
             <div class="swiper-slide bg-dark position-relative">
                 <img
-                    src="style/brand/img/branda-tente-cadir-sistemleri-imalati.webp"
+                    src="/style/brand/img/branda-tente-cadir-sistemleri-imalati.webp"
                     alt="Amir Branda kaliteli branda, tente ve çadır sistemleri imalatı"
                     class="w-100 h-100"
                     loading="lazy"
-                    style="min-height: 60vh; object-fit: cover;"
+                    style="object-fit: cover;"
                 />
                 <div
                     class="background-overlay position-absolute w-100 h-100"
-                    style="top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1;"
+                    style="top: 0; left: 0; background: rgba(0,0,0,0.1); z-index: 1;"
                 >
                 </div>
                 <div
@@ -112,9 +115,7 @@
 
 <style>
     .hero-slider-wrapper {
-        height: 70vh;
-        min-height: 400px;
-        max-height: 700px;
+        /* Fullscreen setup handled via inline style and Bootstrap utility */
     }
     .text-shadow {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
@@ -134,10 +135,12 @@
 </style>
 
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("load", function () {
         if (typeof Swiper !== "undefined") {
             new Swiper(".hero-swiper", {
                 loop: true,
+                effect: "fade",
+                fadeEffect: { crossFade: true },
                 speed: 800,
                 autoplay: {
                     delay: 5000,

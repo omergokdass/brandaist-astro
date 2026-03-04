@@ -18,11 +18,8 @@
             > sayfamızı ziyaret edebilirsiniz.
         </p>
         <div class="space30"></div>
-        <div
-            class="swiper-container-wrapper image-grid swiper-col3-20"
-            data-aos="fade"
-        >
-            <div class="swiper-container text-center">
+        <div class="swiper-container-wrapper image-grid swiper-col3-20">
+            <div class="swiper text-center">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <figure class="overlay overlay4">
@@ -31,7 +28,7 @@
                                     style="height:570px; width:100%; object-fit: cover;"
                                     width="400"
                                     height="570"
-                                    src="style/brand/img/motorlu-bioklimatik-pergola-fiyatlari.webp"
+                                    src="/style/brand/img/motorlu-bioklimatik-pergola-fiyatlari.webp"
                                     alt="Led ışıklı motorlu alüminyum otomatik pergola"
                                     loading="lazy"
                                     decoding="async"
@@ -93,7 +90,7 @@
                                     style="height:570px; width:100%; object-fit: cover;"
                                     width="400"
                                     height="570"
-                                    src="style/brand/img/istanbul-endustriyel-santiye-depo-cadiri.webp"
+                                    src="/style/brand/img/istanbul-endustriyel-santiye-depo-cadiri.webp"
                                     alt="Geniş hacimli çelik konstrüksiyonlu depo çadırı"
                                     loading="lazy"
                                     decoding="async"
@@ -122,7 +119,7 @@
                                     style="height:570px; width:100%; object-fit: cover;"
                                     width="400"
                                     height="570"
-                                    src="style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp"
+                                    src="/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp"
                                     alt="Dükkan önü manuel mafsallı tente modeli"
                                     loading="lazy"
                                     decoding="async"
@@ -153,7 +150,7 @@
                                     style="height:570px; width:100%; object-fit: cover;"
                                     width="400"
                                     height="570"
-                                    src="style/brand/img/bioklimatik-tente.webp"
+                                    src="/style/brand/img/bioklimatik-tente.webp"
                                     alt="Modern motorlu bioklimatik tente uygulaması"
                                     loading="lazy"
                                     decoding="async"
@@ -184,7 +181,7 @@
                                     style="height:570px; width:100%; object-fit: cover;"
                                     width="400"
                                     height="570"
-                                    src="style/brand/img/afet-cadiri.webp"
+                                    src="/style/brand/img/afet-cadiri.webp"
                                     alt="Geniş kapasiteli çadır ve hangar modelleri"
                                     loading="lazy"
                                     decoding="async"
@@ -209,7 +206,7 @@
                 </div>
                 <!-- /.swiper-wrapper -->
             </div>
-            <!-- .swiper-container -->
+            <!-- .swiper -->
             <div class="swiper-pagination gap-large"></div>
         </div>
         <!-- .swiper-container-wrapper -->
@@ -227,3 +224,44 @@
     </div>
     <!-- /.container -->
 </section>
+
+<style>
+    /* Pagination bullets contrast fix */
+    :global(.swiper-pagination) {
+        position: relative;
+        margin-top: 20px;
+    }
+    :global(.swiper-col3-20 .swiper-pagination-bullet) {
+        background: #333;
+        opacity: 0.3;
+        width: 12px;
+        height: 12px;
+        transition: all 0.3s;
+    }
+    :global(.swiper-col3-20 .swiper-pagination-bullet-active) {
+        opacity: 1;
+        background: #007bff;
+        transform: scale(1.2);
+    }
+</style>
+
+<script is:inline>
+    window.addEventListener("load", function () {
+        if (typeof Swiper !== "undefined") {
+            new Swiper(".swiper-col3-20 .swiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: { delay: 4000, disableOnInteraction: false },
+                pagination: {
+                    el: ".swiper-col3-20 .swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                },
+            });
+        }
+    });
+</script>

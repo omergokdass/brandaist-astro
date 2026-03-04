@@ -118,6 +118,11 @@ import "../styles/css/font/font2.css";
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <!-- Swiper CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
         <style>
             /* Modern Floating Buttons */
             .floating-action-container {
@@ -456,22 +461,19 @@ import "../styles/css/font/font2.css";
             defer
             src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+        <!-- Swiper JS -->
         <script
             is:inline
             defer
-            src="https://code.jquery.com/jquery-3.6.3.min.js"
-            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-            crossorigin="anonymous"></script>
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+        ></script>
 
-        <script is:inline defer src="/style/js/popper.min.js"></script>
-        <script is:inline defer src="/style/js/bootstrap.min.js"></script>
-        <script is:inline defer src="/style/js/plugins.min.js"></script>
         <slot name="extra-scripts" />
-        <script is:inline defer src="/style/js/scripts.min.js?v=2"></script>
+        <script is:inline defer src="/style/js/main.js?v=5"></script>
         <script
             is:inline
             defer
             type="text/javascript"
-            src="/style/js/mail.js?v=4"></script>
+            src="/style/js/mail.js?v=5"></script>
     </body>
 </html>
