@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -48,71 +49,26 @@ import PageLayout from '../layouts/PageLayout.astro';
 
                         <div class="space30"></div>
                         <div class="wrapper light-wrapper">
-                            <div class="container inner">
-                                <div class="collage-wrapper">
-                                    <div id="collage-medium" class="collage effect-parent light-gallery">
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye1.webp" data-sub-html="#cap0"><img src="/style/brand/img/semsiye1.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 1" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye2.webp" data-sub-html="#cap1"><img src="/style/brand/img/semsiye2.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 2" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye3.webp" data-sub-html="#cap2"><img src="/style/brand/img/semsiye3.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 3" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye4.webp" data-sub-html="#cap3"><img src="/style/brand/img/semsiye4.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 4" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye5.webp" data-sub-html="#cap4"><img src="/style/brand/img/semsiye5.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 5" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye6.webp" data-sub-html="#cap5"><img src="/style/brand/img/semsiye6.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 6" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye7.webp" data-sub-html="#cap6"><img src="/style/brand/img/semsiye7.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 7" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye8.webp" data-sub-html="#cap7"><img src="/style/brand/img/semsiye8.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 8" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye9.webp" data-sub-html="#cap8"><img src="/style/brand/img/semsiye9.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 9" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye10.webp" data-sub-html="#cap9"><img src="/style/brand/img/semsiye10.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 10" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="collage-image-wrapper">
-                                            <div class="overlay overlay2">
-                                                <a href="/style/brand/img/semsiye11.webp" data-sub-html="#cap10"><img src="/style/brand/img/semsiye11.webp" style="width:675px; height:450px; object-fit: cover;" alt="Şemsiye 11" loading="lazy" /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.collage -->
-                                </div>
-                                <!-- /.collage-wrapper -->
-                            </div>
-                            <!-- /.container -->
-                        </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/semsiye1.webp", alt: "Şemsiye 1" },
+                { src: "/style/brand/img/semsiye2.webp", alt: "Şemsiye 2" },
+                { src: "/style/brand/img/semsiye3.webp", alt: "Şemsiye 3" },
+                { src: "/style/brand/img/semsiye4.webp", alt: "Şemsiye 4" },
+                { src: "/style/brand/img/semsiye5.webp", alt: "Şemsiye 5" },
+                { src: "/style/brand/img/semsiye6.webp", alt: "Şemsiye 6" },
+                { src: "/style/brand/img/semsiye7.webp", alt: "Şemsiye 7" },
+                { src: "/style/brand/img/semsiye8.webp", alt: "Şemsiye 8" },
+                { src: "/style/brand/img/semsiye9.webp", alt: "Şemsiye 9" },
+                { src: "/style/brand/img/semsiye10.webp", alt: "Şemsiye 10" },
+                { src: "/style/brand/img/semsiye11.webp", alt: "Şemsiye 11" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
                         
                     </div>
                 </article>

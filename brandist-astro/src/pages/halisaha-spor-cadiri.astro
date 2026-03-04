@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -53,56 +54,23 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 <div class="space10"></div>
 <div class="wrapper light-wrapper">
-                                <div class="container inner">
-                                                                        <div class="collage-wrapper">
-                                        <div id="collage-medium" class="collage effect-parent light-gallery">
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha1.webp" data-sub-html="#cap0"><img src="/style/brand/img/saha1.webp" style="width:675px; height:450px; object-fit: cover;" alt="halı saha brandası fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha2.webp" data-sub-html="#cap1"><img src="/style/brand/img/saha2.webp" style="width:675px; height:450px; object-fit: cover;" alt="spor brandas fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha3.webp" data-sub-html="#cap2"><img src="/style/brand/img/saha3.webp" style="width:675px; height:450px; object-fit: cover;" alt="hal saha çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha4.webp" data-sub-html="#cap3"><img src="/style/brand/img/saha4.webp" style="width:675px; height:450px; object-fit: cover;" alt="spor çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha5.webp" data-sub-html="#cap4"><img src="/style/brand/img/saha5.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadır" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha6.webp" data-sub-html="#cap5"><img src="/style/brand/img/saha6.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadırcı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha7.webp" data-sub-html="#cap6"><img src="/style/brand/img/saha7.webp" style="width:675px; height:450px; object-fit: cover;" alt="halı saha çadırı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/saha8.webp" data-sub-html="#cap7"><img src="/style/brand/img/saha8.webp" style="width:675px; height:450px; object-fit: cover;" alt="halı saha brandası" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.collage -->
-                                    </div>
-                                    <!-- /.collage-wrapper -->
-                                </div>
-                                <!-- /.container -->
-                            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/saha1.webp", alt: "halı saha brandası fiyatları" },
+                { src: "/style/brand/img/saha2.webp", alt: "spor brandas fiyatları" },
+                { src: "/style/brand/img/saha3.webp", alt: "hal saha çadır fiyatları" },
+                { src: "/style/brand/img/saha4.webp", alt: "spor çadır fiyatları" },
+                { src: "/style/brand/img/saha5.webp", alt: "çadır" },
+                { src: "/style/brand/img/saha6.webp", alt: "çadırcı" },
+                { src: "/style/brand/img/saha7.webp", alt: "halı saha çadırı" },
+                { src: "/style/brand/img/saha8.webp", alt: "halı saha brandası" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
                             <!-- /.social -->
                         </div>
                         <!-- /.post-content -->

@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
@@ -123,61 +124,17 @@ import PageLayout from "../layouts/PageLayout.astro";
             </div>
 
             <div class="wrapper light-wrapper">
-                <div class="container inner">
-                    <div class="collage-wrapper">
-                        <div
-                            id="collage-medium"
-                            class="collage effect-parent light-gallery"
-                        >
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/kamyon-brandasi.webp"
-                                        data-sub-html="#cap0"
-                                    >
-                                        <img
-                                            src="/style/brand/img/kamyon-brandasi.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Tır kayar perde brandası"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/kamyon-brandasi2.webp"
-                                        data-sub-html="#cap1"
-                                    >
-                                        <img
-                                            src="/style/brand/img/kamyon-brandasi2.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Ağır vasıta dorse çadırı"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/kamyon-brandasi3.webp"
-                                        data-sub-html="#cap2"
-                                    >
-                                        <img
-                                            src="/style/brand/img/kamyon-brandasi3.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Logo baskılı lojistik tır brandası"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/kamyon-brandasi.webp", alt: "Tır kayar perde brandası" },
+                { src: "/style/brand/img/kamyon-brandasi2.webp", alt: "Ağır vasıta dorse çadırı" },
+                { src: "/style/brand/img/kamyon-brandasi3.webp", alt: "Logo baskılı lojistik tır brandası" }
+            ]} />
+        </div>
+    </div>
+</div>
         </div>
     </article>
 </PageLayout>

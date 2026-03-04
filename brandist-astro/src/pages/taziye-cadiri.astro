@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -58,41 +59,20 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 <div class="space10"></div>
 <div class="wrapper light-wrapper">
-                                <div class="container inner">
-                                                                        <div class="collage-wrapper">
-                                        <div id="collage-medium" class="collage effect-parent light-gallery">
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/taziye1.webp" data-sub-html="#cap0"><img src="/style/brand/img/taziye1.webp" style="width:675px; height:450px; object-fit: cover;" alt="taziye çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/taziye2.webp" data-sub-html="#cap1"><img src="/style/brand/img/taziye2.webp" style="width:675px; height:450px; object-fit: cover;" alt="taziye çadırları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/taziye3.webp" data-sub-html="#cap2"><img src="/style/brand/img/taziye3.webp" style="width:675px; height:450px; object-fit: cover;" alt="taziye çadırı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/taziye4.webp" data-sub-html="#cap3"><img src="/style/brand/img/taziye4.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadır" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/taziye5.webp" data-sub-html="#cap4"><img src="/style/brand/img/taziye5.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadırcı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.collage -->
-                                    </div>
-                                    <!-- /.collage-wrapper -->
-                                </div>
-                                <!-- /.container -->
-                            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/taziye1.webp", alt: "taziye çadır fiyatları" },
+                { src: "/style/brand/img/taziye2.webp", alt: "taziye çadırları" },
+                { src: "/style/brand/img/taziye3.webp", alt: "taziye çadırı" },
+                { src: "/style/brand/img/taziye4.webp", alt: "çadır" },
+                { src: "/style/brand/img/taziye5.webp", alt: "çadırcı" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
                             <!-- /.social -->
                         </div>
                         <!-- /.post-content -->

@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -58,76 +59,24 @@ import PageLayout from '../layouts/PageLayout.astro';
 <div class="space10"></div>
 <div class="space10"></div>
                             <div class="wrapper light-wrapper">
-                                <div class="container inner">
-                                    <div class="collage-wrapper">
-                                        <div id="collage-medium" class="collage effect-parent light-gallery">
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente2.webp" data-sub-html="#caption1"><img src="/style/brand/img/cift-acilir-tente2.webp" style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="Çift Açılır Tente Fiyatları" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <!-- /.collage-image-wrapper -->
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente5.webp" data-sub-html="#caption2"><img src="/style/brand/img/cift-acilir-tente5.webp" style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="Elle Açılır Tente Fiyatları" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente3.webp" data-sub-html="#caption3"><img src="/style/brand/img/cift-acilir-tente3.webp" style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="Tente fiyatları" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente4.webp" data-sub-html="#caption3"><img src="/style/brand/img/cift-acilir-tente4.webp" style="width: 100%; max-width: 325px; height: auto; aspect-ratio: 325/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="İstanbul tenteci" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente6.webp" data-sub-html="#caption3"><img src="/style/brand/img/cift-acilir-tente6.webp" style="width: 100%; max-width: 650px; height: auto; aspect-ratio: 650/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="beyoğlu tenteci" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente7.webp" data-sub-html="#caption3"><img src="/style/brand/img/cift-acilir-tente7.webp" style="width: 100%; max-width: 350px; height: auto; aspect-ratio: 350/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="tente fiyatları" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente9.webp" data-sub-html="#caption2"><img src="/style/brand/img/cift-acilir-tente9.webp" style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="İstanbul Tente Fiyatları" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                             <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente10.webp" data-sub-html="#caption2"><img src="/style/brand/img/cift-acilir-tente10.webp" style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="tente modelleri" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/cift-acilir-tente8.webp" data-sub-html="#caption2"><img src="/style/brand/img/cift-acilir-tente8.webp" style="width: 100%; max-width: 1000px; height: auto; aspect-ratio: 1000/450; object-fit: cover;" class="img-fluid rounded shadow-sm" alt="meydan tentesi" loading="lazy" /></a>
-
-                                                </div>
-                                            </div>
-                                            <!-- /.collage-image-wrapper -->
-                                            <!-- /.collage-image-wrapper -->
-                                            <!-- /.collage-image-wrapper -->
-                                            <!-- /.collage-image-wrapper -->
-                                            <!-- /.collage-image-wrapper -->
-                                        </div>
-                                        <!-- /.collage -->
-                                    </div>
-                                    <!-- /.collage-wrapper -->
-                                </div>
-                                <!-- /.container -->
-                            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/cift-acilir-tente2.webp", alt: "Çift Açılır Tente Fiyatları" },
+                { src: "/style/brand/img/cift-acilir-tente5.webp", alt: "Elle Açılır Tente Fiyatları" },
+                { src: "/style/brand/img/cift-acilir-tente3.webp", alt: "Tente fiyatları" },
+                { src: "/style/brand/img/cift-acilir-tente4.webp", alt: "İstanbul tenteci" },
+                { src: "/style/brand/img/cift-acilir-tente6.webp", alt: "beyoğlu tenteci" },
+                { src: "/style/brand/img/cift-acilir-tente7.webp", alt: "tente fiyatları" },
+                { src: "/style/brand/img/cift-acilir-tente9.webp", alt: "İstanbul Tente Fiyatları" },
+                { src: "/style/brand/img/cift-acilir-tente10.webp", alt: "tente modelleri" },
+                { src: "/style/brand/img/cift-acilir-tente8.webp", alt: "meydan tentesi" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
                             <!-- /.social -->
                         </div>
                         <!-- /.post-content -->

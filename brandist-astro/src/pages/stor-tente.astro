@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
@@ -132,61 +133,17 @@ import PageLayout from "../layouts/PageLayout.astro";
             </div>
 
             <div class="wrapper light-wrapper">
-                <div class="container inner">
-                    <div class="collage-wrapper">
-                        <div
-                            id="collage-medium"
-                            class="collage effect-parent light-gallery"
-                        >
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/mafsalli-tente13.webp"
-                                        data-sub-html="#cap0"
-                                    >
-                                        <img
-                                            src="/style/brand/img/mafsalli-tente13.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Stor tente kancalı kullanım"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/pergola-tente1.webp"
-                                        data-sub-html="#cap1"
-                                    >
-                                        <img
-                                            src="/style/brand/img/pergola-tente1.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Açık balkon stor dikey tente"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/seffaf-branda2.webp"
-                                        data-sub-html="#cap2"
-                                    >
-                                        <img
-                                            src="/style/brand/img/seffaf-branda2.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Pvc şeffaf stor uygulaması"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/mafsalli-tente13.webp", alt: "Stor tente kancalı kullanım" },
+                { src: "/style/brand/img/pergola-tente1.webp", alt: "Açık balkon stor dikey tente" },
+                { src: "/style/brand/img/seffaf-branda2.webp", alt: "Pvc şeffaf stor uygulaması" }
+            ]} />
+        </div>
+    </div>
+</div>
         </div>
     </article>
 </PageLayout>

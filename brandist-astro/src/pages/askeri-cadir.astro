@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
@@ -190,61 +191,18 @@ import PageLayout from "../layouts/PageLayout.astro";
 
             <div class="space10"></div>
             <div class="wrapper light-wrapper">
-                <div class="container inner">
-                    <div class="collage-wrapper">
-                        <div
-                            id="collage-medium"
-                            class="collage effect-parent light-gallery"
-                        >
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/askeri-cadir.webp"
-                                        data-sub-html="#cap0"
-                                        ><img
-                                            src="/style/brand/img/askeri-cadir.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="ucuz çadırcı"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/askeri-cadir2.webp"
-                                        data-sub-html="#cap1"
-                                        ><img
-                                            src="/style/brand/img/askeri-cadir2.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="çadır fiyatları"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/askeri-cadir3.webp"
-                                        data-sub-html="#cap2"
-                                        ><img
-                                            src="/style/brand/img/askeri-cadir3.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="çadırcı"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.collage -->
-                    </div>
-                    <!-- /.collage-wrapper -->
-                </div>
-                <!-- /.container -->
-            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/askeri-cadir.webp", alt: "ucuz çadırcı" },
+                { src: "/style/brand/img/askeri-cadir2.webp", alt: "çadır fiyatları" },
+                { src: "/style/brand/img/askeri-cadir3.webp", alt: "çadırcı" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
             <!-- /.social -->
         </div>
         <!-- /.post-content -->

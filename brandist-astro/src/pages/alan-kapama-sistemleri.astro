@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
@@ -147,61 +148,17 @@ import PageLayout from "../layouts/PageLayout.astro";
             </div>
 
             <div class="wrapper light-wrapper">
-                <div class="container inner">
-                    <div class="collage-wrapper">
-                        <div
-                            id="collage-medium"
-                            class="collage effect-parent light-gallery"
-                        >
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/isikli-acik-alan-kapatmasi-kafe-restoran.webp"
-                                        data-sub-html="#cap0"
-                                    >
-                                        <img
-                                            src="/style/brand/img/isikli-acik-alan-kapatmasi-kafe-restoran.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Kafe dış mekan kışlık kapaması"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/seffaf-kis-bahcesi-brandasi.webp"
-                                        data-sub-html="#cap1"
-                                    >
-                                        <img
-                                            src="/style/brand/img/seffaf-kis-bahcesi-brandasi.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Işıklı şeffaf pvc kış bahçesi alan kapatması"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/seffaf-branda.webp"
-                                        data-sub-html="#cap2"
-                                    >
-                                        <img
-                                            src="/style/brand/img/seffaf-branda.webp"
-                                            style="width:675px; height:450px; object-fit: cover;"
-                                            alt="Motorlu zip perde ile cephe kapatma sistemi"
-                                            loading="lazy"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/isikli-acik-alan-kapatmasi-kafe-restoran.webp", alt: "Kafe dış mekan kışlık kapaması" },
+                { src: "/style/brand/img/seffaf-kis-bahcesi-brandasi.webp", alt: "Işıklı şeffaf pvc kış bahçesi alan kapatması" },
+                { src: "/style/brand/img/seffaf-branda.webp", alt: "Motorlu zip perde ile cephe kapatma sistemi" }
+            ]} />
+        </div>
+    </div>
+</div>
         </div>
     </article>
 </PageLayout>

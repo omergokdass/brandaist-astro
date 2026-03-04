@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
@@ -63,130 +64,22 @@ import PageLayout from "../layouts/PageLayout.astro";
             <div class="space10"></div>
             <div class="space10"></div>
             <div class="wrapper light-wrapper">
-                <div class="container inner">
-                    <div class="collage-wrapper">
-                        <div
-                            id="collage-medium"
-                            class="collage effect-parent light-gallery"
-                        >
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi2.webp"
-                                        data-sub-html="#caption1"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi2.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="tekne brandası"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <!-- /.collage-image-wrapper -->
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi-1.webp"
-                                        data-sub-html="#caption2"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi-1.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="tekne gemi brandası ucuz fiyatları"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi4.webp"
-                                        data-sub-html="#caption3"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi4.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="su geçirmez gemi tekne brandası fiyatı"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi5.webp"
-                                        data-sub-html="#caption3"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi5.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="gemi brandası fiyatı"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi6.webp"
-                                        data-sub-html="#caption3"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi6.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="su geçirmez brandası fiyatı"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi7.webp"
-                                        data-sub-html="#caption3"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi7.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="brandacı ucuz fiyatları"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/tekne-brandasi.webp"
-                                        data-sub-html="#caption3"
-                                        ><img
-                                            src="/style/brand/img/tekne-brandasi.webp"
-                                            style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 800/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="tekne brandası koruma"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                        </div>
-                        <!-- /.collage -->
-                    </div>
-                    <!-- /.collage-wrapper -->
-                </div>
-                <!-- /.container -->
-            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/tekne-brandasi2.webp", alt: "tekne brandası" },
+                { src: "/style/brand/img/tekne-brandasi-1.webp", alt: "tekne gemi brandası ucuz fiyatları" },
+                { src: "/style/brand/img/tekne-brandasi4.webp", alt: "su geçirmez gemi tekne brandası fiyatı" },
+                { src: "/style/brand/img/tekne-brandasi5.webp", alt: "gemi brandası fiyatı" },
+                { src: "/style/brand/img/tekne-brandasi6.webp", alt: "su geçirmez brandası fiyatı" },
+                { src: "/style/brand/img/tekne-brandasi7.webp", alt: "brandacı ucuz fiyatları" },
+                { src: "/style/brand/img/tekne-brandasi.webp", alt: "tekne brandası koruma" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
             <!-- /.social -->
         </div>
         <!-- /.post-content -->

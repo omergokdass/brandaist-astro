@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
@@ -65,69 +66,18 @@ import PageLayout from "../layouts/PageLayout.astro";
             <div class="space10"></div>
             <div class="space10"></div>
             <div class="wrapper light-wrapper">
-                <div class="container inner">
-                    <div class="collage-wrapper">
-                        <div
-                            id="collage-medium"
-                            class="collage effect-parent light-gallery"
-                        >
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/golgelik-jut-branda.webp"
-                                        data-sub-html="#caption1"
-                                        ><img
-                                            src="/style/brand/img/golgelik-jut-branda.webp"
-                                            style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="gölgelik branda fiyatları"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <!-- /.collage-image-wrapper -->
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/golgelik-jut-branda2.webp"
-                                        data-sub-html="#caption2"
-                                        ><img
-                                            src="/style/brand/img/golgelik-jut-branda2.webp"
-                                            style="width: 100%; max-width: 675px; height: auto; aspect-ratio: 675/450; object-fit: cover;"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="gölgelik jüt germe branda fiyatı"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <div class="collage-image-wrapper">
-                                <div class="overlay overlay2">
-                                    <a
-                                        href="/style/brand/img/golgelik-jut-branda4.webp"
-                                        data-sub-html="#caption3"
-                                        ><img
-                                            src="/style/brand/img/golgelik-jut-branda4.webp"
-                                            style="width:100%; height:450px;"
-                                            alt="gölgelik branda modeli"
-                                            loading="lazy"
-                                        /></a
-                                    >
-                                </div>
-                            </div>
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                            <!-- /.collage-image-wrapper -->
-                        </div>
-                        <!-- /.collage -->
-                    </div>
-                    <!-- /.collage-wrapper -->
-                </div>
-                <!-- /.container -->
-            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/golgelik-jut-branda.webp", alt: "gölgelik branda fiyatları" },
+                { src: "/style/brand/img/golgelik-jut-branda2.webp", alt: "gölgelik jüt germe branda fiyatı" },
+                { src: "/style/brand/img/golgelik-jut-branda4.webp", alt: "gölgelik branda modeli" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
             <!-- /.social -->
         </div>
         <!-- /.post-content -->

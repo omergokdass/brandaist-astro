@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -58,41 +59,20 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 <div class="space10"></div>
 <div class="wrapper light-wrapper">
-                                <div class="container inner">
-                                                                        <div class="collage-wrapper">
-                                        <div id="collage-medium" class="collage effect-parent light-gallery">
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/iftar1.webp" data-sub-html="#cap0"><img src="/style/brand/img/iftar1.webp" style="width:675px; height:450px; object-fit: cover;" alt="iftar çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/iftar2.webp" data-sub-html="#cap1"><img src="/style/brand/img/iftar2.webp" style="width:675px; height:450px; object-fit: cover;" alt="etkinlik çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/iftar3.webp" data-sub-html="#cap2"><img src="/style/brand/img/iftar3.webp" style="width:675px; height:450px; object-fit: cover;" alt="organizasyon çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/iftar4.webp" data-sub-html="#cap3"><img src="/style/brand/img/iftar4.webp" style="width:675px; height:450px; object-fit: cover;" alt="yemek çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/iftar5.webp" data-sub-html="#cap4"><img src="/style/brand/img/iftar5.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadır" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.collage -->
-                                    </div>
-                                    <!-- /.collage-wrapper -->
-                                </div>
-                                <!-- /.container -->
-                            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/iftar1.webp", alt: "iftar çadır fiyatları" },
+                { src: "/style/brand/img/iftar2.webp", alt: "etkinlik çadır fiyatları" },
+                { src: "/style/brand/img/iftar3.webp", alt: "organizasyon çadır fiyatları" },
+                { src: "/style/brand/img/iftar4.webp", alt: "yemek çadır fiyatları" },
+                { src: "/style/brand/img/iftar5.webp", alt: "çadır" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
                             <!-- /.social -->
                         </div>
                         <!-- /.post-content -->

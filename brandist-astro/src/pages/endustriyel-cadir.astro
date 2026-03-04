@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -60,51 +61,22 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 <div class="space10"></div>
 <div class="wrapper light-wrapper">
-                                <div class="container inner">
-                                                                        <div class="collage-wrapper">
-                                        <div id="collage-medium" class="collage effect-parent light-gallery">
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel1.webp" data-sub-html="#cap0"><img src="/style/brand/img/endustriyel1.webp" style="width:675px; height:450px; object-fit: cover;" alt="endüstriyel çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel2.webp" data-sub-html="#cap1"><img src="/style/brand/img/endustriyel2.webp" style="width:675px; height:450px; object-fit: cover;" alt="büyük çadır yapan firmalar" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel3.webp" data-sub-html="#cap2"><img src="/style/brand/img/endustriyel3.webp" style="width:675px; height:450px; object-fit: cover;" alt="endüstriyel çadır" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel4.webp" data-sub-html="#cap3"><img src="/style/brand/img/endustriyel4.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadırcı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel5.webp" data-sub-html="#cap4"><img src="/style/brand/img/endustriyel5.webp" style="width:675px; height:450px; object-fit: cover;" alt="çadır fiyatları" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel6.webp" data-sub-html="#cap5"><img src="/style/brand/img/endustriyel6.webp" style="width:675px; height:450px; object-fit: cover;" alt="ucuz çadırcı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                            <div class="collage-image-wrapper">
-                                                <div class="overlay overlay2">
-                                                    <a href="/style/brand/img/endustriyel7.webp" data-sub-html="#cap6"><img src="/style/brand/img/endustriyel7.webp" style="width:675px; height:450px; object-fit: cover;" alt="kaliteli çadırcı" loading="lazy" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.collage -->
-                                    </div>
-                                    <!-- /.collage-wrapper -->
-                                </div>
-                                <!-- /.container -->
-                            </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/endustriyel1.webp", alt: "endüstriyel çadır fiyatları" },
+                { src: "/style/brand/img/endustriyel2.webp", alt: "büyük çadır yapan firmalar" },
+                { src: "/style/brand/img/endustriyel3.webp", alt: "endüstriyel çadır" },
+                { src: "/style/brand/img/endustriyel4.webp", alt: "çadırcı" },
+                { src: "/style/brand/img/endustriyel5.webp", alt: "çadır fiyatları" },
+                { src: "/style/brand/img/endustriyel6.webp", alt: "ucuz çadırcı" },
+                { src: "/style/brand/img/endustriyel7.webp", alt: "kaliteli çadırcı" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
                             <!-- /.social -->
                         </div>
                         <!-- /.post-content -->

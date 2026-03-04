@@ -1,4 +1,5 @@
 ---
+import ModernGallery from '../components/ModernGallery.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -230,142 +231,21 @@ import PageLayout from '../layouts/PageLayout.astro';
 
                                 <div class="space30"></div>
                                 <div class="wrapper light-wrapper">
-                                    <div class="container inner">
-                                        <div class="collage-wrapper">
-                                            <div
-                                                id="collage-medium"
-                                                class="collage effect-parent light-gallery"
-                                            >
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente1.webp"
-                                                            data-sub-html="#cap1"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente1.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 1"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente2.webp"
-                                                            data-sub-html="#cap2"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente2.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 2"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente3.webp"
-                                                            data-sub-html="#cap3"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente3.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 3"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente4.webp"
-                                                            data-sub-html="#cap4"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente4.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 4"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente5.webp"
-                                                            data-sub-html="#cap5"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente5.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 5"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente6.webp"
-                                                            data-sub-html="#cap6"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente6.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 6"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="collage-image-wrapper"
-                                                >
-                                                    <div
-                                                        class="overlay overlay2"
-                                                    >
-                                                        <a
-                                                            href="/style/brand/img/rolling-tente7.webp"
-                                                            data-sub-html="#cap7"
-                                                            ><img
-                                                                src="/style/brand/img/rolling-tente7.webp"
-                                                                style="width:675px; height:450px; object-fit: cover;"
-                                                                alt="Bioklimatik Tente Montajı 7"
-                                                                loading="lazy"
-                                                            /></a
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/rolling-tente1.webp", alt: "Bioklimatik Tente Montajı 1" },
+                { src: "/style/brand/img/rolling-tente2.webp", alt: "Bioklimatik Tente Montajı 2" },
+                { src: "/style/brand/img/rolling-tente3.webp", alt: "Bioklimatik Tente Montajı 3" },
+                { src: "/style/brand/img/rolling-tente4.webp", alt: "Bioklimatik Tente Montajı 4" },
+                { src: "/style/brand/img/rolling-tente5.webp", alt: "Bioklimatik Tente Montajı 5" },
+                { src: "/style/brand/img/rolling-tente6.webp", alt: "Bioklimatik Tente Montajı 6" },
+                { src: "/style/brand/img/rolling-tente7.webp", alt: "Bioklimatik Tente Montajı 7" }
+            ]} />
+        </div>
+    </div>
+</div>
                                 <div class="space30"></div>
 
                                 <h2 class="h3 mt-20 mb-10">
