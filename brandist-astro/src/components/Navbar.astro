@@ -10,7 +10,7 @@
             <div class="navbar-brand d-lg-none d-xl-none">
                 <a href="/"
                     ><img
-                        src="#"
+                        src="/style/brand/img/navbar-logo.webp"
                         srcset="/style/brand/img/navbar-logo.webp 1x, /style/brand/img/navbar-logo.webp 2x"
                         style="width:100px;"
                         alt="Amir Branda Ana Sayfa"
@@ -381,16 +381,29 @@
 <script is:inline>
     // Dinamik kaydırma oku gösterimi
     document.addEventListener("DOMContentLoaded", () => {
+        const checkScroll = (menu) => {
+            // Check if there is overflow and we haven't scrolled to the bottom
+            const tolerance = 2; // pixel tolerance for scaling issues
+            if (
+                menu.scrollHeight > menu.clientHeight &&
+                Math.ceil(menu.scrollTop + menu.clientHeight) + tolerance <
+                    menu.scrollHeight
+            ) {
+                menu.classList.add("is-overflowing");
+            } else {
+                menu.classList.remove("is-overflowing");
+            }
+        };
+
         document.querySelectorAll(".navbar .dropdown").forEach((dropdown) => {
             dropdown.addEventListener("mouseenter", () => {
                 const submenus = dropdown.querySelectorAll(".dropdown-menu");
                 submenus.forEach((menu) => {
-                    // Check if it's actually overflowing
-                    if (menu.scrollHeight > menu.clientHeight) {
-                        menu.classList.add("is-overflowing");
-                    } else {
-                        menu.classList.remove("is-overflowing");
-                    }
+                    checkScroll(menu);
+                    // Update arrow visibility when scrolling
+                    menu.addEventListener("scroll", () => checkScroll(menu), {
+                        passive: true,
+                    });
                 });
             });
         });
@@ -426,44 +439,94 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     }
 
-    /* Long Dropdown scroll containment without visible scrollbars */
+    /* Long Dropdown scroll containment */
     :global(.navbar .dropdown-menu::before) {
         display: none !important; /* Optional: Remove bootstrap arrow if it clashes */
     }
-    :global(.navbar .dropdown-menu) {
-        max-height: 85vh;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
-        position: relative;
-    }
-    :global(.navbar .dropdown-menu::-webkit-scrollbar) {
-        display: none; /* Chrome, Safari and Opera */
-    }
 
-    /* Gelişmiş Kaydırma Oku Tasarımı (Sadece Taştığında) */
-    :global(.navbar .dropdown-menu.is-overflowing::after) {
-        content: "▼";
-        position: sticky;
-        bottom: 0;
-        display: block;
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        text-align: center;
-        background-color: #151515; /* Menü ile tam aynı renk */
-        color: #fff; /* Orijinal menü yazıları gibi beyaz */
-        font-size: 14px;
-        pointer-events: none;
-        z-index: 100;
-    }
+    /* Desktop-Specific Dropdown Scroll Constraint */
+    @media (min-width: 992px) {
+        :global(.navbar .dropdown-menu) {
+            max-height: 75vh;
+            overflow-y: auto !important;
+            /* Hide scrollbar for Firefox and IE/Edge */
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        :global(.navbar .dropdown-menu::-webkit-scrollbar) {
+            display: none !important;
+        }
 
+        /* Gelişmiş Kaydırma Oku Tasarımı (Sadece Taştığında) */
+        :global(.navbar .dropdown-menu.is-overflowing::after) {
+            content: "▼";
+            position: sticky;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 30px;
+            line-height: 25px; /* Slightly offset upwards visually */
+            text-align: center;
+            background-color: #1e1e1e; /* Menü ile tam aynı renk (koyu gri/siyah) */
+            color: rgba(
+                255,
+                255,
+                255,
+                0.7
+            ); /* Çok sırıtmaması için biraz şeffaf beyaz */
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 0 -10px 15px -5px rgba(30, 30, 30, 0.9); /* Fade efekti için */
+        }
+    }
     /* Force all dropdown items to stay on a single line */
     :global(.navbar .dropdown-item),
     :global(.navbar .mega-menu-content a) {
-        white-space: nowrap !important;
+        white-space: normal !important; /* Let text wrap on mobile if needed instead of clipping */
     }
 
-    /* Enlarged and tightened main navigation links */
+    @media (max-width: 991.98px) {
+        /* Mobile Specific Wrap */
+        :global(.navbar .dropdown-item) {
+            white-space: normal !important;
+            padding-right: 20px;
+        }
+
+        :global(.navbar) {
+            z-index: 1050 !important;
+        }
+
+        /* CRITICAL MOBlLE MENU SCROLL FIX */
+        :global(.navbar-collapse) {
+            max-height: 75vh !important;
+            height: auto !important;
+            overflow-y: auto !important;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            background-color: rgba(
+                30,
+                30,
+                30,
+                0.98
+            ); /* Solid dark background for menu */
+            padding-bottom: 60px !important; /* Extra padding so bottom items aren't cut off */
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        :global(.navbar-collapse::-webkit-scrollbar) {
+            display: none !important;
+        }
+
+        /* Ensure dropdown menus aren't constrained on mobile */
+        :global(.navbar-collapse .dropdown-menu) {
+            max-height: none !important;
+            overflow: visible !important;
+        }
+    }
 </style>

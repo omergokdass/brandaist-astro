@@ -242,7 +242,7 @@ import "../styles/css/font/font2.css";
                 flex-direction: column;
                 align-items: flex-start; /* Keep buttons pinned to the left edge */
                 gap: 15px;
-                z-index: 9999;
+                z-index: 1040; /* Reduced to be below the mobile menu (1050) */
             }
 
             .float-btn {
@@ -316,7 +316,7 @@ import "../styles/css/font/font2.css";
                 font-size: 22px; /* Slightly smaller because it's visually wider */
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 991.98px) {
                 .float-btn span {
                     display: none !important; /* Never show text on mobile */
                 }
@@ -333,19 +333,6 @@ import "../styles/css/font/font2.css";
                     border-top-right-radius: 0.25rem;
                     border-bottom-left-radius: 0 !important;
                     border-bottom-right-radius: 0 !important;
-                }
-                .navbar {
-                    z-index: 1050 !important;
-                }
-                .navbar-collapse {
-                    max-height: 80vh;
-                    overflow-y: auto;
-                    background-color: rgba(
-                        52,
-                        58,
-                        64,
-                        0.98
-                    ); /* Solid dark background for menu */
                 }
             }
 

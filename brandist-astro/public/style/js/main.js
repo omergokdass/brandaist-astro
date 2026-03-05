@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             navbarCollapse.classList.toggle('show');
             hamburger.classList.toggle('is-active');
+            document.body.classList.toggle('mobile-menu-active');
         });
     }
 
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!navbarCollapse.contains(e.target) && !hamburger.contains(e.target)) {
                 navbarCollapse.classList.remove('show');
                 hamburger.classList.remove('is-active');
+                document.body.classList.remove('mobile-menu-active');
             }
         }
     });
