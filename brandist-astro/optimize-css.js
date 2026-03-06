@@ -5,7 +5,7 @@ async function optimizeCss() {
     console.log('🚀 CSS Purge Optimisation Starting...');
     const result = await new PurgeCSS().purge({
         content: ['dist/**/*.html', 'dist/**/*.js'],
-        css: ['dist/style/css/plugins.css', 'dist/style/css/bootstrap.min.css', 'dist/style/css/style.css'],
+        css: ['dist/_astro/*.css'],
         safelist: [
             /^nav-/, /^navbar-/, /^dropdown-/, // Menü yapıları
             /^tp-/, /^rs-/, /^rev_slider/, // Revolution Slider
