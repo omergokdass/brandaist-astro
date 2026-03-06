@@ -101,16 +101,20 @@ const localBusinessSchema = JSON.stringify({
 });
 
 // Dynamic Service Schema for Product/Service Pages
+const normalizedPath = pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 const isServicePage =
     ![
         "/",
         "/iletisim",
         "/hakkimizda",
+        "/hizmetler",
+        "/urunler",
+        "/fiyat-listesi",
         "/gizlilik-ve-cerez-politikasi",
         "/kvkk-aydinlatma-metni",
         "/sikca-sorulan-sorular",
         "/blog",
-    ].includes(pathname) && !pathname.startsWith("/blog/");
+    ].includes(normalizedPath) && !pathname.startsWith("/blog/");
 
 const serviceSchema = isServicePage
     ? JSON.stringify({
@@ -121,23 +125,14 @@ const serviceSchema = isServicePage
               "@type": "HomeAndConstructionBusiness",
               name: "Amir Branda",
               image: "https://branda.ist/style/brand/img/logo-amir-branda.png",
+              url: "https://branda.ist",
+              telephone: "+905386044851",
           },
           areaServed: {
               "@type": "City",
-              name: "İstanbul",
+              name: "\u0130stanbul",
           },
           description: description,
-          offers: {
-              "@type": "Offer",
-              priceSpecification: {
-                  "@type": "PriceSpecification",
-                  price: "0",
-                  priceCurrency: "TRY",
-              },
-              description:
-                  "Özel ölçü ve projeye göre fiyatlandırma. Lütfen teklif alınız.",
-              availability: "https://schema.org/InStock",
-          },
       })
     : null;
 import "../styles/css/bootstrap.min.css";

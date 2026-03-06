@@ -7,6 +7,10 @@ ErrorDocument 404 /404.html
   RewriteRule ^(branda|tente|cadir)/(.+)$ /$2 [R=301,L]
   Redirect 301 /cami-kapisi /cami-kapisi-brandasi
 
+  # /index.html -> / (Astro build'de yapılamıyor, Apache seviyesinde yönetilir)
+  RewriteCond %{THE_REQUEST} /index\.html [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
   # Serve exact file/dir or 404
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

@@ -21,7 +21,7 @@ export default defineConfig({
         '/iletisim/hakkimizda.html': '/hakkimizda',
         '/hakkimizda.html': '/hakkimizda',
         '/hizmetler.html': '/hizmetler',
-        // '/index.html': '/',
+        // '/index.html': '/', // Astro build'de EEXIST hatası veriyor, _redirects dosyasında yönetilecek
 
         // --- 3. Eski Linki Değişen Sayfalar (Adres Değişikliği) ---
         '/fabrika-bolmeleri-kapilari': '/bolme-ve-kapi-brandasi',
