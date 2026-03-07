@@ -1,11 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
-<Layout
+<PageLayout
     title="Depo Çadırı Alırken Dikkat Edilmesi Gereken 5 Önemli Unsur | Amir Branda"
     description="Endüstriyel depo ve hangar çadırı satın alırken dikkat edilmesi gerekenler nelerdir? Kalite, kumaş ömrü ve fiyat analizine dair uzman rehberi."
     ogTitle="Depo Çadırı Alırken Dikkat Edilmesi Gerekenler | Amir Branda Blog"
+    headerTitle="Depo Çadırı Alırken Dikkat Edilmesi Gerekenler"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    hideSidebar={true}
 >
     <script type="application/ld+json" is:inline>
         {
@@ -28,28 +32,11 @@ import Layout from "../../layouts/Layout.astro";
         }
     </script>
 
-    <div
-        class="wrapper image-wrapper bg-image inverse-text"
-        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
-    >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">
-                Depo Çadırı Alırken Nelere Dikkat Edilmeli?
-            </h1>
-        </div>
-    </div>
-
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="blog single-view">
-                        <div class="post">
-                            <div class="post-content">
-                                <h2 class="h3 mb-3">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 prose prose-lg prose-blue">
+                                <h1 id="page" class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-900 leading-tight">
                                     İşletmenizin Yeni Depolama Alanı:
                                     Endüstriyel Çadır Seçim Rehberi
-                                </h2>
+                                </h1>
                                 <p>
                                     Fabrikalar, lojistik şirketleri, tarımsal
                                     tesisler ya da atölyeler için kapalı bir
@@ -68,7 +55,7 @@ import Layout from "../../layouts/Layout.astro";
                                         ><a
                                             href="/hakkimizda"
                                             title="Amir Branda Hakkında"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             >Amir Branda</a
                                         ></strong
                                     > olarak, yatırımınızı korumak için <strong
@@ -77,14 +64,14 @@ import Layout from "../../layouts/Layout.astro";
                                     > listesini sizler için derledik.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     1. Çelik Konstrüksiyon İşçiliği (Profil Et
                                     Kalınlığı)
                                 </h3>
                                 <p>
                                     <a
                                         href="/depo-cadiri"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         title="Depo çadırı">Depo çadırı</a
                                     >nın ayakta durmasını sağlayan asıl güç
                                     dşında kaplanmış olan PVC malzemesi değil,
@@ -101,14 +88,14 @@ import Layout from "../../layouts/Layout.astro";
                                     korunmadığı da sorgulanmalıdır. <a
                                         href="/hakkimizda"
                                         title="Amir Branda Hakkında"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         >Amir Branda</a
                                     >, tüm hangar ve endüstriyel boyuttaki
                                     üretimlerinde kar ve rüzgar statik raporunu
                                     standart olarak dikkate alır.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     2. Yanmaz, Alev Yürümez, Blackout Kaliteli
                                     Kumaş (Branda)
                                 </h3>
@@ -123,7 +110,7 @@ import Layout from "../../layouts/Layout.astro";
                                     güneşte kuruyarak çatlar ve içerideki
                                     ürünlerin ıslanmasıyla sonuçlanır.
                                 </p>
-                                <ul class="icon-list bullet-default mb-20">
+                                <ul>
                                     <li>
                                         <strong>Blackout (Karartma):</strong> İsteğe
                                         bağlı olarak kullanılan bu seri, yazın içeriyi
@@ -142,7 +129,7 @@ import Layout from "../../layouts/Layout.astro";
                                     </li>
                                 </ul>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     3. İzolasyon İhtiyacının Karşılanması
                                     (Yalıtımlı Çadırlar)
                                 </h3>
@@ -163,7 +150,7 @@ import Layout from "../../layouts/Layout.astro";
                                     tartışmasız daha iyidir.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     4. İklim Koşulları, Yükseklik ve Yan
                                     Yükseklik Orantısı
                                 </h3>
@@ -180,7 +167,7 @@ import Layout from "../../layouts/Layout.astro";
                                     ustanızla mutlaka paylaşın.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     5. Garanti, Montaj Lojistiği ve Ruhsat
                                     Avantajı
                                 </h3>
@@ -205,7 +192,7 @@ import Layout from "../../layouts/Layout.astro";
                                     yönüdür.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">Sonuç ve Başvuru</h3>
+                                <h3>Sonuç ve Başvuru</h3>
                                 <p>
                                     Kurumsal kapasitenizi saniyeler içinde ikiye
                                     katlayabilecek depo çadırları, akıllı
@@ -216,7 +203,7 @@ import Layout from "../../layouts/Layout.astro";
                                     esnek modeldir. Hemen şimdi <strong
                                         ><a
                                             href="/endustriyel-cadir"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             title="endüstriyel çadır"
                                             >endüstriyel çadır</a
                                         > fiyatları</strong
@@ -232,29 +219,5 @@ import Layout from "../../layouts/Layout.astro";
                                     mekanlarınıza gölge ve güven getiren Amir
                                     Branda hep yanınızda!
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="col-md-3 sidebar">
-                    <div class="sidebox widget">
-                        <h3 class="widget-title">Blog Kategorileri</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="/branda">Branda İmalatı</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/tente">Tente Modelleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/cadir">Çadır Sistemleri</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.widget -->
-                </aside>
-            </div>
-        </div>
-    </div>
-</Layout>
+                            </article>
+</PageLayout>

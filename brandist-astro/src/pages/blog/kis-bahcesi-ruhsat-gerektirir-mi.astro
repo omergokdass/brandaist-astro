@@ -1,11 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
-<Layout
+<PageLayout
     title="Kış Bahçesi ve Tente Yaptırmak İçin Belediye Ruhsatı Gerekir Mi? | Amir Branda"
     description="Kafe terası ve kış bahçesi kapatma, pergola tente yapımı için belediye ruhsatı, iskan izni gerekir mi? Tente sistemleri yasal süreçleri hakkında uzman rehberi."
     ogTitle="Kış Bahçesi ve Tente Sistemlerinde Mimari Ruhsat Süreçleri"
+    headerTitle="Kış Bahçesi ve Tente Sistemlerinde Mimari Ruhsat Süreçleri"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    hideSidebar={true}
 >
     <script type="application/ld+json" is:inline>
         {
@@ -28,28 +32,11 @@ import Layout from "../../layouts/Layout.astro";
         }
     </script>
 
-    <div
-        class="wrapper image-wrapper bg-image inverse-text"
-        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
-    >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">
-                Tente ve Kış Bahçesi Yasal Ruhsat Süreçleri
-            </h1>
-        </div>
-    </div>
-
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="blog single-view">
-                        <div class="post">
-                            <div class="post-content">
-                                <h2 class="h3 mb-3">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 prose prose-lg prose-blue">
+                                <h1 id="page" class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-900 leading-tight">
                                     Evler ve Restoranlar İçin Kış Bahçesi
                                     Yapımında Ruhsat ve Hukuki İzinler Nelerdir?
-                                </h2>
+                                </h1>
                                 <p>
                                     Evinizin kullanılmayan açık terasını şirin
                                     bir oda konseptine çevirmek, ya da yeni
@@ -59,7 +46,7 @@ import Layout from "../../layouts/Layout.astro";
                                     istiyorsunuz. Akla gelen ilk eylem hemen dev
                                     bir pergola, mika kaplı <a
                                         href="/kis-bahcesi"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         title="kış bahçesi">kış bahçesi</a
                                     > veya mafsallı gölgelik kurmak. Ancak Türkiye'de
                                     sıkı imar kuralları sebebiyle işletme sahiplerinin
@@ -78,7 +65,7 @@ import Layout from "../../layouts/Layout.astro";
                                     rehberimizi sizlerle ücretsiz paylaşıyoruz.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     "Taşıyıcı (Sabit Beton) Sistemler" ile
                                     "Portatif (Sökülür) Sistemler" Arasındaki
                                     Yasal Çizgi
@@ -99,7 +86,7 @@ import Layout from "../../layouts/Layout.astro";
                                     yalıtım örmek (Yani tam kapalı yığma <strong
                                         ><a
                                             href="/kis-bahcesi"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             title="Kış Bahçesi">Kış Bahçesi</a
                                         > / Cam Balkon / Veranda oda inşaatı</strong
                                     >) hedefliyorsanız evet, İmar Yasası 21.
@@ -114,7 +101,7 @@ import Layout from "../../layouts/Layout.astro";
                                     ihtar komutu) yazdırabilmektedir.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     Pergola Tente ve Hareketi Şistemlerde Ruhsat
                                     Zorunluluğu Yok! (Neden?)
                                 </h3>
@@ -138,7 +125,7 @@ import Layout from "../../layouts/Layout.astro";
                                     Yani lüks bir <strong
                                         >Otomatik <a
                                             href="/pergola-tente"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             title="Pergola Tente"
                                             >Pergola Tente</a
                                         ></strong
@@ -155,7 +142,7 @@ import Layout from "../../layouts/Layout.astro";
                                     metrekare kazancının kar cüzdanını yaşar.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     Yan Cepheleri (Giyotin Cam ve Şeffaf Branda)
                                     Kapatırken İnce Detaylar
                                 </h3>
@@ -209,7 +196,7 @@ import Layout from "../../layouts/Layout.astro";
                                     </li>
                                 </ul>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     Apartman (Site İçi) Yönetimlerinden İzin
                                     Almak Gerekir Mi? (Kat Mülkiyeti Kanunu)
                                 </h3>
@@ -252,7 +239,7 @@ import Layout from "../../layouts/Layout.astro";
                                     yaraşmaktadır.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     Amortismanı Tavan Yaptıran Yasallık: Amir
                                     Branda Tecrübesi
                                 </h3>
@@ -277,7 +264,7 @@ import Layout from "../../layouts/Layout.astro";
                                     içeren şık kapalı (Kış bahçesi, pergola,
                                     Şeffaf <a
                                         href="/mika"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         title="Mika">Mika</a
                                     >) <strong>brandası kılıfına</strong> büründürülmesi
                                     formüllerince; sizi zabıtaya ihlal borcu ve stresi
@@ -291,28 +278,5 @@ import Layout from "../../layouts/Layout.astro";
                                     kastıyla bizlere destek hatlarımız ve formlarımız
                                     saniyesinden ulaşıp mimari uzmanlıkla tanışabilirsiniz.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="col-md-3 sidebar">
-                    <div class="sidebox widget">
-                        <h3 class="widget-title">Blog Kategorileri</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="/branda">Branda Sistemleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/tente">Tente Modelleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/cadir">Çadır İmalatı</a>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</Layout>
+                            </article>
+</PageLayout>

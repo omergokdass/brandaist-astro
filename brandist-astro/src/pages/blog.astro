@@ -1,349 +1,124 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const blogPosts = [
+    {
+        url: "/blog/depo-cadiri-nedir",
+        img: "/style/brand/img/depo-cadiri-fiyatlari.webp",
+        title: "Depo Çadırı Fiyatları ve Kullanım Avantajları Nelerdir?",
+        desc: "Depo çadırı çözümlerine dair tüm detaylar: Fiyat faktörleri, avantajlar, dayanıklılık oranları ve kurulum bilgileri.",
+    },
+    {
+        url: "/blog/kis-bahcesi-icin-seffaf-branda-secimi",
+        img: "/style/brand/img/seffaf-branda2.webp",
+        title: "Kış Bahçesi İçin Şeffaf Branda Seçimi: Nelere Dikkat Edilmeli?",
+        desc: "Kış bahçesi yaptırmak isteyenlerin en çok sorduğu sorulardan biri doğru branda malzemesinin nasıl seçileceğidir. Şeffaf fermuarlı sistemlerden mika kullanımına kadar tüm detaylar rehberimizde.",
+    },
+    {
+        url: "/blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler",
+        img: "/style/brand/img/depo-cadiri.webp",
+        title: "Endüstriyel Depo Çadırı Alırken Dikkat Edilmesi Gereken Yönler",
+        desc: "Fabrika alanı veya depolama hacmini artırmak için ekonomik olan endüstriyel depo çadırı alırken nelere dikkat etmeniz gerektiğini biliyor musunuz?",
+    },
+    {
+        url: "/blog/kis-bahcesi-ruhsat-gerektirir-mi",
+        img: "/style/brand/img/seffaf-kis-bahcesi-brandasi.webp",
+        title: "Kış Bahçesi ve Tente Yaptırmak İçin Belediye Ruhsatı Gerekir Mi?",
+        desc: "Mekanınıza yapacağınız kış bahçesi veya pergola tente kapamalarının zabıta ve imar mevzuatı karşısındaki yasal durumunu öğrenin. Ruhsatsız sistemlerin püf noktaları.",
+    },
+    {
+        url: "/blog/mafsalli-ile-kasetli-tente-farklari",
+        img: "/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp",
+        title: "Mafsallı Tente ile Kasetli Tente Arasındaki 5 Kritik Fark",
+        desc: "Eviniz veya dükkanınız için en ideal tenteyi ararken mafsallı ile kasetli tente arasında kararsız mı kaldınız? Uzun ömür ve mekanizma farkları burada.",
+    },
+    {
+        url: "/blog/motorlu-tente-arizalari-ve-cozumleri",
+        img: "/style/brand/img/bioklimatik-tente.webp",
+        title: "Motorlu Tentelerde Sık Karşılaşılan Arızalar ve Acil Çözümleri",
+        desc: "Kumandanıza basmanıza rağmen motorlu tente neden açılıp kapanmıyor? Elektrik, sınır siviçleri ve sensör kaynaklı başlıca tente arızalarının onarım yöntemleri.",
+    },
+    {
+        url: "/blog/akrilik-mi-polyester-mi-secmeli",
+        img: "/style/brand/img/akrilik-kumas.webp",
+        title: "Akrilik Kumaş Mı Polyester Kumaş Mı Seçmeli? İklemdeki Farklar",
+        desc: "Gölgelendirme sistemleri, tente ve şemsiyeler için kumaş türlerinin (polyester ucuzluğu ve akrilik solmazlık garantisinin) tüm dayanıklılık kıyaslaması.",
+    },
+];
 ---
 
 <Layout
     title="Blog & Faydalı Bilgiler | Tente, Çadır ve Branda Rehberi | Amir Branda"
     description="Tente, branda ve çadır sistemleri hakkında merak ettiğiniz her şey. Kış bahçesi seçimi, depo çadırı alırken dikkat edilecekler ve diğer faydalı SEO rehberlerimiz."
 >
+    <!-- Header Banner -->
     <div
-        class="wrapper image-wrapper bg-image inverse-text"
-        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
+        class="relative bg-gray-900 overflow-hidden isolate px-6 py-24 sm:py-32 lg:px-8"
     >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">Blog &amp; Faydalı Bilgiler</h1>
+        <img
+            src="/style/brand/img/kategori-arkasi-pp.webp"
+            alt="Blog ve Faydalı Bilgiler"
+            class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-40 mix-blend-multiply"
+        />
+        <div class="mx-auto max-w-4xl text-center">
+            <h1
+                class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            >
+                Blog &amp; Faydalı Bilgiler
+            </h1>
         </div>
-        <!-- /.container -->
     </div>
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="mb-50 text-center">
-                        <p class="lead">
-                            Mekanınızı yenilemeden önce uzman tavsiyelerimizi
-                            inceleyin.
-                        </p>
-                    </div>
-                    <!-- BlogPost New -->
-                    <div class="card shadow-sm border-0 mb-30 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a href="/blog/depo-cadiri-nedir">
-                                    <img
-                                        src="/style/brand/img/depo-cadiri-fiyatlari.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Depo Çadırı"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/depo-cadiri-nedir"
-                                            class="text-dark"
-                                            >Depo Çadırı Fiyatları ve Kullanım
-                                            Avantajları Nelerdir?</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Depo çadırı çözümlerine dair tüm
-                                        detaylar: Fiyat faktörleri, avantajlar,
-                                        dayanıklılık oranları ve kurulum
-                                        bilgileri.
-                                    </p>
-                                    <a
-                                        href="/blog/depo-cadiri-nedir"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- BlogPost 1 -->
-                    <div class="card shadow-sm border-0 mb-30 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a
-                                    href="/blog/kis-bahcesi-icin-seffaf-branda-secimi"
-                                >
-                                    <img
-                                        src="/style/brand/img/seffaf-branda2.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Kış Bahçesi İçin Şeffaf Branda Seçimi"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/kis-bahcesi-icin-seffaf-branda-secimi"
-                                            class="text-dark"
-                                            >Kış Bahçesi İçin Şeffaf Branda
-                                            Seçimi: Nelere Dikkat Edilmeli?</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Kış bahçesi yaptırmak isteyenlerin en
-                                        çok sorduğu sorulardan biri doğru branda
-                                        malzemesinin nasıl seçileceğidir. Şeffaf
-                                        fermuarlı sistemlerden mika kullanımına
-                                        kadar tüm detaylar rehberimizde.
-                                    </p>
-                                    <a
-                                        href="/blog/kis-bahcesi-icin-seffaf-branda-secimi"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /BlogPost 1 -->
-                    <!-- BlogPost 2 -->
-                    <div class="card shadow-sm border-0 mb-40 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a
-                                    href="/blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler"
-                                >
-                                    <img
-                                        src="/style/brand/img/depo-cadiri.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Depo Çadırı"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler"
-                                            class="text-dark"
-                                            >Endüstriyel Depo Çadırı Alırken
-                                            Dikkat Edilmesi Gereken Yönler</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Fabrika alanı veya depolama hacmini
-                                        artırmak için ekonomik olan endüstriyel
-                                        depo çadırı alırken nelere dikkat
-                                        etmeniz gerektiğini biliyor musunuz?
-                                    </p>
-                                    <a
-                                        href="/blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /BlogPost 2 -->
-                    <!-- BlogPost 3 -->
-                    <div class="card shadow-sm border-0 mb-40 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a
-                                    href="/blog/kis-bahcesi-ruhsat-gerektirir-mi"
-                                >
-                                    <img
-                                        src="/style/brand/img/seffaf-kis-bahcesi-brandasi.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Kış Bahçesi Teras İmar Ruhsatı"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/kis-bahcesi-ruhsat-gerektirir-mi"
-                                            class="text-dark"
-                                            >Kış Bahçesi ve Tente Yaptırmak İçin
-                                            Belediye Ruhsatı Gerekir Mi?</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Mekanınıza yapacağınız kış bahçesi veya
-                                        pergola tente kapamalarının zabıta ve
-                                        imar mevzuatı karşısındaki yasal
-                                        durumunu öğrenin. Ruhsatsız sistemlerin
-                                        püf noktaları.
-                                    </p>
-                                    <a
-                                        href="/blog/kis-bahcesi-ruhsat-gerektirir-mi"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /BlogPost 3 -->
-                    <!-- BlogPost 4 -->
-                    <div class="card shadow-sm border-0 mb-40 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a
-                                    href="/blog/mafsalli-ile-kasetli-tente-farklari"
-                                >
-                                    <img
-                                        src="/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Mafsallı ve Kasetli Tente Kıyaslama"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/mafsalli-ile-kasetli-tente-farklari"
-                                            class="text-dark"
-                                            >Mafsallı Tente ile Kasetli Tente
-                                            Arasındaki 5 Kritik Fark</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Eviniz veya dükkanınız için en ideal
-                                        tenteyi ararken mafsallı ile kasetli
-                                        tente arasında kararsız mı kaldınız?
-                                        Uzun ömür ve mekanizma farkları burada.
-                                    </p>
-                                    <a
-                                        href="/blog/mafsalli-ile-kasetli-tente-farklari"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /BlogPost 4 -->
-                    <!-- BlogPost 5 -->
-                    <div class="card shadow-sm border-0 mb-40 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a
-                                    href="/blog/motorlu-tente-arizalari-ve-cozumleri"
-                                >
-                                    <img
-                                        src="/style/brand/img/bioklimatik-tente.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Motorlu Tente Arızaları"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/motorlu-tente-arizalari-ve-cozumleri"
-                                            class="text-dark"
-                                            >Motorlu Tentelerde Sık Karşılaşılan
-                                            Arızalar ve Acil Çözümleri</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Kumandanıza basmanıza rağmen motorlu
-                                        tente neden açılıp kapanmıyor? Elektrik,
-                                        sınır siviçleri ve sensör kaynaklı
-                                        başlıca tente arızalarının onarım
-                                        yöntemleri.
-                                    </p>
-                                    <a
-                                        href="/blog/motorlu-tente-arizalari-ve-cozumleri"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /BlogPost 5 -->
-                    <!-- BlogPost 6 -->
-                    <div class="card shadow-sm border-0 mb-40 rounded">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-5">
-                                <a href="/blog/akrilik-mi-polyester-mi-secmeli">
-                                    <img
-                                        src="/style/brand/img/akrilik-kumas.webp"
-                                        class="img-fluid blog-card-img"
-                                        alt="Akrilik vs Polyester Tente Kumaşı"
-                                        loading="lazy"
-                                    />
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-left">
-                                    <h4 class="card-title mb-2">
-                                        <a
-                                            href="/blog/akrilik-mi-polyester-mi-secmeli"
-                                            class="text-dark"
-                                            >Akrilik Kumaş Mı Polyester Kumaş Mı
-                                            Seçmeli? İklemdeki Farklar</a
-                                        >
-                                    </h4>
-                                    <p
-                                        class="card-text text-muted mb-4"
-                                        style="font-size: 14px;"
-                                    >
-                                        Gölgelendirme sistemleri, tente ve
-                                        şemsiyeler için kumaş türlerinin
-                                        (polyester ucuzluğu ve akrilik solmazlık
-                                        garantisinin) tüm dayanıklılık
-                                        kıyaslaması.
-                                    </p>
-                                    <a
-                                        href="/blog/akrilik-mi-polyester-mi-secmeli"
-                                        class="btn btn-primary btn-sm rounded text-white"
-                                        ><i class="fa fa-book-open mr-1"></i> Devamını
-                                        Oku</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /BlogPost 6 -->
-                </div>
-                <!--/column -->
+
+    <!-- Main Content -->
+    <div class="bg-gray-50 py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-xl text-gray-600 leading-relaxed font-medium">
+                    Mekanınızı yenilemeden önce uzman tavsiyelerimizi inceleyin.
+                </p>
+                <hr
+                    class="w-16 mx-auto mt-6 border-t-4 border-primary rounded-full opacity-60"
+                />
             </div>
-            <!--/.row -->
+
+            <!-- Blog List -->
+            <div class="space-y-8">
+                {
+                    blogPosts.map((post) => (
+                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 group flex flex-col sm:flex-row">
+                            <div class="w-full sm:w-2/5 overflow-hidden flex-shrink-0">
+                                <a href={post.url} class="block h-full">
+                                    <img
+                                        src={post.img}
+                                        class="w-full h-56 sm:h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        alt={post.title}
+                                        loading="lazy"
+                                    />
+                                </a>
+                            </div>
+                            <div class="w-full sm:w-3/5 p-6 sm:p-8 flex flex-col justify-center">
+                                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors leading-tight">
+                                    <a href={post.url}>{post.title}</a>
+                                </h2>
+                                <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                                    {post.desc}
+                                </p>
+                                <div class="mt-auto">
+                                    <a
+                                        href={post.url}
+                                        class="inline-flex items-center text-primary font-bold hover:text-blue-700 transition-colors"
+                                    >
+                                        Devamını Oku{" "}
+                                        <span class="ml-2 transform group-hover:translate-x-1 transition-transform">
+                                            →
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
         </div>
-        <!-- /.container -->
     </div>
 </Layout>

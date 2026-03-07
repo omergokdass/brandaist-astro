@@ -12,13 +12,14 @@ export interface Props {
     headerTitleTag?: string;
     headerSubtitle?: string;
     headerBgImage?: string;
-    sidebarCategory:
+    sidebarCategory?:
         | "tente"
         | "branda"
         | "cadir"
         | "kumas"
         | "semsiye"
         | string;
+    hideSidebar?: boolean;
 }
 
 const {
@@ -32,6 +33,7 @@ const {
     headerSubtitle,
     headerBgImage = "/style/brand/img/kategori-arkasi-pp.webp",
     sidebarCategory,
+    hideSidebar = false,
 } = Astro.props;
 ---
 
@@ -45,33 +47,60 @@ const {
     <slot name="json-ld" />
 
     <div
-        class="wrapper image-wrapper bg-image inverse-text"
-        style={`background-image: url('${headerBgImage}');`}
+        class="relative bg-gray-900 overflow-hidden isolate px-6 py-24 sm:py-32 lg:px-8"
     >
-        <div class="container inner pt-120 pb-120 text-center">
+        <img
+            src={headerBgImage}
+            alt="Amir Branda Hizmetleri"
+            class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-40 mix-blend-multiply"
+        />
+        <div class="mx-auto max-w-4xl text-center">
             {
                 headerTitleTag === "h1" ? (
-                    <h1 class="heading mb-0">{headerTitle}</h1>
+                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                        {headerTitle}
+                    </h1>
                 ) : (
-                    <h2 class="heading mb-0">{headerTitle}</h2>
+                    <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                        {headerTitle}
+                    </h2>
                 )
             }
-            {headerSubtitle && <div set:html={headerSubtitle} />}
+            {
+                headerSubtitle && (
+                    <div
+                        class="mt-6 text-xl leading-8 text-gray-300 font-medium"
+                        set:html={headerSubtitle}
+                    />
+                )
+            }
         </div>
     </div>
 
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-md-8">
-                    <slot />
-                </div>
-                <!--/column -->
-                <Sidebar category={sidebarCategory as any} />
-                <!-- /column .sidebar -->
+    <div class="bg-gray-50 py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class={hideSidebar
+                    ? "flex flex-col"
+                    : "flex flex-col lg:flex-row gap-12"}
+            >
+                <main class={hideSidebar ? "w-full" : "w-full lg:w-2/3"}>
+                    <div
+                        class={hideSidebar
+                            ? ""
+                            : "bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-10 lg:p-12"}
+                    >
+                        <slot />
+                    </div>
+                </main>
+                {
+                    !hideSidebar && (
+                        <aside class="w-full lg:w-1/3">
+                            <Sidebar category={sidebarCategory as any} />
+                        </aside>
+                    )
+                }
             </div>
-            <!--/.row -->
         </div>
-        <!-- /.container -->
     </div>
 </Layout>

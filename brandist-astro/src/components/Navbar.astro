@@ -1,536 +1,660 @@
 ---
+const brandaLinks = [
+    { text: "Alan Kapama Sistemleri", href: "/alan-kapama-sistemleri" },
+    { text: "Araba Dolu Brandası", href: "/araba-dolu-brandasi" },
+    { text: "Bölme ve Kapı Brandası", href: "/bolme-ve-kapi-brandasi" },
+    { text: "Branda Tente İmalatı", href: "/branda-tente-imalati" },
+    { text: "Cami Kapısı Brandası", href: "/cami-kapisi-brandasi" },
+    { text: "Gölgelik Branda", href: "/golgelik-branda" },
+    { text: "Havuz Brandası", href: "/havuz-brandasi" },
+    { text: "Kamyon-Kamyonet Brandası", href: "/kamyon-kamyonet-brandasi" },
+    { text: "Otopark Brandası", href: "/otopark-brandasi" },
+    { text: "PVC Branda", href: "/pvc-branda" },
+    { text: "Şeffaf Branda", href: "/seffaf-branda" },
+    { text: "Tekne Brandası", href: "/tekne-brandasi" },
+    { text: "Tır Brandası", href: "/tir-brandasi" },
+];
 
+const cadirLinks = [
+    { text: "Afet-Deprem Çadırı", href: "/afet-deprem-cadiri" },
+    { text: "Askeri Çadır", href: "/askeri-cadir" },
+    { text: "Depo Çadırı", href: "/depo-cadiri" },
+    { text: "Endüstriyel Çadır", href: "/endustriyel-cadir" },
+    { text: "Etkinlik Çadırı", href: "/etkinlik-cadiri" },
+    { text: "Fuar Çadırı", href: "/fuar-cadiri" },
+    { text: "Halısaha-Spor Çadırı", href: "/halisaha-spor-cadiri" },
+    { text: "Hangar Çadırı", href: "/hangar-cadiri" },
+    { text: "İftar Çadırı", href: "/iftar-cadiri" },
+    { text: "Kış Bahçesi", href: "/kis-bahcesi" },
+    { text: "Kurban-Hayvan Çadırı", href: "/kurban-hayvan-cadiri" },
+    { text: "Şantiye Çadırı", href: "/santiye-cadiri" },
+    { text: "Taziye Çadırı", href: "/taziye-cadiri" },
+];
+
+const tenteLinks = [
+    { text: "Bahçe Tentesi", href: "/bahce-tentesi" },
+    { text: "Balkon Tentesi", href: "/balkon-tentesi" },
+    { text: "Bioklimatik Tente", href: "/bioklimatik-tente" },
+    { text: "Çift Açılır Tente", href: "/cift-acilir-tente" },
+    { text: "Karpuz Tente", href: "/karpuz-tente" },
+    { text: "Kasetli Tente", href: "/kasetli-tente" },
+    { text: "Körüklü Tente", href: "/koruklu-tente" },
+    { text: "Mafsallı Tente", href: "/mafsalli-tente" },
+    { text: "Motorlu Tente", href: "/motorlu-tente" },
+    { text: "Pergola Tente", href: "/pergola-tente" },
+    { text: "Sabit Tente", href: "/sabit-tente" },
+    { text: "Stor Tente", href: "/stor-tente" },
+    { text: "Tente Tamiri & Bakımı", href: "/tente-tamiri-bakimi" },
+    { text: "Winted Tente", href: "/winted-tente" },
+    { text: "Yarasa Tente", href: "/yarasa-tente" },
+    { text: "Zip Tente", href: "/zip-tente" },
+];
+
+const kumaslarLinks = [
+    { text: "Akrilik", href: "/akrilik" },
+    { text: "Blackout", href: "/blackout" },
+    { text: "Mika", href: "/mika" },
+    { text: "Polyester", href: "/polyester" },
+    { text: "Su Geçirmez Pilsa", href: "/su-gecirmez-pilsa" },
+    { text: "Şemsiye Kumaşı", href: "/semsiye-kumasi" },
+];
+
+const kurumsalLinks = [
+    { text: "Hakkımızda", href: "/hakkimizda" },
+    { text: "Sıkça Sorulan Sorular", href: "/sikca-sorulan-sorular" },
+];
 ---
 
-<nav
-    class="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-xl center justify-content-between"
+<header
+    id="main-navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 font-sans border-b border-white/10"
 >
-    <div class="container">
-        <div class="navbar-header">
-            <div class="navbar-brand d-lg-none d-xl-none">
-                <a href="/"
-                    ><img
-                        src="/style/brand/img/navbar-logo.webp"
-                        srcset="/style/brand/img/navbar-logo.webp 1x, /style/brand/img/navbar-logo.webp 2x"
-                        style="width:100px;"
-                        width="100"
-                        height="71"
-                        alt="Amir Branda Ana Sayfa"
-                        loading="lazy"
-                    /></a
+    <div class="container mx-auto px-4 lg:px-6">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0 z-50 relative">
+                <img
+                    src="/style/brand/img/navbar-logo.webp"
+                    alt="Amir Branda Ana Sayfa"
+                    class="h-10 lg:h-12 w-auto object-contain"
+                    width="100"
+                    height="71"
+                />
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button
+                id="mobile-menu-btn"
+                class="lg:hidden z-50 p-2 ml-auto rounded-md text-white hover:text-primary focus:outline-none transition-colors"
+                aria-label="Menüyü Aç/Kapat"
+            >
+                <svg
+                    id="menu-icon-open"
+                    class="h-7 w-7 block"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                 >
-            </div>
-            <div class="navbar-hamburger ml-auto d-lg-none d-xl-none">
-                <button class="hamburger animate" aria-label="Menüyü Aç/Kapat"
-                    ><span></span></button
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg
+                    id="menu-icon-close"
+                    class="h-7 w-7 hidden"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop Menu -->
+            <nav
+                class="hidden lg:flex flex-1 justify-center items-center space-x-1 xl:space-x-3"
+            >
+                <a
+                    href="/"
+                    class="text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >Ana Sayfa</a
+                >
+                <a
+                    href="/urunler"
+                    class="text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >Ürünler</a
+                >
+
+                <!-- Branda Dropdown -->
+                <div class="relative group">
+                    <a
+                        href="/branda"
+                        class="flex items-center text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >
+                        BRANDA <svg
+                            class="ml-1 w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top border border-gray-100"
+                    >
+                        <div
+                            class="py-2 max-h-[75vh] overflow-y-auto no-scrollbar"
+                        >
+                            {
+                                brandaLinks.map((link) => (
+                                    <a
+                                        href={link.href}
+                                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
+                                    >
+                                        {link.text}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Çadır Dropdown -->
+                <div class="relative group">
+                    <a
+                        href="/cadir"
+                        class="flex items-center text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >
+                        ÇADIR <svg
+                            class="ml-1 w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top border border-gray-100"
+                    >
+                        <div
+                            class="py-2 max-h-[75vh] overflow-y-auto no-scrollbar"
+                        >
+                            {
+                                cadirLinks.map((link) => (
+                                    <a
+                                        href={link.href}
+                                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
+                                    >
+                                        {link.text}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tente Dropdown -->
+                <div class="relative group">
+                    <a
+                        href="/tente"
+                        class="flex items-center text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >
+                        TENTE <svg
+                            class="ml-1 w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top border border-gray-100"
+                    >
+                        <div
+                            class="py-2 max-h-[75vh] overflow-y-auto no-scrollbar"
+                        >
+                            {
+                                tenteLinks.map((link) => (
+                                    <a
+                                        href={link.href}
+                                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
+                                    >
+                                        {link.text}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <a
+                    href="/semsiye"
+                    class="text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >Şemsiye</a
+                >
+
+                <!-- Kumaşlar Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >
+                        KUMAŞLAR <svg
+                            class="ml-1 w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top border border-gray-100"
+                    >
+                        <div class="py-2">
+                            {
+                                kumaslarLinks.map((link) => (
+                                    <a
+                                        href={link.href}
+                                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
+                                    >
+                                        {link.text}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <a
+                    href="/hizmetler"
+                    class="text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >Hizmetler</a
+                >
+                <a
+                    href="/fiyat-listesi"
+                    class="text-white hover:text-primary px-3 py-2 text-sm xl:text-base font-bold transition-colors"
+                    >Fiyat</a
+                >
+            </nav>
+
+            <!-- Desktop Right Side (Kurumsal vs) -->
+            <div class="hidden lg:flex items-center space-x-1">
+                <!-- Kurumsal Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center text-white hover:text-primary px-2 py-2 text-sm font-bold transition-colors"
+                    >
+                        KURUMSAL <svg
+                            class="ml-1 w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </button>
+                    <div
+                        class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100"
+                    >
+                        <div class="py-2">
+                            {
+                                kurumsalLinks.map((link) => (
+                                    <a
+                                        href={link.href}
+                                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors border-l-2 border-transparent hover:border-primary"
+                                    >
+                                        {link.text}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <a
+                    href="/blog"
+                    class="text-white hover:text-primary px-2 py-2 text-sm font-bold transition-colors"
+                    >Blog</a
+                >
+                <a
+                    href="/iletisim"
+                    class="text-white hover:text-primary px-2 py-2 text-sm font-bold transition-colors"
+                    >İletişim</a
                 >
             </div>
         </div>
-        <!-- /.navbar-header -->
-        <div class="collapse navbar-collapse">
-            <div class="navbar-nav-wrapper">
-                <ul
-                    class="nav navbar-nav mr-auto"
-                    style="justify-content:center;"
-                >
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Ana Sayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/urunler">Ürünler</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/branda"
-                            >Branda</a
-                        >
-                        <ul class="dropdown-menu dropdown-menu-left">
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/alan-kapama-sistemleri"
-                                    >Alan Kapama Sistemleri</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/araba-dolu-brandasi"
-                                    >Araba Dolu Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/bolme-ve-kapi-brandasi"
-                                    >Bölme ve Kapı Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/branda-tente-imalati"
-                                    >Branda Tente İmalatı</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/cami-kapisi-brandasi"
-                                    >Cami Kapısı Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/golgelik-branda"
-                                    >Gölgelik Branda</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/havuz-brandasi"
-                                    >Havuz Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/kamyon-kamyonet-brandasi"
-                                    >Kamyon-Kamyonet Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/otopark-brandasi">Otopark Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/pvc-branda"
-                                    >PVC Branda</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/seffaf-branda"
-                                    >Şeffaf Branda</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/tekne-brandasi"
-                                    >Tekne Brandası</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/tir-brandasi"
-                                    >Tır Brandası</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/cadir"
-                            >Çadır</a
-                        >
-                        <ul class="dropdown-menu dropdown-menu-left">
-                            <li class="dropdown">
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/afet-deprem-cadiri"
-                                    >Afet-Deprem Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/askeri-cadir">Askeri Çadır</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/depo-cadiri">Depo Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/endustriyel-cadir"
-                                    >Endüstriyel Çadır</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/etkinlik-cadiri">Etkinlik Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/fuar-cadiri">Fuar Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/halisaha-spor-cadiri"
-                                    >Halısaha-Spor Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/hangar-cadiri">Hangar Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/iftar-cadiri">İftar Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/kis-bahcesi">Kış Bahçesi</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/kurban-hayvan-cadiri"
-                                    >Kurban-Hayvan Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/santiye-cadiri">Şantiye Çadırı</a
-                                >
-                                <a
-                                    class="dropdown-item dropdown-toggle"
-                                    href="/taziye-cadiri">Taziye Çadırı</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/tente"
-                            >Tente</a
-                        >
-                        <ul class="dropdown-menu dropdown-menu-left">
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/bahce-tentesi"
-                                    >Bahçe Tentesi</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/balkon-tentesi"
-                                    >Balkon Tentesi</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/bioklimatik-tente"
-                                    >Bioklimatik Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/cift-acilir-tente"
-                                    >Çift Açılır Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/karpuz-tente"
-                                    >Karpuz Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/kasetli-tente"
-                                    >Kasetli Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/koruklu-tente"
-                                    >Körüklü Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/mafsalli-tente"
-                                    >Mafsallı Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/motorlu-tente"
-                                    >Motorlu Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/pergola-tente"
-                                    >Pergola Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/sabit-tente"
-                                    >Sabit Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/stor-tente"
-                                    >Stor Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/tente-tamiri-bakimi"
-                                    >Tente Tamiri & Bakımı</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/winted-tente"
-                                    >Winted Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/yarasa-tente"
-                                    >Yarasa Tente</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/zip-tente"
-                                    >Zip Tente</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/semsiye">Şemsiye</a>
-                    </li>
-                </ul>
-                <!-- /.navbar-nav -->
-            </div>
-            <!-- /.navbar-nav-wrapper -->
-            <div class="navbar-brand d-none d-lg-block">
-                <a href="/"
-                    ><img
-                        style="width:100px;"
-                        src="/style/brand/img/navbar-logo.webp"
-                        width="100"
-                        height="71"
-                        alt="Amir Branda Ana Sayfa"
-                        loading="lazy"
-                    /></a
-                >
-            </div>
-            <div class="navbar-nav-wrapper">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#">Kumaşlar</a
-                        >
-                        <ul class="dropdown-menu dropdown-menu-left">
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/akrilik"
-                                    >Akrilik</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/blackout"
-                                    >Blackout</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/mika">Mika</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/polyester"
-                                    >Polyester</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/su-gecirmez-pilsa"
-                                    >Su Geçirmez Pilsa</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/semsiye-kumasi"
-                                    >Şemsiye Kumaşı</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hizmetler">Hizmetler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/fiyat-listesi"
-                            >Fiyat Listesi</a
-                        >
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#">Kurumsal</a
-                        >
-                        <ul class="dropdown-menu dropdown-menu-left">
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="/hakkimizda"
-                                    >Hakkımızda</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="dropdown-item"
-                                    href="/sikca-sorulan-sorular"
-                                    >Sıkça Sorulan Sorular</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/iletisim">İletişim</a>
-                    </li>
-                </ul>
-                <!-- /.navbar-nav -->
-            </div>
-            <!-- /.navbar-nav-wrapper -->
-        </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
-</nav>
-<!-- /.navbar -->
+
+    <!-- Mobile Navigation Menu Overlay -->
+    <div
+        id="mobile-menu-container"
+        class="fixed inset-0 z-40 bg-gray-900/98 backdrop-blur-md transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto pb-24 pt-20"
+    >
+        <div class="px-4 py-4 space-y-2 font-sans overflow-x-hidden">
+            <a
+                href="/"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
+                >Ana Sayfa</a
+            >
+            <a
+                href="/urunler"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
+                >Ürünler</a
+            >
+
+            <!-- Mobile Dropdown Component (Vanilla JS handles toggle via data-target) -->
+            <div class="border-t border-gray-800/50 pt-2 pb-2">
+                <div
+                    class="w-full flex justify-between items-center rounded-lg text-white hover:bg-gray-800 transition-colors"
+                >
+                    <a
+                        href="/branda"
+                        class="flex-grow px-4 py-3 text-lg font-bold">Branda</a
+                    >
+                    <button
+                        class="px-4 py-3"
+                        data-toggle="mobile-branda"
+                        aria-label="Alt menüyü aç/kapat"
+                    >
+                        <svg
+                            class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </button>
+                </div>
+                <div
+                    id="mobile-branda"
+                    class="hidden pl-8 pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                >
+                    {
+                        brandaLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="block py-2 text-[15px] font-medium text-gray-300 hover:text-white"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800/50 pb-2">
+                <div
+                    class="w-full flex justify-between items-center rounded-lg text-white hover:bg-gray-800 transition-colors"
+                >
+                    <a
+                        href="/cadir"
+                        class="flex-grow px-4 py-3 text-lg font-bold">Çadır</a
+                    >
+                    <button
+                        class="px-4 py-3"
+                        data-toggle="mobile-cadir"
+                        aria-label="Alt menüyü aç/kapat"
+                    >
+                        <svg
+                            class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </button>
+                </div>
+                <div
+                    id="mobile-cadir"
+                    class="hidden pl-8 pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                >
+                    {
+                        cadirLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="block py-2 text-[15px] font-medium text-gray-300 hover:text-white"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800/50 pb-2">
+                <div
+                    class="w-full flex justify-between items-center rounded-lg text-white hover:bg-gray-800 transition-colors"
+                >
+                    <a
+                        href="/tente"
+                        class="flex-grow px-4 py-3 text-lg font-bold">Tente</a
+                    >
+                    <button
+                        class="px-4 py-3"
+                        data-toggle="mobile-tente"
+                        aria-label="Alt menüyü aç/kapat"
+                    >
+                        <svg
+                            class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            ><path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path></svg
+                        >
+                    </button>
+                </div>
+                <div
+                    id="mobile-tente"
+                    class="hidden pl-8 pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                >
+                    {
+                        tenteLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="block py-2 text-[15px] font-medium text-gray-300 hover:text-white"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <a
+                href="/semsiye"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
+                >Şemsiye</a
+            >
+
+            <div class="border-t border-gray-800/50 pb-2">
+                <button
+                    class="w-full flex justify-between items-center px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 transition-colors"
+                    data-toggle="mobile-kumaslar"
+                >
+                    Kumaşlar
+                    <svg
+                        class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        ><path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path></svg
+                    >
+                </button>
+                <div
+                    id="mobile-kumaslar"
+                    class="hidden pl-8 pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                >
+                    {
+                        kumaslarLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="block py-2 text-[15px] font-medium text-gray-300 hover:text-white"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <a
+                href="/hizmetler"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
+                >Hizmetler</a
+            >
+            <a
+                href="/fiyat-listesi"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
+                >Fiyat Listesi</a
+            >
+
+            <div class="border-t border-gray-800/50 pb-2">
+                <button
+                    class="w-full flex justify-between items-center px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 transition-colors"
+                    data-toggle="mobile-kurumsal"
+                >
+                    Kurumsal
+                    <svg
+                        class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        ><path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path></svg
+                    >
+                </button>
+                <div
+                    id="mobile-kurumsal"
+                    class="hidden pl-8 pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                >
+                    {
+                        kurumsalLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="block py-2 text-[15px] font-medium text-gray-300 hover:text-white"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <a
+                href="/blog"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
+                >Blog</a
+            >
+            <a
+                href="/iletisim"
+                class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors pb-8"
+                >İletişim</a
+            >
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Hide scrollbar for Chrome, Safari and Opera in desktop dropdowns */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+</style>
 
 <script is:inline>
-    // Dinamik kaydırma oku gösterimi
+    // Vanilla JS for independent lightweight mobile menu behavior
     document.addEventListener("DOMContentLoaded", () => {
-        const checkScroll = (menu) => {
-            // Check if there is overflow and we haven't scrolled to the bottom
-            const tolerance = 2; // pixel tolerance for scaling issues
-            if (
-                menu.scrollHeight > menu.clientHeight &&
-                Math.ceil(menu.scrollTop + menu.clientHeight) + tolerance <
-                    menu.scrollHeight
-            ) {
-                menu.classList.add("is-overflowing");
-            } else {
-                menu.classList.remove("is-overflowing");
-            }
-        };
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenuContainer = document.getElementById(
+            "mobile-menu-container",
+        );
+        const menuIconOpen = document.getElementById("menu-icon-open");
+        const menuIconClose = document.getElementById("menu-icon-close");
+        const body = document.body;
 
-        document.querySelectorAll(".navbar .dropdown").forEach((dropdown) => {
-            dropdown.addEventListener("mouseenter", () => {
-                const submenus = dropdown.querySelectorAll(".dropdown-menu");
-                submenus.forEach((menu) => {
-                    checkScroll(menu);
-                    // Update arrow visibility when scrolling
-                    menu.addEventListener("scroll", () => checkScroll(menu), {
-                        passive: true,
-                    });
-                });
+        if (mobileMenuBtn && mobileMenuContainer) {
+            mobileMenuBtn.addEventListener("click", () => {
+                const isOpen =
+                    !mobileMenuContainer.classList.contains("translate-x-full");
+
+                if (isOpen) {
+                    // Close menu
+                    mobileMenuContainer.classList.add("translate-x-full");
+                    menuIconOpen.classList.remove("hidden");
+                    menuIconClose.classList.add("hidden");
+                    body.classList.remove("overflow-hidden");
+                } else {
+                    // Open menu
+                    mobileMenuContainer.classList.remove("translate-x-full");
+                    menuIconOpen.classList.add("hidden");
+                    menuIconClose.classList.remove("hidden");
+                    body.classList.add("overflow-hidden");
+                }
             });
+        }
+
+        // Accordion functionality for mobile submenus
+        const toggles = document.querySelectorAll("[data-toggle]");
+        toggles.forEach((toggle) => {
+            toggle.addEventListener("click", () => {
+                const targetId = toggle.getAttribute("data-toggle");
+                const targetEl = document.getElementById(targetId);
+                const icon = toggle.querySelector("svg");
+
+                if (targetEl.classList.contains("hidden")) {
+                    targetEl.classList.remove("hidden");
+                    icon.classList.add("rotate-180");
+                } else {
+                    targetEl.classList.add("hidden");
+                    icon.classList.remove("rotate-180");
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById("main-navbar");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add(
+                    "bg-gray-900",
+                    "shadow-xl",
+                    "backdrop-blur-md",
+                );
+            } else {
+                navbar.classList.remove(
+                    "bg-gray-900",
+                    "shadow-xl",
+                    "backdrop-blur-md",
+                );
+            }
         });
     });
 </script>
-
-<style>
-    @media (min-width: 1200px) {
-        .navbar-nav .nav-link {
-            padding-left: 8px !important;
-            padding-right: 8px !important;
-            font-size: 16px !important;
-            font-weight: 700;
-        }
-    }
-
-    /* Sticky Navbar Styling */
-    :global(.navbar) {
-        transition:
-            background-color 0.3s ease,
-            box-shadow 0.3s ease,
-            backdrop-filter 0.3s ease;
-    }
-    :global(.navbar.nav-sticky) {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        z-index: 1050 !important;
-        background-color: rgba(0, 0, 0, 0.75) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    /* Long Dropdown scroll containment */
-    :global(.navbar .dropdown-menu::before) {
-        display: none !important; /* Optional: Remove bootstrap arrow if it clashes */
-    }
-
-    /* Desktop-Specific Dropdown Scroll Constraint */
-    @media (min-width: 992px) {
-        :global(.navbar .dropdown-menu) {
-            max-height: 75vh;
-            overflow-y: auto !important;
-            /* Hide scrollbar for Firefox and IE/Edge */
-            scrollbar-width: none !important;
-            -ms-overflow-style: none !important;
-        }
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        :global(.navbar .dropdown-menu::-webkit-scrollbar) {
-            display: none !important;
-        }
-
-        /* Gelişmiş Kaydırma Oku Tasarımı (Sadece Taştığında) */
-        :global(.navbar .dropdown-menu.is-overflowing::after) {
-            content: "▼";
-            position: sticky;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            height: 30px;
-            line-height: 25px; /* Slightly offset upwards visually */
-            text-align: center;
-            background-color: #1e1e1e; /* Menü ile tam aynı renk (koyu gri/siyah) */
-            color: rgba(
-                255,
-                255,
-                255,
-                0.7
-            ); /* Çok sırıtmaması için biraz şeffaf beyaz */
-            font-size: 14px;
-            pointer-events: none;
-            z-index: 100;
-            box-shadow: 0 -10px 15px -5px rgba(30, 30, 30, 0.9); /* Fade efekti için */
-        }
-    }
-    /* Force all dropdown items to stay on a single line */
-    :global(.navbar .dropdown-item),
-    :global(.navbar .mega-menu-content a) {
-        white-space: normal !important; /* Let text wrap on mobile if needed instead of clipping */
-    }
-
-    @media (max-width: 991.98px) {
-        /* Mobile Specific Wrap */
-        :global(.navbar .dropdown-item) {
-            white-space: normal !important;
-            padding-right: 20px;
-        }
-
-        :global(.navbar) {
-            z-index: 1050 !important;
-        }
-
-        /* CRITICAL MOBlLE MENU SCROLL FIX */
-        :global(.navbar-collapse) {
-            max-height: 75vh !important;
-            height: auto !important;
-            overflow-y: auto !important;
-            overscroll-behavior: contain;
-            -webkit-overflow-scrolling: touch;
-            background-color: rgba(
-                30,
-                30,
-                30,
-                0.98
-            ); /* Solid dark background for menu */
-            padding-bottom: 60px !important; /* Extra padding so bottom items aren't cut off */
-
-            /* Hide scrollbar for IE, Edge and Firefox */
-            -ms-overflow-style: none !important;
-            scrollbar-width: none !important;
-        }
-
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        :global(.navbar-collapse::-webkit-scrollbar) {
-            display: none !important;
-        }
-
-        /* Ensure dropdown menus aren't constrained on mobile */
-        :global(.navbar-collapse .dropdown-menu) {
-            max-height: none !important;
-            overflow: visible !important;
-        }
-    }
-</style>

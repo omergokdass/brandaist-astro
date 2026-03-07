@@ -7,185 +7,222 @@ import Layout from "../layouts/Layout.astro";
     description="Amir Branda'ya ulaşın. Branda fiyatları sormak, tente montajı ve branda onarım talepleriniz için İstanbul içi WhatsApp sipariş ve iletişim numaramız."
     ogTitle="İletişim | Amir Branda Müşteri Hizmetleri"
 >
+    <!-- Header Hero Section -->
     <div
-        class="wrapper image-wrapper bg-image inverse-text"
+        class="relative bg-cover bg-center bg-no-repeat py-20 lg:py-32"
         style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
     >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">İletişim</h1>
-            <p class="lead">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+        >
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-lg"
+            >
+                İletişim
+            </h1>
+            <p
+                class="text-lg md:text-xl font-medium max-w-3xl mx-auto opacity-90"
+            >
                 Soru, görüş veya destek talepleriniz için bize ulaşın.
             </p>
         </div>
-        <!-- /.container -->
     </div>
 
-    <div class="wrapper light-wrapper">
-        <div class="container inner pt-50">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h2 class="section-title text-center">BİZE ULAŞIN</h2>
-                    <p class="text-center">
+    <!-- Main Content -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl font-bold text-gray-900 mb-4 tracking-tight"
+                    >
+                        BİZE ULAŞIN
+                    </h2>
+                    <p class="text-lg text-gray-600">
                         İhtiyaçlarınıza özel çözümler için bizimle iletişime
                         geçin!
                     </p>
-                    <div class="space20"></div>
-                    <div class="row text-center">
-                        <div class="col-md-4">
-                            <span
-                                class="icon icon-color color-default fs-48 mb-10"
-                                ><i class="si-camping_map"></i></span
-                            >
-                            <p>
-                                <a
-                                    href="https://maps.app.goo.gl/hVhqkTaVXen2EfRM9"
-                                    target="_blank"
-                                    class="nocolor"
-                                    >Ayvansaray Mahallesi Esnaf Loncası Sokak
-                                    No:27<br />Fatih / İstanbul</a
-                                >
-                            </p>
-                        </div>
-                        <!--/column -->
-                        <div class="col-md-4">
-                            <span
-                                class="icon icon-color color-default fs-48 mb-10"
-                                ><i class="si-phone_phone-ringing"></i></span
-                            >
-                            <p>
-                                <a href="tel:+902125330891" class="nocolor"
-                                    >0212 533 08 91</a
-                                ><br /><a
-                                    href="tel:+905386044851"
-                                    class="nocolor">0 538 604 48 51</a
-                                >
-                            </p>
-                        </div>
-                        <!--/column -->
-                        <div class="col-md-4">
-                            <span
-                                class="icon icon-color color-default fs-48 mb-10"
-                                ><i class="si-mail_mail-2"></i></span
-                            >
-                            <p>
-                                <a
-                                    class="nocolor"
-                                    href="mailto:amirbranda@hotmail.com"
-                                    >amirbranda@hotmail.com</a
-                                >
-                            </p>
-                        </div>
-                        <!--/column -->
-                    </div>
-                    <!--/.row -->
-                    <div class="space30"></div>
-                    <div class="form-container">
-                        <form
-                            action="https://formsubmit.co/amirbranda@hotmail.com"
-                            method="POST"
-                            class="vanilla vanilla-form"
-                        >
-                            <div class="row text-center">
-                                <div class="col-md-6 pr-10">
-                                    <div class="form-group">
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="name"
-                                            placeholder="Ad"
-                                            required="required"
-                                        />
-                                    </div>
-                                    <!--/.form-group -->
-                                </div>
-                                <!--/column -->
-                                <div class="col-md-6 pl-10">
-                                    <div class="form-group">
-                                        <input
-                                            type="email"
-                                            class="form-control"
-                                            name="email"
-                                            placeholder="Email"
-                                            required="required"
-                                        />
-                                    </div>
-                                    <!--/.form-group -->
-                                </div>
-                                <!--/column -->
-                                <div class="col-md-6 pr-10">
-                                    <div class="form-group">
-                                        <input
-                                            type="tel"
-                                            class="form-control"
-                                            name="tel"
-                                            placeholder="Telefon"
-                                        />
-                                    </div>
-                                    <!--/.form-group -->
-                                </div>
-                                <!--/column -->
-                                <div class="col-md-6 pl-10">
-                                    <div class="form-group">
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="subject"
-                                            placeholder="Konu"
-                                        />
-                                    </div>
-                                    <!--/.form-group -->
-                                </div>
-                                <!--/column -->
-                                <div class="col-12">
-                                    <textarea
-                                        name="message"
-                                        class="form-control"
-                                        rows="3"
-                                        placeholder="Mesajınız..."
-                                        required></textarea>
-                                    <div class="space20"></div>
-                                    <input
-                                        type="hidden"
-                                        name="_next"
-                                        value="https://branda.ist/iletisim"
-                                    />
-                                    <input
-                                        type="hidden"
-                                        name="_captcha"
-                                        value="true"
-                                    />
-                                    <button
-                                        type="submit"
-                                        class="btn btn-full-rounded"
-                                        >Gönder</button
-                                    >
-                                    <footer class="notification-box"></footer>
-                                </div>
-                                <!--/column -->
-                            </div>
-                            <!--/.row -->
-                        </form>
-                        <!--/.vanilla-form -->
-                    </div>
-                    <!--/.form-container -->
                 </div>
-                <!-- /column -->
+
+                <!-- Contact Info Grid -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16"
+                >
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform duration-300"
+                    >
+                        <div
+                            class="w-16 h-16 mx-auto bg-blue-50 text-primary rounded-full flex items-center justify-center mb-6"
+                        >
+                            <i class="fa fa-map-marker text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Adresimiz
+                        </h3>
+                        <p class="text-gray-600">
+                            <a
+                                href="https://maps.app.goo.gl/hVhqkTaVXen2EfRM9"
+                                target="_blank"
+                                class="hover:text-primary transition-colors"
+                            >
+                                Ayvansaray Mahallesi<br />Esnaf Loncası Sokak
+                                No:27<br />Fatih / İstanbul
+                            </a>
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform duration-300"
+                    >
+                        <div
+                            class="w-16 h-16 mx-auto bg-blue-50 text-primary rounded-full flex items-center justify-center mb-6"
+                        >
+                            <i class="fa fa-phone text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Telefon
+                        </h3>
+                        <p class="text-gray-600 space-y-2">
+                            <a
+                                href="tel:+902125330891"
+                                class="block hover:text-primary transition-colors"
+                                >0212 533 08 91</a
+                            >
+                            <a
+                                href="tel:+905386044851"
+                                class="block hover:text-primary transition-colors"
+                                >0 538 604 48 51</a
+                            >
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform duration-300"
+                    >
+                        <div
+                            class="w-16 h-16 mx-auto bg-blue-50 text-primary rounded-full flex items-center justify-center mb-6"
+                        >
+                            <i class="fa fa-envelope text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            E-Posta
+                        </h3>
+                        <p class="text-gray-600">
+                            <a
+                                href="mailto:amirbranda@hotmail.com"
+                                class="hover:text-primary transition-colors"
+                                >amirbranda@hotmail.com</a
+                            >
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 lg:p-12"
+                >
+                    <form
+                        action="https://formsubmit.co/amirbranda@hotmail.com"
+                        method="POST"
+                        class="space-y-6"
+                    >
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="sr-only">Ad</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Adınız"
+                                    required
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-700"
+                                />
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="E-Posta Adresiniz"
+                                    required
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-700"
+                                />
+                            </div>
+                            <div>
+                                <label for="tel" class="sr-only">Telefon</label>
+                                <input
+                                    type="tel"
+                                    id="tel"
+                                    name="tel"
+                                    placeholder="Telefon Numaranız"
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-700"
+                                />
+                            </div>
+                            <div>
+                                <label for="subject" class="sr-only">Konu</label
+                                >
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Konu"
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-700"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only"
+                                >Mesajınız</label
+                            >
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="Size nasıl yardımcı olabiliriz?"
+                                required
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-700 resize-y"
+                            ></textarea>
+                        </div>
+
+                        <!-- FormSubmit Configuration -->
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://branda.ist/iletisim"
+                        />
+                        <input type="hidden" name="_captcha" value="true" />
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Amir Branda Web Sitesinden Yeni Mesaj!"
+                        />
+
+                        <div class="text-center pt-4">
+                            <button
+                                type="submit"
+                                class="inline-flex justify-center items-center px-8 py-4 bg-primary text-white text-lg font-bold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-primary/30 w-full md:w-auto min-w-[200px]"
+                            >
+                                <i class="fa fa-paper-plane mr-2"></i> Mesajı Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- /.row -->
         </div>
     </div>
-    <!-- /.container -->
 
-    <!-- Map at the very bottom, stretching full width -->
-    <div class="map-wrapper" style="margin-bottom: -6px;">
+    <!-- Full Width Map -->
+    <div class="-mb-2 relative h-[450px] w-full bg-gray-200">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4707008397445!2d28.94402467579213!3d41.036834575943274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabbd9cd4a8311%3A0xe9dd5cf9417fc1da!2sAmir%20Branda%20%C3%87ad%C4%B1r%20Tente%20Sistemleri!5e0!3m2!1str!2str!4v1772134073351!5m2!1str!2str"
-            width="100%"
-            height="450"
-            style="border:0;"
+            class="absolute inset-0 w-full h-full border-0"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
     </div>
 
     <script

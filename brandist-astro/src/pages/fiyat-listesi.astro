@@ -1,370 +1,412 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 const currentYear = new Date().getFullYear();
 ---
-<Layout 
+
+<Layout
     title="Amir Branda | En Ucuz Tente ve Branda Fiyat Listesi 2026"
     description="Amir Branda 2026 güncel kampanya ve fiyat listesi. İstanbul'da en uygun şeffaf branda m2 fiyatları, indirimli mafsallı tente ve ucuz çadır fiyat hesaplama."
     ogTitle="Amir Branda | En Ucuz Tente ve Branda Fiyat Listesi 2026"
 >
-    <div class="wrapper image-wrapper bg-image inverse-text" style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');">
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">Güncel Fiyat Listesi</h1>
-            <p class="lead">İhtiyacınıza uygun branda ve tente sistemleri için en rekabetçi fiyatlar ve özel çözümler.</p>
+    <!-- Header Hero Section -->
+    <div
+        class="relative bg-cover bg-center bg-no-repeat py-20 lg:py-32"
+        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
+    >
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+        >
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-lg"
+            >
+                Güncel Fiyat Listesi
+            </h1>
+            <p
+                class="text-lg md:text-xl font-medium max-w-3xl mx-auto opacity-90"
+            >
+                İhtiyacınıza uygun branda ve tente sistemleri için en rekabetçi
+                fiyatlar ve özel çözümler.
+            </p>
         </div>
-        <!-- /.container -->
     </div>
 
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row mb-50">
-                <div class="col-lg-10 offset-lg-1 text-center">
-                    <h2 class="section-title mb-30">Kampanyalı Tente ve Ucuz Branda Fiyat Listesi ({currentYear})</h2>
-                    <p class="lead text-muted mb-30" style="font-size: 16px;">
-                        İstanbul'un önde gelen imalatçısı Amir Branda olarak, kaliteli işçiliği <strong>en uygun fiyat</strong> garantisiyle sunuyoruz. Kış bahçesi, depo çadırı veya kafe gölgelendirmesi arayışınızda bütçenizi sarsmayacak <strong>ucuz branda</strong> ve tente sistemleri için güncel <strong>kampanya</strong> fırsatlarımızdan yararlanın. Aşağıdaki <strong>fiyat listesi</strong>, kullanılacak malzemenin cinsine, ölçüsüne ve montaj bölgesine göre değişiklik gösterebileceğinden, net bir teklif için lütfen bizimle iletişime geçin.
-                    </p>
-                    
-                    <div class="table-responsive mb-40">
-                        <table class="table table-bordered table-striped text-left">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Ürün Modeli</th>
-                                    <th>Açıklama</th>
-                                    <th>Tahmini Başlangıç Fiyatı</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Şeffaf Branda (m2)</strong></td>
-                                    <td>Kış kapamaları için ideal şeffaf mika ve fermuarlı sistem.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Mafsallı Tente</strong></td>
-                                    <td>Standart akrilik kumaşlı, manuel açılır balkon/dükkan tentesi.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Pergola Motorlu Tente (m2)</strong></td>
-                                    <td>Alüminyum profilli, LED ışıklı ve kumandalı lüks gölgelendirme.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Körüklü Tente</strong></td>
-                                    <td>Pencereleri güneşten koruyan dekoratif körüklü sistem.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Depo Çadırı (m2)</strong></td>
-                                    <td>Lojistik firmaları için dayanıklı depo sistemleri.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Şantiye Çadırı (m2)</strong></td>
-                                    <td>Yalıtımlı şantiye personeli barınma çözümü.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Kurban Çadırı</strong></td>
-                                    <td>Hızlı kurulan, fırtınaya dayanıklı hayvan barındırma çadırı.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Hayvan Barınak Çadırı</strong></td>
-                                    <td>Tarımsal işletmeler için yalıtımlı uzun ömürlü büyükbaş/küçükbaş çadırı.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Araba Dolu Brandası</strong></td>
-                                    <td>Dolu yağışına karşı araçları koruyan lüks kalın branda.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Dev Şemsiye</strong></td>
-                                    <td>Kafe ve restoranlar için ipli/kollu devasa koruma.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Otomatik Motorlu Tente</strong></td>
-                                    <td>Kumandalı ve ışıklı lüks kasetli veya çift açılır sistemler.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Sabit Tente</strong></td>
-                                    <td>Kapı üstü, dükkan girişi giriş korumaları. Dekoratif kumaş kaplama.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Çift Açılır Tente</strong></td>
-                                    <td>Geniş bahçeler için T ayaklı çift yöne açılan pratik gölgelik.</td>
-                                    <td>İletişime Geçin</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="text-danger font-weight-bold">
-                        * Tablodaki değerler ortalama piyasa başlangıç fiyatlarıdır. Size özel net ve en uygun fiyat listesi için ücretsiz keşif talep edin!
-                    </p>
+    <!-- Main Content -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Table Section -->
+            <div class="max-w-4xl mx-auto mb-20 text-center">
+                <h2
+                    class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-tight"
+                >
+                    Kampanyalı Tente ve Ucuz Branda Fiyat Listesi ({
+                        currentYear
+                    })
+                </h2>
+                <hr
+                    class="w-20 mx-auto border-t-4 border-primary rounded-full mb-8"
+                />
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-10">
+                    İstanbul'un önde gelen imalatçısı Amir Branda olarak,
+                    kaliteli işçiliği <strong>en uygun fiyat</strong> garantisiyle
+                    sunuyoruz. Kış bahçesi, depo çadırı veya kafe gölgelendirmesi
+                    arayışınızda bütçenizi sarsmayacak <strong
+                        >ucuz branda</strong
+                    > ve tente sistemleri için güncel <strong>kampanya</strong> fırsatlarımızdan
+                    yararlanın. Aşağıdaki <strong>fiyat listesi</strong>,
+                    kullanılacak malzemenin cinsine, ölçüsüne ve montaj
+                    bölgesine göre değişiklik gösterebileceğinden, net bir
+                    teklif için lütfen bizimle iletişime geçin.
+                </p>
+
+                <div
+                    class="overflow-x-auto bg-white rounded-2xl shadow-sm border border-gray-100 mb-6"
+                >
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-800 text-white">
+                            <tr>
+                                <th
+                                    class="py-4 px-6 font-semibold text-sm uppercase tracking-wider border-b border-slate-700"
+                                    >Ürün Modeli</th
+                                >
+                                <th
+                                    class="py-4 px-6 font-semibold text-sm uppercase tracking-wider border-b border-slate-700"
+                                    >Açıklama</th
+                                >
+                                <th
+                                    class="py-4 px-6 font-semibold text-sm uppercase tracking-wider border-b border-slate-700"
+                                    >Tahmini Başlangıç Fiyatı</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-gray-700">
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Şeffaf Branda (m2)</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Kış kapamaları için ideal şeffaf mika ve
+                                    fermuarlı sistem.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Mafsallı Tente</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Standart akrilik kumaşlı, manuel açılır
+                                    balkon/dükkan tentesi.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Pergola Motorlu Tente (m2)</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Alüminyum profilli, LED ışıklı ve kumandalı
+                                    lüks gölgelendirme.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Körüklü Tente</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Pencereleri güneşten koruyan dekoratif
+                                    körüklü sistem.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Depo Çadırı (m2)</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Lojistik firmaları için dayanıklı depo
+                                    sistemleri.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Şantiye Çadırı (m2)</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Yalıtımlı şantiye personeli barınma çözümü.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Kurban Çadırı</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Hızlı kurulan, fırtınaya dayanıklı hayvan
+                                    barındırma çadırı.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Hayvan Barınak Çadırı</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Tarımsal işletmeler için yalıtımlı uzun
+                                    ömürlü büyükbaş/küçükbaş çadırı.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Araba Dolu Brandası</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Dolu yağışına karşı araçları koruyan lüks
+                                    kalın branda.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Dev Şemsiye</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Kafe ve restoranlar için ipli/kollu devasa
+                                    koruma.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Otomatik Motorlu Tente</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Kumandalı ve ışıklı lüks kasetli veya çift
+                                    açılır sistemler.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Sabit Tente</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Kapı üstü, dükkan girişi giriş korumaları.
+                                    Dekoratif kumaş kaplama.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold"
+                                    >Çift Açılır Tente</td
+                                >
+                                <td class="py-4 px-6"
+                                    >Geniş bahçeler için T ayaklı çift yöne
+                                    açılan pratik gölgelik.</td
+                                >
+                                <td class="py-4 px-6"
+                                    ><span
+                                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800"
+                                        >İletişime Geçin</span
+                                    ></td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <p
+                    class="text-red-500 font-bold text-sm bg-red-50 py-3 px-4 rounded-xl border border-red-100"
+                >
+                    * Tablodaki değerler ortalama piyasa başlangıç fiyatlarıdır.
+                    Size özel net ve en uygun fiyat listesi için ücretsiz keşif
+                    talep edin!
+                </p>
             </div>
 
-            <h3 class="section-title text-center mb-40">Kategorilere Göre Tente & Branda Çözümlerimiz</h3>
-            
-            <div class="row">
-                
-                <!-- Şeffaf Branda -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/bahce.webp" class="card-img-top" alt="Şeffaf Branda Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Şeffaf Branda Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Kış bahçesi, kafe ve restoranlar için ideal olan şeffaf branda modellerimizle mekanlarınızı dört mevsim kullanıma açın. Metrekare (m2) bazında en uygun teklifler için bize ulaşın.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mafsallı Tente -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp" class="card-img-top" alt="Mafsallı Tente Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Mafsallı Tente Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Balkon, teras ve işletme önleri için klasik ve şık koruma sağlayan mafsallı tente sistemleri. İstenilen ölçü ve kumaş standartlarına göre özel fiyatlandırma.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pergola Motorlu Tente -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/motorlu-bioklimatik-pergola-fiyatlari.webp" class="card-img-top" alt="Pergola Tente Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Pergola Tente Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Otomatik motorlu yapısıyla modern ve lüks bir deneyim sunan pergola sistemleri. Alüminyum konstrüksiyonlu dayanıklı pergola fiyatları için projenizi bizimle paylaşın.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Körüklü Tente -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/koruklu-tente1.webp" class="card-img-top" alt="Körüklü Tente Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Körüklü Tente Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Pencereleri güneşten ve yağmurdan koruyan, dekoratif ve şık körüklü tente modelleri. İşletme ve evler için özel ölçü uygun fiyatlı körüklü tente imalatı.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Depo Çadırı -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/depo-cadiri.webp" class="card-img-top" alt="Depo Çadırı Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Depo Çadırı Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Lojistik firmaları ve fabrikalar için dayanıklı, yalıtımlı hangar ve depo çadırı sistemleri. Metrekare (m2) büyüklüğüne göre en uygun endüstriyel çadır fiyatları.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Şantiye Çadırı -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/istanbul-endustriyel-santiye-depo-cadiri.webp" class="card-img-top" alt="Şantiye Çadırı Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Şantiye Çadırı Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Zorlu inşaat koşullarında personelin barınma ve yemekhane ihtiyaçlarını karşılayan izoleli şantiye çadırı imalatı. Kurumsal projelere özel fiyat listesi.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kurban Çadırı -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/kurban2.webp" class="card-img-top" alt="Kurban Çadırı Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Kurban Çadırı Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Kurban bayramı dönemlerinde hızlı kurulan, dayanıklı ve hava muhalefetine karşı dirençli kurban çadırı imalatı. Özel ölçü kurulum seçenekleri.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hayvan Çadırı -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/kurban4.webp" class="card-img-top" alt="Hayvan Çadırı Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Hayvan Barınak Çadırı</h4>
-                            <p class="card-text text-muted mb-4">Büyükbaş, küçükbaş ve kümes hayvanları için ideal izolasyonlu hayvan barınak çadırları. Tarım ve hayvancılık için uzun ömürlü çadır kurulumu.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Şemsiye -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/semsiye4.webp" class="card-img-top" alt="Dev Şemsiye Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Dev Şemsiye Modelleri</h4>
-                            <p class="card-text text-muted mb-4">Kafe, restoran ve bahçeler için rüzgara dayanıklı, teleskopik veya yandan gövdeli dev şemsiye modelleri. Firmanıza özel logolu ve renkli üretim.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- Motorlu Tente -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/cift-acilir-tente4.webp" class="card-img-top" alt="Otomatik Motorlu Tente Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Otomatik Motorlu Tente</h4>
-                            <p class="card-text text-muted mb-4">Kumanda ile kontrol edilebilen, LED aydınlatmalı ve katlanabilir otomatik motorlu tente sistemleri. İşletmenizin dış mekanını modern bir görünüme kavuşturun.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sabit Tente -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/sabit-tente1.webp" class="card-img-top" alt="Sabit Tente Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Sabit Tente Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Kapı üstü ve vitrin girişleri için özel olarak hazırlanan, işletmenize değer katan dekoratif kumaş kaplamalı sabit tente imalatı.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Çift Açılır Tente -->
-                <div class="col-md-6 col-lg-4 mb-30">
-                    <div class="card shadow border-0 rounded h-100">
-                        <img src="/style/brand/img/cift-acilir-tente1.webp" class="card-img-top" alt="Çift Açılır Tente Fiyatları" style="height: 250px; object-fit: cover;" loading="lazy">
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">Çift Açılır Tente Fiyatları</h4>
-                            <p class="card-text text-muted mb-4">Geniş bahçe, teras ve açık alan organizasyonlarında pratik ve taşınabilir koruma sağlayan T ayaklı çift yöne açılır tente sistemleri.</p>
-                            
-                            <div class="mt-auto d-flex flex-column gap-2">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <a href="tel:+902125330891" class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-phone"></i> Ara</a>
-                                    <a href="https://wa.me/905386044851" class="btn btn-success btn-sm rounded text-white" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-                                </div>
-                                <a href="/iletisim" class="btn btn-primary btn-sm rounded text-white btn-block"><i class="fa fa-envelope"></i> Hemen Teklif Al</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- Grid Header -->
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 tracking-tight">
+                    Kategorilere Göre Tente & Branda Çözümlerimiz
+                </h3>
             </div>
-            <!-- /.row -->
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* --- MAPPING DATA FOR CARDS TO AVOID REPETITIVE HTML --- */}
+                {
+                    [
+                        {
+                            title: "Şeffaf Branda Fiyatları",
+                            img: "/style/brand/img/bahce.webp",
+                            desc: "Kış bahçesi, kafe ve restoranlar için ideal olan şeffaf branda modellerimizle mekanlarınızı dört mevsim kullanıma açın. Metrekare (m2) bazında en uygun teklifler için bize ulaşın.",
+                        },
+                        {
+                            title: "Mafsallı Tente Fiyatları",
+                            img: "/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp",
+                            desc: "Balkon, teras ve işletme önleri için klasik ve şık koruma sağlayan mafsallı tente sistemleri. İstenilen ölçü ve kumaş standartlarına göre özel fiyatlandırma.",
+                        },
+                        {
+                            title: "Pergola Tente Fiyatları",
+                            img: "/style/brand/img/motorlu-bioklimatik-pergola-fiyatlari.webp",
+                            desc: "Otomatik motorlu yapısıyla modern ve lüks bir deneyim sunan pergola sistemleri. Alüminyum konstrüksiyonlu dayanıklı pergola fiyatları için projenizi bizimle paylaşın.",
+                        },
+                        {
+                            title: "Körüklü Tente Fiyatları",
+                            img: "/style/brand/img/koruklu-tente1.webp",
+                            desc: "Pencereleri güneşten ve yağmurdan koruyan, dekoratif ve şık körüklü tente modelleri. İşletme ve evler için özel ölçü uygun fiyatlı körüklü tente imalatı.",
+                        },
+                        {
+                            title: "Depo Çadırı Fiyatları",
+                            img: "/style/brand/img/depo-cadiri.webp",
+                            desc: "Lojistik firmaları ve fabrikalar için dayanıklı, yalıtımlı hangar ve depo çadırı sistemleri. Metrekare (m2) büyüklüğüne göre en uygun endüstriyel çadır fiyatları.",
+                        },
+                        {
+                            title: "Şantiye Çadırı Fiyatları",
+                            img: "/style/brand/img/istanbul-endustriyel-santiye-depo-cadiri.webp",
+                            desc: "Zorlu inşaat koşullarında personelin barınma ve yemekhane ihtiyaçlarını karşılayan izoleli şantiye çadırı imalatı. Kurumsal projelere özel fiyat listesi.",
+                        },
+                        {
+                            title: "Kurban Çadırı Fiyatları",
+                            img: "/style/brand/img/kurban2.webp",
+                            desc: "Kurban bayramı dönemlerinde hızlı kurulan, dayanıklı ve hava muhalefetine karşı dirençli kurban çadırı imalatı. Özel ölçü kurulum seçenekleri.",
+                        },
+                        {
+                            title: "Hayvan Barınak Çadırı",
+                            img: "/style/brand/img/kurban4.webp",
+                            desc: "Büyükbaş, küçükbaş ve kümes hayvanları için ideal izolasyonlu hayvan barınak çadırları. Tarım ve hayvancılık için uzun ömürlü çadır kurulumu.",
+                        },
+                        {
+                            title: "Dev Şemsiye Modelleri",
+                            img: "/style/brand/img/semsiye4.webp",
+                            desc: "Kafe, restoran ve bahçeler için rüzgara dayanıklı, teleskopik veya yandan gövdeli dev şemsiye modelleri. Firmanıza özel logolu ve renkli üretim.",
+                        },
+                        {
+                            title: "Otomatik Motorlu Tente",
+                            img: "/style/brand/img/cift-acilir-tente4.webp",
+                            desc: "Kumanda ile kontrol edilebilen, LED aydınlatmalı ve katlanabilir otomatik motorlu tente sistemleri. İşletmenizin dış mekanını modern bir görünüme kavuşturun.",
+                        },
+                        {
+                            title: "Sabit Tente Fiyatları",
+                            img: "/style/brand/img/sabit-tente1.webp",
+                            desc: "Kapı üstü ve vitrin girişleri için özel olarak hazırlanan, işletmenize değer katan dekoratif kumaş kaplamalı sabit tente imalatı.",
+                        },
+                        {
+                            title: "Çift Açılır Tente Fiyatları",
+                            img: "/style/brand/img/cift-acilir-tente1.webp",
+                            desc: "Geniş bahçe, teras ve açık alan organizasyonlarında pratik ve taşınabilir koruma sağlayan T ayaklı çift yöne açılır tente sistemleri.",
+                        },
+                    ].map((item) => (
+                        <div class="flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                            <div class="h-60 overflow-hidden relative">
+                                <img
+                                    src={item.img}
+                                    alt={item.title}
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-xl font-bold text-gray-900 mb-3">
+                                    {item.title}
+                                </h4>
+                                <p class="text-gray-600 mb-6 flex-grow">
+                                    {item.desc}
+                                </p>
+
+                                <div class="mt-auto space-y-3 border-t border-gray-100 pt-5">
+                                    <div class="flex justify-between gap-3">
+                                        <a
+                                            href="tel:+902125330891"
+                                            class="flex-1 inline-flex justify-center items-center py-2 px-4 border border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-lg transition-colors text-sm"
+                                        >
+                                            <i class="fa fa-phone mr-2" /> Ara
+                                        </a>
+                                        <a
+                                            href="https://wa.me/905386044851"
+                                            target="_blank"
+                                            class="flex-1 inline-flex justify-center items-center py-2 px-4 bg-[#25D366] text-white hover:bg-[#128C7E] font-semibold rounded-lg transition-colors text-sm"
+                                        >
+                                            <i class="fa-brands fa-whatsapp mr-2" />{" "}
+                                            WhatsApp
+                                        </a>
+                                    </div>
+                                    <a
+                                        href="/iletisim"
+                                        class="w-full inline-flex justify-center items-center py-2 px-4 bg-primary text-white hover:bg-blue-600 font-bold rounded-lg transition-colors text-sm shadow-[0_4px_10px_rgba(76,166,229,0.3)] hover:shadow-[0_6px_15px_rgba(76,166,229,0.4)]"
+                                    >
+                                        <i class="fa fa-envelope mr-2" /> Hemen
+                                        Teklif Al
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
-        <!-- /.container -->
     </div>
-
-    <!-- Custom styling to ensure the cards perfectly match the requested aesthetic -->
-    <style>
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-        }
-        .btn-success {
-            background-color: #25D366;
-            border-color: #25D366;
-        }
-        .btn-success:hover {
-            background-color: #128C7E;
-            border-color: #128C7E;
-        }
-        .gap-2 {
-            gap: 0.5rem;
-        }
-    </style>
 </Layout>

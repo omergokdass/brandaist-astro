@@ -4,9 +4,10 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
     title="Sıkça Sorulan Sorular | Ucuz Branda ve Tente Fiyatları | Amir Branda"
-    description="Tente montajı ne kadar sürer? Şeffaf branda m2 fiyatı nedir? Tente bakımı, depo çadırı ve branda onarımı ile ilgili tüm sorularınızın cevapları Amir Branda SSS sayfasında."
+    description="Tente montajı ne kadar sürer? Şeffaf branda m2 fiyatı nedir? Tente bakımı, depo çadırı ve branda onarım taleplerinizin tüm cevapları Amir Branda SSS sayfasında."
     ogTitle="Sıkça Sorulan Sorular | Ucuz Branda ve Tente Fiyatları"
 >
+    <!-- Schema Markup -->
     <script type="application/ld+json" is:inline>
         {
             "@context": "https://schema.org",
@@ -96,625 +97,250 @@ import Layout from "../layouts/Layout.astro";
         }
     </script>
 
+    <!-- Header Hero Section -->
     <div
-        class="wrapper image-wrapper bg-image inverse-text"
+        class="relative bg-cover bg-center bg-no-repeat py-20 lg:py-32"
         style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
     >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">Sıkça Sorulan Sorular</h1>
-            <p class="lead">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+        >
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-lg"
+            >
+                Sıkça Sorulan Sorular
+            </h1>
+            <p
+                class="text-lg md:text-xl font-medium max-w-3xl mx-auto opacity-90"
+            >
                 Amir Branda sistemleri hakkında aklınıza takılan tüm soruların
                 cevapları rehberimizde.
             </p>
         </div>
-        <!-- /.container -->
     </div>
-    <!-- /.wrapper -->
 
-    <div class="wrapper light-wrapper">
-        <div class="container inner pt-80 pb-80">
-            <div class="row">
-                <div class="col-md-8">
-                    <div id="accordion" class="accordion-wrapper">
-                        <!-- Soru 1 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingOne"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none"
-                                    data-toggle="collapse"
-                                    data-target="#collapseOne"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
+    <!-- Main Content Layout -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- FAQ Accordion Section (Left) -->
+                <div class="w-full lg:w-2/3">
+                    {/* FAQ Items Loop */}
+                    <div class="space-y-4">
+                        {
+                            [
+                                {
+                                    q: "Ücretsiz Keşif ve Ölçüm Hizmetiniz Var Mı?",
+                                    a: "Tüm İstanbul içerisindeki adreslere (Avrupa ve Anadolu yakası dahil) hiçbir ek ücret talep etmeden ücretsiz keşif hizmeti sunuyoruz. Uzman ekibimiz yerinde ölçüm alarak projenize özel en uygun tente ve branda fiyat teklifini hazırlar.",
+                                },
+                                {
+                                    q: "Tente ve Branda Montaj İşlemleri Ne Kadar Sürer?",
+                                    a: "Üretim süreci ürünün teknik özelliklerine göre değişiklik gösterir. Standart balkon veya mafsallı tente siparişleri onaydan sonra yaklaşık 3 iş günü içerisinde üretilip adresinizde yalnızca birkaç saatlik bir operasyonla kurulur.",
+                                },
+                                {
+                                    q: "Eskiyen Tentelerin Kumaş Değişimi veya Onarımı Yapılıyor Mu?",
+                                    a: "Kesinlikle. Yapısal olarak sağlam olan alüminyum veya çelik mekanizmalı tentelerinizin aşınan kumaşlarını yeniliyoruz. Branda tamiri ve akrilik kumaş değişimi ile sisteminizi ilk günkü görünümüne kavuşturuyoruz.",
+                                },
+                                {
+                                    q: "Şeffaf Branda (Mika) Sistemleri Kışın Soğuğu Keser Mi?",
+                                    a: "Kış bahçesi, veranda ve kafeler için özel işlenen 0.8mm - 1.0mm kalınlığındaki ithal mika şeffaf brandalar içeriye lodos, kar ve soğuk havanın girmesini %100 oranında engeller. İç mekandaki ısıyı çok verimli muhafaza eder.",
+                                },
+                                {
+                                    q: "Şeffaf Branda m² (Metrekare) Fiyatları Nasıl Belirlenir?",
+                                    a: "İmalat fiyatlarımız, kapatılacak cephenin toplam metrajına, kullanılacak fermuar / cırt cırt sayısına ve konstrüksiyon ihtiyacına göre maliyetlendirilir. Projenizin resmini göndererek dakikalar içinde net bir teklif alabilirsiniz.",
+                                },
+                                {
+                                    q: "Mafsallı Tente Mi Yoksa Kasetli Tente Mi Seçmeliyim?",
+                                    a: "Mafsallı tente modelleri çok daha ekonomik ve yaygındır; genelde dükkan önü veya apartman balkonları için ilk tercihtir. Kasetli tenteler ise kapandığında sarmal kumaşını alüminyum gövdesi içine sakladığı için daha premium bir görünüm sunar ve kumaş ömrünü uzatır.",
+                                },
+                                {
+                                    q: "Dev Depo ve Hangar Çadırları Ne Kadar Sürede İnşa Edilir?",
+                                    a: "Endüstriyel çadırların en büyük avantajı hızdır. Klasik betonarme yapılardaki uzun süren bürokrasi ve hafriyat süreci yoktur. Proje onaylandıktan sonra çelik konstrüksiyon imalatı başlar ve devasa yapılar çok kısa bir sürede montajlanır.",
+                                },
+                                {
+                                    q: "Kış Bahçesi Fiyatlarını Belirleyen Başlıca Faktörler Nelerdir?",
+                                    a: "Ana etmenler sistemin omurgası (alüminyum profil veya çelik demir), tavan kapatması (hareketli motorlu pergola tavan mı, sabit şeffaf cam mı) ve kenar kısımların niteliğidir (şeffaf mika fermuarlı branda mı yoksa katlanır cam sistemleri mi).",
+                                },
+                                {
+                                    q: "En Ekonomik Branda Malzemesi Hangisidir?",
+                                    a: "Eğer görsel şıklıktan ziyade doğrudan koruma fonksiyonu arıyorsanız pilsa brandalar ve havuz örtüleri için üretilen polyester kumaşlar en ucuz maliyetleri sunar. İskelet profili gerektirmeyen klasik germe sistemleri de bütçe dostudur.",
+                                },
+                            ].map((item, index) => (
+                                <details
+                                    class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                                    open={index === 0}
                                 >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Ücretsiz Keşif ve Ölçüm Hizmetiniz Var
-                                        Mı?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseOne"
-                                class="collapse show"
-                                aria-labelledby="headingOne"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Tüm İstanbul içerisindeki adreslere (Avrupa
-                                    ve Anadolu yakası dahil) hiçbir ek ücret
-                                    talep etmeden ücretsiz keşif hizmeti
-                                    sunuyoruz. Uzman ekibimiz yerinde ölçüm
-                                    alarak projenize özel en uygun tente ve
-                                    branda fiyat teklifini hazırlar.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 2 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingTwo"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseTwo"
-                                    aria-expanded="false"
-                                    aria-controls="collapseTwo"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Tente ve Branda Montaj İşlemleri Ne
-                                        Kadar Sürer?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseTwo"
-                                class="collapse"
-                                aria-labelledby="headingTwo"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Üretim süreci ürünün teknik özelliklerine
-                                    göre değişiklik gösterir. Standart balkon
-                                    veya mafsallı tente siparişleri onaydan
-                                    sonra yaklaşık 3 iş günü içerisinde üretilip
-                                    adresinizde yalnızca birkaç saatlik bir
-                                    operasyonla kurulur.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 3 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingThree"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseThree"
-                                    aria-expanded="false"
-                                    aria-controls="collapseThree"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Eskiyen Tentelerin Kumaş Değişimi veya
-                                        Onarımı Yapılıyor Mu?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseThree"
-                                class="collapse"
-                                aria-labelledby="headingThree"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Kesinlikle. Yapısal olarak sağlam olan
-                                    alüminyum veya çelik mekanizmalı
-                                    tentelerinizin aşınan kumaşlarını
-                                    yeniliyoruz. Branda tamiri ve akrilik kumaş
-                                    değişimi ile sisteminizi ilk günkü
-                                    görünümüne kavuşturuyoruz.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 4 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingFour"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseFour"
-                                    aria-expanded="false"
-                                    aria-controls="collapseFour"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Şeffaf Branda (Mika) Sistemleri Kışın
-                                        Soğuğu Keser Mi?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseFour"
-                                class="collapse"
-                                aria-labelledby="headingFour"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Kış bahçesi, veranda ve kafeler için özel
-                                    işlenen 0.8mm - 1.0mm kalınlığındaki ithal
-                                    mika şeffaf brandalar içeriye lodos, kar ve
-                                    soğuk havanın girmesini %100 oranında
-                                    engeller. İç mekandaki ısıyı çok verimli
-                                    muhafaza eder.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 5 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingFive"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseFive"
-                                    aria-expanded="false"
-                                    aria-controls="collapseFive"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Şeffaf Branda m² (Metrekare) Fiyatları
-                                        Nasıl Belirlenir?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseFive"
-                                class="collapse"
-                                aria-labelledby="headingFive"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    İmalat fiyatlarımız, kapatılacak cephenin
-                                    toplam metrajına, kullanılacak fermuar /
-                                    cırt cırt sayısına ve konstrüksiyon
-                                    ihtiyacına göre maliyetlendirilir.
-                                    Projenizin resmini göndererek dakikalar
-                                    içinde net bir teklif alabilirsiniz.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 6 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingSix"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseSix"
-                                    aria-expanded="false"
-                                    aria-controls="collapseSix"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Mafsallı Tente Mi Yoksa Kasetli Tente
-                                        Mi Seçmeliyim?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseSix"
-                                class="collapse"
-                                aria-labelledby="headingSix"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Mafsallı tente modelleri çok daha ekonomik
-                                    ve yaygındır; genelde dükkan önü veya
-                                    apartman balkonları için ilk tercihtir.
-                                    Kasetli tenteler ise kapandığında sarmal
-                                    kumaşını alüminyum gövdesi içine sakladığı
-                                    için daha premium bir görünüm sunar ve kumaş
-                                    ömrünü uzatır.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 7 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingSeven"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseSeven"
-                                    aria-expanded="false"
-                                    aria-controls="collapseSeven"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Dev Depo ve Hangar Çadırları Ne Kadar
-                                        Sürede İnşa Edilir?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseSeven"
-                                class="collapse"
-                                aria-labelledby="headingSeven"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Endüstriyel çadırların en büyük avantajı
-                                    hızdır. Klasik betonarme yapılardaki uzun
-                                    süren bürokrasi ve hafriyat süreci yoktur.
-                                    Proje onaylandıktan sonra çelik
-                                    konstrüksiyon imalatı başlar ve devasa
-                                    yapılar çok kısa bir sürede montajlanır.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 8 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingNine"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseNine"
-                                    aria-expanded="false"
-                                    aria-controls="collapseNine"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> Kış Bahçesi Fiyatlarını Belirleyen Başlıca
-                                        Faktörler Nelerdir?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseNine"
-                                class="collapse"
-                                aria-labelledby="headingNine"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Ana etmenler sistemin omurgası (alüminyum
-                                    profil veya çelik demir), tavan kapatması
-                                    (hareketli motorlu pergola tavan mı, sabit
-                                    şeffaf cam mı) ve kenar kısımların
-                                    niteliğidir (şeffaf mika fermuarlı branda mı
-                                    yoksa katlanır cam sistemleri mi).
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soru 9 -->
-                        <div
-                            class="card shadow-sm border-0 mb-3 rounded-lg overflow-hidden"
-                        >
-                            <div
-                                class="card-header bg-white border-0 p-0"
-                                id="headingTen"
-                            >
-                                <button
-                                    class="btn btn-link btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center p-4 shadow-none collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#collapseTen"
-                                    aria-expanded="false"
-                                    aria-controls="collapseTen"
-                                    style="text-decoration: none; font-size: 18px; white-space: normal;"
-                                >
-                                    <span
-                                        ><i
-                                            class="fa fa-question-circle text-primary mr-2"
-                                        ></i> En Ekonomik Branda Malzemesi Hangisidir?</span
-                                    >
-                                    <i
-                                        class="fa fa-chevron-down text-muted"
-                                        style="font-size: 14px; min-width: 14px;"
-                                    ></i>
-                                </button>
-                            </div>
-                            <div
-                                id="collapseTen"
-                                class="collapse"
-                                aria-labelledby="headingTen"
-                                data-parent="#accordion"
-                            >
-                                <div
-                                    class="card-body border-top text-dark p-4"
-                                    style="font-size: 16px; line-height: 1.8;"
-                                >
-                                    Eğer görsel şıklıktan ziyade doğrudan koruma
-                                    fonksiyonu arıyorsanız pilsa brandalar ve
-                                    havuz örtüleri için üretilen polyester
-                                    kumaşlar en ucuz maliyetleri sunar. İskelet
-                                    profili gerektirmeyen klasik germe
-                                    sistemleri de bütçe dostudur.
-                                </div>
-                            </div>
-                        </div>
+                                    <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-gray-900 list-none text-lg">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa fa-question-circle text-primary text-xl" />
+                                            {item.q}
+                                        </div>
+                                        <span class="transition group-open:rotate-180">
+                                            <i class="fa fa-chevron-down text-gray-400 text-sm" />
+                                        </span>
+                                    </summary>
+                                    <div class="px-6 pb-6 pt-2 text-gray-600 border-t border-gray-50 leading-relaxed text-base bg-gray-50/50">
+                                        {item.a}
+                                    </div>
+                                </details>
+                            ))
+                        }
                     </div>
 
-                    <style>
-                        /* Premium accordion transitions */
-                        .accordion-wrapper .btn-link {
-                            color: #1a1a1a;
-                            transition: all 0.3s ease;
-                        }
-                        .accordion-wrapper .btn-link:hover {
-                            color: #fff !important; /* White text on hover as requested */
-                        }
-                        .accordion-wrapper .btn-link:hover .fa-question-circle,
-                        .accordion-wrapper .btn-link:hover .fa-chevron-down {
-                            color: #fff !important;
-                        }
-                        .accordion-wrapper .btn-link .fa-chevron-down {
-                            transition: transform 0.3s ease;
-                        }
-                        .accordion-wrapper
-                            .btn-link.collapsed
-                            .fa-chevron-down {
-                            transform: rotate(-90deg);
-                        }
-                        .accordion-wrapper .card {
-                            transition:
-                                box-shadow 0.3s ease,
-                                transform 0.3s ease;
-                        }
-                        .accordion-wrapper .card:hover {
-                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
-                            transform: translateY(-2px);
-                        }
-                    </style>
-
-                    <div class="text-center mt-50">
-                        <p class="text-muted">
+                    <!-- Call to Action below FAQ -->
+                    <div
+                        class="text-center mt-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <p class="text-gray-600 mb-6 text-lg">
                             Başka bir projeniz veya özel sorunuz mu var?
                         </p>
                         <a
                             href="/iletisim"
-                            class="btn btn-primary btn-full-rounded text-white"
-                            ><i class="fa fa-phone mr-2"></i> Uzmanımızla Görüşün</a
+                            class="inline-flex justify-center items-center px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-blue-600 transition-colors shadow-lg shadow-primary/30"
                         >
+                            <i class="fa fa-phone mr-2"></i> Uzmanımızla Görüşün
+                        </a>
                     </div>
                 </div>
-                <!--/column -->
 
-                <!-- Sağ Sidebar Başlangıcı -->
-                <aside class="col-md-4 sidebar mt-5 mt-md-0">
-                    <div class="sidebox widget shadow-sm p-4 rounded bg-white">
-                        <h3 class="widget-title">Kurumsal</h3>
-                        <figure class="mb-20">
+                <!-- Sidebar (Right) -->
+                <aside class="w-full lg:w-1/3 flex flex-col gap-6">
+                    <!-- Corporate Info Widget -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-3"
+                        >
+                            Kurumsal
+                        </h3>
+                        <div class="mb-4">
                             <img
-                                class="w-100 img-fluid rounded mb-3 shadow-sm"
-                                style="max-height: 480px; object-fit: cover;"
                                 src="/style/brand/img/branda-logo.webp"
-                                style="max-height: 80px;"
                                 alt="Amir Branda Logo"
+                                class="w-full h-auto object-contain rounded-lg shadow-sm"
                                 loading="lazy"
                             />
-                        </figure>
-                        <p class="text-muted" style="font-size: 14px;">
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
                             İstanbul'un lider branda firması Amir Branda olarak,
                             işletmelere ve evlere %100 su ve hava sızdırmaz
                             estetik çözümler, kış bahçesi, depo ve hangar çadırı
                             hizmetleri sunuyoruz.
                         </p>
-                        <ul
-                            class="social social-color social-s text-center mt-3"
-                        >
-                            <li>
-                                <a
-                                    href="https://www.facebook.com/amirbrandacadirtente/"
-                                    target="_blank"
-                                    ><i class="fa-brands fa-facebook-f"></i></a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://tr.pinterest.com/amirbranda/"
-                                    target="_blank"
-                                    ><i class="fa-brands fa-pinterest"></i></a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.instagram.com/branda.ist/"
-                                    target="_blank"
-                                    ><i class="fa-brands fa-instagram"></i></a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://x.com/amirbrandaist"
-                                    target="_blank"
-                                    ><i class="fa-brands fa-twitter"></i></a
-                                >
-                            </li>
-                        </ul>
+                        <div class="flex justify-center gap-4">
+                            <a
+                                href="https://www.facebook.com/amirbrandacadirtente/"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                                aria-label="Facebook"
+                                ><i class="fa-brands fa-facebook-f"></i></a
+                            >
+                            <a
+                                href="https://tr.pinterest.com/amirbranda/"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-red-600 hover:text-white transition-colors"
+                                aria-label="Pinterest"
+                                ><i class="fa-brands fa-pinterest"></i></a
+                            >
+                            <a
+                                href="https://www.instagram.com/branda.ist/"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-pink-600 hover:text-white transition-colors"
+                                aria-label="Instagram"
+                                ><i class="fa-brands fa-instagram"></i></a
+                            >
+                            <a
+                                href="https://x.com/amirbrandaist"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-black hover:text-white transition-colors"
+                                aria-label="X (Twitter)"
+                                ><i class="fa-brands fa-x-twitter"></i></a
+                            >
+                        </div>
                     </div>
 
+                    <!-- Useful Links Widget -->
                     <div
-                        class="sidebox widget shadow-sm p-4 rounded bg-white mt-30"
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
                     >
-                        <h3 class="widget-title">Faydalı Bağlantılar</h3>
-                        <ul
-                            class="list-group list-group-flush"
-                            style="font-size:14px;"
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-3"
                         >
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0"
-                            >
-                                <a href="/hakkimizda" class="text-dark"
+                            Faydalı Bağlantılar
+                        </h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="/hakkimizda"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
                                     ><i
-                                        class="fa fa-building-o mr-2 text-primary"
+                                        class="fa fa-building-o w-6 text-primary"
                                     ></i> Kurumsal Hikayemiz</a
                                 >
                             </li>
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0"
-                            >
-                                <a href="/iletisim" class="text-dark"
+                            <li>
+                                <a
+                                    href="/iletisim"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
                                     ><i
-                                        class="fa fa-envelope-o mr-2 text-primary"
+                                        class="fa fa-envelope-o w-6 text-primary"
                                     ></i> İletişim & Harita</a
                                 >
                             </li>
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0"
-                            >
-                                <a href="/fiyat-listesi" class="text-dark"
-                                    ><i class="fa fa-tags mr-2 text-primary"
-                                    ></i> Fiyat Listesi İste</a
+                            <li>
+                                <a
+                                    href="/fiyat-listesi"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+                                    ><i class="fa fa-tags w-6 text-primary"></i> Fiyat
+                                    Listesi İste</a
                                 >
                             </li>
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0"
-                            >
-                                <a href="/blog" class="text-dark"
-                                    ><i
-                                        class="fa fa-book-open mr-2 text-primary"
+                            <li>
+                                <a
+                                    href="/blog"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+                                    ><i class="fa fa-book-open w-6 text-primary"
                                     ></i> Blog ve Makaleler</a
                                 >
                             </li>
                         </ul>
                     </div>
 
+                    <!-- WhatsApp CTA Widget -->
                     <div
-                        class="sidebox widget shadow-sm p-4 rounded bg-white mt-30 text-center"
+                        class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl shadow-sm border border-green-100 text-center"
                     >
-                        <h3 class="widget-title mb-10">
+                        <div
+                            class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4"
+                        >
+                            <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">
                             Özel Teklif İster Misiniz?
                         </h3>
-                        <p class="text-muted mb-15" style="font-size: 13px;">
+                        <p class="text-gray-600 text-sm mb-6">
                             Projelendirme ve acil sorularınız için WhatsApp
                             keşif hattımız aktiftir.
                         </p>
                         <a
                             href="https://wa.me/905386044851"
-                            class="btn btn-success btn-sm btn-full-rounded text-white"
                             target="_blank"
-                            ><i class="fa-brands fa-whatsapp mr-1"></i> Hemen WhatsApp'tan
-                            Yazın</a
+                            class="inline-flex justify-center items-center w-full px-4 py-3 bg-[#25D366] text-white font-bold rounded-lg hover:bg-[#128C7E] transition-colors shadow-lg shadow-green-500/30"
                         >
+                            Hemen Yazın
+                        </a>
                     </div>
                 </aside>
-                <!-- /aside -->
             </div>
         </div>
     </div>
 </Layout>
+
+<style>
+    /* Hide the default summary marker in Safari/Webkit */
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+</style>

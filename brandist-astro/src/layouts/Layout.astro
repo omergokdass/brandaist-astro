@@ -138,12 +138,7 @@ const serviceSchema = isServicePage
           description: description,
       })
     : null;
-import "../styles/css/bootstrap.min.css";
-import "../styles/css/plugins.css";
-
-import "../styles/style.css";
-import "../styles/css/color/sky.css";
-import "../styles/css/font/font2.css";
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -223,14 +218,14 @@ import "../styles/css/font/font2.css";
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
         <link
             rel="preload"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2"
             as="font"
             type="font/woff2"
             crossorigin="anonymous"
         />
         <link
             rel="preload"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2"
             as="font"
             type="font/woff2"
             crossorigin="anonymous"
@@ -241,18 +236,16 @@ import "../styles/css/font/font2.css";
         />
         <link
             rel="preload"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             as="style"
             onload="this.onload=null;this.rel='stylesheet'"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
         <noscript>
             <link
                 rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-                integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 crossorigin="anonymous"
                 referrerpolicy="no-referrer"
             />
@@ -424,158 +417,175 @@ import "../styles/css/font/font2.css";
             <main id="main-content">
                 <slot />
             </main>
-            <footer class="dark-wrapper inverse-text">
-                <div class="container inner pt-30 pb-20 text-center">
-                    <div class="row">
-                        <div class="col-md-10 offset-md-1">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="widget">
-                                        <h3 class="widget-title">Konum</h3>
-                                        <address class="mb-0">
-                                            <a
-                                                href="https://maps.app.goo.gl/hVhqkTaVXen2EfRM9"
-                                                target="_blank"
-                                                class="nocolor"
-                                                >Ayvansaray Mahallesi Esnaf
-                                                Loncası Sokak No:27, Fatih /
-                                                İstanbul</a
-                                            >
-                                        </address>
-                                    </div>
-                                    <!-- /.widget -->
-                                </div>
-                                <!-- /column -->
-                                <div class="col-md-3">
-                                    <div class="widget">
-                                        <h3 class="widget-title">Kurumsal</h3>
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <a
-                                                    href="/hakkimizda"
-                                                    class="nocolor"
-                                                    >Hakkımızda</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/sikca-sorulan-sorular"
-                                                    class="nocolor"
-                                                    >Sıkça Sorulan Sorular</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a href="/blog" class="nocolor"
-                                                    >Blog / Faydalı Bilgiler</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/fiyat-listesi"
-                                                    class="nocolor"
-                                                    >Fiyat Listesi</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/kvkk-aydinlatma-metni"
-                                                    class="nocolor"
-                                                    >KVKK Aydınlatma Metni</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/gizlilik-ve-cerez-politikasi"
-                                                    class="nocolor"
-                                                    >Gizlilik ve Çerez
-                                                    Politikası</a
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /.widget -->
-                                </div>
-                                <!-- /column -->
-                                <div class="col-md-3">
-                                    <div class="widget">
-                                        <h3 class="widget-title">
-                                            Bizi Takip Edin
-                                        </h3>
-                                        <ul class="social social-mute social-s">
-                                            <li>
-                                                <a
-                                                    href="https://tr.pinterest.com/amirbranda/"
-                                                    target="_blank"
-                                                    ><i
-                                                        class="fa-brands fa-pinterest"
-                                                    ></i></a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.facebook.com/amirbrandacadirtente/"
-                                                    target="_blank"
-                                                    ><i
-                                                        class="fa-brands fa-facebook-f"
-                                                    ></i></a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.instagram.com/branda.ist/"
-                                                    target="_blank"
-                                                    ><i
-                                                        class="fa-brands fa-instagram"
-                                                    ></i></a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://x.com/amirbrandaist"
-                                                    target="_blank"
-                                                    ><i
-                                                        class="fa-brands fa-twitter"
-                                                    ></i></a
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /.widget -->
-                                </div>
-                                <!-- /column -->
-                                <div class="col-md-3">
-                                    <div class="widget">
-                                        <h3 class="widget-title">İletişim</h3>
-                                        <a
-                                            href="mailto:amirbranda@hotmail.com"
-                                            class="nocolor"
-                                            >amirbranda@hotmail.com</a
-                                        >
-                                        <br />
-                                        <a
-                                            href="tel:+902125330891"
-                                            class="nocolor">0 212 533 08 91</a
-                                        ><br />
-                                        <a
-                                            href="tel:+905386044851"
-                                            class="nocolor">0 538 604 48 51</a
-                                        >
-                                    </div>
-                                    <!-- /.widget -->
-                                </div>
-                                <!-- /column -->
-                            </div>
-                            <!-- /.row -->
+            <footer
+                class="bg-gray-900 border-t border-gray-800 text-gray-400 py-14"
+            >
+                <div class="container mx-auto px-4 lg:px-8">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-center lg:text-left"
+                    >
+                        <!-- Konum -->
+                        <div>
+                            <h3
+                                class="text-lg font-bold text-white mb-4 uppercase tracking-wider relative inline-block pb-2 border-b-2 border-primary"
+                            >
+                                Konum
+                            </h3>
+                            <address class="not-italic mt-2">
+                                <a
+                                    href="https://maps.app.goo.gl/hVhqkTaVXen2EfRM9"
+                                    target="_blank"
+                                    class="hover:text-primary transition-colors block leading-relaxed"
+                                >
+                                    Ayvansaray Mahallesi Esnaf Loncası Sokak
+                                    No:27, Fatih / İstanbul
+                                </a>
+                            </address>
                         </div>
-                        <!-- /column -->
+
+                        <!-- Kurumsal -->
+                        <div>
+                            <h3
+                                class="text-lg font-bold text-white mb-4 uppercase tracking-wider relative inline-block pb-2 border-b-2 border-primary"
+                            >
+                                Kurumsal
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>
+                                    <a
+                                        href="/hakkimizda"
+                                        class="hover:text-primary transition-colors block"
+                                        >Hakkımızda</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/sikca-sorulan-sorular"
+                                        class="hover:text-primary transition-colors block"
+                                        >Sıkça Sorulan Sorular</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/blog"
+                                        class="hover:text-primary transition-colors block"
+                                        >Blog / Faydalı Bilgiler</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/fiyat-listesi"
+                                        class="hover:text-primary transition-colors block"
+                                        >Fiyat Listesi</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/kvkk-aydinlatma-metni"
+                                        class="hover:text-primary transition-colors block"
+                                        >KVKK Aydınlatma Metni</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/gizlilik-ve-cerez-politikasi"
+                                        class="hover:text-primary transition-colors block"
+                                        >Gizlilik ve Çerez Politikası</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div>
+                            <h3
+                                class="text-lg font-bold text-white mb-4 uppercase tracking-wider relative inline-block pb-2 border-b-2 border-primary"
+                            >
+                                Bizi Takip Edin
+                            </h3>
+                            <ul
+                                class="flex justify-center lg:justify-start space-x-3 mt-2"
+                            >
+                                <li>
+                                    <a
+                                        href="https://tr.pinterest.com/amirbranda/"
+                                        target="_blank"
+                                        class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-primary hover:text-white transition-all duration-300"
+                                    >
+                                        <i
+                                            class="fa-brands fa-pinterest text-lg"
+                                        ></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com/amirbrandacadirtente/"
+                                        target="_blank"
+                                        class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                                    >
+                                        <i
+                                            class="fa-brands fa-facebook-f text-lg"
+                                        ></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.instagram.com/branda.ist/"
+                                        target="_blank"
+                                        class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-600 hover:text-white transition-all duration-300"
+                                    >
+                                        <i
+                                            class="fa-brands fa-instagram text-lg"
+                                        ></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://x.com/amirbrandaist"
+                                        target="_blank"
+                                        class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:text-white transition-all duration-300"
+                                    >
+                                        <i
+                                            class="fa-brands fa-x-twitter text-lg"
+                                        ></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- İletişim -->
+                        <div>
+                            <h3
+                                class="text-lg font-bold text-white mb-4 uppercase tracking-wider relative inline-block pb-2 border-b-2 border-primary"
+                            >
+                                İletişim
+                            </h3>
+                            <div class="space-y-2">
+                                <a
+                                    href="mailto:amirbranda@hotmail.com"
+                                    class="hover:text-primary transition-colors block"
+                                    >amirbranda@hotmail.com</a
+                                >
+                                <a
+                                    href="tel:+902125330891"
+                                    class="hover:text-primary transition-colors block"
+                                    >0 212 533 08 91</a
+                                >
+                                <a
+                                    href="tel:+905386044851"
+                                    class="hover:text-primary transition-colors font-bold text-white text-lg block mt-2"
+                                    >0 538 604 48 51</a
+                                >
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.row -->
-                    <div class="space20"></div>
-                    <p class="text-center">
-                        &copy; 2026 Amir Branda. Tüm Hakları Saklıdır.
-                    </p>
+
+                    <div
+                        class="border-t border-gray-800 pt-6 mt-2 text-center text-sm text-gray-500"
+                    >
+                        <p>&copy; 2026 Amir Branda. Tüm Hakları Saklıdır.</p>
+                    </div>
                 </div>
-                <!-- /.container -->
             </footer>
         </div>
         <!-- /.content-wrapper -->
@@ -584,6 +594,5 @@ import "../styles/css/font/font2.css";
         <script is:inline defer src="/style/js/swiper-bundle.min.js"></script>
 
         <slot name="extra-scripts" />
-        <script is:inline defer src="/style/js/main.js?v=5"></script>
     </body>
 </html>

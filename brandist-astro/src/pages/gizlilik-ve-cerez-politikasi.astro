@@ -1,40 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
 ---
-<Layout 
+
+<PageLayout
     title="Gizlilik ve Çerez Politikası | Amir Branda"
     description="Amir Branda Gizlilik ve Çerez Politikası. Kullanıcı verilerinin nasıl işlendiği ve çerez kullanım esaslarımız hakkında bilgi alın."
+    headerTitle="Gizlilik ve Çerez Politikası"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="hizmetler"
 >
-<div class="wrapper image-wrapper bg-image inverse-text" style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');">
-    <div class="container inner pt-120 pb-120 text-center">
-        <h1 class="heading mb-0">Gizlilik ve Çerez Politikası</h1>
-    </div>
-</div>
+    <!-- Content Section -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-gray-100 prose prose-lg prose-blue max-w-none"
+            >
+                <h2>1. Gizlilik Politikası</h2>
+                <p>
+                    Amir Branda olarak, web sitemizi ziyaret eden
+                    kullanıcılarımızın gizliğine saygı duyuyoruz. İletişim veya
+                    teklif formları aracılığıyla paylaştığınız kişisel veriler,
+                    tamamen size daha iyi hizmet sunabilmek ve taleplerinize
+                    hızlıca dönebilmek adına kayıt altında tutulur ve üçüncü
+                    taraflara kesinlikle satılmaz.
+                </p>
+                <p>
+                    Web sitemiz güvenli iletişim protokollerine sahiptir (SSL)
+                    ve verileriniz sistemlerimizde yüksek güvenlik
+                    standartlarıyla muhafaza edilir.
+                </p>
 
-<div class="wrapper light-wrapper">
-    <div class="container inner">
-        <h2 class="section-title text-center">Gizlilik ve Çerez Politikası</h2>
-        <div class="space30"></div>
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <p><strong>1. Gizlilik Politikası</strong></p>
-                <p>Amir Branda olarak, web sitemizi ziyaret eden kullanıcılarımızın gizliğine saygı duyuyoruz. İletişim veya teklif formları aracılığıyla paylaştığınız kişisel veriler, tamamen size daha iyi hizmet sunabilmek ve taleplerinize hızlıca dönebilmek adına kayıt altında tutulur ve üçüncü taraflara kesinlikle satılmaz.</p>
-                
-                <p>Web sitemiz güvenli iletişim protokollerine sahiptir (SSL) ve verileriniz sistemlerimizde yüksek güvenlik standartlarıyla muhafaza edilir.</p>
+                <h2>2. Çerez (Cookie) Politikası</h2>
+                <p>
+                    Web sitemizin performansını izlemek, ziyaretçi analizleri
+                    yapmak ve kullanım alışkanlıklarını ölçümlemek için çerez
+                    (cookie) dosyalarından yararlanıyoruz. Bunlar; sitenin sizin
+                    cihazınızı hızlı hatırlamasını ve Analytics ölçümleri
+                    vasıtasıyla daha çok aranan kelimelerle ilgilenmemizi
+                    sağlar.
+                </p>
 
-                <p><strong>2. Çerez (Cookie) Politikası</strong></p>
-                <p>Web sitemizin performansını izlemek, ziyaretçi analizleri yapmak ve kullanım alışkanlıklarını ölçümlemek için çerez (cookie) dosyalarından yararlanıyoruz. Bunlar; sitenin sizin cihazınızı hızlı hatırlamasını ve Analytics ölçümleri vasıtasıyla daha çok aranan kelimelerle ilgilenmemizi sağlar.</p>
-
-                <p><strong>Hangi Çerezleri Kullanıyoruz?</strong></p>
+                <h3>Hangi Çerezleri Kullanıyoruz?</h3>
                 <ul>
-                    <li><strong>Zorunlu Çerezler:</strong> Web sitesinin işleyişi için elzem olan temel oturum ve güvenlik çerezleridir.</li>
-                    <li><strong>Performans Çerezleri:</strong> Hangi sayfaların ziyaret edildiği, sitenin neresinde daha fazla vakit geçirildiğini ölçen Google Analytics gibi analitik çerezlerdir.</li>
+                    <li>
+                        <strong>Zorunlu Çerezler:</strong> Web sitesinin işleyişi
+                        için elzem olan temel oturum ve güvenlik çerezleridir.
+                    </li>
+                    <li>
+                        <strong>Performans Çerezleri:</strong> Hangi sayfaların ziyaret
+                        edildiği, sitenin neresinde daha fazla vakit geçirildiğini
+                        ölçen Google Analytics gibi analitik çerezlerdir.
+                    </li>
                 </ul>
 
-                <p><strong>Çerezleri Nasıl Kontrol Edebilirsiniz?</strong></p>
-                <p>Tarayıcı ayarlarınız üzerinden çerez kullanımını kapatabilir veya engelleyebilirsiniz. Çerezleri temizlemek veya engellemek sitemizin kullanılırlığını kısmen düşürebilir. Sitemizi kullanmaya devam ettiğinizde çerez politikamızı kabul etmiş sayılırsınız.</p>
+                <h3>Çerezleri Nasıl Kontrol Edebilirsiniz?</h3>
+                <p>
+                    Tarayıcı ayarlarınız üzerinden çerez kullanımını kapatabilir
+                    veya engelleyebilirsiniz. Çerezleri temizlemek veya
+                    engellemek sitemizin kullanılırlığını kısmen düşürebilir.
+                    Sitemizi kullanmaya devam ettiğinizde çerez politikamızı
+                    kabul etmiş sayılırsınız.
+                </p>
             </div>
         </div>
     </div>
-</div>
-</Layout>
+</PageLayout>

@@ -1,38 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
 ---
-<Layout 
+
+<PageLayout
     title="KVKK Aydınlatma Metni | Amir Branda"
     description="Amir Branda olarak kişisel verilerinizin güvenliğine önem veriyoruz. KVKK Aydınlatma Metni'ni bu sayfadan inceleyebilirsiniz."
+    headerTitle="KVKK Aydınlatma Metni"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="hizmetler"
 >
-<div class="wrapper image-wrapper bg-image inverse-text" style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');">
-    <div class="container inner pt-120 pb-120 text-center">
-        <h1 class="heading mb-0">KVKK Aydınlatma Metni</h1>
-    </div>
-</div>
+    <!-- Content Section -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-gray-100 prose prose-lg prose-blue max-w-none"
+            >
+                <h2>1. Veri Sorumlusunun Kimliği</h2>
+                <p>
+                    Amir Branda olarak, 6698 sayılı Kişisel Verilerin Korunması
+                    Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla, kişisel
+                    verilerinizi işbu aydınlatma metninde açıklandığı şekilde
+                    işliyor ve koruyoruz.
+                </p>
 
-<div class="wrapper light-wrapper">
-    <div class="container inner">
-        <h2 class="section-title text-center">KVKK Aydınlatma Metni</h2>
-        <div class="space30"></div>
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <p><strong>1. Veri Sorumlusunun Kimliği</strong></p>
-                <p>Amir Branda olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla, kişisel verilerinizi işbu aydınlatma metninde açıklandığı şekilde işliyor ve koruyoruz.</p>
+                <h2>2. Kişisel Verilerin İşlenme Amacı</h2>
+                <p>
+                    Firmamızla iletişime geçtiğinizde paylaştığınız ad, soyad,
+                    telefon ve e-posta bilgileriniz; taleplerinizin
+                    yanıtlanması, tekliflerin sunulması ve hizmetlerimizin ifası
+                    amacıyla işlenmektedir.
+                </p>
 
-                <p><strong>2. Kişisel Verilerin İşlenme Amacı</strong></p>
-                <p>Firmamızla iletişime geçtiğinizde paylaştığınız ad, soyad, telefon ve e-posta bilgileriniz; taleplerinizin yanıtlanması, tekliflerin sunulması ve hizmetlerimizin ifası amacıyla işlenmektedir.</p>
+                <h2>
+                    3. İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla
+                    Aktarılabileceği
+                </h2>
+                <p>
+                    Kişisel verileriniz, yasal zorunluluklar dışında üçüncü
+                    hiçbir şahıs ve kurumla paylaşılmaz. Hizmetin gerektirdiği
+                    durumlarda iş ortaklarımız ve yetkili tedarikçilerimiz ile
+                    kanunda belirtilen güvenlik önlemleri dahilinde
+                    paylaşılabilir.
+                </p>
 
-                <p><strong>3. İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği</strong></p>
-                <p>Kişisel verileriniz, yasal zorunluluklar dışında üçüncü hiçbir şahıs ve kurumla paylaşılmaz. Hizmetin gerektirdiği durumlarda iş ortaklarımız ve yetkili tedarikçilerimiz ile kanunda belirtilen güvenlik önlemleri dahilinde paylaşılabilir.</p>
+                <h2>4. Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi</h2>
+                <p>
+                    Kişisel verileriniz, sitemizdeki iletişim formları, telefon
+                    görüşmeleri veya e-posta yoluyla toplanmaktadır. İşleme
+                    faaliyeti KVKK Madde 5'te yer alan sözleşmenin kurulması,
+                    ifası ve meşru menfaatlerimiz hukuki sebeplerine
+                    dayanmaktadır.
+                </p>
 
-                <p><strong>4. Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi</strong></p>
-                <p>Kişisel verileriniz, sitemizdeki iletişim formları, telefon görüşmeleri veya e-posta yoluyla toplanmaktadır. İşleme faaliyeti KVKK Madde 5'te yer alan sözleşmenin kurulması, ifası ve meşru menfaatlerimiz hukuki sebeplerine dayanmaktadır.</p>
-
-                <p><strong>5. İlgili Kişinin Hakları</strong></p>
-                <p>KVKK'nın 11. maddesi gereği; kişisel verilerinizin işlenip işlenmediğini öğrenme, amacına uygun kullanılıp kullanılmadığını bilme, düzeltilmesini veya silinmesini talep etme hakkına sahipsiniz. Taleplerinizi bilgi@amirbranda.ist adresine iletebilirsiniz.</p>
+                <h2>5. İlgili Kişinin Hakları</h2>
+                <p>
+                    KVKK'nın 11. maddesi gereği; kişisel verilerinizin işlenip
+                    işlenmediğini öğrenme, amacına uygun kullanılıp
+                    kullanılmadığını bilme, düzeltilmesini veya silinmesini
+                    talep etme hakkına sahipsiniz. Taleplerinizi <strong
+                        >bilgi@amirbranda.ist</strong
+                    > adresine iletebilirsiniz.
+                </p>
             </div>
         </div>
     </div>
-</div>
-</Layout>
+</PageLayout>

@@ -1,11 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
-<Layout
+<PageLayout
     title="Motorlu Tentelerde Sık Karşılaşılan Arızalar ve Çözümleri | Amir Branda"
     description="Otomatik tül motorlu tente neden açılıp kapanmıyor? Sensör, kumanda ve redüktör arızalarının sebepleri ile branda onarım yöntemleri rehberi."
     ogTitle="Motorlu Tente Arızaları ve Acil Çözümleri"
+    headerTitle="Motorlu Tente Arızaları ve Acil Çözümleri"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    hideSidebar={true}
 >
     <script type="application/ld+json" is:inline>
         {
@@ -28,26 +32,11 @@ import Layout from "../../layouts/Layout.astro";
         }
     </script>
 
-    <div
-        class="wrapper image-wrapper bg-image inverse-text"
-        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
-    >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">Otomatik Tente Arızaları ve Çözümleri</h1>
-        </div>
-    </div>
-
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="blog single-view">
-                        <div class="post">
-                            <div class="post-content">
-                                <h2 class="h3 mb-3">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 prose prose-lg prose-blue">
+                                <h1 id="page" class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-900 leading-tight">
                                     Kumandalı Motorlu Tente Neden Açılmaz veya
                                     Kapanmaz?
-                                </h2>
+                                </h1>
                                 <p>
                                     Ev teraslarınızı ve restoran bahçelerinizi
                                     çağın teknolojisi ile buluşturan, bir tuşla
@@ -56,7 +45,7 @@ import Layout from "../../layouts/Layout.astro";
                                         ><a
                                             href="/motorlu-tente"
                                             title="Motorlu Tente"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             >motorlu tente (otomatik tente)</a
                                         ></strong
                                     > sistemleri; hayatı büyük ölçüde kolaylaştıran
@@ -65,7 +54,7 @@ import Layout from "../../layouts/Layout.astro";
                                     ekolü ithal tüp motorlarla donatılmış bir pergola
                                     veya <a
                                         href="/mafsalli-tente"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         title="mafsallı tente">mafsallı tente</a
                                     >, yıllarca hiçbir sorun vermeden saat gibi
                                     çalışır. Ancak dış fırtınaların ve
@@ -80,7 +69,7 @@ import Layout from "../../layouts/Layout.astro";
                                     durum müdahalelerini) derledik.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     1. Kumanda Basıyorum Ama Tente Tıklamıyor
                                     (Elektriksel Arızalar)
                                 </h3>
@@ -115,7 +104,7 @@ import Layout from "../../layouts/Layout.astro";
                                     </li>
                                 </ul>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     2. Motor Çalışıyor Ama Kumaş Boşa Dönüyor
                                     veya İlerlemiyor (Mekanik Çeyrek Arızaları)
                                 </h3>
@@ -151,7 +140,7 @@ import Layout from "../../layouts/Layout.astro";
                                     </li>
                                 </ul>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     3. Çeyrek ve Yarı Yolda Durma (Switch
                                     Ayarının Bozulması)
                                 </h3>
@@ -176,7 +165,7 @@ import Layout from "../../layouts/Layout.astro";
                                     kronik bir hatadır.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     4. Sensörlerin Çıldırması: Rüzgarlı Olmasa
                                     Bile Tente Kendini Kapatıyor
                                 </h3>
@@ -203,7 +192,7 @@ import Layout from "../../layouts/Layout.astro";
                                     düşürmek sistemdeki cinneti çözer.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     5. Motorlu Tente Kumaşı (Branda) Yırtılması
                                 </h3>
                                 <p>
@@ -219,7 +208,7 @@ import Layout from "../../layouts/Layout.astro";
                                     kısmını söküp çöpe atmadan; yalnızca
                                     metrekaresine tekabül eden (İthal İspanyol/<a
                                         href="/mika"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         title="Mika">Mika</a
                                     > vb.) çok cüzzi <strong
                                         >branda fiyatları</strong
@@ -230,7 +219,7 @@ import Layout from "../../layouts/Layout.astro";
                                     restoranınızı milyarlarca masraftan korur.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     Amir Branda Garantili İstanbul Teknik Onarım
                                     Servisi
                                 </h3>
@@ -258,28 +247,5 @@ import Layout from "../../layouts/Layout.astro";
                                     ustalarla hemen tanışmak için iletişim
                                     numaralarımızdan bizi arayın.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="col-md-3 sidebar">
-                    <div class="sidebox widget">
-                        <h3 class="widget-title">Blog Kategorileri</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="/branda">Branda Sistemleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/tente">Tente Modelleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/cadir">Çadır İmalatı</a>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</Layout>
+                            </article>
+</PageLayout>

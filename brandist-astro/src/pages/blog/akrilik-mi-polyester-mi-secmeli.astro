@@ -1,11 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
-<Layout
+<PageLayout
     title="Hangisi Daha İyi: Akrilik Kumaş Mı, Polyester Kumaş Mı? | Amir Branda"
     description="Şemsiye ve tente yaptırılırken doğru kumaş seçimi nasıl yapılır? Akrilik kumaşın solmazlık kalitesi ve polyester branda m2 fiyatı arasındaki farklar."
     ogTitle="Akrilik vs Polyester: Doğru Kumaş Seçimi Tüyoları"
+    headerTitle="Akrilik vs Polyester: Doğru Kumaş Seçimi Tüyoları"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    hideSidebar={true}
 >
     <script type="application/ld+json" is:inline>
         {
@@ -28,26 +32,11 @@ import Layout from "../../layouts/Layout.astro";
         }
     </script>
 
-    <div
-        class="wrapper image-wrapper bg-image inverse-text"
-        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
-    >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h1 class="heading mb-0">Akrilik Kumaş mı, Polyester Kumaş mı?</h1>
-        </div>
-    </div>
-
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="blog single-view">
-                        <div class="post">
-                            <div class="post-content">
-                                <h2 class="h3 mb-3">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 prose prose-lg prose-blue">
+                                <h1 id="page" class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-900 leading-tight">
                                     Tente, Şemsiye ve Branda Alırken Çöpe Giden
                                     Paraya Son! Hangi Kumaşı Seçmelisiniz?
-                                </h2>
+                                </h1>
                                 <p>
                                     Evinizin veya lüks işletmenizin dış
                                     cephesini güzelleştirmek, rüzgar ve güneş
@@ -59,7 +48,7 @@ import Layout from "../../layouts/Layout.astro";
                                     Bunun sebebi sistemin değil, üstüne örtülen <strong
                                         ><a
                                             href="/tente"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             title="tente">tente kumaşı</a
                                         ></strong
                                     > türünün yanlış kullanım ve yanlış bilgilendirme
@@ -70,7 +59,7 @@ import Layout from "../../layouts/Layout.astro";
                                     > ve <strong>Polyester kumaş</strong>. <a
                                         href="/hakkimizda"
                                         title="Amir Branda Hakkında"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         >Amir Branda</a
                                     > olarak, dış etkenlere (UV güneş süzmesi, yağış
                                     asiti, rüzgar esnemesi) direnecek doğru tekstili
@@ -81,7 +70,7 @@ import Layout from "../../layouts/Layout.astro";
                                     koyuyoruz.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     1. Güneşe Karşı Direnç ve Solmazlık
                                     (Kanserojen UV Filtresi) Faktörü
                                 </h3>
@@ -128,7 +117,7 @@ import Layout from "../../layouts/Layout.astro";
                                     </li>
                                 </ul>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     2. İzolasyon, Su İticilik ve Çürüme / Nem
                                     Sorunları
                                 </h3>
@@ -171,7 +160,7 @@ import Layout from "../../layouts/Layout.astro";
                                     içeri verebilir.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     3. Fiziksel Sağlamlık, Rüzgar Mukavemeti ve
                                     Temizlik
                                 </h3>
@@ -208,7 +197,7 @@ import Layout from "../../layouts/Layout.astro";
                                     </li>
                                 </ul>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     4. Ekonomik Bütçe ve Kumaş Fiyatları Algısı
                                 </h3>
                                 <p>
@@ -243,14 +232,14 @@ import Layout from "../../layouts/Layout.astro";
                                     suyu yalıtım kumaşı olacaktır.
                                 </p>
 
-                                <h3 class="h4 mt-4 mb-2">
+                                <h3>
                                     Bizim Karar Tavsiyemiz
                                 </h3>
                                 <p>
                                     Üst düzey <strong>tente modelleri</strong> (Otomatik
                                     Pergola, Kasetli <a
                                         href="/motorlu-tente"
-                                        class="text-primary font-weight-bold"
+                                        class="text-primary font-bold hover:underline"
                                         title="motorlu Tente">motorlu Tente</a
                                     > veya lüks restoran mafsallı tenteleri) yaptıran
                                     yatırımcının çatısına kesinlikle ve tartışmasız
@@ -267,7 +256,7 @@ import Layout from "../../layouts/Layout.astro";
                                     hiç düşünülmeden cankurtaran <strong
                                         ><a
                                             href="/polyester"
-                                            class="text-primary font-weight-bold"
+                                            class="text-primary font-bold hover:underline"
                                             title="Polyester Kumaş"
                                             >Polyester Kumaş</a
                                         >lar</strong
@@ -286,28 +275,5 @@ import Layout from "../../layouts/Layout.astro";
                                     hemen şimdi çekinmeyin; projenizi sızdırmazlıkla
                                     dürüstçe zırhlandıralım.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="col-md-3 sidebar">
-                    <div class="sidebox widget">
-                        <h3 class="widget-title">Blog Kategorileri</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="/branda">Branda Sistemleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/tente">Tente Modelleri</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="/cadir">Çadır İmalatı</a>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</Layout>
+                            </article>
+</PageLayout>

@@ -8,41 +8,62 @@ import TestimonialSlider from "../components/TestimonialSlider.astro";
     description="İstanbul'un lider tente imalatçısı Amir Branda. Mafsallı tente, kış bahçesi, ucuz çadır ve şeffaf branda imalatında güvenilir yılların tecrübesi."
     ogTitle="İstanbul Branda Firmaları | Tente İmalatı | Amir Branda"
 >
+    <!-- Header Hero Section -->
     <div
-        class="wrapper image-wrapper bg-image inverse-text"
+        class="relative bg-cover bg-center bg-no-repeat py-20 lg:py-32"
         style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
     >
-        <div class="container inner pt-120 pb-120 text-center">
-            <h2 class="heading mb-0"></h2>
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+        >
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-lg"
+            >
+                Hakkımızda
+            </h1>
         </div>
-        <!-- /.container -->
     </div>
-    <!-- /.wrapper -->
-    <div class="wrapper light-wrapper">
-        <div class="container inner">
-            <h2 class="section-title mb-40 text-center">
-                Tüm Bunların Arkasında Kim Var?
-            </h2>
-            <div class="row">
-                <div class="col-lg-6 text-md-center">
-                    <figure>
-                        <img
-                            class="w-100 img-fluid rounded mb-3 shadow-sm"
-                            style="max-height: 480px; object-fit: cover;"
-                            src="/style/brand/img/branda-logo.webp"
-                            alt="Amir Branda Tente ve Çadır Sistemleri"
-                            loading="lazy"
-                        />
-                    </figure>
+
+    <!-- Main Content -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Tüm Bunların Arkasında Kim Var?
+                </h2>
+                <hr
+                    class="w-20 mx-auto border-t-4 border-primary rounded-full"
+                />
+            </div>
+
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+                <!-- Left Image -->
+                <div class="order-2 lg:order-1 relative group">
+                    <div
+                        class="absolute -inset-4 bg-primary/10 rounded-2xl transform rotate-3 group-hover:rotate-1 group-hover:bg-primary/20 transition-all duration-300"
+                    >
+                    </div>
+                    <img
+                        class="relative w-full rounded-2xl shadow-xl object-cover h-[400px] lg:h-[500px] border-4 border-white"
+                        src="/style/brand/img/branda-logo.webp"
+                        alt="Amir Branda Tente ve Çadır Sistemleri"
+                        loading="lazy"
+                    />
                 </div>
-                <!-- /column -->
-                <div class="space30 d-block d-lg-none d-xl-none"></div>
-                <div class="col-lg-6">
-                    <h1 class="h3 mb-3">
-                        İstanbul'un En Güvenilir Tente Tente ve Branda
-                        İmalatçısı: Amir Branda
-                    </h1>
-                    <p>
+
+                <!-- Right Text Content -->
+                <div class="order-1 lg:order-2">
+                    <h3
+                        class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 leading-snug"
+                    >
+                        İstanbul'un En Güvenilir Tente ve Branda İmalatçısı:
+                        Amir Branda
+                    </h3>
+
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
                         Amir Branda, 2009 yılından bu yana İstanbul başta olmak
                         üzere tüm Türkiye'de ve yurt dışında birinci sınıf <strong
                             >branda imalatı</strong
@@ -53,18 +74,20 @@ import TestimonialSlider from "../components/TestimonialSlider.astro";
                         kuruluşlarına kadar her ihtiyaca özel hızlı çözümler üretmektedir.
                     </p>
 
-                    <h2 class="h5 mb-2 mt-4">
-                        Neden Biz? Tente ve Çadır Sistemlerindeki Uzmanlığımız
-                    </h2>
-                    <blockquote class="bordered">
-                        <p>
-                            <a
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 border-l-4 border-l-primary"
+                    >
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">
+                            Neden Biz? Uzmanlığımız
+                        </h4>
+                        <p class="text-gray-600 leading-relaxed italic">
+                            "<a
                                 href="/mafsalli-tente"
-                                class="text-primary font-weight-bold"
+                                class="text-primary font-semibold hover:underline"
                                 title="Mafsallı tente">Mafsallı tente</a
                             >, şeffaf <a
                                 href="/kis-bahcesi"
-                                class="text-primary font-weight-bold"
+                                class="text-primary font-semibold hover:underline"
                                 title="kış bahçesi">kış bahçesi</a
                             > kapama, motorlu pergola, oto ve <strong
                                 >kamyon brandası fiyatları</strong
@@ -72,74 +95,54 @@ import TestimonialSlider from "../components/TestimonialSlider.astro";
                                 >çadır sistemleri fiyat</strong
                             > politikamızla sektördeki kalıpları yıkıyoruz. <strong
                                 >En ucuz branda fiyatları</strong
-                            > ile en yüksek kaliteyi harmanlıyoruz.
+                            > ile en yüksek kaliteyi harmanlıyoruz."
                         </p>
-                        <footer class="blockquote-footer">
-                            Amir Branda Teknik Ekip liderleri
-                        </footer>
-                    </blockquote>
+                    </div>
 
-                    <h2 class="h5 mb-2">
-                        İstanbul Tente İmalatçısı Olarak Misyonumuz
-                    </h2>
-                    <p>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">
+                        Misyonumuz
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed mb-8">
                         Müşteri memnuniyetini merkeze alan firmamız, sadece
                         satış odaklı değil, uzun yıllar dayanacak, paslanmaz
                         sistemler üreterek müşteri bütçesini korumayı amaçlar.
-                        Uzman personelimiz ile <strong
-                            >İstanbul tente imalatçısı</strong
-                        > sıfatımızı koruyarak ücretsiz keşif avantajları sunuyoruz.
-                        Sektördeki rakiplerimizin aksine, biz sadece standart ölçüler
-                        değil, mimari projenize tam uygun, milimetrik hesaplamalarla
-                        yapılmış özel tasarımlar geliştiririz. Geniş ve güncel <strong
-                            >branda fiyat listesi</strong
-                        > seçeneklerimizle herkesin kaliteli bir koruma sistemine
-                        sahip olmasını sağlıyoruz.
+                        Geniş ve güncel <strong>branda fiyat listesi</strong> seçeneklerimizle
+                        herkesin kaliteli bir koruma sistemine sahip olmasını sağlıyoruz.
                     </p>
 
-                    <p class="font-weight-600">
-                        Dış mekanlarınıza gölge, işletmenize değer,
-                        hayallerinize ise yepyeni bir atmosfer katan modern
-                        branda ve çadır sistemlerimizle vakit kaybetmeden
-                        tanışın!
-                    </p>
-                    <ul class="social social-color social-s mb-15">
-                        <li>
-                            <a
-                                href="https://www.facebook.com/amirbrandacadirtente/"
-                                target="_blank"
-                                ><i class="fa-brands fa-facebook-f"></i></a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://tr.pinterest.com/amirbranda/"
-                                target="_blank"
-                                ><i class="fa-brands fa-pinterest"></i></a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://www.instagram.com/branda.ist/"
-                                target="_blank"
-                                ><i class="fa-brands fa-instagram"></i></a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://x.com/amirbrandaist"
-                                target="_blank"
-                                ><i class="fa-brands fa-twitter"></i></a
-                            >
-                        </li>
-                    </ul>
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a
+                            href="https://www.facebook.com/amirbrandacadirtente/"
+                            target="_blank"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                        >
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+                        <a
+                            href="https://tr.pinterest.com/amirbranda/"
+                            target="_blank"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                        >
+                            <i class="fa-brands fa-pinterest text-lg"></i>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/branda.ist/"
+                            target="_blank"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-600 text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                        >
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a
+                            href="https://x.com/amirbrandaist"
+                            target="_blank"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-black text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                        >
+                            <i class="fa-brands fa-x-twitter text-lg"></i>
+                        </a>
+                    </div>
                 </div>
-                <!-- /column -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
     </div>
-    <!-- /.wrapper -->
-    <TestimonialSlider />
 </Layout>

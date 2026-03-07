@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #4CA6E5;
+  --color-dark: #333333;
+
+  /* Setting the primary font to EB Garamond as requested in Phase 1 */
+  --font-sans: "EB Garamond", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "EB Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer components {
+  .post {
+    @apply prose prose-lg prose-slate max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-h2:text-3xl prose-h3:text-2xl prose-a:text-primary prose-a:font-semibold prose-a:no-underline hover:prose-a:text-blue-700 hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-md prose-img:w-full prose-img:object-cover mx-auto;
+  }
+}
