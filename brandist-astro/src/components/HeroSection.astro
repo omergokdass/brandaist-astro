@@ -134,7 +134,7 @@
         </style>
 
         <script is:inline>
-            window.addEventListener("load", function () {
+            document.addEventListener("astro:page-load", function () {
                 // Ensure Swiper is loaded before initializing
                 const initSwiper = () => {
                     if (typeof Swiper !== "undefined") {

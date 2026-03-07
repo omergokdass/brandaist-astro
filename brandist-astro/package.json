@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && node optimize-css.js",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -26,7 +26,6 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "purgecss": "^8.0.0",
     "terser": "^5.46.0"
   }
 }

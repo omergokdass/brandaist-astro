@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import { ClientRouter } from "astro:transitions";
 
 export interface Props {
     title?: string;
@@ -136,16 +137,24 @@ const serviceSchema = isServicePage
               name: "\u0130stanbul",
           },
           description: description,
+          offers: {
+              "@type": "AggregateOffer",
+              priceCurrency: "TRY",
+              lowPrice: "100",
+              highPrice: "50000",
+              offerCount: "1",
+          },
       })
     : null;
 import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="overflow-x-hidden w-full">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <ClientRouter />
         <meta name="author" content="Amir Branda" />
         <meta
             name="p:domain_verify"
@@ -397,7 +406,7 @@ import "../styles/global.css";
             )
         }
     </head>
-    <body>
+    <body class="overflow-x-hidden w-full m-0 p-0">
         <div class="floating-action-container">
             <a href="/iletisim" class="float-btn btn-quote">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
@@ -451,6 +460,13 @@ import "../styles/global.css";
                                 Kurumsal
                             </h3>
                             <ul class="space-y-2">
+                                <li>
+                                    <a
+                                        href="/istanbul-tenteci"
+                                        class="hover:text-primary transition-colors block font-bold"
+                                        >İstanbul Tenteci</a
+                                    >
+                                </li>
                                 <li>
                                     <a
                                         href="/hakkimizda"

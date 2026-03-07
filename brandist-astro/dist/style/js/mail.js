@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
   // Tüm FormSubmit formlarını yakala
   const forms = document.querySelectorAll('form[action^="https://formsubmit.co"]');
 

@@ -32,6 +32,7 @@ const cadirLinks = [
 ];
 
 const tenteLinks = [
+    { text: "İstanbul Tenteci", href: "/istanbul-tenteci" },
     { text: "Bahçe Tentesi", href: "/bahce-tentesi" },
     { text: "Balkon Tentesi", href: "/balkon-tentesi" },
     { text: "Bioklimatik Tente", href: "/bioklimatik-tente" },
@@ -74,7 +75,7 @@ const kurumsalLinks = [
             <!-- Logo -->
             <a href="/" class="flex-shrink-0 z-50 relative">
                 <img
-                    src="/style/brand/img/navbar-logo.webp"
+                    src="/style/brand/img/branda-logo.webp"
                     alt="Amir Branda Ana Sayfa"
                     class="h-10 lg:h-12 w-auto object-contain"
                     width="100"
@@ -342,9 +343,11 @@ const kurumsalLinks = [
     <!-- Mobile Navigation Menu Overlay -->
     <div
         id="mobile-menu-container"
-        class="fixed inset-0 z-40 bg-gray-900/98 backdrop-blur-md transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto pb-24 pt-20"
+        class="fixed top-0 left-0 w-full h-[100dvh] z-40 bg-gray-900/98 backdrop-blur-md transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-20"
     >
-        <div class="px-4 py-4 space-y-2 font-sans overflow-x-hidden">
+        <div
+            class="px-4 py-4 space-y-2 font-sans overflow-x-hidden overflow-y-auto flex-1 pb-24"
+        >
             <a
                 href="/"
                 class="block px-4 py-3 rounded-lg text-lg font-bold text-white hover:bg-gray-800 hover:text-primary transition-colors"
@@ -591,7 +594,7 @@ const kurumsalLinks = [
 
 <script is:inline>
     // Vanilla JS for independent lightweight mobile menu behavior
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("astro:page-load", () => {
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
         const mobileMenuContainer = document.getElementById(
             "mobile-menu-container",

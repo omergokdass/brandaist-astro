@@ -111,7 +111,7 @@ const { images } = Astro.props;
     import GLightbox from "glightbox";
     import "glightbox/dist/css/glightbox.min.css";
 
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("astro:page-load", () => {
         GLightbox({
             selector: ".glightbox",
             touchNavigation: true,

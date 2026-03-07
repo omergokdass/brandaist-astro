@@ -270,7 +270,7 @@
 </style>
 
 <script is:inline>
-    window.addEventListener("load", function () {
+    document.addEventListener("astro:page-load", function () {
         const initSwiper = () => {
             if (typeof Swiper !== "undefined") {
                 new Swiper(".tavsiye-swiper", {
