@@ -10,21 +10,15 @@ const currentYear = new Date().getFullYear();
 >
     <!-- Header Hero Section -->
     <div
-        class="relative bg-cover bg-center bg-no-repeat py-20 lg:py-32"
-        style="background-image: url('/style/brand/img/kategori-arkasi-pp.webp');"
+        class="relative bg-gray-900 overflow-hidden isolate px-6 py-24 sm:py-32 lg:px-8"
     >
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div
-            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
-        >
+        <div class="mx-auto max-w-4xl text-center">
             <h1
-                class="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-lg"
+                class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
             >
                 Güncel Fiyat Listesi
             </h1>
-            <p
-                class="text-lg md:text-xl font-medium max-w-3xl mx-auto opacity-90"
-            >
+            <p class="mt-6 text-xl leading-8 text-gray-300 font-medium">
                 İhtiyacınıza uygun branda ve tente sistemleri için en rekabetçi
                 fiyatlar ve özel çözümler.
             </p>
@@ -50,12 +44,20 @@ const currentYear = new Date().getFullYear();
                 <p class="text-lg text-gray-700 leading-relaxed mb-10">
                     İstanbul'un önde gelen imalatçısı Amir Branda olarak,
                     kaliteli işçiliği <strong>en uygun fiyat</strong> garantisiyle
-                    sunuyoruz. Kış bahçesi, depo çadırı veya kafe gölgelendirmesi
-                    arayışınızda bütçenizi sarsmayacak <strong
-                        >ucuz branda</strong
-                    > ve tente sistemleri için güncel <strong>kampanya</strong> fırsatlarımızdan
-                    yararlanın. Aşağıdaki <strong>fiyat listesi</strong>,
-                    kullanılacak malzemenin cinsine, ölçüsüne ve montaj
+                    sunuyoruz. <a
+                        href="/kis-bahcesi"
+                        class="text-primary hover:underline"
+                        title="kış bahçesi fiyatları">Kış bahçesi</a
+                    >, <a
+                        href="/depo-cadiri"
+                        class="text-primary hover:underline"
+                        title="depo çadırı fiyatları">depo çadırı</a
+                    > veya kafe gölgelendirmesi arayışınızda bütçenizi sarsmayacak
+                    <strong>ucuz branda</strong> ve tente sistemleri için güncel <strong
+                        >kampanya</strong
+                    > fırsatlarımızdan yararlanın. Aşağıdaki <strong
+                        >fiyat listesi</strong
+                    >, kullanılacak malzemenin cinsine, ölçüsüne ve montaj
                     bölgesine göre değişiklik gösterebileceğinden, net bir
                     teklif için lütfen bizimle iletişime geçin.
                 </p>
@@ -83,7 +85,12 @@ const currentYear = new Date().getFullYear();
                         <tbody class="divide-y divide-gray-100 text-gray-700">
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="py-4 px-6 font-semibold"
-                                    >Şeffaf Branda (m2)</td
+                                    ><a
+                                        href="/seffaf-branda"
+                                        class="text-gray-900 hover:text-primary transition-colors"
+                                        title="Şeffaf Branda"
+                                        >Şeffaf Branda (m2)</a
+                                    ></td
                                 >
                                 <td class="py-4 px-6"
                                     >Kış kapamaları için ideal şeffaf mika ve
@@ -113,7 +120,12 @@ const currentYear = new Date().getFullYear();
                             </tr>
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="py-4 px-6 font-semibold"
-                                    >Pergola Motorlu Tente (m2)</td
+                                    ><a
+                                        href="/pergola-tente"
+                                        class="text-gray-900 hover:text-primary transition-colors"
+                                        title="Pergola Motorlu Tente"
+                                        >Pergola Motorlu Tente (m2)</a
+                                    ></td
                                 >
                                 <td class="py-4 px-6"
                                     >Alüminyum profilli, LED ışıklı ve kumandalı
@@ -143,7 +155,11 @@ const currentYear = new Date().getFullYear();
                             </tr>
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="py-4 px-6 font-semibold"
-                                    >Depo Çadırı (m2)</td
+                                    ><a
+                                        href="/depo-cadiri"
+                                        class="text-gray-900 hover:text-primary transition-colors"
+                                        title="Depo Çadırı">Depo Çadırı (m2)</a
+                                    ></td
                                 >
                                 <td class="py-4 px-6"
                                     >Lojistik firmaları için dayanıklı depo
@@ -303,6 +319,7 @@ const currentYear = new Date().getFullYear();
                             title: "Şeffaf Branda Fiyatları",
                             img: "/style/brand/img/bahce.webp",
                             desc: "Kış bahçesi, kafe ve restoranlar için ideal olan şeffaf branda modellerimizle mekanlarınızı dört mevsim kullanıma açın. Metrekare (m2) bazında en uygun teklifler için bize ulaşın.",
+                            blogUrl: "/blog/seffaf-branda-fiyatlari",
                         },
                         {
                             title: "Mafsallı Tente Fiyatları",
@@ -313,6 +330,7 @@ const currentYear = new Date().getFullYear();
                             title: "Pergola Tente Fiyatları",
                             img: "/style/brand/img/motorlu-bioklimatik-pergola-fiyatlari.webp",
                             desc: "Otomatik motorlu yapısıyla modern ve lüks bir deneyim sunan pergola sistemleri. Alüminyum konstrüksiyonlu dayanıklı pergola fiyatları için projenizi bizimle paylaşın.",
+                            blogUrl: "/blog/pergola-tente-fiyatlari",
                         },
                         {
                             title: "Körüklü Tente Fiyatları",
@@ -323,6 +341,7 @@ const currentYear = new Date().getFullYear();
                             title: "Depo Çadırı Fiyatları",
                             img: "/style/brand/img/depo-cadiri.webp",
                             desc: "Lojistik firmaları ve fabrikalar için dayanıklı, yalıtımlı hangar ve depo çadırı sistemleri. Metrekare (m2) büyüklüğüne göre en uygun endüstriyel çadır fiyatları.",
+                            blogUrl: "/blog/depo-cadiri-nedir",
                         },
                         {
                             title: "Şantiye Çadırı Fiyatları",
@@ -394,13 +413,24 @@ const currentYear = new Date().getFullYear();
                                             WhatsApp
                                         </a>
                                     </div>
-                                    <a
-                                        href="/iletisim"
-                                        class="w-full inline-flex justify-center items-center py-2 px-4 bg-primary text-white hover:bg-blue-600 font-bold rounded-lg transition-colors text-sm shadow-[0_4px_10px_rgba(76,166,229,0.3)] hover:shadow-[0_6px_15px_rgba(76,166,229,0.4)]"
-                                    >
-                                        <i class="fa fa-envelope mr-2" /> Hemen
-                                        Teklif Al
-                                    </a>
+                                    <div class="flex gap-3">
+                                        <a
+                                            href="/iletisim"
+                                            class={`${item.blogUrl ? "flex-1" : "w-full"} inline-flex justify-center items-center py-2 px-4 bg-primary text-white hover:bg-blue-600 font-bold rounded-lg transition-colors text-sm shadow-[0_4px_10px_rgba(76,166,229,0.3)] hover:shadow-[0_6px_15px_rgba(76,166,229,0.4)]`}
+                                        >
+                                            <i class="fa fa-envelope mr-2" />{" "}
+                                            Hemen Teklif Al
+                                        </a>
+                                        {item.blogUrl && (
+                                            <a
+                                                href={item.blogUrl}
+                                                class="flex-1 inline-flex justify-center items-center py-2 px-4 bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold rounded-lg transition-colors text-sm"
+                                            >
+                                                <i class="fa fa-file-text mr-2" />{" "}
+                                                Detaylar
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>

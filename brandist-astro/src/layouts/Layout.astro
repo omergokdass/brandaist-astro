@@ -9,23 +9,30 @@ export interface Props {
     ogImage?: string;
     ogType?: string;
     customCanonical?: string;
+    preloadImage?: string;
 }
 
 const {
     title = "Amir Branda | En İyi Tente ve Branda Sistemleri",
     description = "İstanbul'un lider tente ve branda üreticisi Amir Branda ile mekanlarınızı dört mevsim yaşanabilir kılın.",
     ogTitle,
-    ogImage = "https://branda.ist/images/amir-branda-logo.jpg",
+    ogImage = "https://www.branda.ist/images/amir-branda-logo.jpg",
     ogType = "website",
     customCanonical,
+    preloadImage,
 } = Astro.props;
 
 const pageTitle = title.includes("Amir Branda")
     ? title
     : `${title} | Amir Branda`;
+const currentPath =
+    Astro.url.pathname.endsWith("/") && Astro.url.pathname !== "/"
+        ? Astro.url.pathname.slice(0, -1)
+        : Astro.url.pathname;
+
 const canonicalURL =
     customCanonical ||
-    new URL(Astro.url.pathname, Astro.site || "https://branda.ist");
+    new URL(currentPath, Astro.site || "https://www.branda.ist");
 const finalOgTitle = ogTitle || pageTitle;
 
 // Breadcrumb Schema Generator
@@ -34,7 +41,7 @@ const pathSegments = pathname.split("/").filter((p) => p);
 const breadcrumbItems = pathSegments.map((segment, index) => {
     const isLast = index === pathSegments.length - 1;
     const url =
-        "https://branda.ist/" + pathSegments.slice(0, index + 1).join("/");
+        "https://www.branda.ist/" + pathSegments.slice(0, index + 1).join("/");
     return {
         "@type": "ListItem",
         position: index + 2,
@@ -57,7 +64,7 @@ const breadcrumbSchema =
                       "@type": "ListItem",
                       position: 1,
                       name: "Ana Sayfa",
-                      item: "https://branda.ist",
+                      item: "https://www.branda.ist",
                   },
                   ...breadcrumbItems,
               ],
@@ -69,9 +76,9 @@ const localBusinessSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: "Amir Branda",
-    image: "https://branda.ist/style/brand/img/logo-amir-branda.png",
-    "@id": "https://branda.ist",
-    url: "https://branda.ist",
+    image: "https://www.branda.ist/style/brand/img/logo-amir-branda.png",
+    "@id": "https://www.branda.ist",
+    url: "https://www.branda.ist",
     telephone: "+905386044851",
     priceRange: "₺₺",
     address: {
@@ -128,8 +135,8 @@ const serviceSchema = isServicePage
           provider: {
               "@type": "HomeAndConstructionBusiness",
               name: "Amir Branda",
-              image: "https://branda.ist/style/brand/img/logo-amir-branda.png",
-              url: "https://branda.ist",
+              image: "https://www.branda.ist/style/brand/img/logo-amir-branda.png",
+              url: "https://www.branda.ist",
               telephone: "+905386044851",
           },
           areaServed: {
@@ -162,17 +169,15 @@ import "../styles/global.css";
         />
         <meta name="robots" content="index, follow" />
         <meta name="description" content={description} />
-        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="sitemap" href="/sitemap.xml" />
         <link rel="canonical" href={canonicalURL} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
         <link
             rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/favicon.png?v=4"
+            type="image/webp"
+            href="/style/brand/img/branda-logo.webp"
         />
-        <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png?v=4" />
-        <link rel="shortcut icon" href="/favicon.png?v=4" />
+        <link rel="apple-touch-icon" href="/style/brand/img/branda-logo.webp" />
+        <link rel="shortcut icon" href="/style/brand/img/branda-logo.webp" />
         <!-- Open Graph META -->
         <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonicalURL} />
@@ -217,6 +222,9 @@ import "../styles/global.css";
             )
         }
 
+        <!-- LCP Image Preload -->
+        {preloadImage && <link rel="preload" as="image" href={preloadImage} />}
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -239,10 +247,27 @@ import "../styles/global.css";
             type="font/woff2"
             crossorigin="anonymous"
         />
+
+        <!-- Google Fonts (Deferred but preloaded) -->
         <link
+            rel="preload"
+            as="style"
             href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            />
+        </noscript>
+
+        <!-- FontAwesome CSS (Deferred) -->
         <link
             rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -259,8 +284,8 @@ import "../styles/global.css";
                 referrerpolicy="no-referrer"
             />
         </noscript>
-        <!-- Swiper CSS -->
-        <link rel="stylesheet" href="/style/css/swiper-bundle.min.css" />
+
+        <!-- Removed Swiper CSS Request -->
         <style>
             /* Modern Floating Buttons */
             .floating-action-container {
@@ -378,7 +403,7 @@ import "../styles/global.css";
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Amir Branda",
-                "image": "https://branda.ist/style/brand/img/branda-logo.webp",
+                "image": "https://www.branda.ist/style/brand/img/branda-logo.webp",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Ayvansaray Mahallesi Esnaf Loncası Sokak No:27",
@@ -387,7 +412,7 @@ import "../styles/global.css";
                     "addressCountry": "TR"
                 },
                 "telephone": "+90 538 604 48 51",
-                "url": "https://branda.ist",
+                "url": "https://www.branda.ist",
                 "sameAs": [
                     "https://www.facebook.com/amirbrandacadirtente/",
                     "https://www.instagram.com/branda.ist/",
@@ -606,8 +631,7 @@ import "../styles/global.css";
         </div>
         <!-- /.content-wrapper -->
 
-        <!-- Swiper JS -->
-        <script is:inline defer src="/style/js/swiper-bundle.min.js"></script>
+        <!-- Removed Swiper JS Request -->
 
         <slot name="extra-scripts" />
     </body>

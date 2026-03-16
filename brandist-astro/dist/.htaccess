@@ -3,13 +3,48 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Enforce www domain
+  RewriteCond %{HTTP_HOST} ^branda\.ist [NC]
+  RewriteRule ^(.*)$ https://www.branda.ist/$1 [L,R=301]
+
   # SEO Redirects /branda/X -> /X
   RewriteRule ^(branda|tente|cadir)/(.+)$ /$2 [R=301,L]
   Redirect 301 /cami-kapisi /cami-kapisi-brandasi
 
+  # WordPress ve Eski Tesisat Kalıntıları
+  Redirect 301 /elementor-2359 /
+  Redirect 301 /wp-content/plugins/litespeed-cache/guest.vary.php /
+
+  # Eski Linki Değişen Sayfalar (Adres Değişikliği)
+  Redirect 301 /fabrika-bolmeleri-kapilari /bolme-ve-kapi-brandasi
+  Redirect 301 /endustriyel-cadirlar /endustriyel-cadir
+  Redirect 301 /pergola-motorlu-tente /pergola-tente
+  Redirect 301 /hali-saha-cadiri /halisaha-spor-cadiri
+  Redirect 301 /ceset-torbasi-brandasi /urunler
+  Redirect 301 /ceset-torbasi /urunler
+
+  # Klasöre Taşınan Blog Yazıları
+  Redirect 301 /kis-bahcesi-icin-seffaf-branda-secimi /blog/kis-bahcesi-icin-seffaf-branda-secimi
+  Redirect 301 /depo-cadiri-alirken-dikkat-edilmesi-gerekenler /blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler
+  Redirect 301 /kis-bahcesi-ruhsat-gerektirir-mi /blog/kis-bahcesi-ruhsat-gerektirir-mi
+  Redirect 301 /mafsalli-ile-kasetli-tente-farklari /blog/mafsalli-ile-kasetli-tente-farklari
+  Redirect 301 /motorlu-tente-arizalari-ve-cozumleri /blog/motorlu-tente-arizalari-ve-cozumleri
+  Redirect 301 /akrilik-mi-polyester-mi-secmeli /blog/akrilik-mi-polyester-mi-secmeli
+  Redirect 301 /depo-cadiri-nedir /blog/depo-cadiri-nedir
+
   # /index.html -> / (Astro build'de yapılamıyor, Apache seviyesinde yönetilir)
   RewriteCond %{THE_REQUEST} /index\.html [NC]
   RewriteRule ^index\.html$ / [R=301,L]
+
+  # Genel .html -> SEO Uyumlu (Extensionless) Yönlendirme
+  RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+  RewriteCond %{REQUEST_URI} !^/404\.html$
+  RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+  # Eski Astro veya diğer sitemap adreslerini asıl detaylı sitemap.xml'e 301 yönlendir
+  RewriteRule ^sitemap-index\.xml$ /sitemap.xml [R=301,L]
+  RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
+  RewriteRule ^sitemap-0\.xml$ /sitemap.xml [R=301,L]
 
   # Serve exact file/dir or 404
   RewriteCond %{REQUEST_FILENAME} !-f
