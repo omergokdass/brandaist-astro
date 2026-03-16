@@ -86,4 +86,4 @@ User-agent: TurnitinBot
 User-agent: YouBot
 User-agent: ZumBot
 
-Sitemap: https://www.branda.ist/sitemap.xml
+Sitemap: https://www.branda.ist/sitemap-index.xml

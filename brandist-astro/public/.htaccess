@@ -41,10 +41,6 @@ ErrorDocument 404 /404.html
   RewriteCond %{REQUEST_URI} !^/404\.html$
   RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
-  # Eski Astro veya diğer sitemap adreslerini asıl detaylı sitemap.xml'e 301 yönlendir
-  RewriteRule ^sitemap-index\.xml$ /sitemap.xml [R=301,L]
-  RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
-  RewriteRule ^sitemap-0\.xml$ /sitemap.xml [R=301,L]
 
   # Serve exact file/dir or 404
   RewriteCond %{REQUEST_FILENAME} !-f
