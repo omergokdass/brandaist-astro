@@ -1,0 +1,84 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import ilceler from "../data/ilceler.json";
+
+export async function getStaticPaths() {
+    // Sadece "published: true" olan ilçeler için sayfa üretir. (Kademeli Yayın / Phased Rollout stratejisi)
+    const yayindakiIlceler = ilceler.filter((ilce) => ilce.published);
+
+    return yayindakiIlceler.map((ilce) => ({
+        params: { ilce: ilce.slug },
+        props: { ilce },
+    }));
+}
+
+const { ilce } = Astro.props;
+
+const title = `${ilce.isim} Tente ve Branda İmalatı | Amir Branda`;
+const description = `${ilce.isim} ilçesi için ücretsiz keşif avantajıyla profesyonel tente, şeffaf branda ve kış bahçesi sistemleri imalatı ve montajı.`;
+const ogTitle = `${ilce.isim} Tenteci | Amir Branda`;
+
+// Dinamik Fiyat ve FAQ Optimizasyonu
+const schemaPriceLow = "1500";
+const schemaPriceHigh = "120000";
+const faqData = [
+    {
+        question: `${ilce.isim} ilçesinde hizmet veriyor musunuz?`,
+        answer: `Evet, Amir Branda olarak ${ilce.isim} bölgesi genelindeki tüm kafe, restoran, müstakil ev ve fabrikalara tamamen ücretsiz keşif ile tente ve branda ölçüsü almaya geliyoruz. Müşterilerimizden keşif veya proje fizibilitesi için herhangi bir ücret talep edilmez.`
+    },
+    {
+        question: `${ilce.isim} bölgesinde montaj süresi ne kadar sürüyor?`,
+        answer: `Atölyemizde imalatı tamamlanan standart branda veya mafsallı tente sistemlerinin ${ilce.isim} ilçesindeki montajı genellikle uzman ekibimiz tarafından 1 iş günü içerisinde bitirilmektedir. Motorlu pergola sistemlerinde bu süreç ortalama 2-3 günü bulabilmektedir.`
+    },
+    {
+        question: `Tente kumaşlarınız kış şartlarına dayanıklı mı?`,
+        answer: `Kesinlikle. Kurduğumuz sistemlerde %100 su geçirmez, kar birikmesine karşı dirençli Avrupa standartlarında akrilik ve polyester branda kumaşları tercih ediyoruz. Çelik ve alüminyum konstrüksiyon yapılarımız şiddetli fırtınalara dahi dayanacak biçimde monte edilmektedir.`
+    }
+];
+---
+
+<PageLayout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    headerTitle={`${ilce.isim} Hizmet Bölgemiz`}
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="tente"
+    schemaPriceLow={schemaPriceLow}
+    schemaPriceHigh={schemaPriceHigh}
+    faqData={faqData}
+>
+    <article class="post">
+        <h2 class="post-title text-center" id="page">
+            {ilce.isim} Tente ve Branda Sistemleri
+        </h2>
+        <figure class="mb-8">
+            <img class="w-100 img-fluid rounded mb-3 shadow-sm" style="max-height: 480px; object-fit: cover;" src="/style/brand/img/istanbul-tenteci.webp" alt={`${ilce.isim} Tenteci ve Branda İmalatı`} fetchpriority="high" loading="eager" />
+        </figure>
+        
+        <div class="post-content">
+            <p>
+                Dış mekanlarınızı dört mevsim güvenle ve konforla kullanmanızı sağlayan profesyonel gölgelendirme çözümlerimizle <strong>{ilce.isim}</strong> ilçesinde <strong>Amir Branda</strong> kalitesiyle hizmetinizdeyiz. İster evinizin balkonunu kapatmak, ister kafenize şık bir kış bahçesi kurmak isteyin; uzun ömürlü ve estetik malzemelerimizle ihtiyaçlarınıza tam uyumlu <a href="/branda-tente-imalati" class="text-primary font-medium hover:underline">tente ve branda imalatı</a> projeleri geliştiriyoruz.
+            </p>
+
+            <h3 class="mt-8 mb-4 text-xl font-bold">{ilce.isim} Şeffaf Branda ve Kış Bahçesi</h3>
+            <p>
+                Açık alanları soğuk ve yağışlı hava şartlarından korumanın en ekonomik yolu olan <strong><a href="/seffaf-branda" class="text-primary font-medium hover:underline">şeffaf branda</a></strong> sistemlerimiz, şeffaf mika yapısıyla dışarıyı rahatça görmenizi sağlarken içerideki ısıyı muhafaza eder. Restoran veya özel balkonlarınız için tasarlanabilen fermuarlı ya da motorlu <strong><a href="/kis-bahcesi" class="text-primary font-medium hover:underline">kış bahçesi</a></strong> modellerimizle <a href="/istanbul-tenteci" class="text-primary font-medium hover:underline" title="İstanbul Tenteci">İstanbul genelindeki</a> en dayanıklı altyapıyı kurarak mekanınızı anında kullanıma açıyoruz.
+            </p>
+
+            <h3 class="mt-8 mb-4 text-xl font-bold">Motorlu Pergola ve Lojistik Depo Çadırları</h3>
+            <p>
+                Özellikle lüks mekanların tercihi olan, led aydınlatmalı ve uzaktan kumandalı <strong><a href="/pergola-tente" class="text-primary font-medium hover:underline">pergola tente</a></strong> uygulamalarımız, {ilce.isim} altındaki elit işletmelerin mekan değerini artırmaktadır. Ayrıca bölgedeki sanayi ve işletmeler için anında depolama alanı yaratan izolasyonlu <strong><a href="/depo-cadiri" class="text-primary font-medium hover:underline">depo çadırı</a></strong> hangar çözümleriyle uzun yıllar dayanan devasa yapılar inşa ediyoruz.
+            </p>
+
+            <div class="text-center mt-10 mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-primary">{ilce.isim} İçin Ücretsiz Keşif Fırsatı!</h4>
+                    <p class="mb-6">Hemen arayın, alanınızın ölçüsünü ücretsiz çıkarıp size en uygun fiyat teklifini sunalım.</p>
+                    <a href="tel:+905386044851" class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-full hover:bg-[#1e40af] transition-colors shadow-lg mt-4"><i class="fa fa-phone mr-2"></i> 0538 604 4851</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</PageLayout>

@@ -11,6 +11,26 @@ import PageLayout from "../layouts/PageLayout.astro";
     headerTitleTag="h2"
     headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
     sidebarCategory="cadir"
+    schemaPriceLow="10000"
+    schemaPriceHigh="250000"
+    faqData={[
+        {
+            question: "Depo çadırı ruhsat gerektirir mi?",
+            answer: "Endüstriyel depo çadırları betonarme, kalıcı yapılar olmadığından (portatif sınıfında geçtiğinden) mevcut imar kanunlarına göre genellikle yapı ruhsatı gerektirmez. Bu, fabrikalar ve lojistik firmaları için aylar süren bürokratik izinleri atlayarak anında depolama alanı oluşturma imkanı sunar."
+        },
+        {
+            question: "Depo çadırı fiyatları neye göre belirlenir?",
+            answer: "Hangar ve depo çadırı fiyatları; yapının M2 (metrekaresine), kullanılacak çelik taşıyıcı makasların kalınlığına (kutu profil veya boru profil) ve dış kaplama brandasının kalitesine (yanmaz PVC, 1100 Denye vb.) göre belirlenir. Düz veya izolasyonlu (poliüretan/cam yünü) olması da m2 birim fiyatını etkiler."
+        },
+        {
+            question: "Depo çadırı rüzgara ve kara ne kadar dayanıklıdır?",
+            answer: "Uluslararası standartlarda inşa ettiğimiz çelik konstrüksiyon yapı ağımız sayesinde depo çadırlarımız şiddetli fırtınalara (saatte 120 km hıza kadar rüzgar) ve ağır kar yüküne karşı tam dayanıklıdır. Çadırın formu (prizmatik veya ovalik) rüzgar direncini kırmak için özel donatılır."
+        },
+        {
+            question: "Depo çadırının içine tır veya forklift girebilir mi?",
+            answer: "Evet. Geniş açıklıklı üretim yapabildiğimiz için depo çadırlarımızın orta kısmında hiçbir kolon (taşıyıcı direk) bulunmaz. Böylece hangar içerisine tır, forklift veya iş makineleri çok rahat manevra yaparak girebilir ve maksimum stok alanı kullanılabilir."
+        }
+    ]}
 >
     <article class="post">
         <h1 class="post-title text-center" id="page">Depo Çadırı</h1>
@@ -20,7 +40,7 @@ import PageLayout from "../layouts/PageLayout.astro";
                 style="max-height: 480px; object-fit: cover;"
                 src="/style/brand/img/depo-cadiri-kapak.webp"
                 alt="Kocaeli Dayanıklı Endüstriyel Depo Çadırı"
-                loading="lazy"
+                fetchpriority="high" loading="eager"
             />
         </figure>
 

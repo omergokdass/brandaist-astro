@@ -1,6 +1,9 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import { ClientRouter } from "astro:transitions";
+import ilceler from "../data/ilceler.json";
+
+const activeDistricts = ilceler.filter((ilce) => ilce.published);
 
 export interface Props {
     title?: string;
@@ -10,6 +13,9 @@ export interface Props {
     ogType?: string;
     customCanonical?: string;
     preloadImage?: string;
+    schemaPriceLow?: string;
+    schemaPriceHigh?: string;
+    faqData?: { question: string; answer: string }[];
 }
 
 const {
@@ -20,15 +26,19 @@ const {
     ogType = "website",
     customCanonical,
     preloadImage,
+    schemaPriceLow = "100",
+    schemaPriceHigh = "50000",
+    faqData,
 } = Astro.props;
 
 const pageTitle = title.includes("Amir Branda")
     ? title
     : `${title} | Amir Branda`;
-const currentPath =
-    Astro.url.pathname.endsWith("/") && Astro.url.pathname !== "/"
-        ? Astro.url.pathname.slice(0, -1)
-        : Astro.url.pathname;
+
+// Canonical ve Sitemap uyumunu sağlamak için URL sonundaki / (slash) her zaman temizlenir.
+let currentPath = Astro.url.pathname.replace(/\/$/, "");
+if (currentPath === "") currentPath = "/"; // Ana sayfa "/" olmaya devam eder
+
 
 const canonicalURL =
     customCanonical ||
@@ -147,10 +157,26 @@ const serviceSchema = isServicePage
           offers: {
               "@type": "AggregateOffer",
               priceCurrency: "TRY",
-              lowPrice: "100",
-              highPrice: "50000",
+              lowPrice: schemaPriceLow,
+              highPrice: schemaPriceHigh,
               offerCount: "1",
           },
+      })
+    : null;
+
+// FAQ Schema Generator
+const faqSchema = faqData && faqData.length > 0
+    ? JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqData.map(faq => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer
+              }
+          }))
       })
     : null;
 import "../styles/global.css";
@@ -218,6 +244,15 @@ import "../styles/global.css";
                     is:inline
                     type="application/ld+json"
                     set:html={serviceSchema}
+                />
+            )
+        }
+        {
+            faqSchema && (
+                <script
+                    is:inline
+                    type="application/ld+json"
+                    set:html={faqSchema}
                 />
             )
         }
@@ -456,7 +491,7 @@ import "../styles/global.css";
             >
                 <div class="container mx-auto px-4 lg:px-8">
                     <div
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-center lg:text-left"
+                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 text-center lg:text-left"
                     >
                         <!-- Konum -->
                         <div>
@@ -475,6 +510,37 @@ import "../styles/global.css";
                                     No:27, Fatih / İstanbul
                                 </a>
                             </address>
+                        </div>
+
+                        <!-- Hizmet Bölgelerimiz -->
+                        <div>
+                            <h3
+                                class="text-lg font-bold text-white mb-4 uppercase tracking-wider relative inline-block pb-2 border-b-2 border-primary"
+                            >
+                                Hizmet Bölgeleri
+                            </h3>
+                            <ul class="space-y-2">
+                                {
+                                    activeDistricts.map((ilce) => (
+                                        <li>
+                                            <a
+                                                href={`/${ilce.slug}-tenteci`}
+                                                class="hover:text-primary transition-colors block text-gray-300"
+                                            >
+                                                {ilce.isim} Tenteci
+                                            </a>
+                                        </li>
+                                    ))
+                                }
+                                <li>
+                                    <a
+                                        href="/hizmet-bolgelerimiz"
+                                        class="hover:text-primary transition-colors block font-bold text-white mt-3 border-t border-gray-700 pt-2 inline-block"
+                                    >
+                                        Tüm İlçeler &rarr;
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Kurumsal -->

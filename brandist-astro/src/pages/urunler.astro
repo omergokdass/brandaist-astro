@@ -269,7 +269,7 @@ const categories = [
                                         src={`/style/brand/img/${item.img}`}
                                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                                         alt={item.name}
-                                        loading="lazy"
+                                        fetchpriority="high" loading="eager"
                                     />
                                     <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300" />
                                 </div>

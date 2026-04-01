@@ -99,7 +99,7 @@ const blogPosts = [
                                         src={post.img}
                                         class="w-full h-56 sm:h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         alt={post.title}
-                                        loading="lazy"
+                                        fetchpriority="high" loading="eager"
                                     />
                                 </a>
                             </div>

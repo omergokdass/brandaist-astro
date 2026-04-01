@@ -1,0 +1,68 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import ilceler from "../data/ilceler.json";
+---
+
+<PageLayout
+    title="İstanbul Hizmet Bölgelerimiz | Amir Branda"
+    description="Amir Branda olarak İstanbul'un 39 ilçesinde şeffaf branda, depo çadırı ve tente imalatı yaparken, tüm Türkiye'ye kargo ve özel montaj ekiplerimizle hizmet veriyoruz."
+    ogTitle="Hizmet Bölgelerimiz | Amir Branda Türkiye"
+    headerTitle="Hizmet Ağımız"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="tente"
+>
+    <article class="post">
+        <h2 class="post-title text-center" id="page">
+            İstanbul İçi Keşif ve Tüm Türkiye'ye Gönderim
+        </h2>
+        <div class="post-content mt-10">
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                <strong>Amir Branda</strong> üretim tesisimiz İstanbul merkezli çalışmaktadır. Ancak yarım asra yaklaşan deneyimimizle, tasarladığımız kış bahçesi, pergola tente ve devasa depo çadırlarını sadece İstanbul gümrüğünde değil, kargo ağımız ve mobil montaj ekiplerimizle <strong>Türkiye'nin 81 iline ve tüm Avrupa'ya</strong> ihraç etmekteyiz. Büyük endüstriyel firmaların projelendirilmesini şehir / ülke sınırı tanımadan titizlikle sürdürüyoruz.
+            </p>
+
+            <h3 class="mb-6 mt-12 text-2xl font-bold border-b-2 border-primary pb-2 inline-block">İstanbul İçi Kesintisiz Hizmet Ağımız</h3>
+            <p class="mb-6 text-gray-600">İstanbul avrupa ve anadolu yakasındaki tüm (39) ilçeye, deneyimli keşif ekibimiz ve servis araçlarımızla ücretsiz adres ziyareti yapıyor, birebir ölçü alıp fiyatlandırıyoruz. Ekibimiz tüm mahallelere hakimdir.</p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-6">
+                {ilceler.map((ilce) => (
+                    <a href={ilce.published ? `/${ilce.slug}-tenteci` : `/iletisim?bolge=${ilce.slug}`} class="bg-white border border-gray-200 rounded-lg p-4 text-center hover:bg-primary hover:text-white transition-all group shadow-sm hover:shadow-md cursor-pointer">
+                        <i class="fa-solid fa-map-location-dot text-primary text-2xl mb-2 group-hover:text-white transition-colors"></i>
+                        <h4 class="font-semibold text-gray-800 group-hover:text-white">{ilce.isim} Kesif</h4>
+                    </a>
+                ))}
+            </div>
+
+            <!-- Türkiye Geneli Hizmet Alanı -->
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 opacity-5">
+                    <i class="fa-solid fa-globe text-[15rem]"></i>
+                </div>
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Şehir Dışı ve Yurt Dışı Kargolama Sistemi</h3>
+                        <p class="text-gray-600 mb-4">
+                            Fabrikaların depo çadırı taleplerini veya mekan sahiplerinin kış bahçesi, şeffaf branda projelerini milimetrik teknik çizimler üzerinden değerlendiriyoruz. Demonte halde hazırladığımız ürünlerimizi sağlam ambalajlar eşliğinde nakliye acentelerine (ambarlara) veya kargoya güvenle veriyoruz.
+                        </p>
+                        <ul class="space-y-3 mt-6">
+                            <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-green-500 mr-3"></i> Tır ve Kamyon Brandaları için Özel Nakliyat</li>
+                            <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-green-500 mr-3"></i> Büyük Depo Çadırlarında "Ücretsiz Kurulum Ekibi" Sevkiyatı</li>
+                            <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-green-500 mr-3"></i> Tente Kumaşlarına İstenilen Ölçü Kesim Modeli (Demonte)</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-block p-6 bg-white rounded-full shadow-md mb-6 relative">
+                            <i class="fa-solid fa-truck-fast text-5xl text-primary relative z-10" style="left: -4px;"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">Projeniz Hangi Şehirde?</h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-6">Mimari projelerinizi tarafımıza iletin, profesyonel fizibilite yapalım.</p>
+                        <a href="/iletisim" class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-full hover:bg-[#1e40af] transition-colors shadow-lg mt-4">
+                            Hemen Uzmandan Bilgi Al
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</PageLayout>

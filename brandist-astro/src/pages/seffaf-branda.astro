@@ -11,10 +11,30 @@ import PageLayout from '../layouts/PageLayout.astro';
     headerTitleTag="h2"
     headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
     sidebarCategory="branda"
+    schemaPriceLow="500"
+    schemaPriceHigh="15000"
+    faqData={[
+        {
+            question: "Şeffaf branda m2 fiyatı ne kadar ve nasıl hesaplanır?",
+            answer: "Şeffaf brandalar m2 (metrekare) bazında hesaplanır. Fiyatlar 2026 yılı güncel kurlarına göre kullanılacak mika şeffaf brandanın kalınlığına (0.80 mm, 1 mm, 2 mm) veya sistemin fermuarlı/kasetli olmasına göre değişiklik gösterir. Ortalama şeffaf mika kış bahçesi metrekare fiyatlarımız 500 TL ile 1500 TL arasından başlamaktadır. Kesin tutar ücretsiz keşfimiz sonrası netleşir."
+        },
+        {
+            question: "Kış bahçesi için cam balkon mu yoksa şeffaf branda mı daha uygun?",
+            answer: "Cam balkon sistemleri yapısal izin (ruhsat) gerektirebilir ve m2 maliyetleri şeffaf brandaya göre 3-4 kat daha pahalıdır. Ayrıca şeffaf mika fermuarlı brandalar katlandığında alanı %100 açık bırakırken cam balkon cam ağırlığı ve profilleri sebebiyle daraltıcı olabilir. Ekonomik ve pratik kış bahçesi kurulumu için şeffaf branda açık ara öndedir."
+        },
+        {
+            question: "Şeffaf branda soğu ve yağmuru gerçekten keser mi?",
+            answer: "Evet, ithal PVC (Poliüretan kaplı mika) kumaşlarımız %100 su geçirmez garantilidir. İklim geçişlerinde oluşan rüzgar, yağmur suları ve karı alanınızın içine kesinlikle sızdırmaz. İçeride hafif bir ısıtıcı kullanılarak tam izolasyonlu bir kış bahçesi konforu yakalayabilirsiniz."
+        },
+        {
+            question: "Kafe veya restoran içi şeffaf mika branda ruhsat gerektirir mi?",
+            answer: "Sabit ve betonarme bir yapı inşa edilmediği, seyyar (kaldırılabilir, cırtlı/fermuarlı) bir sistem olduğu için şeffaf branda kapamaları genellikle belediye mevzuatlarında imar iznine veya ruhsata tabi değildir. Bu sebeple işletmeler tarafından en güvenli kapama çözümü olarak tercih edilir."
+        }
+    ]}
 >
 <article class="post">
                         <h1 class="post-title text-center" id="page">Şeffaf Branda</h1>
-                        <figure class="mb-25"><img class="w-100 img-fluid rounded mb-3 shadow-sm" style="max-height: 480px; object-fit: cover;" src="/style/brand/img/seffaf-branda.webp" alt="Kocaeli Kafe Şeffaf Branda İmalatı" loading="lazy" /></figure>
+                        <figure class="mb-25"><img class="w-100 img-fluid rounded mb-3 shadow-sm" style="max-height: 480px; object-fit: cover;" src="/style/brand/img/seffaf-branda.webp" alt="Kocaeli Kafe Şeffaf Branda İmalatı" fetchpriority="high" loading="eager" /></figure>
                         <div class="post-content">
                             
 
@@ -39,6 +59,34 @@ import PageLayout from '../layouts/PageLayout.astro';
     <li><i class="fa fa-check"></i> UV ışınlarına karşı dayanıklı yapısıyla güneş altında kolayca kavrulmaz, erken <strong>sararma ve çatlama yapmaz</strong>.</li>
     <li><i class="fa fa-check"></i> Yüksek ısı yalıtımı sağlayarak içerideki sıcak havayı dışarı kaçırmaz, dışarıdaki soğuğu içeriye geçirmez.</li>
 </ul>
+
+<h3 class="mb-15 mt-30 text-xl font-bold">0.80 mm vs 1.00 mm Şeffaf Mika Kalınlık Karşılaştırması</h3>
+<div class="table-responsive mb-20 text-sm">
+    <table class="table table-bordered table-striped w-full text-left">
+        <thead class="bg-gray-100">
+            <tr>
+                <th class="p-2 border">Kalınlık</th>
+                <th class="p-2 border">Kullanım Alanı</th>
+                <th class="p-2 border">Dayanıklılık</th>
+                <th class="p-2 border">Fiyat/Performans</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="p-2 border font-bold">0.80 mm Mika</td>
+                <td class="p-2 border">Ev Balkonları, Küçük Kafeler, Kamelyalar</td>
+                <td class="p-2 border">Esnek yapılı, sararmaya karşı orta/yüksek direnç.</td>
+                <td class="p-2 border text-green-600 font-bold">Çok Uygun</td>
+            </tr>
+            <tr>
+                <td class="p-2 border font-bold">1.00 mm - 2.00 mm Mika</td>
+                <td class="p-2 border">Büyük Restoranlar, Ters Rüzgar Alan Mekanlar</td>
+                <td class="p-2 border">Cam sertliğine yakın, darbeye ve şiddetli fırtınaya yüksek direnç.</td>
+                <td class="p-2 border text-orange-600 font-bold">Maliyetli ama Yatırımlık</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <h2 class="mb-15 mt-30">İstanbul Şeffaf Branda İmalatı ve m2 Fiyatları</h2>
 <p><strong>Şeffaf branda m2 fiyatları</strong>, kullanılacak mika kumaşın mm bazında kalınlığına, kaplanacak alanın toplam metrekaresine ve tercih edilecek açma/kapama mekanizmasına (fermuarlı sistem, cırtlı sistem, tokalı sistem veya motorlu yapılar) göre değişiklik göstermektedir. <strong>Amir Branda</strong> olarak, çeyrek asırlık deneyimimizle İstanbul içi adresinize gelerek <strong>ücretsiz keşif</strong> hizmeti sunuyor, alanınızın ölçüsünü milimetrik olarak tam alarak işletmenize ve bütçenize en uygun şeffaf balkon ve bahçe kapama fiyat teklifini sunuyoruz.</p>

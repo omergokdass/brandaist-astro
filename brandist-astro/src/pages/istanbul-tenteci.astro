@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
+import ilceler from "../data/ilceler.json";
 ---
 
 <PageLayout
@@ -11,6 +12,22 @@ import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
     headerTitleTag="h1"
     headerBgImage="/style/brand/img/pergola-tente1.webp"
     sidebarCategory="tente"
+    schemaPriceLow="4000"
+    schemaPriceHigh="250000"
+    faqData={[
+        {
+            question: "Amir Branda İstanbul'un hangi ilçelerine hizmet veriyor?",
+            answer: "İstanbul'un hem Avrupa Yakası (Beşiktaş, Şişli, Sarıyer, Bakırköy, Beylikdüzü) hem de Anadolu Yakası (Kadıköy, Ümraniye, Üsküdar, Pendik, Maltepe) dahil olmak üzere 39 ilçesine kendi uzman montaj ekibimizle profesyonel tente ve branda kurulumu sağlıyoruz."
+        },
+        {
+            question: "Ücretsiz keşif işlemi nasıl yapılıyor?",
+            answer: "Bize telefon veya WhatsApp üzerinden ulaştığınızda, mekanınızın (kafe, restoran, balkon veya fabrika) bulunduğu İstanbul ilçesine göre keşif ekibimizi yönlendiriyoruz. Ustalarımız milimetrik lazer ölçüm yapıyor, kumaş kartelalarını beğeninize sunuyor ve o an kesin fiyat teklifini çıkarıyor."
+        },
+        {
+            question: "İstanbul'da kış bahçesi veya pergola kurulum süresi ne kadardır?",
+            answer: "Sipariş (kapora) verildikten sonra, kendi atölyemizde imal edilen sistemler modeline göre 3 ile 10 iş günü içerisinde tamamlanır. Kurulum (montaj) ise profesyonel ekibimiz tarafından genellikle sadece 1 günde bitirilerek mekanınız anında kullanıma açılır."
+        }
+    ]}
 >
     <article class="post">
         <h2 class="post-title text-center" id="page">
@@ -22,7 +39,7 @@ import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
                 style="max-height: 480px; object-fit: cover;"
                 src="/style/brand/img/mafsalli-tente.webp"
                 alt="İstanbul Tenteci ve Branda Üreticisi"
-                loading="lazy"
+                fetchpriority="high" loading="eager"
             />
         </figure>
         <div class="post-content">
@@ -31,7 +48,7 @@ import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
                 yılların verdiği tecrübe ile öne çıkan Amir Branda, hem Avrupa yakasında
                 hem de Anadolu yakasında ev, kafe, restoran ve iş yerleri için profesyonel
                 tente çözümleri sunmaktadır. İster işletmeniz için gösterişli bir
-                <a href="/kasetli-tente" class="text-primary font-bold"
+                <a href="/kasetli-tente" class="text-[#1d4ed8] font-bold hover:underline"
                     >kasetli tente</a
                 >, ister bahçeniz için dayanıklı bir <strong
                     >pergola tente sistemi</strong
@@ -49,7 +66,7 @@ import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
                 kaliteden ödün vermemiş olursunuz.
             </p>
 
-            <h3 class="mt-8 mb-4">
+            <h3 class="mt-8 mb-4 text-xl font-bold">
                 İstanbul İçi Sunduğumuz Başlıca Tente ve Branda Hizmetleri
             </h3>
             <ul class="list-disc pl-5 space-y-2 mb-6 text-gray-700">
@@ -73,7 +90,19 @@ import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
                 </li>
             </ul>
 
-            <p>
+            <h3 class="mt-12 mb-6 text-2xl font-bold border-b-2 border-gray-200 pb-2 inline-block">Marmara Bölgesi Keşif ve Hizmet Ağımız</h3>
+            <p class="mb-6 text-gray-700">Aşağıdaki tüm İstanbul ilçelerinde uzman tenteci kadromuzla pazar günleri dahil keşif hizmeti vermekteyiz. Bulunduğunuz ilçeyi seçerek bölgenize özel detaylara ulaşabilirsiniz:</p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10">
+                {ilceler.map((ilce) => (
+                    <a href={ilce.published ? `/${ilce.slug}-tenteci` : `/iletisim?bolge=${ilce.slug}`} class="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center hover:bg-[#1d4ed8] hover:text-white transition-all group shadow-sm hover:shadow-md cursor-pointer">
+                        <i class="fa-solid fa-map-location-dot text-[#1d4ed8] text-xl mb-2 group-hover:text-white transition-colors"></i>
+                        <h4 class="font-medium text-sm text-gray-800 group-hover:text-white">{ilce.isim} Kesif</h4>
+                    </a>
+                ))}
+            </div>
+
+            <p class="mt-8">
                 Siz de <strong>İstanbul'da tente yaptırmak istiyorsanız</strong> firmamızla
                 iletişime geçin. Mekanınıza gelip ölçüleri alalım, kumaş kartelalarımızı
                 gösterelim ve size en uygun, bütçe dostu <strong
@@ -82,10 +111,10 @@ import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
                 ile sorunsuz bir deneyim yaşayın.
             </p>
 
-            <div class="mt-10 border-t border-gray-200 pt-8">
+            <div class="mt-10 border-t border-gray-200 pt-8 text-center pb-8">
                 <a
                     href="/iletisim"
-                    class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg hover:shadow-xl"
+                    class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-4 px-10 rounded-full hover:bg-[#1e40af] transition-colors shadow-lg"
                 >
                     <i class="fa-solid fa-phone mr-2"></i> İstanbul İçi Ücretsiz Keşif
                     İçin Arayın
