@@ -1,0 +1,81 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const title = "Şişli Tenteci | Motorlu Kasetli Tente & Pergola Fiyatları | Amir Branda";
+const description = "Şişli, Nişantaşı ve Mecidiyeköy mağazaları, restoranları ve iş merkezleri için lüks otomatik motorlu tente, kasetli sistem ve lüks kış bahçesi imalatı.";
+const ogTitle = "Şişli Tenteci ve Motorlu Pergola Kurulumu";
+
+// Dinamik Fiyat ve FAQ Optimizasyonu (Tamamen özgün Rakam ve Soru)
+const schemaPriceLow = "4500";
+const schemaPriceHigh = "220000";
+const faqData = [
+    {
+        question: "Şişli / Nişantaşı mağazaları için cephe estetiğini bozmayacak tente modeliniz var mı?",
+        answer: "Kesinlikle. Lüks mağaza ve butikler için özel olarak tasarlanan 'Kasetli Tente' modelimizi öneriyoruz. Bu tente türü kapalıyken tüm mekanizmayı ve kumaşı şık bir alüminyum dış kutunun (kasetin) içine saklayarak dışarıdan neredeyse görünmez ve minimalist bir yapı sunar."
+    },
+    {
+        question: "Otomatik tentelerde çalışırken çok ses çıkıp müşterileri rahatsız eder mi?",
+        answer: "Hayır. Kurumsal firmalarda ve seçkin restoranlarda gürültüyü engellemek adına Somfy ve Becker gibi birinci sınıf sessiz Alman ve Fransız motor teknolojilerini kullanıyoruz. Sistem açılıp kapanırken kafe içindeki akustiği kesinlikle etkilemez."
+    },
+    {
+        question: "Büyük kurumsal plazalar / iş merkezleri için toplu gölgelendirme yapıyor musunuz?",
+        answer: "Evet, Mecidiyeköy ve Gayrettepe gibi plazaların sık yoğunlaştığı alanlarda büyük çaplı 'Dev Şemsiye' ve toplu otopark veya çatı katı/teras bioklimatik açık alan kapamaları (şeffaf mika dahil) için projelerimiz mevcuttur."
+    }
+];
+---
+
+<PageLayout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    headerTitle="Şişli ve Nişantaşı Lüks Tente Sistemleri"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/yeni-kasetli-tente.webp"
+    sidebarCategory="tente"
+    schemaPriceLow={schemaPriceLow}
+    schemaPriceHigh={schemaPriceHigh}
+    faqData={faqData}
+>
+    <article class="post">
+        <h2 class="post-title text-center text-3xl font-extrabold text-[#1d4ed8] mb-6" id="page">
+            Şişli Lüks Mağazalara Özel Akıllı Gölgelendirme ve Tente Mimarisi
+        </h2>
+        <figure class="mb-10 overflow-hidden relative shadow-2xl rounded-2xl">
+            <!-- Farklı bir lüks imaj -->
+            <img class="w-100 img-fluid transition-transform duration-700 hover:scale-110" style="max-height: 480px; object-fit: cover; width: 100%; border-radius: 16px;" src="/style/brand/img/bioklimatik-tente.webp" alt="Şişli Kasetli Tente ve Lüks Kafe Modelleri" fetchpriority="high" loading="eager" />
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-6 pt-20">
+                <p class="text-white font-semibold flex items-center"><i class="fa fa-star text-yellow-400 mr-2"></i> Şişli Bölgesine Özel Estetik Seri</p>
+            </div>
+        </figure>
+        
+        <div class="post-content text-gray-700 leading-loose space-y-7">
+            <p>
+                Gerek Nişantaşı'nın gösterişli caddeleri gerekse Mecidiyeköy'ün yoğun plaza ve şirket ortamı olsun, <strong>Şişli</strong> bölgesi yüksek kalite standartları ve kusursuz bir mimari uyum talep eden işletmelerin adresidir. <strong>Amir Branda</strong> olarak, standart tentelerin ötesine geçerek estetikle teknolojiyi buluşturan akıllı gölgelendirme panelleri üretiyoruz. Eski tip demirli çardaklar yerine mağazanızın veya şirket terasınızın marka değerine yakışır son nesil sistemleri uygun fiyat esnekliğiyle keşfe sunuyoruz.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-900 mt-10 border-b border-gray-200 pb-2">Görsel Kirliliği Yok Eden: Kasetli Mekanizma</h3>
+            <p>
+                Tente kullanılmadığı özellikle yağmurun veya güneşin olmadığı hava koşullarında göze çarpan kalın demir iskeletler elit mağaza vitrinlerini bozabilir. <strong><a href="/kasetli-tente" class="text-[#1d4ed8] font-bold hover:underline">Motorlu kasetli tente</a></strong> dediğimiz teknoloji ile kumaş ve mekanizma kendini toplayarak çok dar, şık bir kaset yapısının içine saklar. Kumanda ile açtığınızda kumaş tekrar öne doğru kusursuzca gerilir. Şişli, Fulya ve Teşvikiye'deki bir çok moda evinin birinci tercihidir.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-900 mt-10 border-b border-gray-200 pb-2">Dev Şemsiyeler ve Cam Balkon Şeffaf Uygulamaları</h3>
+            <p>
+                Oteller ve AVM giriş alanları için tek gövdeden metrelerce kare uzayabilen fırtınalı havalarda güvenli <strong><a href="/semsiye" class="text-[#1d4ed8] font-bold hover:underline">dev kafeterya ve teleskopik şemsiyeleri</a></strong> de sağlam ankraj ile zemine monte ediyoruz. Ayrıca geniş terasların rüzgar izolasyonu için fermuarlı, kalın PVC teknolojisine dayanan dayanıklı <strong>şeffaf kış bahçesi</strong> yapılarımız, açık alanlardaki verimliliği bir anda ikiye katlar. 
+            </p>
+
+            <div class="text-center mt-10 mb-8 bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div class="absolute top-4 left-4 opacity-10">
+                    <i class="fa-solid fa-building text-6xl text-[#1d4ed8]"></i>
+                </div>
+                <div class="relative z-10">
+                    <h4 class="font-bold text-2xl mb-4 text-[#1d4ed8]">Şişli Bölgesine Özel Kurumsal Fizibilite Hizmeti</h4>
+                    <p class="text-gray-600 mb-6 max-w-xl mx-auto">Uzmanlarımız tarafından mağaza veya restoran vitrininize özel mimari çizime uygun kumaş numune kartelası sunumu için hemen randevu oluşturun.</p>
+                    <a href="/iletisim" class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-full hover:bg-black transition-colors shadow-lg">
+                        E-Mail / İletişim Formu İle Ulaşın
+                    </a>
+                    <p class="text-sm text-gray-500 mt-4 font-bold">Veya Acil Ulaşın: <a href="tel:+905386044851" class="text-gray-900 hover:text-[#1d4ed8]">0538 604 4851</a></p>
+                </div>
+            </div>
+        </div>
+    </article>
+</PageLayout>

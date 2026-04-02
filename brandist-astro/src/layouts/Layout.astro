@@ -1,9 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import { ClientRouter } from "astro:transitions";
-import ilceler from "../data/ilceler.json";
-
-const activeDistricts = ilceler.filter((ilce) => ilce.published);
 
 export interface Props {
     title?: string;
@@ -520,18 +517,31 @@ import "../styles/global.css";
                                 Hizmet Bölgeleri
                             </h3>
                             <ul class="space-y-2">
-                                {
-                                    activeDistricts.map((ilce) => (
-                                        <li>
-                                            <a
-                                                href={`/${ilce.slug}-tenteci`}
-                                                class="hover:text-primary transition-colors block text-gray-300"
-                                            >
-                                                {ilce.isim} Tenteci
-                                            </a>
-                                        </li>
-                                    ))
-                                }
+                                <li>
+                                    <a href="/kadikoy-tenteci" class="hover:text-primary transition-colors block text-gray-300">
+                                        Kadıköy Tenteci
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/besiktas-tenteci" class="hover:text-primary transition-colors block text-gray-300">
+                                        Beşiktaş Tenteci
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/sisli-tenteci" class="hover:text-primary transition-colors block text-gray-300">
+                                        Şişli Tenteci
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/fatih-tenteci" class="hover:text-primary transition-colors block text-gray-300">
+                                        Fatih Tenteci
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/bakirkoy-tenteci" class="hover:text-primary transition-colors block text-gray-300">
+                                        Bakırköy Tenteci
+                                    </a>
+                                </li>
                                 <li>
                                     <a
                                         href="/hizmet-bolgelerimiz"

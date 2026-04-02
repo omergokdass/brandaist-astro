@@ -1,0 +1,76 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const title = "Bakırköy Tenteci | Kış Bahçesi ve Pergola Yapımı | Amir Branda";
+const description = "Bakırköy, Florya ve Yeşilköy villa bahçeleri ile mekanlarına özel rüzgar dayanımlı motorlu pergola tente ve şeffaf katlanır kış bahçesi sistemleri.";
+const ogTitle = "Bakırköy Tenteci | Lüks Pergola ve Tente Üreticisi";
+
+// Dinamik Fiyat ve FAQ Optimizasyonu
+const schemaPriceLow = "2500";
+const schemaPriceHigh = "180000";
+const faqData = [
+    {
+        question: "Bakırköy villa bahçeleri için tavsiye ettiğiniz tente sistemi hangisi?",
+        answer: "Florya ve Yeşilköy bölgesindeki bahçeli villalar için en estetik dış mekan yaratma şekli, üstü otomatik alüminyum panellerden oluşan 'Bioklimatik Pergola'lardır. Yağmur yağdığında su sızdırmaz, yazın ise panelleri açılarak hava sirkülasyonu sağlayan bir klima görevi görür."
+    },
+    {
+        question: "Yaptığınız kış bahçesi modelleri yalıtım sağlıyor mu?",
+        answer: "Evet, kış bahçesi çerçevelerimize cam balkon sistemlerinin yanı sıra ağır mika özellikli fermuarlı şeffaf branda kapamalar yapıyoruz. İçeri bir ısıtıcı (soba veya infrared) kurduğunuzda kalın PVC katman kesinlikle soğuğu içeri almaz ve terasınız oda konforu verir."
+    },
+    {
+        question: "Bakırköy'deki mekanıma gelip ölçü almak ücretli mi?",
+        answer: "Kesinlikle ücretsizdir. Avrupa yakası keşif rotamızdaki uzmanlarımız, Bakırköy sınırları içindeki konut veya ticari tüm mekanlarınıza aynı gün veya randevulu şekilde gelerek ücretsiz dijital ölçüm ve maliyetlendirme (fizibilite) hizmeti sağlamaktadır."
+    }
+];
+---
+
+<PageLayout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    headerTitle="Bakırköy Bölgesi Kış Bahçesi ve Pergola"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/pergola-tente1.webp"
+    sidebarCategory="tente"
+    schemaPriceLow={schemaPriceLow}
+    schemaPriceHigh={schemaPriceHigh}
+    faqData={faqData}
+>
+    <article class="post">
+        <h2 class="post-title text-center text-3xl font-bold text-gray-800 mb-6" id="page">
+            Bakırköy & Florya Kalitesine Uygun Üst Düzey Dış Mekan Mimarisi
+        </h2>
+        <figure class="mb-10 px-4 md:px-0">
+            <div class="relative rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] bg-white border-4 border-white">
+                <img class="w-100 img-fluid transform hover:scale-105 transition-transform duration-1000" style="max-height: 480px; object-fit: cover; width: 100%;" src="/style/brand/img/bahce.webp" alt="Bakırköy Villa ve Kış Bahçesi Tente Yapımı" fetchpriority="high" loading="eager" />
+            </div>
+        </figure>
+        
+        <div class="post-content text-gray-700 leading-relaxed font-medium space-y-6">
+            <p>
+                Geniş sahil şeridi, marina çevresindeki elit restoranlar ve özellikle Yeşilyurt, Yeşilköy ile Florya taraflarındaki bahçeli lüks villalarıyla bilinen <strong>Bakırköy</strong>; mimarinin ve açık hava yaşam kültürünün en yoğun olduğu ilçelerdendir. Ancak denizden gelen sert rüzgarlar bu lüks mekanları kışın kullanılmaz duruma sokabilir. İşte tam bu noktada, yılların <strong><a href="/branda-tente-imalati" class="text-primary hover:underline">tente imalatçısı</a></strong> Amir Branda güvencesi devreye girer. Mekanınıza sınıf atlatırken doğa şartlarından da sizi kalkan gibi koruruz.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-900 mt-10">Teraslarda Giyotin Cam veya Şeffaf Branda Ferahlığı</h3>
+            <p>
+                Harika bir balkona veya bahçe verandasına sahipseniz onu soğuk aylarda atıl durumda bırakmayın. İskelet sistemli <strong><a href="/kis-bahcesi" class="text-primary hover:underline">lüks kış bahçesi</a></strong> imalatlarımızda talebinize göre ister motorlu giyotin camlar, isterseniz çok daha uygun fiyatlara tam bir yalıtım sağlayan, kalın <strong><a href="/seffaf-branda" class="text-primary hover:underline">fermuarlı şeffaf mika pencereler</a></strong> kullanıyoruz. Bahçenizi dört mevsimlik bir yaşam odasına dönüştürmek uzmanlığımızdır.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-900 mt-10">Marina ve Kafeler İçin Alüminyum Bioklimatik Yapılar</h3>
+            <p>
+                Rüzgara karşı geleneksel kumaş tenteler zayıf kaldığı için Bakırköy sahildeki çoğu geniş alana hitap eden tesise gövdesi ve üst tavan rayları korozyona dayanıklı alüminyum panellerden oluşan motorlu <strong><a href="/bioklimatik-tente" class="text-primary hover:underline">bioklimatik sistemler</a></strong> öneriyoruz. İçine entegre edilen led aydınlatmalar ortamı kusursuzca aydınlatırken, somfy teknolojisiyle panelleri saniyeler içinde kumandadan yönetebilirsiniz. 
+            </p>
+
+            <div class="mt-12 bg-white text-gray-800 p-8 rounded border-b-4 border-l-4 border-[#1d4ed8] shadow-md flex items-start gap-4">
+                <i class="fa-solid fa-house-chimney text-3xl text-[#1d4ed8] pt-1"></i>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Bakırköy'e Aynı Gün Uzman Cihaz Keşif!</h4>
+                    <p class="text-gray-600 mb-4 text-sm">Zamanınız değerli. Evinizin veya tesisinizin yapısına uygun en estetik çözümü, lazer metrelerle sıfır mühendislik hata payıyla hesaplıyoruz. Tamamen ücretsiz olan bu mimari fikir alışverişi için iletişimde kalın.</p>
+                    <a href="/iletisim" class="inline-flex py-2 px-6 border-2 border-[#1d4ed8] text-[#1d4ed8] font-bold rounded-full hover:bg-[#1d4ed8] hover:text-white transition-all text-sm">
+                        Keşif ve Fiyatlandırma Randevusu Al
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</PageLayout>

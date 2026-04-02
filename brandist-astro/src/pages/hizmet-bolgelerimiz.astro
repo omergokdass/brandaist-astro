@@ -1,6 +1,5 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import ilceler from "../data/ilceler.json";
 ---
 
 <PageLayout
@@ -18,51 +17,238 @@ import ilceler from "../data/ilceler.json";
         </h2>
         <div class="post-content mt-10">
             <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                <strong>Amir Branda</strong> üretim tesisimiz İstanbul merkezli çalışmaktadır. Ancak yarım asra yaklaşan deneyimimizle, tasarladığımız kış bahçesi, pergola tente ve devasa depo çadırlarını sadece İstanbul gümrüğünde değil, kargo ağımız ve mobil montaj ekiplerimizle <strong>Türkiye'nin 81 iline ve tüm Avrupa'ya</strong> ihraç etmekteyiz. Büyük endüstriyel firmaların projelendirilmesini şehir / ülke sınırı tanımadan titizlikle sürdürüyoruz.
+                <strong>Amir Branda</strong> üretim tesisimiz İstanbul merkezli çalışmaktadır.
+                Ancak yarım asra yaklaşan deneyimimizle, tasarladığımız kış bahçesi,
+                pergola tente ve devasa depo çadırlarını sadece İstanbul gümrüğünde
+                değil, kargo ağımız ve mobil montaj ekiplerimizle <strong
+                    >Türkiye'nin 81 iline ve tüm Avrupa'ya</strong
+                > ihraç etmekteyiz. Büyük endüstriyel firmaların projelendirilmesini
+                şehir / ülke sınırı tanımadan titizlikle sürdürüyoruz.
             </p>
 
-            <h3 class="mb-6 mt-12 text-2xl font-bold border-b-2 border-primary pb-2 inline-block">İstanbul İçi Kesintisiz Hizmet Ağımız</h3>
-            <p class="mb-6 text-gray-600">İstanbul avrupa ve anadolu yakasındaki tüm (39) ilçeye, deneyimli keşif ekibimiz ve servis araçlarımızla ücretsiz adres ziyareti yapıyor, birebir ölçü alıp fiyatlandırıyoruz. Ekibimiz tüm mahallelere hakimdir.</p>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-6">
-                {ilceler.map((ilce) => (
-                    <a href={ilce.published ? `/${ilce.slug}-tenteci` : `/iletisim?bolge=${ilce.slug}`} class="bg-white border border-gray-200 rounded-lg p-4 text-center hover:bg-primary hover:text-white transition-all group shadow-sm hover:shadow-md cursor-pointer">
-                        <i class="fa-solid fa-map-location-dot text-primary text-2xl mb-2 group-hover:text-white transition-colors"></i>
-                        <h4 class="font-semibold text-gray-800 group-hover:text-white">{ilce.isim} Kesif</h4>
-                    </a>
-                ))}
+            <h3
+                class="mb-6 mt-12 text-2xl font-bold border-b-2 border-primary pb-2 inline-block"
+            >
+                İstanbul İçi Kesintisiz Hizmet Ağımız
+            </h3>
+            <p class="mb-6 text-gray-600">
+                İstanbul avrupa ve anadolu yakasındaki tüm (39) ilçeye,
+                deneyimli keşif ekibimiz ve servis araçlarımızla ücretsiz adres
+                ziyareti yapıyor, birebir ölçü alıp fiyatlandırıyoruz. Ekibimiz
+                tüm mahallelere hakimdir.
+            </p>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"
+            >
+                <a
+                    href="/kadikoy-tenteci"
+                    class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                >
+                    <img
+                        src="/style/brand/img/pergola-tente1.webp"
+                        alt="Kadıköy Tenteci"
+                        class="w-full h-40 object-cover"
+                    />
+                    <div
+                        class="p-5 text-center bg-gray-50 group-hover:bg-[#1d4ed8] transition-colors"
+                    >
+                        <h4
+                            class="font-bold text-xl text-gray-800 group-hover:text-white mb-1"
+                        >
+                            Kadıköy
+                        </h4>
+                        <p
+                            class="text-sm text-gray-500 group-hover:text-gray-100"
+                        >
+                            Sahil, Marina ve Kafe Sistemleri
+                        </p>
+                    </div>
+                </a>
+                <a
+                    href="/besiktas-tenteci"
+                    class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                >
+                    <img
+                        src="/style/brand/img/istanbul-tenteci.webp"
+                        alt="Beşiktaş Tenteci"
+                        class="w-full h-40 object-cover"
+                    />
+                    <div
+                        class="p-5 text-center bg-gray-50 group-hover:bg-[#1d4ed8] transition-colors"
+                    >
+                        <h4
+                            class="font-bold text-xl text-gray-800 group-hover:text-white mb-1"
+                        >
+                            Beşiktaş
+                        </h4>
+                        <p
+                            class="text-sm text-gray-500 group-hover:text-gray-100"
+                        >
+                            Yaya Yoğunluğu & Çarşı Dükkanları
+                        </p>
+                    </div>
+                </a>
+                <a
+                    href="/sisli-tenteci"
+                    class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                >
+                    <img
+                        src="/style/brand/img/bioklimatik-tente.webp"
+                        alt="Şişli Tenteci"
+                        class="w-full h-40 object-cover"
+                    />
+                    <div
+                        class="p-5 text-center bg-gray-50 group-hover:bg-[#1d4ed8] transition-colors"
+                    >
+                        <h4
+                            class="font-bold text-xl text-gray-800 group-hover:text-white mb-1"
+                        >
+                            Şişli
+                        </h4>
+                        <p
+                            class="text-sm text-gray-500 group-hover:text-gray-100"
+                        >
+                            Lüks Mağazalar & Şirket Plazaları
+                        </p>
+                    </div>
+                </a>
+                <a
+                    href="/fatih-tenteci"
+                    class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                >
+                    <img
+                        src="/style/brand/img/mafsalli-tente.webp"
+                        alt="Fatih Tenteci"
+                        class="w-full h-40 object-cover"
+                    />
+                    <div
+                        class="p-5 text-center bg-gray-50 group-hover:bg-[#1d4ed8] transition-colors"
+                    >
+                        <h4
+                            class="font-bold text-xl text-gray-800 group-hover:text-white mb-1"
+                        >
+                            Fatih
+                        </h4>
+                        <p
+                            class="text-sm text-gray-500 group-hover:text-gray-100"
+                        >
+                            Tarihi Dokular & Ekonomik Sistemler
+                        </p>
+                    </div>
+                </a>
+                <a
+                    href="/bakirkoy-tenteci"
+                    class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1"
+                >
+                    <img
+                        src="/style/brand/img/bahce.webp"
+                        alt="Bakırköy Tenteci"
+                        class="w-full h-40 object-cover"
+                    />
+                    <div
+                        class="p-5 text-center bg-gray-50 group-hover:bg-[#1d4ed8] transition-colors"
+                    >
+                        <h4
+                            class="font-bold text-xl text-gray-800 group-hover:text-white mb-1"
+                        >
+                            Bakırköy
+                        </h4>
+                        <p
+                            class="text-sm text-gray-500 group-hover:text-gray-100"
+                        >
+                            Villalar & Bahçeli Teras Sistemleri
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div
+                class="bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-xl p-6 mt-8 shadow-sm flex items-start sm:items-center gap-5"
+            >
+                <div
+                    class="bg-[#1d4ed8] text-white p-3 rounded-full flex-shrink-0"
+                >
+                    <i class="fa fa-map-marker-alt text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg text-gray-800 mb-1">
+                        İstanbul'un Tüm İlçelerindeyiz (39 İlçe)
+                    </h4>
+                    <p class="text-sm text-gray-600 m-0 leading-relaxed">
+                        Yukarıdaki pilot ve ana operasyon bölgelerimiz
+                        haricinde, Avrupa ve Anadolu yakasındaki diğer <strong
+                            >34 ilçe</strong
+                        > için de aynı gün saha ölçümü ve ücretsiz fizibilite hizmetimiz
+                        kesintisiz mevcuttur.
+                    </p>
+                </div>
             </div>
 
             <!-- Türkiye Geneli Hizmet Alanı -->
-            <div class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+            <div
+                class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm relative overflow-hidden"
+            >
                 <div class="absolute -right-10 -top-10 opacity-5">
                     <i class="fa-solid fa-globe text-[15rem]"></i>
                 </div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                <div
+                    class="relative z-10 grid md:grid-cols-2 gap-8 items-center"
+                >
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Şehir Dışı ve Yurt Dışı Kargolama Sistemi</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                            Şehir Dışı ve Yurt Dışı Kargolama Sistemi
+                        </h3>
                         <p class="text-gray-600 mb-4">
-                            Fabrikaların depo çadırı taleplerini veya mekan sahiplerinin kış bahçesi, şeffaf branda projelerini milimetrik teknik çizimler üzerinden değerlendiriyoruz. Demonte halde hazırladığımız ürünlerimizi sağlam ambalajlar eşliğinde nakliye acentelerine (ambarlara) veya kargoya güvenle veriyoruz.
+                            Fabrikaların depo çadırı taleplerini veya mekan
+                            sahiplerinin kış bahçesi, şeffaf branda projelerini
+                            milimetrik teknik çizimler üzerinden
+                            değerlendiriyoruz. Demonte halde hazırladığımız
+                            ürünlerimizi sağlam ambalajlar eşliğinde nakliye
+                            acentelerine (ambarlara) veya kargoya güvenle
+                            veriyoruz.
                         </p>
                         <ul class="space-y-3 mt-6">
-                            <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-green-500 mr-3"></i> Tır ve Kamyon Brandaları için Özel Nakliyat</li>
-                            <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-green-500 mr-3"></i> Büyük Depo Çadırlarında "Ücretsiz Kurulum Ekibi" Sevkiyatı</li>
-                            <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-green-500 mr-3"></i> Tente Kumaşlarına İstenilen Ölçü Kesim Modeli (Demonte)</li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fa-solid fa-check text-green-500 mr-3"
+                                ></i> Tır ve Kamyon Brandaları için Özel Nakliyat
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fa-solid fa-check text-green-500 mr-3"
+                                ></i> Büyük Depo Çadırlarında "Ücretsiz Kurulum Ekibi"
+                                Sevkiyatı
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fa-solid fa-check text-green-500 mr-3"
+                                ></i> Tente Kumaşlarına İstenilen Ölçü Kesim Modeli
+                                (Demonte)
+                            </li>
                         </ul>
                     </div>
                     <div class="text-center">
-                        <div class="inline-block p-6 bg-white rounded-full shadow-md mb-6 relative">
-                            <i class="fa-solid fa-truck-fast text-5xl text-primary relative z-10" style="left: -4px;"></i>
+                        <div
+                            class="inline-block p-6 bg-white rounded-full shadow-md mb-6 relative"
+                        >
+                            <i
+                                class="fa-solid fa-truck-fast text-5xl text-primary relative z-10"
+                                style="left: -4px;"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-gray-800">Projeniz Hangi Şehirde?</h4>
-                        <p class="text-sm text-gray-500 mt-2 mb-6">Mimari projelerinizi tarafımıza iletin, profesyonel fizibilite yapalım.</p>
-                        <a href="/iletisim" class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-full hover:bg-[#1e40af] transition-colors shadow-lg mt-4">
+                        <h4 class="text-xl font-bold text-gray-800">
+                            Projeniz Hangi Şehirde?
+                        </h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-6">
+                            Mimari projelerinizi tarafımıza iletin, profesyonel
+                            fizibilite yapalım.
+                        </p>
+                        <a
+                            href="/iletisim"
+                            class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-full hover:bg-[#1e40af] transition-colors shadow-lg mt-4"
+                        >
                             Hemen Uzmandan Bilgi Al
                         </a>
                     </div>
                 </div>
             </div>
-
         </div>
     </article>
 </PageLayout>

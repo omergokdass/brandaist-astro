@@ -1,0 +1,77 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const title = "Beşiktaş Tenteci | Kafe ve Restoran Kış Bahçesi Sistemleri | Amir Branda";
+const description = "Beşiktaş Çarşı, Ortaköy ve Bebek kafeleri, dükkanları ve evleri için özel tasarım mafsallı tente, körüklü şemsiye ve şeffaf kış bahçesi fiyatları.";
+const ogTitle = "Beşiktaş Branda ve Tente Ustası | Uygun Fiyat";
+
+// Dinamik Fiyat ve FAQ Optimizasyonu (Tamamen özgün Rakam ve Soru)
+const schemaPriceLow = "1650";
+const schemaPriceHigh = "140000";
+const faqData = [
+    {
+        question: "Beşiktaş Çarşı içindeki dar sokak dükkanlarına hangi tenteler uyar?",
+        answer: "Beşiktaş gibi yaya trafiğinin ve dükkan yoğunluğunun çok yüksek olduğu yerlerde alanı daraltmayan pratik 'Mafsallı Tente' veya şık vitrin görünümü için 'Körüklü Tente' modelleri en mantıklı çözümdür. Dükkan girişinizi yağmurdan korurken kaldırım ihlali yapmazsınız."
+    },
+    {
+        question: "Sahil kenarı (Bebek / Ortaköy) kafeleri için kış sitemleriniz rüzgara dayanıklı mı?",
+        answer: "Boğaz şeridinin soğuk rüzgarlarını iyi biliyoruz. Açık teras veya bahçesi olan restoranlar için kalın somfy motorlu alüminyum bioklimatik pergolalar ve kenar kapamalarında kalın fermuarlı şeffaf mika pencereler kuruyoruz, rüzgarda kasma ve yırtılma yapmaz."
+    },
+    {
+        question: "Eski çadırımın veya tentemin sadece kumaş değişimi Beşiktaş rotasında yapılıyor mu?",
+        answer: "Evet! Demir aksamınız (iskelet) sağlam durumdaysa, sıfırdan sistem satın almanıza gerek bırakmadan sadece solmuş, yırtılmış Avrupa akrilik kumaş (Sattler, Recasens vb.) değişimi tamir ve bakım işlemlerini yerinde ustalarımızla yapıyoruz."
+    }
+];
+---
+
+<PageLayout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    headerTitle="Beşiktaş Tenteci İmalat ve Montaj"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/mafsalli-tente.webp"
+    sidebarCategory="tente"
+    schemaPriceLow={schemaPriceLow}
+    schemaPriceHigh={schemaPriceHigh}
+    faqData={faqData}
+>
+    <article class="post">
+        <h2 class="post-title text-center text-3xl font-bold text-gray-900 mb-6" id="page">
+            Beşiktaş'ın Lüks Mekanları ve Klasik Dükkanları İçin Branda Tente Çözümleri
+        </h2>
+        <figure class="mb-8 overflow-hidden rounded shadow-xl">
+            <!-- Farklı bir imaj -->
+            <img class="w-100 img-fluid hover:scale-105 transition-transform duration-500" style="max-height: 480px; object-fit: cover; width: 100%; border-radius: 12px;" src="/style/brand/img/istanbul-tenteci.webp" alt="Beşiktaş Dükkan Önü Körüklü ve Mafsallı Tente" fetchpriority="high" loading="eager" />
+        </figure>
+        
+        <div class="post-content text-gray-700 leading-relaxed space-y-6">
+            <p>
+                Tarihi dokusu, daracık şirin sokakları ve sahile uzanan lüks restoranlarıyla <strong>Beşiktaş</strong> bölgesi, mimari gölgelendirme sistemlerinin en çok ihtiyaç duyulduğu ilçelerin başında geliyor. <strong>Amir Branda</strong> olarak, mekanın ruhuna ve dış cephesine zarar vermeden, ister tarihi bir dükkan vitrinine isterseniz de Ortaköy'deki boğaz manzaralı bir kafenin terasına kusursuz <strong><a href="/branda-tente-imalati" class="text-primary font-bold hover:underline">tente sistemleri</a></strong> uyguluyoruz. En dar kaldırımlarda bile dükkan önü kullanım alanınızı 1 metrekare dahi olsa genişleterek ferah alanlar yaratıyoruz.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mt-8 border-l-4 border-[#1d4ed8] pl-3">Dükkanlar ve Marketler İçin Mafsallı Standart Tenteler</h3>
+            <p>
+                Bakkallar, manavlar veya pasaj içerisindeki çay ocakları için genellikle motorlu sistemler gereksiz ve bütçe yoran yatırımlar olabilir. Biz bu işletmeler için tamamen paslanmaz alüminyum koldan oluşan, elle manuel bir şekilde kolayca açılıp kapanabilen <strong><a href="/mafsalli-tente" class="text-primary font-bold hover:underline">ekonomik mafsallı tenteleri</a></strong> çok uygun fiyatlara 1 günde monte ediyoruz. Üstelik branda üstüne kendi logonuzu veya marka imajınızı da şık bir şekilde basabiliyoruz.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mt-8 border-l-4 border-yellow-500 pl-3">Lüks Kafeler İçin Otomatik (Motorlu) Pergola</h3>
+            <p>
+                Akaretler veya Bebek hattındaki A sınıfı kitleye hitap eden bir restoranınız varsa, açık hava alanınızı dört dörtlük bir salona dönüştüren tam otomatik <strong><a href="/pergola-tente" class="text-primary font-bold hover:underline">pergola kış bahçesi modelleri</a></strong> öneriyoruz. Tepesini yağmurlu günlerde kumandayla kolayca kapatabilir, <strong>şeffaf mika pencereli fermuar donanımı</strong> ile içeriyi rüzgardan korurken müşterilerinize nefes alacak bir ortam sunabilirsiniz. Tente kumandası üzerinden led ışıkları kısıp açarak harika bir gece atmosferi de yakalayabilirsiniz.
+            </p>
+
+            <div class="text-center mt-10 mb-8 bg-white p-8 rounded-2xl border-2 border-gray-100 shadow-[0_4px_25px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-125 group-hover:rotate-12 transition-all duration-700">
+                    <i class="fa-solid fa-store text-9xl text-gray-800"></i>
+                </div>
+                <div class="relative z-10">
+                    <h4 class="font-extrabold text-2xl mb-4 text-gray-900 border-b pb-2 inline-block">Beşiktaş ve Civarı Hızlı Montaj!</h4>
+                    <p class="text-gray-600 mb-8 max-w-lg mx-auto">İster sıfır kurulum, ister var olan bozuk tentenizin ve solmuş branda kumaşınızın tamiratı için uzman ustalarımızı aynı gün çağırın.</p>
+                    <a href="/iletisim" class="inline-flex items-center justify-center bg-gray-900 text-white font-bold py-4 px-10 rounded hover:bg-[#1d4ed8] transition-colors shadow-lg">
+                        <i class="fa-solid fa-clipboard-list mr-3"></i> Şimdi Fiyat Teklifi İsteyin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</PageLayout>

@@ -1,0 +1,72 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const title = "Fatih Tenteci | Tarihi Yarımada Tente ve Branda Sistemleri | Amir Branda";
+const description = "Fatih, Sultanahmet, Sirkeci kafeleri ve dükkanları için tarihi dokuya uygun estetik mafsallı tente, körüklü yarasa tente ve kış bahçesi çözümleri.";
+const ogTitle = "Fatih Tenteci | Klasik ve Ekonomik Tente İmalatı";
+
+// Dinamik Fiyat ve FAQ Optimizasyonu
+const schemaPriceLow = "1500";
+const schemaPriceHigh = "60000";
+const faqData = [
+    {
+        question: "Sultanahmet ve çevresindeki tarihi binaların dış cephesine zarar vermeden tente takılabiliyor mu?",
+        answer: "Fatih ve tarihi yarımada bölgesinde çalışırken anıtlar ve tarihi doku hassasiyetiyle hareket ediyoruz. Dış cephe taşıyıcı sistemlerine ve taş duvarlara minimum müdahale sağlayan, binadan bağımsız çift açılır veya mafsallı ayaklı sistemler uygulayabiliyoruz."
+    },
+    {
+        question: "Fatih'teki restoran ve lokantalar için en uygun tente modeli hangisidir?",
+        answer: "Geleneksel lokantalar için hem nostaljik bir esnaf görünümü veren hem de maliyeti çok düşük olan karpuz ve körüklü modeller harikadır. Eğer sokağa taşan masalarınız varsa 'Mafsallı Tente' veya şeffaf branda kapama tavsiye ediyoruz."
+    },
+    {
+        question: "Branda kumaşı yırtılırsa komple iskeleti mi değiştirmem gerekiyor?",
+        answer: "Hayır, Amir Branda olarak Fatih içi hizmetlerimizde sadece branda/kumaş yüzü yenileme onarımları da yapıyoruz. Solmuş veya yırtılmış eski çadır kumaşlarınızı %100 yerli veya ithal akrilik kumaşlarla sıfır bir şekilde değiştiriyoruz."
+    }
+];
+---
+
+<PageLayout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    headerTitle="Fatih Bölgesi Tente ve Gölgelendirme"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/mafsalli-tente.webp"
+    sidebarCategory="tente"
+    schemaPriceLow={schemaPriceLow}
+    schemaPriceHigh={schemaPriceHigh}
+    faqData={faqData}
+>
+    <article class="post">
+        <h2 class="post-title text-center text-3xl font-bold text-[#1d4ed8] mb-6" id="page">
+            Tarihi Fatih Sokaklarına Nostaljik ve Modern Tente Ustalığı
+        </h2>
+        <figure class="mb-10 p-2 bg-gray-50 border border-gray-200 rounded-lg">
+            <img class="w-100 img-fluid rounded" style="max-height: 480px; object-fit: cover; width: 100%;" src="/style/brand/img/koruklu-tente1.webp" alt="Fatih Esnafı İçin Körüklü ve Klasik Tente" fetchpriority="high" loading="eager" />
+        </figure>
+        
+        <div class="post-content text-gray-700 leading-relaxed space-y-6">
+            <p>
+                Asırlardır İstanbul ticaretinin kalbi olan <strong>Fatih</strong> ilçesi; Eminönü, Sirkeci, Sultanahmet ve Balat gibi semtleriyle bambaşka bir enerjiye ve yaya sirkülasyonuna sahiptir. Bu yoğun tarihi doku içerisinde hizmet veren kafe, lokanta, büfe veya hediyelik eşya dükkanlarının güneşe ve ani bastıran yağmurlara karşı pratik bir şekilde korunması son derece elzemdir. Avrupa yakası operasyonlarımızla Fatih esnafı için kaliteli ancak <strong>ekonomik</strong>, <strong><a href="/branda-tente-imalati" class="text-primary font-bold hover:underline">geleneksel tente ve çadır</a></strong> sistemleri kurguluyoruz.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Bütçe Dostu Gölgelikler: Mafsallı ve Karpuz Tenteler</h3>
+            <p>
+                Dükkan önlerindeki ürünleri veya giriş kapısı önünde bekleyen müşterileri yağmurdan korumanın en estetik ve yer kaplamayan yolu <strong><a href="/mafsalli-tente" class="text-primary font-bold hover:underline">mafsallı sistem</a></strong> gölgeliklerdir. Eğer daha dar pencereler veya nostaljik bir cephe hedefliyorsanız akordeon gibi katlanan şık <strong>karpuz tenteler</strong> imdadınıza yetişir. Firmamızın kumaş kartelasından mekanınızın kurumsal renklerine en uygun tenteyi seçebilir, gerekirse kumaş üzerine dükkan isminizi şablon baskı yaptırabilirsiniz.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Meydan ve Avlular İçin Dev Çift Açılır Sistemler</h3>
+            <p>
+                Geniş bahçelere veya avlulara sahip büyük restoranlar için binaya monte etmeden orta noktada durabilen demir ayaklı <strong><a href="/cift-acilir-tente" class="text-primary font-bold hover:underline">çift açılır (T ayaklı) tenteler</a></strong> veya devasa bahçe şemsiyeleri de üretiyoruz. Hem gündüz sıcağının yaktığı güneşin yönüne göre konumlanabilir hem de altında onlarca insanın huzurla kahvaltı edip yemek yiyebileceği korunaklı serin adacıklar yaratır. Kış aylarında kullanım için ise branda fermuarlı <strong><a href="/seffaf-branda" class="text-primary font-bold hover:underline">şeffaf izolasyon kapama</a></strong> da ekleyerek mekânın 12 ay çalışmasına olanak tanıyoruz.
+            </p>
+
+            <div class="mt-10 mb-8 border-4 border-dashed border-gray-300 p-8 rounded-2xl text-center bg-gray-50 hover:bg-yellow-50 transition-colors duration-500">
+                <i class="fa-solid fa-tape text-5xl text-yellow-500 mb-4 inline-block"></i>
+                <h4 class="font-bold text-xl mb-3 text-gray-800">Fatih İçin Ücretsiz Lazer Ölçüm Ekibi</h4>
+                <p class="text-gray-600 mb-6 text-sm">Milimetrik lazer hata payı hesaplayıcılarla geliyoruz, dükkanınızın ihtiyacını çıkartıp sıfır meblağ yüküyle ilk teklifi sunuyoruz. Atölyeden halka fiyatları kaçırmayın.</p>
+                <a href="tel:+905386044851" class="inline-flex items-center justify-center bg-emerald-600 text-white font-bold py-3 px-8 rounded-full hover:bg-emerald-800 transition-colors shadow-md">
+                    <i class="fa fa-phone mr-2"></i> Acil Usta İstiyorum (0538 604 4851)
+                </a>
+            </div>
+        </div>
+    </article>
+</PageLayout>

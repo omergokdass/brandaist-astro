@@ -1,7 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
-import ilceler from "../data/ilceler.json";
 ---
 
 <PageLayout
@@ -90,16 +89,50 @@ import ilceler from "../data/ilceler.json";
                 </li>
             </ul>
 
-            <h3 class="mt-12 mb-6 text-2xl font-bold border-b-2 border-gray-200 pb-2 inline-block">Marmara Bölgesi Keşif ve Hizmet Ağımız</h3>
-            <p class="mb-6 text-gray-700">Aşağıdaki tüm İstanbul ilçelerinde uzman tenteci kadromuzla pazar günleri dahil keşif hizmeti vermekteyiz. Bulunduğunuz ilçeyi seçerek bölgenize özel detaylara ulaşabilirsiniz:</p>
+            <h3 class="mt-12 mb-6 text-2xl font-bold border-b-2 border-gray-200 pb-2 inline-block">Marmara Bölgesi Asıl Keşif Ağımız</h3>
+            <p class="mb-6 text-gray-700">İstanbul genelinde 39 ilçenin tamamına usta ve ölçüm ekiplerimizi yönlendirmekteyiz. Ancak aşağıda listelediğimiz ana operasyon (pilot) bölgelerimiz olan ilçelerin kendine has mimari dokularına göre, yıllardır bölge esnafı ve villaları için özel yürüttüğümüz tente stratejilerimize ait detaylı portfolyo sayfalarını inceleyebilirsiniz:</p>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10">
-                {ilceler.map((ilce) => (
-                    <a href={ilce.published ? `/${ilce.slug}-tenteci` : `/iletisim?bolge=${ilce.slug}`} class="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center hover:bg-[#1d4ed8] hover:text-white transition-all group shadow-sm hover:shadow-md cursor-pointer">
-                        <i class="fa-solid fa-map-location-dot text-[#1d4ed8] text-xl mb-2 group-hover:text-white transition-colors"></i>
-                        <h4 class="font-medium text-sm text-gray-800 group-hover:text-white">{ilce.isim} Kesif</h4>
-                    </a>
-                ))}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <a href="/kadikoy-tenteci" class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition-all duration-300">
+                    <img src="/style/brand/img/pergola-tente1.webp" alt="Kadıköy" class="w-full h-32 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-[#1d4ed8]">Kadıköy Bölgesi</h4>
+                        <p class="text-sm text-gray-500 mt-1">Sahil, Marina ve Kafe Sistemleri</p>
+                    </div>
+                </a>
+                <a href="/besiktas-tenteci" class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition-all duration-300">
+                    <img src="/style/brand/img/koruklu-tente1.webp" alt="Beşiktaş" class="w-full h-32 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-[#1d4ed8]">Beşiktaş Bölgesi</h4>
+                        <p class="text-sm text-gray-500 mt-1">Yaya Yoğunluğu & Dar Sokaklar</p>
+                    </div>
+                </a>
+                <a href="/sisli-tenteci" class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition-all duration-300">
+                    <img src="/style/brand/img/bioklimatik-tente.webp" alt="Şişli" class="w-full h-32 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-[#1d4ed8]">Şişli Bölgesi</h4>
+                        <p class="text-sm text-gray-500 mt-1">Lüks Mağazalar & Plazalar</p>
+                    </div>
+                </a>
+                <a href="/fatih-tenteci" class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition-all duration-300">
+                    <img src="/style/brand/img/mafsalli-tente.webp" alt="Fatih" class="w-full h-32 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-[#1d4ed8]">Fatih Bölgesi</h4>
+                        <p class="text-sm text-gray-500 mt-1">Tarihi Yarımada & Klasik Dokular</p>
+                    </div>
+                </a>
+                <a href="/bakirkoy-tenteci" class="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <img src="/style/brand/img/bahce.webp" alt="Bakırköy" class="w-full h-32 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-[#1d4ed8]">Bakırköy Bölgesi</h4>
+                        <p class="text-sm text-gray-500 mt-1">Sahil Villaları & Kış Bahçesi</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-lg p-5 mb-8 flex items-center gap-4">
+                <i class="fa fa-info-circle text-2xl text-[#1d4ed8]"></i>
+                <p class="text-sm text-gray-700 m-0"><strong>İstanbul'un diğer 34 İlçesi</strong> için de hiçbir fark gözetmeksizin aynı kalitede ücretsiz saha ölçümü, fizibilite ve montaj garantisi sunmaktayız. Detaylar için iletişime geçebilirsiniz.</p>
             </div>
 
             <p class="mt-8">
