@@ -1,0 +1,77 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const title = "Kadıköy Tenteci & Bioklimatik Pergola Sistemleri | Amir Branda";
+const description = "Kadıköy sahili, kafe ve restoranlarına özel rüzgara dayanıklı bioklimatik pergola, kasetli tente ve şeffaf kış bahçesi tasarımları ve imalatı.";
+const ogTitle = "Kadıköy Tenteci | En İyi Tente Kış Bahçesi Çözümleri";
+
+// Dinamik Fiyat ve FAQ Optimizasyonu
+const schemaPriceLow = "1800";
+const schemaPriceHigh = "150000";
+const faqData = [
+    {
+        question: "Kadıköy sahil şeridindeki rüzgarlı hava şartlarına hangi tenteler dayanır?",
+        answer: "Kadıköy ve Moda sahilinin rüzgarlı yapısını çok iyi biliyoruz. Bu bölgeler için özellikle raylı sistemle çalışan alüminyum alaşımlı bioklimatik pergola veya kasetli motorlu tentesi kullanmanızı tavsiye ediyoruz. Klasik tentelerden fırtınaya karşı çok daha dirayetlidir."
+    },
+    {
+        question: "Bağdat Caddesi ve Kadıköy Çarşı içindeki kafeme ücretsiz keşif alabilir miyim?",
+        answer: "Elbette. Anadolu Yakası merkez atölyemize yakınlığından dolayı Kadıköy ilçesine aynı gün veya ertesi gün ekspres keşif ekibi gönderiyoruz. Mekanınıza gelip en doğru şeffaf branda veya gölgelendirme sistemini yerinde projelendiriyoruz."
+    },
+    {
+        question: "Kadıköy kış bahçesi veya pergola m2 fiyatları lüks semt diye daha mı pahalı?",
+        answer: "Hayır, Amir Branda olarak biz bir imalat atölyesiyiz. Semte veya bölgeye göre değil, kullanılacak ithal akrilik kumaş (örneğin Dickson) ve alüminyum profilin metrajına göre standart Türkiye distribütör fiyatları üzerinden şeffaf ve net fiyatlandırma yapmaktayız."
+    }
+];
+---
+
+<PageLayout
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    headerTitle="Kadıköy Tenteci ve Branda Sistemleri"
+    headerTitleTag="h1"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="tente"
+    schemaPriceLow={schemaPriceLow}
+    schemaPriceHigh={schemaPriceHigh}
+    faqData={faqData}
+>
+    <article class="post">
+        <h2 class="post-title text-center text-3xl font-extrabold text-gray-900 mb-6" id="page">
+            Kadıköy Kafeleri ve Lüks Evleri İçin Mimari Tente Çözümleri
+        </h2>
+        <figure class="mb-8 overflow-hidden rounded-xl">
+            <!-- Using a unique image instead of generic istanbul-tenteci -->
+            <img class="w-100 img-fluid shadow-lg hover:scale-105 transition-transform duration-700" style="max-height: 480px; object-fit: cover; width: 100%;" src="/style/brand/img/pergola-tente1.webp" alt="Kadıköy Tenteci Motorlu Pergola Kurulumu" fetchpriority="high" loading="eager" />
+        </figure>
+        
+        <div class="post-content text-gray-700 leading-relaxed space-y-6">
+            <p>
+                Anadolu yakasının incisi, eğlencenin ve gastronominin başkenti <strong>Kadıköy</strong>; yoğun yaya trafiğinin ve kıyı şeridi rüzgarlarının merkezidir. Moda sahilindeki butik kafenizden Bağdat Caddesi'ndeki lüks restoranınıza veya Suadiye'deki villanızın bahçesine kadar her türlü dış mekanı tasarlarken tam olarak bu dinamikleri baz alıyoruz. Sıradan bir brandacı olmanın ötesinde, <strong>Amir Branda</strong> kalitesiyle dört mevsim yüksek cirolar elde etmenizi sağlayacak <strong><a href="/bioklimatik-tente/" class="text-[#1d4ed8] font-bold hover:underline">bioklimatik pergola</a></strong> ve estetik tente gölgelendirme projeleri imal ediyoruz.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-800 mt-10 border-b-2 border-gray-100 pb-3">Kadıköy Sahil Şeridine Göre Şeffaf Kış Bahçeleri</h3>
+            <p>
+                Aslında mekanınızın en verimli tarafı olan teras ve bahçe alanları, kışın yağışlardan ötürü atıl bir bölgeye dönüşebilir. Rüzgar direncine dayanıklı ithal mika PVC'den imal edilen <strong><a href="/seffaf-branda/" class="text-[#1d4ed8] font-bold hover:underline">şeffaf branda kış bahçesi</a></strong> kapatmalarımızla; müşterilerinizin manzarasını kesmeden içeriyi soba konforunda sıcacık tutabilirsiniz. Kadıköy'deki onlarca bar, kafe ve pub projemiz bu fermuarlı şeffaf izolasyon sistemlerimizin ne kadar pratik olduğunun kanıtıdır.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-800 mt-10 border-b-2 border-gray-100 pb-3">Çarşı İçi Dar Sokaklara Tente Modelleri (Körüklü / Mafsallı)</h3>
+            <p>
+                Kadıköy Balıkçılar Çarşısı, Osmanağa ve Caferağa gibi dar sokaklara ve yoğun dükkan popülasyonuna sahip yerlerde, vitrini güneşten korumak için <strong><a href="/mafsalli-tente/" class="text-[#1d4ed8] font-bold hover:underline">mafsallı tente</a></strong> veya daha retro bir hava yaratan karpuz/<strong>körüklü tente</strong> tercih edilmesi mekânı bir adım öne çıkarır. Yağmur yağdığında manuel bir çevirme koluyla saniyeler içinde açılan bu pratik tenteler hem çok uygun fiyatlıdır hem de dükkanınıza gelen misafirleri yağmurdan anında korur.
+            </p>
+
+            <div class="text-center mt-12 mb-8 bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i class="fa-solid fa-compass text-6xl text-blue-900"></i>
+                </div>
+                <div class="relative z-10">
+                    <h4 class="font-extrabold text-2xl mb-3 text-[#1d4ed8]">Kadıköy Bölgesine Öncelikli Lazer Keşif!</h4>
+                    <p class="text-gray-600 mb-8 max-w-lg mx-auto">Mimari ölçülendirme, kumaş (Dikson, Sattler vb.) doku sunumu ve şeffaf tekliflandırma için sadece bir WhatsApp mesajı veya telefon uzağınızdayız.</p>
+                    <a href="tel:+905386044851" class="inline-flex items-center justify-center bg-[#1d4ed8] text-white font-bold py-4 px-10 rounded-full hover:bg-black transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                        <i class="fa-solid fa-phone mr-3"></i> 0538 604 4851
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</PageLayout>

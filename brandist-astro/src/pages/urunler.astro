@@ -1,0 +1,341 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const categories = [
+    {
+        title: "Tente ve Gölgelendirme Sistemleri",
+        subtitle:
+            "Güneşin kavurucu sıcaklarından ve yağmurdan en şık şekilde korunun.",
+        items: [
+            {
+                name: "Pergola Tente",
+                url: "/pergola-tente",
+                img: "pergola-tente1.webp",
+                label: "En Çok Satan",
+                labelColor: "bg-red-500",
+                desc: "Kumandalı, açılır-kapanır LED aydınlatmalı dört mevsim lüks tavan sistemleri. Kafe ve teraslar için idealdir.",
+            },
+            {
+                name: "Bioklimatik Tente",
+                url: "/bioklimatik-tente",
+                img: "bioklimatik-tente.webp",
+                label: "Premium Sistem",
+                labelColor: "bg-gray-900",
+                desc: "Alüminyum panelleri dönerek havalandırma sağlayan akıllı mimari sistem.",
+            },
+            {
+                name: "Mafsallı Tente",
+                url: "/mafsalli-tente",
+                img: "ucuz-mafsalli-tente-modelleri-istanbul.webp",
+                label: "Ekonomik",
+                labelColor: "bg-primary",
+                desc: "Mağaza vitrinleri ve düz balkonlar için tasarlanmış eklemli pratik gölgelendirme.",
+            },
+            {
+                name: "Kasetli Tente",
+                url: "/kasetli-tente",
+                img: "yeni-kasetli-tente.webp",
+                desc: "Kapandığı zaman kumaşı ve mekanizmayı tamamen alüminyum kaset içine saklayan sistem.",
+            },
+            {
+                name: "Çift Açılır Tente",
+                url: "/cift-acilir-tente",
+                img: "cift-acilir-tente1.webp",
+                desc: "Geniş alanlar ve kafe/restoran bahçeleri için taşınabilir tekerlekli çift yönlü gölgelendirme.",
+            },
+            {
+                name: "Körüklü Tente",
+                url: "/koruklu-tente",
+                img: "koruklu-tente1.webp",
+                desc: "Yanlardan gelen güneşi kesen, akordiyon tipi klasik ve şık vitrin/pencere tentesi.",
+            },
+            {
+                name: "Motorlu Tente",
+                url: "/motorlu-tente",
+                img: "pergola-tente2.webp",
+                desc: "Tüm tente sistemlerine entegre edilebilen, kumandalı kullanım sağlayan rahat otomasyonlu sistem.",
+            },
+            {
+                name: "Zip Tente (Düşey)",
+                url: "/zip-tente",
+                img: "yeni-zip-tente.webp",
+                desc: "Fermuarlı ray sistemi ile rüzgara tam dayanıklı, motorlu dikey yalıtım perdesi.",
+            },
+            {
+                name: "Sabit Tente",
+                url: "/sabit-tente",
+                img: "sabit-tente1.webp",
+                label: "Butik Tasarım",
+                labelColor: "bg-teal-500",
+                desc: "Oteller, kafeler ve giriş kapıları için vitrine estetik katan sabit iskeletli tavan çıkmaları.",
+            },
+            {
+                name: "Karpuz Tente",
+                url: "/karpuz-tente",
+                img: "karpuz-tente1.webp",
+                desc: "Yuvarlak hatları ve dilimli yapısıyla pencerelerde sıcak bir görünüm sağlayan klasik model.",
+            },
+        ],
+    },
+    {
+        title: "Çadır ve Endüstriyel Kapamalar",
+        subtitle:
+            "Ağır hava koşullarına dayanıklı, geniş açıklıkları kaplayan profesyonel çadır mimarileri.",
+        items: [
+            {
+                name: "Şeffaf Kış Bahçesi",
+                url: "/seffaf-branda",
+                img: "seffaf-branda5.webp",
+                label: "Yüksek İlgi",
+                labelColor: "bg-green-500",
+                desc: "İşletmenizin açık alanlarını ısı izolasyonlu kapalı odalara çevirin.",
+            },
+            {
+                name: "Şantiye Çadırı",
+                url: "/santiye-cadiri",
+                img: "istanbul-endustriyel-santiye-depo-cadiri.webp",
+                desc: "İnşaat alanları için dayanıklı, hızlı kurulumlu şantiye yemekhane ve yatakhane çadırı.",
+            },
+            {
+                name: "Depo Çadırı",
+                url: "/depo-cadiri",
+                img: "depo-cadiri.webp",
+                desc: "Fabrikalar, sanayi, lojistik ve limanlar için ruhsat gerektirmeyen pratik depolama alanları.",
+            },
+            {
+                name: "Askeri Çadır",
+                url: "/askeri-cadir",
+                img: "askeri-cadir.webp",
+                desc: "Zorlu iklim koşullarına dayanıklı, standartlara uygun askeri sahra ve yatakhane çadırları.",
+            },
+            {
+                name: "Afet Çadırı",
+                url: "/afet-deprem-cadiri",
+                img: "afet-cadiri.webp",
+                desc: "Acil barınma amaçlı, hızlı izole sağlayan çelik iskeletli deprem ve toplanma çadırı.",
+            },
+            {
+                name: "Taziye Çadırı",
+                url: "/taziye-cadiri",
+                img: "taziye1.webp",
+                desc: "Belediyeler ve dernekler için portatif, yalıtımlı dev taziye ve anma çadırları.",
+            },
+            {
+                name: "Fuar ve Etkinlik Çadırı",
+                url: "/fuar-cadiri",
+                img: "fuar.webp",
+                desc: "Etkinlikler ve fuarlar için görkemli, kolonsuz net kullanım alanı sağlayan yapılar.",
+            },
+        ],
+    },
+    {
+        title: "Ticari Araçlar ve Kumaş Satışı",
+        subtitle:
+            "Otomotiv brandaları, rulo mika ve ithal akrilik kumaş tedariği.",
+        items: [
+            {
+                name: "Tır & Kamyon Brandası",
+                url: "/tir-brandasi",
+                img: "kamyon-brandasi.webp",
+                desc: "Lojistik çekici grupları için uluslararası gümrük standartlarında PVC kayar perde ve römork kapatmaları.",
+            },
+            {
+                name: "Otopark & Araba Dolu Brandası",
+                url: "/araba-dolu-brandasi",
+                img: "araba-dolu-brandasi.webp",
+                desc: "Araçlarınızı dolu yağışlarından ve güneş yanığından koruyan özel şişme kaplamalar.",
+            },
+            {
+                name: "Toptan Akrilik Kumaş",
+                url: "/akrilik",
+                img: "akrilik-kumas.webp",
+                label: "%100 Akrilik",
+                labelColor: "bg-gray-900",
+                desc: "Avrupa ithal, 10 yıl solmazlık garantili su itici akrilik tente kumaşı rulo satışları.",
+            },
+            {
+                name: "Pilsa Branda",
+                url: "/su-gecirmez-pilsa",
+                img: "pilsa1.webp",
+                desc: "İnşaat örtüsü ve genel kullanım için ekonomik, çok amaçlı ve tamamen su geçirmez pilsa brandalar.",
+            },
+            {
+                name: "Şeffaf Mika",
+                url: "/mika",
+                img: "mika.webp",
+                desc: "Kış bahçesi için kullanılan cam şeffaflığında, soğuğa dayanıklı kalın PVC mika branda (0.80mm).",
+            },
+        ],
+    },
+];
+---
+
+<PageLayout
+    title="Tüm Ürünler ve Tente Branda Çeşitleri | Amir Branda"
+    description="Amir Branda'nın ürettiği tüm tente sistemleri, kış bahçesi, şeffaf branda, kamyonet çadırları ve pergola modelleri kataloğu. Tüm ürünleri inceleyin."
+    ogTitle="Tüm Ürünler ve Tente Branda Çeşitleri | Amir Branda"
+    ogImage="https://www.branda.ist/style/brand/img/pergola-tente1.webp"
+    headerTitle="Sizin Mekanınıza En Uygun Çözümü Seçin"
+    headerTitleTag="h2"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="tente"
+>
+    <!-- List for Google Schema -->
+    <script slot="json-ld" type="application/ld+json" is:inline>
+        {
+            "@context": "https://schema.org/",
+            "@type": "ItemList",
+            "name": "Amir Branda Ürün Kataloğu",
+            "description": "Tüm ürün kategorilerimizi ve modellerimizi içeren liste.",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Mafsallı Tente",
+                    "url": "https://www.branda.ist/mafsalli-tente"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Pergola Tente",
+                    "url": "https://www.branda.ist/pergola-tente"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Şeffaf Kış Bahçesi",
+                    "url": "https://www.branda.ist/seffaf-branda"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Depo Çadırı",
+                    "url": "https://www.branda.ist/depo-cadiri"
+                }
+            ]
+        }
+    </script>
+
+    <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <h1
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-6 tracking-tight"
+            id="page"
+        >
+            Geniş Ürün Kataloğumuz
+        </h1>
+
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+                İstanbul'un lider
+                <strong
+                    ><a
+                        href="/branda-tente-imalati/"
+                        class="text-primary font-bold hover:text-blue-700 transition-colors border-b border-primary hover:border-blue-700 pb-0.5"
+                        title="branda imalatı">brandacı ve tentecisi</a
+                    ></strong
+                >
+                Amir Branda güvencesi ile sunulan, mekanınıza estetik, değer ve dört
+                mevsim konfor katan tüm sistemlerimizi inceleyebilirsiniz.
+            </p>
+        </div>
+
+        {
+            categories.map((category, idx) => (
+                <div
+                    class={`mb-20 ${idx === 1 ? "bg-gray-50 rounded-3xl p-6 lg:p-10 border border-gray-100" : ""}`}
+                >
+                    <div class="text-center mb-10">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                            {category.title}
+                        </h2>
+                        <hr class="w-16 mx-auto mb-6 border-t-4 border-primary rounded-full" />
+                        <p class="text-gray-600 text-base md:text-lg">
+                            {category.subtitle}
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                        {category.items.map((item) => (
+                            <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col relative overflow-hidden">
+                                {item.label && (
+                                    <div
+                                        class={`absolute top-4 right-4 z-10 px-3 py-1 text-xs font-bold uppercase tracking-wide rounded shadow-sm text-white ${item.labelColor}`}
+                                    >
+                                        {item.label}
+                                    </div>
+                                )}
+                                <div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
+                                    <img
+                                        src={`/style/brand/img/${item.img}`}
+                                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                                        alt={item.name}
+                                        fetchpriority="high" loading="eager"
+                                    />
+                                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300" />
+                                </div>
+                                <div class="p-5 flex-grow flex flex-col">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                                        {item.name}
+                                    </h3>
+                                    <p class="text-sm text-gray-600 mb-4 leading-relaxed flex-grow">
+                                        {item.desc}
+                                    </p>
+                                    <a
+                                        href={item.url}
+                                        class="mt-auto inline-flex items-center text-primary font-bold text-sm hover:text-blue-700 transition-colors"
+                                    >
+                                        Detaylı İncele{" "}
+                                        <span class="ml-2 transform group-hover:translate-x-1 transition-transform">
+                                            →
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))
+        }
+
+        <!-- Call to Action -->
+        <div
+            class="mt-16 relative overflow-hidden rounded-3xl shadow-2xl bg-gray-900"
+        >
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"
+            >
+            </div>
+            <div
+                class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/20 blur-3xl"
+            >
+            </div>
+            <div
+                class="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-8"
+            >
+                <div class="max-w-2xl">
+                    <h4 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Eski Tentenizi Yenileyin!
+                    </h4>
+                    <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+                        Bozulmuş sistemleriniz, yırtık kumaşlarınız veya arızalı
+                        motorlar için
+                        <a
+                            href="/tente-tamiri-bakimi/"
+                            class="text-primary hover:text-white transition-colors underline underline-offset-4 decoration-primary hover:decoration-white font-bold"
+                            >Tente Tamiri & Servis</a
+                        >
+                        hizmeti alabilirsiniz.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a
+                        href="/iletisim/"
+                        class="inline-block bg-primary text-white font-bold text-lg px-8 py-4 rounded-full shadow-[0_0_20px_rgba(76,166,229,0.4)] hover:bg-blue-600 hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(76,166,229,0.5)] transition-all duration-300"
+                    >
+                        Fiyat Teklifi Al
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</PageLayout>

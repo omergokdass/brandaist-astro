@@ -1,0 +1,86 @@
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Enforce www domain
+  RewriteCond %{HTTP_HOST} ^branda\.ist [NC]
+  RewriteRule ^(.*)$ https://www.branda.ist/$1 [L,R=301]
+
+  # SEO Redirects /branda/X -> /X
+  RewriteRule ^(branda|tente|cadir)/(.+)$ /$2 [R=301,L]
+  Redirect 301 /cami-kapisi /cami-kapisi-brandasi
+
+  # WordPress ve Eski Tesisat Kalıntıları
+  Redirect 301 /elementor-2359 /
+  Redirect 301 /wp-content/plugins/litespeed-cache/guest.vary.php /
+
+  # Eski Linki Değişen Sayfalar (Adres Değişikliği)
+  Redirect 301 /fabrika-bolmeleri-kapilari /bolme-ve-kapi-brandasi
+  Redirect 301 /endustriyel-cadirlar /endustriyel-cadir
+  Redirect 301 /pergola-motorlu-tente /pergola-tente
+  Redirect 301 /hali-saha-cadiri /halisaha-spor-cadiri
+  Redirect 301 /ceset-torbasi-brandasi /urunler
+  Redirect 301 /ceset-torbasi /urunler
+
+  # Klasöre Taşınan Blog Yazıları
+  Redirect 301 /kis-bahcesi-icin-seffaf-branda-secimi /blog/kis-bahcesi-icin-seffaf-branda-secimi
+  Redirect 301 /depo-cadiri-alirken-dikkat-edilmesi-gerekenler /blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler
+  Redirect 301 /kis-bahcesi-ruhsat-gerektirir-mi /blog/kis-bahcesi-ruhsat-gerektirir-mi
+  Redirect 301 /mafsalli-ile-kasetli-tente-farklari /blog/mafsalli-ile-kasetli-tente-farklari
+  Redirect 301 /motorlu-tente-arizalari-ve-cozumleri /blog/motorlu-tente-arizalari-ve-cozumleri
+  Redirect 301 /akrilik-mi-polyester-mi-secmeli /blog/akrilik-mi-polyester-mi-secmeli
+  Redirect 301 /depo-cadiri-nedir /blog/depo-cadiri-nedir
+
+  # /index.html -> / (Astro build'de yapılamıyor, Apache seviyesinde yönetilir)
+  RewriteCond %{THE_REQUEST} /index\.html [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # Genel .html -> SEO Uyumlu (Extensionless) Yönlendirme
+  RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+  RewriteCond %{REQUEST_URI} !^/404\.html$
+  RewriteCond %{REQUEST_URI} !^/google.+\.html$
+  RewriteRule ^(.*)\.html$ /$1/ [R=301,L]
+
+
+  # Serve exact file/dir or 404
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ /404.html [L,R=404]
+</IfModule>
+
+# GZIP Sıkıştırma (Performans)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript image/svg+xml
+</IfModule>
+
+# Tarayıcı Önbellekleme (Browser Caching)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+</IfModule>
+
+# Immutable Cache (Hash'li dosyalar için)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|woff2|woff|ttf|webp|png|jpg|jpeg|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# Güvenlik Başlıkları (Security Headers)
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

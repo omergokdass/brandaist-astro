@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AnaIcerikSection from "../components/AnaIcerikSection.astro";
+import NedenBizSection from "../components/NedenBizSection.astro";
+import TavsiyelerimizSection from "../components/TavsiyelerimizSection.astro";
+import FaydaliBilgilerSection from "../components/FaydaliBilgilerSection.astro";
+---
+
+<Layout
+    title="Amir Branda | Tente ve Branda Fiyatları"
+    description="Amir Branda İstanbul'da şeffaf branda, mafsallı tente, kış bahçesi ve depo çadırı imalatında uzman! En ucuz branda, çadır ve tente fiyatları."
+    ogTitle="Amir Branda | En İyi Tente ve Branda Sistemleri"
+    ogImage="https://www.branda.ist/images/amir-branda-tente-sistemleri-istanbul.jpg"
+    preloadImage="/style/brand/img/istanbul-brandaci-tenteci-cadirci.webp"
+>
+    <!-- /.navbar -->
+    <HeroSection />
+    <main id="main-content">
+        <AnaIcerikSection />
+        <NedenBizSection />
+        <TavsiyelerimizSection />
+        <FaydaliBilgilerSection />
+    </main>
+
+    <Fragment slot="extra-scripts"> </Fragment>
+</Layout>

@@ -1,0 +1,340 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="Sıkça Sorulan Sorular | Ucuz Branda ve Tente Fiyatları | Amir Branda"
+    description="Tente montajı ne kadar sürer? Şeffaf branda m2 fiyatı nedir? Tente bakımı, depo çadırı ve branda onarım taleplerinizin tüm cevapları Amir Branda SSS sayfasında."
+    ogTitle="Sıkça Sorulan Sorular | Ucuz Branda ve Tente Fiyatları"
+>
+    <!-- Schema Markup -->
+    <script type="application/ld+json" is:inline>
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "İstanbul içi keşif ve ölçüm ücretli mi?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Hayır. Amir Branda olarak İstanbul Avrupa ve Anadolu yakasındaki tüm adreslere ücretsiz keşif hizmeti sunuyoruz. Uzman ekibimiz yerinde ölçüm yaparak size özel tente ve branda fiyat listesi çalışması hazırlar."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Tente montajı ne kadar sürer?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ürünün türüne göre değişmekle birlikte, standart mafsallı tente veya balkon tentesi montajları siparişiniz onaylandıktan sonra üretim dahil ortalama 3 iş günü içinde adresinizde gerçekleştirilir ve montaj birkaç saat sürer."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Branda onarımı ve tente kumaş değişimi yapıyor musunuz?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Evet. Demir veya alüminyum mekanizması sağlam olan tentelerinizin sadece kumaşlarını değiştiriyoruz. Yırtılan veya eskiyerek yıpranan brandalarınız için hızlı branda onarımı İstanbul servisimiz bulunmaktadır."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Şeffaf brandalar kışın sıcağı tutar mı?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Kesinlikle. Kış bahçesi veya kafeler için özel ürettiğimiz 0.8mm mika şeffaf brandalar içeriye rüzgar ve soğuk geçirmez. İçeride soba veya ısıtıcı yandığında sıcak havayı çok verimli bir şekilde muhafaza eder."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Şeffaf branda m2 fiyatı nasıl hesaplanır?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Şeffaf branda fiyatları, kapatılacak alanın toplam metrekare (m2) büyüklüğüne, kullanılacak fermuar sayısına ve montajın yapılacağı zemine göre hesaplanır. Bizimle iletişime geçerek en güncel kampanya ve ucuz branda fiyatları avantajlarından yararlanabilirsiniz."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Mafsallı tente mi kasetli tente mi tercih etmeliyim?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Mekanınızın cephesine ve kullanım sıklığına bağlıdır. Mafsallı tente fiyatları daha ekonomik, yaygın ve kullanışlıdır. Kasetli tenteler ise kapandığında kumaşı tam içine alarak dış etkenlerden koruduğu için daha uzun ömürlü ve moderndir."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Depo çadırı ne kadar sürede kurulur?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Betonlaşma süreci gerektirmediğinden, depo çadırı sistemleri klasik binalara oranla çok daha hızlıdır. Stoklarımızda bulunan çadır sistemleri fiyat ve ebat onayı sonrasında birkaç gün içinde montaja hazır hale getirilir ve 1-2 gün içinde kurulur."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Şantiye çadırı rüzgara ve kara dayanıklı mıdır?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Evet. İzolasyonlu şantiye çadırı modellerimiz demir karkas yapısıyla lodos, fırtına ve kar yüküne karşı özel bir mühendislikle hesaplanarak imal edildiğinden şantiyelerde güvenli barınma sağlar."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Kış bahçesi fiyatları neye göre değişir?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Kış bahçesi fiyatları mekanın iskelet sistemine (alüminyum veya çelik), tavan sistemine (pergola tente veya sabit cam), ve yan alan kaplamalarına (sürme cam veya şeffaf branda) göre şekillenir."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "En ucuz branda fiyatları hangi sistemler için geçerlidir?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Genellikle özel mekanizması olmayan sabit brandalar, büzgülü gölgelik fileler ve pilsa kumaşlar en uygun branda imalatı çözümlerimizdir. İhtiyacınızı uygun branda fiyat listesi üzerinden çözümlemek en önemli önceliğimizdir."
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <!-- Header Hero Section -->
+    <div
+        class="relative bg-gray-900 overflow-hidden isolate px-6 py-24 sm:py-32 lg:px-8"
+    >
+        <div class="mx-auto max-w-4xl text-center">
+            <h1
+                class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            >
+                Sıkça Sorulan Sorular
+            </h1>
+            <p class="mt-6 text-xl leading-8 text-gray-300 font-medium">
+                Amir Branda sistemleri hakkında aklınıza takılan tüm soruların
+                cevapları rehberimizde.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- FAQ Accordion Section (Left) -->
+                <div class="w-full lg:w-2/3">
+                    {/* FAQ Items Loop */}
+                    <div class="space-y-4">
+                        {
+                            [
+                                {
+                                    q: "Ücretsiz Keşif ve Ölçüm Hizmetiniz Var Mı?",
+                                    a: "Tüm İstanbul içerisindeki adreslere (Avrupa ve Anadolu yakası dahil) hiçbir ek ücret talep etmeden ücretsiz keşif hizmeti sunuyoruz. Uzman ekibimiz yerinde ölçüm alarak projenize özel en uygun tente ve branda fiyat teklifini hazırlar.",
+                                },
+                                {
+                                    q: "Tente ve Branda Montaj İşlemleri Ne Kadar Sürer?",
+                                    a: "Üretim süreci ürünün teknik özelliklerine göre değişiklik gösterir. Standart balkon veya mafsallı tente siparişleri onaydan sonra yaklaşık 3 iş günü içerisinde üretilip adresinizde yalnızca birkaç saatlik bir operasyonla kurulur.",
+                                },
+                                {
+                                    q: "Eskiyen Tentelerin Kumaş Değişimi veya Onarımı Yapılıyor Mu?",
+                                    a: "Kesinlikle. Yapısal olarak sağlam olan alüminyum veya çelik mekanizmalı tentelerinizin aşınan kumaşlarını yeniliyoruz. Branda tamiri ve akrilik kumaş değişimi ile sisteminizi ilk günkü görünümüne kavuşturuyoruz.",
+                                },
+                                {
+                                    q: "Şeffaf Branda (Mika) Sistemleri Kışın Soğuğu Keser Mi?",
+                                    a: "Kış bahçesi, veranda ve kafeler için özel işlenen 0.8mm - 1.0mm kalınlığındaki ithal mika şeffaf brandalar içeriye lodos, kar ve soğuk havanın girmesini %100 oranında engeller. İç mekandaki ısıyı çok verimli muhafaza eder.",
+                                },
+                                {
+                                    q: "Şeffaf Branda m² (Metrekare) Fiyatları Nasıl Belirlenir?",
+                                    a: "İmalat fiyatlarımız, kapatılacak cephenin toplam metrajına, kullanılacak fermuar / cırt cırt sayısına ve konstrüksiyon ihtiyacına göre maliyetlendirilir. Projenizin resmini göndererek dakikalar içinde net bir teklif alabilirsiniz.",
+                                },
+                                {
+                                    q: "Mafsallı Tente Mi Yoksa Kasetli Tente Mi Seçmeliyim?",
+                                    a: "Mafsallı tente modelleri çok daha ekonomik ve yaygındır; genelde dükkan önü veya apartman balkonları için ilk tercihtir. Kasetli tenteler ise kapandığında sarmal kumaşını alüminyum gövdesi içine sakladığı için daha premium bir görünüm sunar ve kumaş ömrünü uzatır.",
+                                },
+                                {
+                                    q: "Dev Depo ve Hangar Çadırları Ne Kadar Sürede İnşa Edilir?",
+                                    a: "Endüstriyel çadırların en büyük avantajı hızdır. Klasik betonarme yapılardaki uzun süren bürokrasi ve hafriyat süreci yoktur. Proje onaylandıktan sonra çelik konstrüksiyon imalatı başlar ve devasa yapılar çok kısa bir sürede montajlanır.",
+                                },
+                                {
+                                    q: "Kış Bahçesi Fiyatlarını Belirleyen Başlıca Faktörler Nelerdir?",
+                                    a: "Ana etmenler sistemin omurgası (alüminyum profil veya çelik demir), tavan kapatması (hareketli motorlu pergola tavan mı, sabit şeffaf cam mı) ve kenar kısımların niteliğidir (şeffaf mika fermuarlı branda mı yoksa katlanır cam sistemleri mi).",
+                                },
+                                {
+                                    q: "En Ekonomik Branda Malzemesi Hangisidir?",
+                                    a: "Eğer görsel şıklıktan ziyade doğrudan koruma fonksiyonu arıyorsanız pilsa brandalar ve havuz örtüleri için üretilen polyester kumaşlar en ucuz maliyetleri sunar. İskelet profili gerektirmeyen klasik germe sistemleri de bütçe dostudur.",
+                                },
+                            ].map((item, index) => (
+                                <details
+                                    class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                                    open={index === 0}
+                                >
+                                    <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-gray-900 list-none text-lg">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa fa-question-circle text-primary text-xl" />
+                                            {item.q}
+                                        </div>
+                                        <span class="transition group-open:rotate-180">
+                                            <i class="fa fa-chevron-down text-gray-400 text-sm" />
+                                        </span>
+                                    </summary>
+                                    <div class="px-6 pb-6 pt-2 text-gray-600 border-t border-gray-50 leading-relaxed text-base bg-gray-50/50">
+                                        {item.a}
+                                    </div>
+                                </details>
+                            ))
+                        }
+                    </div>
+
+                    <!-- Call to Action below FAQ -->
+                    <div
+                        class="text-center mt-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <p class="text-gray-600 mb-6 text-lg">
+                            Başka bir projeniz veya özel sorunuz mu var?
+                        </p>
+                        <a
+                            href="/iletisim/"
+                            class="inline-flex justify-center items-center px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-blue-600 transition-colors shadow-lg shadow-primary/30"
+                        >
+                            <i class="fa fa-phone mr-2"></i> Uzmanımızla Görüşün
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sidebar (Right) -->
+                <aside class="w-full lg:w-1/3 flex flex-col gap-6">
+                    <!-- Corporate Info Widget -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-3"
+                        >
+                            Kurumsal
+                        </h3>
+                        <div class="mb-4">
+                            <img
+                                src="/style/brand/img/branda-logo.webp"
+                                alt="Bursa Amir Branda Logo"
+                                class="w-full h-auto object-contain rounded-lg shadow-sm"
+                                fetchpriority="high" loading="eager"
+                            />
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            İstanbul'un lider branda firması Amir Branda olarak,
+                            işletmelere ve evlere %100 su ve hava sızdırmaz
+                            estetik çözümler, kış bahçesi, depo ve hangar çadırı
+                            hizmetleri sunuyoruz.
+                        </p>
+                        <div class="flex justify-center gap-4">
+                            <a
+                                href="https://www.facebook.com/amirbrandacadirtente/"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                                aria-label="Facebook"
+                                ><i class="fa-brands fa-facebook-f"></i></a
+                            >
+                            <a
+                                href="https://tr.pinterest.com/amirbranda/"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-red-600 hover:text-white transition-colors"
+                                aria-label="Pinterest"
+                                ><i class="fa-brands fa-pinterest"></i></a
+                            >
+                            <a
+                                href="https://www.instagram.com/branda.ist/"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-pink-600 hover:text-white transition-colors"
+                                aria-label="Instagram"
+                                ><i class="fa-brands fa-instagram"></i></a
+                            >
+                            <a
+                                href="https://x.com/amirbrandaist"
+                                target="_blank"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-black hover:text-white transition-colors"
+                                aria-label="X (Twitter)"
+                                ><i class="fa-brands fa-x-twitter"></i></a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Useful Links Widget -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-3"
+                        >
+                            Faydalı Bağlantılar
+                        </h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="/hakkimizda/"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+                                    ><i
+                                        class="fa fa-building-o w-6 text-primary"
+                                    ></i> Kurumsal Hikayemiz</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/iletisim/"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+                                    ><i
+                                        class="fa fa-envelope-o w-6 text-primary"
+                                    ></i> İletişim & Harita</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/fiyat-listesi/"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+                                    ><i class="fa fa-tags w-6 text-primary"></i> Fiyat
+                                    Listesi İste</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/blog/"
+                                    class="flex items-center text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+                                    ><i class="fa fa-book-open w-6 text-primary"
+                                    ></i> Blog ve Makaleler</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- WhatsApp CTA Widget -->
+                    <div
+                        class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl shadow-sm border border-green-100 text-center"
+                    >
+                        <div
+                            class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4"
+                        >
+                            <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">
+                            Özel Teklif İster Misiniz?
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-6">
+                            Projelendirme ve acil sorularınız için WhatsApp
+                            keşif hattımız aktiftir.
+                        </p>
+                        <a
+                            href="https://wa.me/905386044851"
+                            target="_blank"
+                            class="inline-flex justify-center items-center w-full px-4 py-3 bg-[#25D366] text-white font-bold rounded-lg hover:bg-[#128C7E] transition-colors shadow-lg shadow-green-500/30"
+                        >
+                            Hemen Yazın
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    /* Hide the default summary marker in Safari/Webkit */
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+</style>

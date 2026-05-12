@@ -1,0 +1,149 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const blogPosts = [
+    {
+        url: "/blog/seffaf-branda-fiyatlari",
+        img: "/style/brand/img/seffaf-branda.webp",
+        title: "Şeffaf Branda Fiyatları 2026: Kış Bahçesi Kapama Rehberi",
+        desc: "Kış bahçesi brandası ve şeffaf stor kapama sistemlerinin m2 fiyat analizi. Şeffaf PVC mika kumaş özellikleri ve balkon hesabı.",
+    },
+    {
+        url: "/blog/pergola-tente-fiyatlari",
+        img: "/style/brand/img/pergola-tente2.webp",
+        title: "Pergola Tente Fiyatları ve Modelleri (2026 Rehberi)",
+        desc: "Otomatik, ışıklı motorlu alüminyum pergola tente sistemlerinin metrekare fiyatlarına etki eden faktörler ve maliyet rehberi.",
+    },
+    {
+        url: "/blog/depo-cadiri-nedir",
+        img: "/style/brand/img/depo-cadiri-fiyatlari.webp",
+        title: "Depo Çadırı Fiyatları ve Kullanım Avantajları Nelerdir?",
+        desc: "Depo çadırı çözümlerine dair tüm detaylar: Fiyat faktörleri, avantajlar, dayanıklılık oranları ve kurulum bilgileri.",
+    },
+    {
+        url: "/blog/kis-bahcesi-icin-seffaf-branda-secimi",
+        img: "/style/brand/img/seffaf-branda2.webp",
+        title: "Kış Bahçesi İçin Şeffaf Branda Seçimi: Nelere Dikkat Edilmeli?",
+        desc: "Kış bahçesi yaptırmak isteyenlerin en çok sorduğu sorulardan biri doğru branda malzemesinin nasıl seçileceğidir. Şeffaf fermuarlı sistemlerden mika kullanımına kadar tüm detaylar rehberimizde.",
+    },
+    {
+        url: "/blog/depo-cadiri-alirken-dikkat-edilmesi-gerekenler",
+        img: "/style/brand/img/depo-cadiri.webp",
+        title: "Endüstriyel Depo Çadırı Alırken Dikkat Edilmesi Gereken Yönler",
+        desc: "Fabrika alanı veya depolama hacmini artırmak için ekonomik olan endüstriyel depo çadırı alırken nelere dikkat etmeniz gerektiğini biliyor musunuz?",
+    },
+    {
+        url: "/blog/kis-bahcesi-ruhsat-gerektirir-mi",
+        img: "/style/brand/img/seffaf-kis-bahcesi-brandasi.webp",
+        title: "Kış Bahçesi ve Tente Yaptırmak İçin Belediye Ruhsatı Gerekir Mi?",
+        desc: "Mekanınıza yapacağınız kış bahçesi veya pergola tente kapamalarının zabıta ve imar mevzuatı karşısındaki yasal durumunu öğrenin. Ruhsatsız sistemlerin püf noktaları.",
+    },
+    {
+        url: "/blog/mafsalli-ile-kasetli-tente-farklari",
+        img: "/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp",
+        title: "Mafsallı Tente ile Kasetli Tente Arasındaki 5 Kritik Fark",
+        desc: "Eviniz veya dükkanınız için en ideal tenteyi ararken mafsallı ile kasetli tente arasında kararsız mı kaldınız? Uzun ömür ve mekanizma farkları burada.",
+    },
+    {
+        url: "/blog/motorlu-tente-arizalari-ve-cozumleri",
+        img: "/style/brand/img/bioklimatik-tente.webp",
+        title: "Motorlu Tentelerde Sık Karşılaşılan Arızalar ve Acil Çözümleri",
+        desc: "Kumandanıza basmanıza rağmen motorlu tente neden açılıp kapanmıyor? Elektrik, sınır siviçleri ve sensör kaynaklı başlıca tente arızalarının onarım yöntemleri.",
+    },
+    {
+        url: "/blog/akrilik-mi-polyester-mi-secmeli",
+        img: "/style/brand/img/akrilik-kumas.webp",
+        title: "Akrilik Kumaş Mı Polyester Kumaş Mı Seçmeli? İklemdeki Farklar",
+        desc: "Gölgelendirme sistemleri, tente ve şemsiyeler için kumaş türlerinin (polyester ucuzluğu ve akrilik solmazlık garantisinin) tüm dayanıklılık kıyaslaması.",
+    },
+    {
+        url: "/blog/dukkan-onu-tente-yasak-mi/",
+        img: "/style/brand/img/mafsalli-tente4.webp",
+        title: "Dükkan Önü Tente Yasak Mı? Mafsallı Tente Ruhsat İzni",
+        desc: "Dükkan önüne tente yapmak yasal mı? Esnaflar için belediye izni, zabıta cezası ve yasal süreçler ile ruhsatsız kasetli tente çözümleri.",
+    },
+    {
+        url: "/blog/teras-kis-bahcesi-sistemleri/",
+        img: "/style/brand/img/seffaf-kis-bahcesi-brandasi.webp",
+        title: "Teras Kış Bahçesi Sistemleri ve Balkon Altı Kapatma Modelleri",
+        desc: "Çatıyı terasa çevirmek, açık terasları kış bahçesine dönüştürmek yasal mı? Şeffaf branda, mika ve cam balkon kapama sistemleriyle estetik tasarımlar.",
+    },
+    {
+        url: "/blog/tente-ve-cadir-m2-fiyatlari-nasil-hesaplanir/",
+        img: "/style/brand/img/depo-cadiri-fiyatlari.webp",
+        title: "2026 Tente, Çadır ve Şeffaf Branda m2 Fiyatları Nasıl Hesaplanır?",
+        desc: "Sabit bir metrekare fiyatı vermek neden yanıltıcıdır? Pergola, depo çadırı ve şeffaf branda m2 maliyetlerini belirleyen kalite faktörleri.",
+    },
+];
+---
+
+<Layout
+    title="Blog & Faydalı Bilgiler | Tente, Çadır ve Branda Rehberi | Amir Branda"
+    description="Tente, branda ve çadır sistemleri hakkında merak ettiğiniz her şey. Kış bahçesi seçimi, depo çadırı alırken dikkat edilecekler ve diğer faydalı SEO rehberlerimiz."
+>
+    <!-- Header Banner -->
+    <div
+        class="relative bg-gray-900 overflow-hidden isolate px-6 py-24 sm:py-32 lg:px-8"
+    >
+        <div class="mx-auto max-w-4xl text-center">
+            <h1
+                class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            >
+                Blog &amp; Faydalı Bilgiler
+            </h1>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="bg-gray-50 py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-xl text-gray-600 leading-relaxed font-medium">
+                    Mekanınızı yenilemeden önce uzman tavsiyelerimizi inceleyin.
+                </p>
+                <hr
+                    class="w-16 mx-auto mt-6 border-t-4 border-primary rounded-full opacity-60"
+                />
+            </div>
+
+            <!-- Blog List -->
+            <div class="space-y-8">
+                {
+                    blogPosts.map((post) => (
+                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 group flex flex-col sm:flex-row">
+                            <div class="w-full sm:w-2/5 overflow-hidden flex-shrink-0">
+                                <a href={post.url} class="block h-full">
+                                    <img
+                                        src={post.img}
+                                        class="w-full h-56 sm:h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        alt={post.title}
+                                        fetchpriority="high" loading="eager"
+                                    />
+                                </a>
+                            </div>
+                            <div class="w-full sm:w-3/5 p-6 sm:p-8 flex flex-col justify-center">
+                                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors leading-tight">
+                                    <a href={post.url}>{post.title}</a>
+                                </h2>
+                                <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                                    {post.desc}
+                                </p>
+                                <div class="mt-auto">
+                                    <a
+                                        href={post.url}
+                                        class="inline-flex items-center text-primary font-bold hover:text-blue-700 transition-colors"
+                                    >
+                                        Devamını Oku{" "}
+                                        <span class="ml-2 transform group-hover:translate-x-1 transition-transform">
+                                            →
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</Layout>

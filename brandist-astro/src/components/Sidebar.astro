@@ -1,0 +1,219 @@
+---
+// Sidebar.astro
+export interface Props {
+    category: "tente" | "branda" | "cadir" | "kumas" | "semsiye";
+}
+
+const { category } = Astro.props;
+
+const data = {
+    tente: {
+        title: "Tente Kategorileri",
+        desc: "Amir Branda, İstanbul içi ücretsiz keşif ve uygun fiyat avantajlarıyla profesyonel tente imalatı yapmaktadır. %100 su geçirmez akrilik kumaşlı ve motorlu pergola tente sistemleri için uzman ekibimizden teklif alarak mekanınıza değer katın.",
+        links: [
+            { url: "/bahce-tentesi", text: "Bahçe Tentesi" },
+            { url: "/balkon-tentesi", text: "Balkon Tentesi" },
+            { url: "/bioklimatik-tente", text: "Bioklimatik Tente" },
+            { url: "/cift-acilir-tente", text: "Çift Açılır Tente" },
+            { url: "/karpuz-tente", text: "Karpuz Tente" },
+            { url: "/kasetli-tente", text: "Kasetli Tente" },
+            { url: "/koruklu-tente", text: "Körüklü Tente" },
+            { url: "/mafsalli-tente", text: "Mafsallı Tente" },
+            { url: "/motorlu-tente", text: "Motorlu Tente" },
+            { url: "/pergola-tente", text: "Pergola Tente" },
+            { url: "/sabit-tente", text: "Sabit Tente" },
+            { url: "/stor-tente", text: "Stor Tente" },
+            { url: "/tente-tamiri-bakimi", text: "Tente Tamiri & Bakımı" },
+            { url: "/winted-tente", text: "Winted Tente" },
+            { url: "/yarasa-tente", text: "Yarasa Tente" },
+            { url: "/zip-tente", text: "Zip Tente" },
+        ],
+    },
+    branda: {
+        title: "Branda Kategorileri",
+        desc: "Amir Branda, İstanbul içi ücretsiz keşif ve uygun fiyat avantajlarıyla profesyonel branda imalatı yapmaktadır. %100 su geçirmez, dayanıklı ve esnek kullanım sunan branda sistemleri için hemen uzman ekibimizden teklif alarak mekanınızı koruma altına alın.",
+        links: [
+            { url: "/alan-kapama-sistemleri", text: "Alan Kapama Sistemleri" },
+            { url: "/araba-dolu-brandasi", text: "Araba Dolu Brandası" },
+            { url: "/cami-kapisi-brandasi", text: "Cami Kapısı Brandası" },
+            {
+                url: "/bolme-ve-kapi-brandasi",
+                text: "Bölme ve Kapı Brandası",
+            },
+            { url: "/branda-tente-imalati", text: "Branda Tente İmalatı" },
+            { url: "/golgelik-branda", text: "Gölgelik Branda" },
+            { url: "/havuz-brandasi", text: "Havuz Brandası" },
+            {
+                url: "/kamyon-kamyonet-brandasi",
+                text: "Kamyon - Kamyonet Brandası",
+            },
+            { url: "/otopark-brandasi", text: "Otopark Brandası" },
+            { url: "/pvc-branda", text: "PVC Branda" },
+            { url: "/seffaf-branda", text: "Şeffaf Branda" },
+            { url: "/tekne-brandasi", text: "Tekne Brandası" },
+            { url: "/tir-brandasi", text: "Tır Brandası" },
+        ],
+    },
+    cadir: {
+        title: "Çadır Kategorileri",
+        desc: "Amir Branda, endüstriyel, tarımsal ve bireysel ihtiyaçlarınız için dayanıklı çadır sistemleri üretmektedir. İzolasyonlu, kurulumu pratik ve bütçenize uygun çadır sitemleri için hemen uzman ekibimizle iletişime geçin.",
+        links: [
+            { url: "/afet-deprem-cadiri", text: "Afet & Deprem Çadırı" },
+            { url: "/askeri-cadir", text: "Askeri Çadır" },
+            { url: "/depo-cadiri", text: "Depo Çadırı" },
+            { url: "/endustriyel-cadir", text: "Endüstriyel Çadır" },
+            { url: "/etkinlik-cadiri", text: "Etkinlik Çadırı" },
+            { url: "/fuar-cadiri", text: "Fuar Çadırı" },
+            { url: "/halisaha-spor-cadiri", text: "Halı Saha & Spor Çadırı" },
+            { url: "/hangar-cadiri", text: "Hangar Çadırı" },
+            { url: "/iftar-cadiri", text: "İftar Çadırı" },
+            { url: "/kis-bahcesi", text: "Kış Bahçesi" },
+            { url: "/kurban-hayvan-cadiri", text: "Kurban & Hayvan Çadırı" },
+            { url: "/santiye-cadiri", text: "Şantiye Çadırı" },
+            { url: "/taziye-cadiri", text: "Taziye Çadırı" },
+        ],
+    },
+    kumas: {
+        title: "Kumaş Türleri",
+        desc: "Amir Branda, dış mekan sistemlerinde uzun ömürlü ve garantili ithal/yerli kumaş çözümleri sunar. Akrilik, polyester ve blackout kumaş seçenekleriyle mekanınıza değer katın.",
+        links: [
+            { url: "/akrilik", text: "Akrilik" },
+            { url: "/blackout", text: "Blackout" },
+            { url: "/mika", text: "Mika" },
+            { url: "/polyester", text: "Polyester" },
+            { url: "/su-gecirmez-pilsa", text: "Su Geçirmez Pilsa" },
+            { url: "/semsiye-kumasi", text: "Şemsiye Kumaşı" },
+        ],
+    },
+    hizmetler: {
+        title: "Hizmetlerimiz",
+        desc: "Amir Branda olarak, çadır ve tente sistemlerinin kurulumu, tamiri ve yenilemesi için profesyonel destek sağlıyoruz.",
+        links: [
+            { url: "/urunler", text: "Ürünler" },
+            { url: "/branda-tente-imalati", text: "Branda" },
+            { url: "/tente-tamiri-bakimi", text: "Tente" },
+            { url: "/cadir", text: "Çadır" },
+            { url: "/branda-tente-imalati", text: "Branda ve Tente İmalatı" },
+            { url: "/tente-tamiri-bakimi", text: "Tente Tamiri & Servis" },
+            { url: "/seffaf-branda", text: "Şeffaf Branda" },
+            { url: "/depo-cadiri", text: "Depo Çadırı" },
+            { url: "/mafsalli-tente", text: "Mafsallı Tente" },
+            { url: "/pergola-tente", text: "Pergola Tente" },
+            { url: "/semsiye", text: "Şemsiye" },
+        ],
+    },
+    semsiye: {
+        title: "Şemsiye Modelleri",
+        desc: "Amir Branda olarak kafe, restoran, plaj ve bahçeleriniz için yüksek kaliteli, rüzgara dayanıklı profesyonel şemsiye sistemleri imal ediyoruz.",
+        links: [
+            { url: "/semsiye", text: "Ayaklı Açılır Kapanır Şemsiye" },
+            { url: "/semsiye", text: "Yandan Gövdeli Şemsiye" },
+            { url: "/semsiye", text: "Cafe ve Restorant Şemsiyesi" },
+            { url: "/semsiye", text: "Bahçe Şemsiyesi" },
+            { url: "/semsiye", text: "Teleskopik ve Plaj Şemsiyesi" },
+        ],
+    },
+};
+
+const currentData = data[category];
+---
+
+<aside class="w-full px-4 mt-12 lg:mt-0">
+    <!-- About Widget -->
+    <div class="mb-10">
+        <h3
+            class="text-xl font-bold text-gray-800 mb-5 pb-2 border-b-2 border-primary relative uppercase tracking-wide"
+        >
+            Hakkımızda
+        </h3>
+        <figure class="mb-5">
+            <img
+                src="/style/brand/img/branda-logo.webp"
+                alt="Amir Branda Tente ve Çadır Sistemleri"
+                class="w-full max-w-[300px] h-auto object-contain mx-auto"
+                style="aspect-ratio: 2/1;"
+                loading="lazy"
+            />
+        </figure>
+        <p class="text-gray-600 mb-5 leading-relaxed text-[15px]">
+            {currentData.desc}
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-3">
+            <a
+                href="https://www.facebook.com/amirbrandacadirtente/"
+                target="_blank"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white hover:-translate-y-1 transition-transform duration-300"
+            >
+                <i class="fa-brands fa-facebook-f text-lg"></i>
+            </a>
+            <a
+                href="https://tr.pinterest.com/amirbranda/"
+                target="_blank"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-red-600 text-white hover:-translate-y-1 transition-transform duration-300"
+            >
+                <i class="fa-brands fa-pinterest text-lg"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/branda.ist/"
+                target="_blank"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-pink-600 text-white hover:-translate-y-1 transition-transform duration-300"
+            >
+                <i class="fa-brands fa-instagram text-lg"></i>
+            </a>
+            <a
+                href="https://x.com/amirbrandaist"
+                target="_blank"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:-translate-y-1 transition-transform duration-300"
+            >
+                <i class="fa-brands fa-x-twitter text-lg"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Category Links Modern Widget -->
+    <div
+        class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-black/5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-all duration-300 p-6 mb-8 relative overflow-hidden"
+    >
+        <h3
+            class="text-xl font-bold text-gray-800 mb-5 pb-3 border-b border-gray-200 relative uppercase tracking-wide"
+        >
+            {currentData.title}
+            <span class="absolute bottom-[-1px] left-0 w-16 h-[2px] bg-primary"
+            ></span>
+        </h3>
+        <ul class="flex flex-col rounded-lg">
+            {
+                currentData.links.map((link) => (
+                    <li class="group flex items-center justify-between border-b border-gray-100 last:border-b-0">
+                        <a
+                            href={link.url}
+                            class="py-3 px-2 flex-1 text-gray-600 font-medium text-[15px] group-hover:text-primary transition-all duration-300 flex items-center group-hover:translate-x-1"
+                        >
+                            <span class="opacity-0 group-hover:opacity-100 mr-2 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-primary font-bold">
+                                •
+                            </span>
+                            {link.text}
+                        </a>
+                        <span class="text-gray-400 group-hover:text-primary transition-colors duration-300 text-sm group-hover:translate-x-0.5 transform">
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                />
+                            </svg>
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</aside>

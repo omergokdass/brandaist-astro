@@ -1,0 +1,76 @@
+---
+import ModernGallery from '../components/ModernGallery.astro';
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout
+    title="Tekne Brandası İmalatı ve m2 Fiyatları | Amir Branda"
+    description="Amir Branda güvencesiyle İstanbul içi ücretsiz keşifle en uygun Tekne Brandası fiyatları."
+    ogTitle="Tekne Brandası | Amir Branda İstanbul"
+    headerTitle="Branda Çeşitlerimiz"
+    headerTitleTag="h2"
+    headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
+    sidebarCategory="branda"
+>
+<article class="post">
+        <h1 class="post-title text-center" id="page">Tekne Brandası</h1>
+        <figure class="mb-25">
+            <img
+                src="/style/brand/img/tekne-brandasi3.webp"
+                style="width: 100%; max-width: 650px; height: auto; aspect-ratio: 650/650; object-fit: cover;"
+                class="img-fluid rounded shadow-sm"
+                alt="Üsküdar Koruma Brandası Fiyatları"
+                fetchpriority="high" loading="eager"
+            />
+        </figure>
+        <div class="post-content">
+            <p>
+                Deniz araçlarınızı tuzlu suyun korozyon etkisine, güneş
+                sararmalarına, rüzgara ve yağmura karşı zırh gibi saran <strong
+                    >Tekne Brandası</strong
+                >, yat veya kamaraların kışlamasını sağlayan bir koruma
+                sistemidir. Yat örtme çadırları, bimini tente kılıfları ve
+                koruyucu bot torbaları için tekne formuna uygun dikim hizmeti
+                sunuyoruz. Su, mantar ve küf oluşumuna karşı %100 dirençli ithal
+                marin (denizcilik) <a
+                    href="/akrilik/"
+                    class="text-primary font-weight-bold"
+                    title="akrilik kumaş">akrilik kumaş</a
+                >lar veya dayanıklı sunbrella kumaşlar tercih edilerek
+                teknenizin ömrünü yıllarca korumanıza olanak tanıyoruz.
+            </p>
+            <p>
+                Firmamız, üretimden montaja kadar %100 müşteri memnuniyeti
+                garantisi sunmaktadır. <strong>Tekne Brandası</strong> sistemlerinde
+                profesyonel işçilik, su geçirmez, güneşe dayanıklı kumaş, paslanmaz
+                alüminyum gövde seçenekleri ve modern dış mekan tasarımları arıyorsanız
+                doğru yerdesiniz. Hemen bizimle iletişime geçerek mekanınıza özel
+                ölçümlerle hızlı teslimat ve ücretsiz fiyat teklifi alabilirsiniz.
+            </p>
+
+            <div class="space10"></div>
+            <div class="space10"></div>
+            <div class="wrapper light-wrapper">
+    <div class="container inner">
+        <div class="mb-4">
+            <h3 class="text-center mb-4">Uygulama Galerimiz</h3>
+            <ModernGallery images={[
+                { src: "/style/brand/img/tekne-brandasi2.webp", alt: "Özel Ölçü Koruma Brandası Sakarya" },
+                { src: "/style/brand/img/tekne-brandasi-1.webp", alt: "Tekirdağ tekne gemi brandası ucuz fiyatları" },
+                { src: "/style/brand/img/tekne-brandasi4.webp", alt: "Sakarya su geçirmez gemi tekne brandası fiyatı" },
+                { src: "/style/brand/img/tekne-brandasi5.webp", alt: "Balıkesir gemi brandası fiyatı" },
+                { src: "/style/brand/img/tekne-brandasi6.webp", alt: "Muğla su geçirmez brandası fiyatı" },
+                { src: "/style/brand/img/tekne-brandasi7.webp", alt: "Kadıköy brandacı ucuz fiyatları" },
+                { src: "/style/brand/img/tekne-brandasi.webp", alt: "Gebze tekne brandası koruma" }
+            ]} />
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
+            <!-- /.social -->
+        </div>
+        <!-- /.post-content -->
+    </article>
+    <!-- /.post -->
+</PageLayout>
+<!-- /.blog -->
