@@ -16,7 +16,6 @@ export default defineConfig({
     '/hizmetler.html': '/hizmetler/',
     '/urunler.html': '/urunler/',
     '/kalyon-kamyonet-brandasi': '/kamyon-kamyonet-brandasi/',
-    '/kalyon-kamyonet-brandasi/': '/kamyon-kamyonet-brandasi/',
   },
 
   build: {
