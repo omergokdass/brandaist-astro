@@ -8,7 +8,9 @@ export default defineConfig({
   trailingSlash: 'always',
 
   output: 'static',
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'compile',
+  }),
 
   redirects: {
     '/iletisim.html': '/iletisim/',
