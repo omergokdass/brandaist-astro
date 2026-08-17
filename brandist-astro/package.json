@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gsc:sync": "node scripts/sync-gsc.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "googleapis": "^174.0.1",
     "terser": "^5.46.0"
   }
 }

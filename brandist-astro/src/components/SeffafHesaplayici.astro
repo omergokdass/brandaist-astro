@@ -1,0 +1,215 @@
+---
+// SeffafHesaplayici.astro - Şeffaf Branda İnteraktif m2 Hesaplama Aracı
+---
+
+<div class="bg-gradient-to-br from-blue-50 via-indigo-50 to-slate-100 rounded-3xl p-6 sm:p-8 md:p-10 border border-blue-100 shadow-xl my-10 not-prose">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 bg-blue-600 text-white text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-3 shadow-sm">
+            <i class="fa-solid fa-calculator"></i> 2026 Güncel m² Fiyat Hesaplayıcı
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+            Şeffaf Branda & Balkon Kapama Maliyetinizi Hesaplayın
+        </h3>
+        <p class="text-sm sm:text-base text-gray-600 mt-2">
+            Alanınızın ölçülerini ve sistem türünü seçin, anında yaklaşık fiyat aralığını görün.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Sol Kolon: Girdiler -->
+        <div class="space-y-5 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <label for="calc-width" class="text-sm font-bold text-gray-800">
+                        <i class="fa-solid fa-arrows-left-right text-blue-600 mr-1"></i> Genişlik (En):
+                    </label>
+                    <span id="width-val" class="text-sm font-extrabold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-md">4.0 m</span>
+                </div>
+                <input 
+                    type="range" 
+                    id="calc-width" 
+                    min="1" 
+                    max="30" 
+                    step="0.5" 
+                    value="4" 
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                />
+                <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                    <span>1m</span>
+                    <span>15m</span>
+                    <span>30m</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <label for="calc-height" class="text-sm font-bold text-gray-800">
+                        <i class="fa-solid fa-arrows-up-down text-blue-600 mr-1"></i> Yükseklik (Boy):
+                    </label>
+                    <span id="height-val" class="text-sm font-extrabold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-md">2.5 m</span>
+                </div>
+                <input 
+                    type="range" 
+                    id="calc-height" 
+                    min="1" 
+                    max="6" 
+                    step="0.1" 
+                    value="2.5" 
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                />
+                <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                    <span>1m</span>
+                    <span>3m</span>
+                    <span>6m</span>
+                </div>
+            </div>
+
+            <div>
+                <label for="calc-system" class="block text-sm font-bold text-gray-800 mb-1.5">
+                    <i class="fa-solid fa-sliders text-blue-600 mr-1"></i> Mekanizma & Sistem Türü:
+                </label>
+                <select id="calc-system" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all">
+                    <option value="fermuarli" selected>Fermuarlı Manuel Sarmal Sistem (En Popüler)</option>
+                    <option value="cirtli">Cırtlı / Tokalı Sabit Germe Sistem</option>
+                    <option value="motorlu">Motorlu & Kumandalı Kasetli Şeffaf Stor (Lüks)</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="calc-thickness" class="block text-sm font-bold text-gray-800 mb-1.5">
+                    <i class="fa-solid fa-layer-group text-blue-600 mr-1"></i> Şeffaf Mika Kalınlığı:
+                </label>
+                <select id="calc-thickness" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all">
+                    <option value="0.80" selected>0.80 mm İthal Kristal Mika (Balkon & Standart)</option>
+                    <option value="1.00">1.00 mm Ağır Hizmet Mika (Kafe, Rüzgarlı Alan)</option>
+                    <option value="2.00">2.00 mm Ekstra Mukavemetli Mika (Endüstriyel)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Sağ Kolon: Sonuç ve WhatsApp CTA -->
+        <div class="flex flex-col justify-between bg-white p-6 sm:p-8 rounded-2xl border border-blue-100 shadow-md">
+            <div>
+                <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+                    <span class="text-sm font-bold text-gray-500 uppercase tracking-wider">Hesaplanan Alan:</span>
+                    <span id="total-area" class="text-2xl font-black text-gray-900">10.0 m²</span>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50/80 rounded-xl p-5 border border-blue-100/60 mb-5">
+                    <div class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-1">
+                        Tahmini 2026 Fiyat Aralığı (İmalat & Montaj):
+                    </div>
+                    <div id="price-range" class="text-3xl sm:text-4xl font-black text-blue-900 tracking-tight">
+                        7.500 ₺ - 10.500 ₺
+                    </div>
+                    <div class="text-xs text-gray-500 mt-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-check text-green-500"></i>
+                        <span>İstanbul içi <strong>Ücretsiz Keşif</strong> dahildir. Kesin tutar yerinde ölçümle netleşir.</span>
+                    </div>
+                </div>
+
+                <ul class="text-xs text-gray-600 space-y-2 mb-6">
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-green-600 font-bold"></i> %100 Su ve Rüzgar Geçirmez İthal PVC Mika
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-green-600 font-bold"></i> UV Filtreli Sararmaz ve Çatlamaz Kumaş
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-green-600 font-bold"></i> 2 Yıl İmalat ve Dikiş Garantisi
+                    </li>
+                </ul>
+            </div>
+
+            <a 
+                id="whatsapp-cta-btn"
+                href="https://api.whatsapp.com/send?phone=905386044851&text=Merhaba%20Amir%20Branda,%204.0m%20x%202.5m%20(10m2)%20Fermuarl%C4%B1%200.80mm%20%C5%9Eeffaf%20Branda%20i%C3%A7in%20fiyat%20teklifi%20almak%20istiyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2.5 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-green-600/30 transition-all duration-300 transform hover:-translate-y-0.5 text-center text-sm sm:text-base"
+            >
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Bu Ölçüler İçin Hızlı Teklif Al</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    (function() {
+        function initSeffafCalc() {
+            var widthInput = document.getElementById('calc-width');
+            var heightInput = document.getElementById('calc-height');
+            var systemSelect = document.getElementById('calc-system');
+            var thicknessSelect = document.getElementById('calc-thickness');
+
+            var widthVal = document.getElementById('width-val');
+            var heightVal = document.getElementById('height-val');
+            var totalArea = document.getElementById('total-area');
+            var priceRange = document.getElementById('price-range');
+            var ctaBtn = document.getElementById('whatsapp-cta-btn');
+
+            if (!widthInput || !heightInput || !systemSelect || !thicknessSelect || !widthVal || !heightVal || !totalArea || !priceRange || !ctaBtn) {
+                return;
+            }
+
+            function calc() {
+                var w = parseFloat(widthInput.value) || 1;
+                var h = parseFloat(heightInput.value) || 1;
+                var area = w * h;
+
+                widthVal.textContent = w.toFixed(1) + ' m';
+                heightVal.textContent = h.toFixed(1) + ' m';
+                totalArea.textContent = area.toFixed(1) + ' m²';
+
+                var baseLow = 700;
+                var baseHigh = 950;
+
+                var thickness = thicknessSelect.value;
+                if (thickness === '1.00') {
+                    baseLow += 200;
+                    baseHigh += 300;
+                } else if (thickness === '2.00') {
+                    baseLow += 500;
+                    baseHigh += 750;
+                }
+
+                var system = systemSelect.value;
+                var systemName = 'Fermuarlı Manuel Sistem';
+                if (system === 'cirtli') {
+                    baseLow -= 100;
+                    baseHigh -= 100;
+                    systemName = 'Cırtlı / Tokalı Sistem';
+                } else if (system === 'motorlu') {
+                    baseLow += 1200;
+                    baseHigh += 1800;
+                    systemName = 'Motorlu Kasetli Şeffaf Stor';
+                }
+
+                var totalLow = Math.round(area * baseLow);
+                var totalHigh = Math.round(area * baseHigh);
+
+                priceRange.textContent = totalLow.toLocaleString('tr-TR') + ' ₺ - ' + totalHigh.toLocaleString('tr-TR') + ' ₺';
+
+                var msg = encodeURIComponent(
+                    'Merhaba Amir Branda, ' + w.toFixed(1) + 'm x ' + h.toFixed(1) + 'm (' + area.toFixed(1) + ' m²) ' + systemName + ' (' + thickness + 'mm Mika) şeffaf branda kapama için yaklaşık ' + totalLow.toLocaleString('tr-TR') + ' ₺ - ' + totalHigh.toLocaleString('tr-TR') + ' ₺ fiyat hesapladım. Yerinde ücretsiz keşif ve net teklif almak istiyorum.'
+                );
+                ctaBtn.href = 'https://api.whatsapp.com/send?phone=905386044851&text=' + msg;
+            }
+
+            widthInput.addEventListener('input', calc);
+            heightInput.addEventListener('input', calc);
+            systemSelect.addEventListener('change', calc);
+            thicknessSelect.addEventListener('change', calc);
+
+            calc();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSeffafCalc);
+        } else {
+            initSeffafCalc();
+        }
+        document.addEventListener('astro:page-load', initSeffafCalc);
+    })();
+</script>

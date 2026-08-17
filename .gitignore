@@ -3,3 +3,13 @@ dist/
 dist.zip
 .astro/
 .DS_Store
+*.json.key
+service_account.json
+credentials.json
+oauth_credentials.json
+token.json
+gsc-key.json
+search_console_data.json
+deep_site_audit.json
+search_console.txt
+search_console_summary.md
