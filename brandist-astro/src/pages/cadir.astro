@@ -1,15 +1,198 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
+
+const tentModels = [
+    {
+        title: "Depo Çadırı",
+        url: "/depo-cadiri/",
+        img: "/style/brand/img/depo-cadiri-kapak.webp",
+        imgAlt: "İstanbul Çelik Konstrüksiyon Fabrika Depo Çadırı İmalatı",
+        badge: "En Çok Tercih Edilen",
+        desc: "Fabrika stok sahaları ve lojistik merkezleri için kolonsuz, fırtınaya dayanıklı modüler depolama çadırları."
+    },
+    {
+        title: "Hangar Çadırı",
+        url: "/hangar-cadiri/",
+        img: "/style/brand/img/depo-cadiri5.webp",
+        imgAlt: "Ağır Sanayi ve Havacılık İçin Kolonsuz Çelik Makaslı Hangar Çadırı",
+        badge: "Ağır Sanayi",
+        desc: "Uçak, helikopter, iş makinesi ve büyük hacimli sanayi ekipmanları için dev açıklıklı çelik makaslı hangarlar."
+    },
+    {
+        title: "Endüstriyel Çadır",
+        url: "/endustriyel-cadir/",
+        img: "/style/brand/img/endustriyel1.webp",
+        imgAlt: "Sanayi Tesisleri ve Üretim Hatları İçin Alev Yürütmez Endüstriyel Çadır",
+        badge: "Sanayi & Üretim",
+        desc: "Üretim hatları ve geçici atölyeler için yangına dayanıklı, alev yürütmez PVC kaplamalı endüstriyel yapılar."
+    },
+    {
+        title: "Şantiye Çadırı",
+        url: "/santiye-cadiri/",
+        img: "/style/brand/img/depo-cadiri10.webp",
+        imgAlt: "İnşaat Sahaları İçin Yalıtımlı Personel Yatakhane ve Yemekhane Çadırı",
+        badge: "Yalıtımlı",
+        desc: "İnşaat sahalarında personel yatakhane, yemekhane ve ofis ihtiyaçları için cam yünlü termal yalıtımlı çadırlar."
+    },
+    {
+        title: "Etkinlik Çadırı",
+        url: "/etkinlik-cadiri/",
+        img: "/style/brand/img/fuar8.webp",
+        imgAlt: "Açık Hava Düğün, Festival ve Kurumsal Lansman Etkinlik Çadırı",
+        badge: "Organizasyon",
+        desc: "Açılışlar, festivaller ve kurumsal davetler için şık, estetik kubbeli ve şeffaf pencereli organizasyon çadırları."
+    },
+    {
+        title: "Fuar Çadırı",
+        url: "/fuar-cadiri/",
+        img: "/style/brand/img/fuar6.webp",
+        imgAlt: "Modüler Tanıtım Günleri ve Panayır Stand Fuar Çadırı İmalatı",
+        badge: "Tanıtım & Stand",
+        desc: "Açık hava fuarları, panayırlar ve tanıtım günleri için kolay kurulup toplanabilen modüler fuar stand çadırları."
+    },
+    {
+        title: "Halı Saha Spor Çadırı",
+        url: "/halisaha-spor-cadiri/",
+        img: "/style/brand/img/saha1.webp",
+        imgAlt: "Kapalı Halı Saha ve Spor Kompleksi Branda Çatı Kapama Çadırı",
+        badge: "Spor Tesisleri",
+        desc: "Futbol sahaları, tenis kortları ve spor kompleksleri için güneş ve yağmurdan koruyan yüksek tavanlı branda kapama."
+    },
+    {
+        title: "İftar Çadırı",
+        url: "/iftar-cadiri/",
+        img: "/style/brand/img/iftar1.webp",
+        imgAlt: "Belediye ve Dernekler İçin Meydan Ramazan İftar Çadırı İmalatı",
+        badge: "Toplu Yemek",
+        desc: "Belediyeler ve dernekler için yüzlerce kişiye aynı anda hizmet veren hijyenik ve ferah toplu iftar çadırları."
+    },
+    {
+        title: "Kurban & Hayvan Çadırı",
+        url: "/kurban-hayvan-cadiri/",
+        img: "/style/brand/img/kurban1.webp",
+        imgAlt: "Tarımsal Besihane ve Çift Kat İzolasyonlu Hayvan Barınak Çadırı",
+        badge: "Tarımsal & Besi",
+        desc: "Besihaneler ve kurban satış alanları için havalandırmalı, ısı dengesini koruyan dayanıklı hayvan barınakları."
+    },
+    {
+        title: "Taziye Çadırı",
+        url: "/taziye-cadiri/",
+        img: "/style/brand/img/taziye1.webp",
+        imgAlt: "Belediyeler ve Aileler İçin Hızlı Kurulan Portatif Taziye Çadırı",
+        badge: "Portatif",
+        desc: "Belediyeler ve muhtarlıklar için hızlı kurulan, pencereli ve masa-sandalye düzenine uygun portatif taziye çadırları."
+    },
+    {
+        title: "Şeffaf Kış Bahçesi Çadırı",
+        url: "/kis-bahcesi/",
+        img: "/style/brand/img/seffaf-branda2.webp",
+        imgAlt: "Kafe ve Restoranlar İçin Şeffaf Mika Kış Bahçesi Kapama Çadırı",
+        badge: "Kafe & Villa",
+        desc: "Restoran, kafe ve teraslar için manzarayı kapatmayan kristal mika pencereli fermuarlı kış bahçesi sistemleri."
+    }
+];
 ---
 
 <PageLayout
-    title="Çadır Sistemleri | Hangar ve Şantiye Çadırı Fiyatları | Amir Branda"
-    description="Depo çadırı, şantiye çadırı ve halı saha çadırı imalatında çeyrek asırlık tecrübe. İstanbul içi en uygun endüstriyel dayanıklı çadır fiyatları için Amir Branda."
-    headerTitle="Endüstriyel Çadır Sistemleri"
-    headerTitleTag="h1"
-    headerSubtitle="Zorlu hava koşullarına dayanıklı, geniş açıklıklı izolasyonlu çadır imalatı."
+    title="Endüstriyel Çadır Sistemleri ve Modelleri 2026 | Amir Branda"
+    description="Depo çadırı, şantiye çadırı, hangar çadırı ve etkinlik çadırı imalatında 25 yıllık tecrübe. İstanbul içi en uygun 2026 çadır m2 fiyatları ve ücretsiz keşif."
+    ogTitle="Endüstriyel Çadır Sistemleri ve Modelleri | Amir Branda"
+    headerTitle="Çadır Sistemleri"
+    headerTitleTag="h2"
+    headerSubtitle="Fabrikalar, şantiyeler ve organizasyonlar için yüksek mukavemetli çelik konstrüksiyon çadır imalatı."
     headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
     sidebarCategory="cadir"
+    schemaPriceLow="950"
+    schemaPriceHigh="450000"
+    faqData={[
+        {
+            question: "Çadır sistemleri hangi alanlarda kullanılır?",
+            answer: "Çadır sistemleri sanayi depolamadan şantiye personeli barınmasına, uçak ve makine hangarlarından fuar, spor ve iftar organizasyonlarına kadar çok geniş bir kullanım alanına sahiptir."
+        },
+        {
+            question: "Çadır imalatında hangi iskelet ve kumaş malzemeleri kullanılır?",
+            answer: "Taşıyıcı iskelet olarak sıcak daldırma galvanizli kutu/boru çelik profiller veya NPU makaslar; kaplama olarak ise 650g - 900g/m² 1100 Denye alev yürütmez, su ve UV geçirmez ithal PVC membran branda kullanılmaktadır."
+        },
+        {
+            question: "Çadır sistemleri fırtına ve kar yüküne dayanıklı mıdır?",
+            answer: "Evet. Tüm çadır projelerimiz kurulacağı bölgenin meteorolojik şartlarına göre statik olarak hesaplanır. Saatte 120 km fırtınaya ve 100-150 kg/m² kar yüküne tam dayanıklıdır."
+        },
+        {
+            question: "İstanbul içi ücretsiz keşif ve montaj hizmetiniz var mı?",
+            answer: "Evet. Amir Branda olarak İstanbul'un tüm ilçelerine ve çevre sanayi havzalarına (Gebze, Çorlu, Tekirdağ) ücretsiz keşif ekibi yönlendiriyor, yerinde ölçüm ve zemin analizi yapıyoruz."
+        }
+    ]}
 >
-<article class="post"> <h2 class="h3 mb-3">Güvenilir ve Geniş Kapasiteli Yeni Çadır Sistemleri</h2> <p>Klasik betonarme yapılara kıyasla çok daha ekonomik, sökülüp takılabilir ve inanılmaz derecede hızlı kurulan <strong>çadır sistemleri</strong>, sanayiden tarıma kadar sayısız sektörde kalıcı bir çözüm olmuştur. <strong>Amir Branda</strong>, İstanbul merkezli üretim üssünde en güvenilir <strong>endüstriyel çadırlar</strong> ile hangar sistemlerini dünya standartlarında inşa etmektedir.</p> <h3 class="h5 mt-4 mb-2">Devasa Kapasiteli Depo ve Hangar Çadırı</h3> <p>Lojistik firmaları ve fabrikalar için tasarlanmış geniş açıklıklı <strong>depo çadırı</strong> yapılarımız, içeride hiçbir kolon veya direğe ihtiyaç duymayan altyapısıyla maksimum kullanım alanı vadeder. Güçlü çelik konstrüksiyon veya alüminyum profil iskelet üzerine 1. kalite yanmaz ithal pvc kumaş uygulanarak imal edilir. Hızlı monte edilmesi sayesinde iş gücü kaybını engellerken, oldukça cazip sunulan <strong>depo çadırı fiyatları</strong> sayesinde her işletmenin yeni depolama sahası bütçesine hitap eder.</p> <h3 class="h5 mt-4 mb-2">Şantiyeler İçin Personel ve Yemekhane Çadırları</h3> <p>Çetin hava şartlarında inşaat personeline güvence sağlayan, yüksek mühendislikle izolasyonu (cam yünü veya izocam kaplama) sağlanan poliüretan <strong>şantiye çadırı</strong> üretimimiz sayesinde en zorlu kış şartlarında bile sıcacık konaklama ve yemek alanları kuruyoruz. Amir Branda, inşaat süreçlerinin hız kesmemesi ve toplu yapım ihtiyaçlarında kâr marjının da maksimize olabilmesi amacıyla kurumsal firmalara destekleyecek çok özel <strong>şantiye çadırı fiyatları</strong> paketleri hazırlamaktadır.</p> <h3 class="h5 mt-4 mb-2">Fuar, Etkinlik ve Taziye Çadırı Seçenekleri</h3> <p>Belediye ve dernekler için portatif özellikli <strong>taziye çadırı</strong>, iftar çadırı ile panayır alanlarına özel kurulan <strong>fuar çadırı</strong> ihtiyaçlarında, hızlı kurulup toparlanabilir sistemler inşa ediyoruz. Yaz güneşinden korunmak ve kış yağışında güvende kalmak adına özel mekanizmalar geliştiriyoruz.</p> <h3 class="h5 mt-4 mb-2">Çadır Fiyatları ve İmalat Süreci</h3> <p>Dayanıklılığı ve güvenliği belirleyen en temel etken işçiliktir. Biz, Amir Branda ekibi olarak İstanbul içerisindeki her projede yerinde ve <strong>ücretsiz keşif</strong> yapar, zemin araştırmasını tamamlar ve yapının m2 ebatlarını planlarız. Toplu etkinlik, tarımsal veya endüstriyel her türdeki çadır imalatında uygun ve bütçenizi zora sokmayan <strong>çadır fiyatları</strong> politikamızla yanınızdayız.</p> </article> <div class="space30"></div>
+    <article class="post">
+        <h1 class="post-title text-center" id="page">Endüstriyel Çadır Sistemleri ve Modelleri</h1>
+        
+        <div class="post-content">
+            <div class="seo-content">
+                <p class="lead text-lg text-gray-700 leading-relaxed font-medium text-center max-w-3xl mx-auto mb-8">
+                    Geleneksel betonarme yapılara kıyasla <strong>%70 daha ekonomik</strong>, ruhsat prosedürlerine takılmayan ve günler içinde kurulup sökülebilen <strong>çadır sistemleri</strong>, sanayiden inşaata ve organizasyon sektörüne kadar çağımızın en akılcı mekansal çözümüdür.
+                </p>
+
+                <!-- 11 ÇADIR MODELİ VİTRİN KARTLARI -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10 not-prose">
+                    {tentModels.map((tent) => (
+                        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                                <img 
+                                    src={tent.img} 
+                                    alt={tent.imgAlt} 
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy"
+                                />
+                                <span class="absolute top-3 right-3 bg-blue-600/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                    {tent.badge}
+                                </span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                    <a href={tent.url} class="hover:underline">{tent.title}</a>
+                                </h3>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-4 flex-grow">
+                                    {tent.desc}
+                                </p>
+                                <div class="pt-3 border-t border-gray-100 mt-auto">
+                                    <a 
+                                        href={tent.url} 
+                                        class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors"
+                                    >
+                                        <span>Detaylı Bilgi & Fiyatlar</span>
+                                        <i class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1 transition-transform"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <h2>Doğru Çadır Sistemini Seçerken Nelere Dikkat Edilmeli?</h2>
+                <p>
+                    Çadır yatırımı yaparken amacınıza en uygun modeli belirlemek uzun vadeli kullanım konforu ve maliyet optimizasyonu açısından kritiktir:
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Lojistik ve Hammadde Depolama:</strong> Eğer forklift ve tır girişine uygun, kolonsuz devasa bir stok alanı arıyorsanız <a href="/depo-cadiri/" class="text-primary font-bold hover:underline">Depo Çadırı</a> veya <a href="/hangar-cadiri/" class="text-primary font-bold hover:underline">Hangar Çadırı</a> modellerimiz idealdir.
+                    </li>
+                    <li>
+                        <strong>İnşaat ve Personel Konaklama:</strong> Zorlu hava koşullarında işçi sağlığını korumak ve yemekhane/ofis oluşturmak için ısı yalıtımlı <a href="/santiye-cadiri/" class="text-primary font-bold hover:underline">Şantiye Çadırı</a> tercih edilmelidir.
+                    </li>
+                    <li>
+                        <strong>Etkinlik ve Tanıtım:</strong> Festival, panayır ve kurumsal organizasyonlar için hızlı kurulup toplanabilen <a href="/etkinlik-cadiri/" class="text-primary font-bold hover:underline">Etkinlik Çadırı</a> ve <a href="/fuar-cadiri/" class="text-primary font-bold hover:underline">Fuar Çadırı</a> sistemleri estetik görünüm sağlar.
+                    </li>
+                    <li>
+                        <strong>Ticari ve Kafe Kapamaları:</strong> Restoran ve kafe bahçelerinde 4 mevsim oturum sağlamak için <a href="/kis-bahcesi/" class="text-primary font-bold hover:underline">Şeffaf Kış Bahçesi Çadırı</a> en ekonomik çözümdür.
+                    </li>
+                </ul>
+
+                <h2>Amir Branda Kalitesiyle 2026 Çadır Fiyat Avantajları</h2>
+                <p>
+                    İstanbul Tuzla merkezli üretim fabrikamızda, aracı ve taşeron olmadan doğrudan kendi CNC büküm tesislerimizde imalat yapıyoruz. Zemin tipinize ve talep ettiğiniz ölçülere göre en uygun maliyetli <strong>çadır fiyatları</strong> ve <strong>ücretsiz keşif</strong> fırsatları için bizimle dilediğiniz an iletişime geçebilirsiniz.
+                </p>
+            </div>
+        </div>
+    </article>
 </PageLayout>

@@ -107,16 +107,28 @@ const { images } = Astro.props;
 
 <script>
     // Initialize GLightbox
-    // We import it here so it's only bundled and executed on pages that use this component
     import GLightbox from "glightbox";
     import "glightbox/dist/css/glightbox.min.css";
 
-    document.addEventListener("astro:page-load", () => {
-        GLightbox({
+    let lightboxInstance: any = null;
+
+    function initLightbox() {
+        if (lightboxInstance) {
+            lightboxInstance.destroy();
+        }
+        lightboxInstance = GLightbox({
             selector: ".glightbox",
             touchNavigation: true,
             loop: true,
             zoomable: true,
         });
-    });
+    }
+
+    // Initialize immediately, on DOM ready, and on Astro transition page load
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initLightbox);
+    } else {
+        initLightbox();
+    }
+    document.addEventListener("astro:page-load", initLightbox);
 </script>
