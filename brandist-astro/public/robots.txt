@@ -1,90 +1,91 @@
+# ==============================================================================
+# robots.txt for branda.ist (Amir Branda & Şeffaf Branda Sistemleri)
+# Optimized for Google, Bing, Yandex and AI Search Engines (SearchGPT, Gemini, Claude, Perplexity)
+# ==============================================================================
+
+# Global Crawler Access
 User-agent: *
 Allow: /
 
-
+# ------------------------------------------------------------------------------
+# 1. Major Search Engine Crawlers (Full Access)
+# ------------------------------------------------------------------------------
 User-agent: Googlebot
 Allow: /
 
-
-User-agent: Applebot
+User-agent: Googlebot-Image
 Allow: /
-
 
 User-agent: Bingbot
 Allow: /
 
-
-User-agent: DuckDuckBot
+User-agent: Applebot
 Allow: /
-
-
-User-agent: GPTBot
-Allow: /
-
-
-User-agent: ia_archiver
-Allow: /
-
-
-User-agent: msnbot
-Allow: /
-
-
-User-agent: Naverbot
-Allow: /
-
-
-User-agent: Twitterbot
-Allow: /
-
 
 User-agent: Yandex
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
 
-User-agent: ADmantX
-User-agent: AlphaBot
-User-agent: anthropic-ai
-User-agent: AwarioRssBot
-User-agent: AwarioSmartBot
-User-agent: BLEXBot
-User-agent: Buzzbot
-User-agent: Bytespider
-User-agent: CCBot
-User-agent: ChatGPT-User
-User-agent: claritybot
-User-agent: Claude-Web
-User-agent: ClaudeBot
-User-agent: cohere-ai
-User-agent: Diffbot
-User-agent: FacebookBot
-User-agent: FriendlyCrawler
-User-agent: Google-Extended
+# ------------------------------------------------------------------------------
+# 2. AI Search & Answer Engines (Explicitly Allowed for Indexing & Citations)
+# ------------------------------------------------------------------------------
+# OpenAI (ChatGPT Browsing, SearchGPT, Training)
 User-agent: GPTBot
-User-agent: huggingface
-User-agent: ImagesiftBot
-User-agent: img2dataset
-User-agent: magpie-crawler
-User-agent: Meltwater
-User-agent: Neevabot
-User-agent: news-please
-User-agent: NewsNow
-User-agent: Nutch
-User-agent: omgili
-User-agent: omgilibot
-User-agent: panscient.com
-User-agent: Perplexity-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google Gemini & AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI Search Engine
 User-agent: PerplexityBot
-User-agent: PetalBot
-User-agent: PiplBot
-User-agent: scoop.it
+Allow: /
+
+User-agent: Perplexity-ai
+Allow: /
+
+# Cohere & Meta AI
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ------------------------------------------------------------------------------
+# 3. Known Aggressive Scrapers & Abusive Harvesters (Blocked)
+# ------------------------------------------------------------------------------
+User-agent: BLEXBot
+User-agent: DotBot
+User-agent: MJ12bot
+User-agent: MegaIndex
 User-agent: Scrapy
-User-agent: Seekr
-User-agent: SentiBot
-User-agent: SeznamBot
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: PetalBot
+User-agent: ZoominfoBot
 User-agent: TurnitinBot
-User-agent: YouBot
-User-agent: ZumBot
 Disallow: /
 
+# ------------------------------------------------------------------------------
+# Sitemaps & Machine-Readable Entity Endpoints
+# ------------------------------------------------------------------------------
 Sitemap: https://www.branda.ist/sitemap-index.xml
+# LLMs Context: https://www.branda.ist/llms.txt

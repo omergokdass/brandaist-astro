@@ -1,0 +1,89 @@
+# Amir Branda & Şeffaf Branda Sistemleri (branda.ist) - Kapsamlı Dokümantasyon
+
+## 1. İşletme Kimliği ve Kurumsal Bilgiler
+- **Marka Adları:** Amir Branda, Şeffaf Branda Sistemleri, Amir Branda Çadır Tente Sistemleri
+- **Resmi Web Sitesi:** https://www.branda.ist
+- **Şeffaf Branda Özel Açılış Sayfası:** https://www.branda.ist/seffaf-branda/
+- **Fiziksel Konum:** Ayvansaray Mahallesi, Esnaf Loncası Sokak No:27, Fatih / İstanbul, Türkiye
+- **Coğrafi Koordinatlar:** 41.0368345, 28.9440246
+- **Telefon 1 (GSM / WhatsApp Teklif):** +90 538 604 48 51
+- **Telefon 2 (Sabit Hat):** +90 212 533 08 91
+- **E-Posta:** amirbranda@hotmail.com
+- **Çalışma Saatleri:** Pazartesi - Cumartesi 08:30 - 19:00
+- **Hizmet Kapsamı:** İstanbul'un 39 ilçesinde ücretsiz yerinde keşif, özel ölçü imalat, profesyonel montaj, kumaş değişimi ve teknik servis. Türkiye geneline kargo ve montaj desteği.
+
+---
+
+## 2. Üretim ve Hizmet Alanları
+
+### A. Tente Sistemleri (Mekanik ve Motorlu Gölgelendirme)
+1. **Pergola Tente:**
+   - Kafe, restoran ve villa terasları için 4 mevsim su ve kar tahliyeli raylı tente sistemi.
+   - 850 gr/m² alev yürütmez, ısı yalıtımlı 3 katmanlı Blackout PVC kumaş kullanılır.
+   - Uzaktan kumandalı Somfy veya yerli tüp motor, dimerli Samsung/Osram LED aydınlatma.
+   - Elektrostatik toz fırın boyalı kalın etli alüminyum ekstrüzyon profiller.
+2. **Bioklimatik (Bioclimatic) Tente:**
+   - Kendi ekseninde 0-120 derece dönebilen ve geriye toplanabilen alüminyum paneller.
+   - Doğal havalandırma, güneş kırma ve tam su sızdırmazlık.
+3. **Kasetli Tente:**
+   - Kapanırken kumaşını ve mekanik kollarını alüminyum kaset kutusu içine hapsederek kumaş ömrünü 3 kat artıran estetik sistem.
+   - İthal akrilik kumaş (su itici, solmaz). Rüzgar ve güneş sensörü entegrasyonu.
+4. **Mafsallı Tente:**
+   - En yaygın ve ekonomik kollu açılır tente türü. Manuel çevirme kollu veya motorlu seçenekler.
+5. **Zip Tente (Fermuarlı Dikey Stor):**
+   - Yan raylara kilitlenen fermuarlı kumaş yapısı sayesinde 120 km/s şiddetli rüzgara dayanıklı, modern dış cephe gölgeliği.
+6. **Karpuz ve Körüklü Tente:**
+   - Otel, butik mağaza ve konut pencereleri için geleneksel oval veya körüklü kumaş sistemleri.
+7. **Çift Açılır Tente:**
+   - Ortada çelik T ayak konstrüksiyonu üzerine iki yana açılan geniş bahçe ve restoran gölgeliği.
+
+### B. Şeffaf Branda & Kış Bahçesi Sistemleri (Şeffaf Branda Sistemleri)
+1. **Fermuarlı Şeffaf Mika Balkon Kapatma:**
+   - Cam balkon sistemlerine kıyasla %60-70 daha ekonomik, portatif ve hafif kapatma sistemi.
+   - İthal 0.80 mm ve 1.00 mm kristal şeffaf PVC mika (Japon / Tayvan menşeili, UV korumalı, -30°C ile +70°C dayanımlı).
+   - Çevresinde 1100 denye polyester takviye branda çerçevesi ve çift taraflı kalın fermuarlar.
+   - Yazın rulo yapılarak toplanabilir veya tamamen sökülebilir.
+2. **Kafeterya ve Restoran Şeffaf Kış Bahçesi:**
+   - Dış mekan müşteri kapasitesini kışın sıcacık bir oturma alanına çeviren ticari sistemler.
+   - Ufak bir ısıtıcıyla iç mekan sıcaklığı korunur.
+3. **Mevzuat ve Ruhsat Avantajı:**
+   - Portatif, sökülebilir tekstil yapıda olduğu için belediye imar mevzuatlarında yapı inşaat alanı (emsal) artışı sayılmaz; yıkım veya kaçak yapı cezası riski taşımaz.
+
+### C. Endüstriyel Çadır ve Hangar Yapıları
+1. **Depo ve Hangar Çadırları:**
+   - Betonarme ve çelik binalara kıyasla 1/5 maliyetle haftalar içinde kurulan ruhsatsız depolama çözümü.
+   - Makaslı çelik boru konstrüksiyon, sıcak daldırma galvaniz kaplama.
+   - 650 gr/m² - 900 gr/m² alev yürütmez, laklı PVC membran kaplama.
+2. **Şantiye ve Yatakhane Çadırları:**
+   - İnşaat projeleri için izolasyonlu (taşyünü / keçe / elyaf) işçi koğuşları ve yemekhane çadırları.
+3. **Taziye Çadırları:**
+   - Belediyeler, muhtarlıklar ve vakıflar için dayanıklı, kubbeli veya beşik çatılı portatif çadırlar.
+4. **Etkinlik, Düğün ve Fuar Çadırları:**
+   - Modüler alüminyum konstrüksiyonlu kubbeli kiralık ve satılık etkinlik yapıları.
+
+### D. Branda Kumaşları ve Taşıt Sistemleri
+1. **Tır ve Kamyonet Brandası:**
+   - 900 gr/m² Panama dokuma, gümrük mevzuatına uygun tır kayar perde ve körüklü kasa brandaları.
+2. **Bölme ve Fabrika Perdesi:**
+   - Depo içi yangın, toz ve ses bariyerleri, şerit mika PVC perdeler.
+3. **Akrilik ve Blackout Dış Mekan Kumaşları:**
+   - Solmama garantili, nano teflon kaplamalı su itici tente kumaşları.
+
+---
+
+## 3. Fiyatlandırma Politikası ve Keşif Süreci
+- Fiyatlar metrekare (m²), seçilen kumaşın teknik özellikleri (mika kalınlığı, blackout gramajı), iskelet türü (çelik, alüminyum) ve otomasyon markasına göre şeffaf olarak hesaplanır.
+- İstanbul genelinde yerinde **ücretsiz keşif ve milimetrik ölçü alma** hizmeti verilmektedir.
+
+---
+
+## 4. İlgili Web Sayfaları ve Bağlantılar
+- Ana Sayfa: https://www.branda.ist/
+- Şeffaf Branda: https://www.branda.ist/seffaf-branda/
+- Tente Modelleri: https://www.branda.ist/tente/
+- Pergola Tente: https://www.branda.ist/pergola-tente/
+- Depo Çadırı: https://www.branda.ist/depo-cadiri/
+- Tır Brandası: https://www.branda.ist/tir-brandasi/
+- Kış Bahçesi: https://www.branda.ist/kis-bahcesi/
+- Fiyat Listesi: https://www.branda.ist/fiyat-listesi/
+- İletişim: https://www.branda.ist/iletisim/

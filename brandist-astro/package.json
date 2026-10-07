@@ -9,7 +9,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "gsc:sync": "node scripts/sync-gsc.js"
+    "gsc:sync": "node scripts/sync-gsc.js",
+    "cf:sync": "node scripts/sync-cloudflare.js"
   },
   "keywords": [],
   "author": "",

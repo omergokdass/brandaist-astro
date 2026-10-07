@@ -1,0 +1,49 @@
+# Amir Branda & Şeffaf Branda Sistemleri (branda.ist)
+
+> İstanbul Fatih merkezli, 25 yılı aşkın tecrübeyle tente, branda, şeffaf kapama ve endüstriyel çadır imalatçısı. İstanbul'un tüm ilçelerine ücretsiz keşif ve montaj hizmeti sunmaktadır.
+
+## Kurumsal Kimlik & Genel Bakış
+- **Ticari Unvanlar:** Amir Branda Çadır Tente Sistemleri / Şeffaf Branda Sistemleri
+- **Faaliyet Alanı:** Dış mekan gölgelendirme, mimari tente, su geçirmez endüstriyel branda, kış bahçesi mika kapama ve çadır yapı sistemleri imalatı ve montajı.
+- **Konum:** Ayvansaray Mahallesi, Esnaf Loncası Sokak No:27, Fatih / İstanbul
+- **Telefon:** +90 538 604 48 51 / +90 212 533 08 91
+- **Web Sitesi:** https://www.branda.ist
+- **Şeffaf Branda Açılış Sayfası:** https://www.branda.ist/seffaf-branda/
+- **Google Haritalar:** Amir Branda Çadır Tente Sistemleri & Şeffaf Branda Sistemleri (Fatih / İstanbul)
+
+## Ana Ürün Kategorileri
+
+### 1. Tente Sistemleri
+- [Pergola Tente](https://www.branda.ist/pergola-tente/): Motorlu, uzaktan kumandalı, LED aydınlatmalı, 4 mevsim blackout kumaşlı açılır kapanır tavan sistemi.
+- [Bioklimatik Tente](https://www.branda.ist/bioklimatik-tente/): Dönebilen ve toplanabilen alüminyum lamelli akıllı tavan sistemi.
+- [Kasetli Tente](https://www.branda.ist/kasetli-tente/): Kumaş ve mekanizmayı tam koruyan kapalı kasetli modern tente.
+- [Mafsallı Tente](https://www.branda.ist/mafsalli-tente/): Dükkan ve balkonlar için ekonomik, kollu açılır tente.
+- [Motorlu Tente](https://www.branda.ist/motorlu-tente/): Somfy veya yerli otomasyonlu kumandalı tente sistemleri.
+- [Zip Tente](https://www.branda.ist/zip-tente/): Rüzgar geçirmez, fermuarlı dikey stor perde sistemi.
+- [Karpuz & Körüklü Tente](https://www.branda.ist/karpuz-tente/): Mağaza, otel ve pencere üstleri için estetik dekoratif tente.
+- [Tente İmalatı Genel Rehberi](https://www.branda.ist/tente/): Tüm tente modelleri, fiyatlandırma ve teknik detaylar.
+
+### 2. Şeffaf Branda & Kış Bahçesi Sistemleri
+- [Şeffaf Branda Sistemleri](https://www.branda.ist/seffaf-branda/): Balkon, kafe ve teraslar için kristal mika PVC fermuarlı kapatma. 0.80 mm ve 1.00 mm UV filtreli, -30°C/+70°C dayanımlı cam şeffaflığında izolasyon.
+- [Kış Bahçesi Çözümleri](https://www.branda.ist/kis-bahcesi/): İmar ruhsatı gerektirmeyen portatif sıcak alan oluşturma.
+- [Şeffaf Mika Kumaş](https://www.branda.ist/mika/): İthal rulo mika kumaş özellikleri ve toptan/perakende temini.
+
+### 3. Endüstriyel Çadır Sistemleri
+- [Depo Çadırı](https://www.branda.ist/depo-cadiri/): Fabrika, lojistik ve depolama için kolon-kirişsiz geniş açıklıklı çelik konstrüksiyonlu yapılar.
+- [Endüstriyel Çadır](https://www.branda.ist/endustriyel-cadir/): Üretim alanları, hangar ve atölye çadırları.
+- [Şantiye Çadırı](https://www.branda.ist/santiye-cadiri/): İnşaat şantiyeleri için yatakhane, yemekhane ve malzeme çadırları.
+- [Taziye Çadırı](https://www.branda.ist/taziye-cadiri/): Belediyeler ve kurumlar için portatif kubbeli taziye yapıları.
+- [Etkinlik & Fuar Çadırı](https://www.branda.ist/fuar-cadiri/): Organizasyon ve fuar etkinlikleri için kiralık/satılık çadırlar.
+
+### 4. Branda Kumaşları ve Özel Dikim
+- [Tır Brandası](https://www.branda.ist/tir-brandasi/): 900 gr/m² ve 1100 denye kayar perde ve gümrüklü dorse brandaları.
+- [PVC Branda](https://www.branda.ist/pvc-branda/): Su, alev ve kimyasal dayanımlı membran branda kumaşları.
+- [Akrilik Kumaş](https://www.branda.ist/akrilik/): Solmazlık garantili su itici dış mekan tente kumaşı.
+- [Blackout Kumaş](https://www.branda.ist/blackout/): %100 ışık ve ısı geçirmeyen 3 katmanlı tavan kumaşı.
+- [Bölme & Kapı Brandası](https://www.branda.ist/bolme-ve-kapi-brandasi/): Fabrika içi ısı ve toz bariyeri, kaynak bölmeleri.
+
+## Teknik Özellikler ve Önemli Bilgiler
+- **Keşif:** İstanbul'un 39 ilçesinde ücretsiz yerinde ölçü ve keşif hizmeti.
+- **İmalat:** Aracı olmadan doğrudan Fatih imalat atölyesinde özel ölçüye göre üretim.
+- **Garanti:** 2 yıl imalat, dikiş ve montaj garantisi.
+- **Detaylı Bilgi:** Eksiksiz ürün listesi ve teknik şartnameler için [llms-full.txt](https://www.branda.ist/llms-full.txt) dosyasını inceleyin.

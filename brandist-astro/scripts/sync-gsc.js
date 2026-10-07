@@ -30,22 +30,7 @@ const oauthCandidates = [
 
 const tokenPath = path.join(projectRoot, 'token.json');
 
-async function getOAuthClient(oauthPath) {
-    const content = fs.readFileSync(oauthPath, 'utf-8');
-    const credentials = JSON.parse(content);
-    const { client_secret, client_id, redirect_uris } = credentials.installed || credentials.web || credentials;
-    
-    // We use a local server redirect
-    const redirectUri = 'http://localhost:8085/oauth2callback';
-    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirectUri);
-
-    if (fs.existsSync(tokenPath)) {
-        const token = JSON.parse(fs.readFileSync(tokenPath, 'utf-8'));
-        oAuth2Client.setCredentials(token);
-        return oAuth2Client;
-    }
-
-    // Authenticate via local browser
+function startBrowserAuth(oAuth2Client) {
     return new Promise((resolve, reject) => {
         const authUrl = oAuth2Client.generateAuthUrl({
             access_type: 'offline',
@@ -65,7 +50,7 @@ async function getOAuthClient(oauthPath) {
                     const { tokens } = await oAuth2Client.getToken(code);
                     oAuth2Client.setCredentials(tokens);
                     fs.writeFileSync(tokenPath, JSON.stringify(tokens, null, 2));
-                    console.log('✅ Giriş yetkisi alındı ve kaydedildi!');
+                    console.log('✅ Yeni giriş yetkisi başarıyla alındı ve token.json dosyasına kaydedildi!\n');
                     resolve(oAuth2Client);
                 }
             } catch (e) {
@@ -73,7 +58,6 @@ async function getOAuthClient(oauthPath) {
             }
         });
 
-        // Track sockets to close quickly
         const sockets = new Set();
         server.on('connection', socket => {
             sockets.add(socket);
@@ -85,12 +69,39 @@ async function getOAuthClient(oauthPath) {
         };
 
         server.listen(8085, () => {
-            console.log('\n🌐 Lütfen açılan tarayıcı penceresinden Google hesabınızla giriş yapıp izin verin.');
-            console.log(`Otomatik açılmazsa şu adrese gidin: ${authUrl}\n`);
-            // Open browser automatically on Windows
+            console.log('🌐 Lütfen açılan tarayıcı penceresinden Google hesabınızla giriş yapıp izin verin.');
+            console.log(`🔗 Otomatik açılmazsa bu adrese gidin: ${authUrl}\n`);
+            // Windows
             exec(`start "" "${authUrl}"`);
         });
     });
+}
+
+async function getOAuthClient(oauthPath, forceNew = false) {
+    const content = fs.readFileSync(oauthPath, 'utf-8');
+    const credentials = JSON.parse(content);
+    const { client_secret, client_id } = credentials.installed || credentials.web || credentials;
+    
+    const redirectUri = 'http://localhost:8085/oauth2callback';
+    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirectUri);
+
+    if (!forceNew && fs.existsSync(tokenPath)) {
+        try {
+            const token = JSON.parse(fs.readFileSync(tokenPath, 'utf-8'));
+            oAuth2Client.setCredentials(token);
+            // Belirtecin aktif olup olmadığını doğrula
+            await oAuth2Client.getAccessToken();
+            return oAuth2Client;
+        } catch (e) {
+            console.log(`⚠️ Mevcut token geçersiz veya süresi dolmuş (${e.message}).`);
+            console.log('🔄 Eski token temizleniyor ve otomatik yeniden tarayıcı yetkilendirmesi başlatılıyor...\n');
+            try {
+                if (fs.existsSync(tokenPath)) fs.unlinkSync(tokenPath);
+            } catch (err) {}
+        }
+    }
+
+    return startBrowserAuth(oAuth2Client);
 }
 
 async function runSync() {
@@ -103,7 +114,7 @@ async function runSync() {
     const oauthPath = oauthCandidates.find(p => fs.existsSync(p));
 
     if (serviceAccountPath) {
-        console.log(`🔑 Service Account bulundu: ${serviceAccountPath}`);
+        console.log(`🔑 Kalıcı Service Account bulundu: ${serviceAccountPath}`);
         authClient = new google.auth.GoogleAuth({
             keyFile: serviceAccountPath,
             scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
@@ -113,16 +124,18 @@ async function runSync() {
         authClient = await getOAuthClient(oauthPath);
     } else {
         console.log('❌ Anahtar dosyası bulunamadı!\n');
-        console.log('Google Cloud politikanız Service Account anahtar indirmeyi engellediği için');
-        console.log('👉 "OAuth Client ID" (Masaüstü Uygulaması) oluşturarak 1 dakikada çözebilirsiniz:');
+        console.log('İki yöntemden birini kullanabilirsiniz:');
         console.log('---------------------------------------------------------------------------------');
-        console.log('1. Sol menüden "API\'ler ve Hizmetler" > "Kimlik Bilgileri" (Credentials) sekmesine gelin.');
-        console.log('2. "Kimlik Bilgisi Oluştur" > "OAuth İstemci Kimliği" (OAuth client ID) seçin.');
-        console.log('   (Eğer "OAuth Onay Ekranı" isterse: Kullanıcı türü "Dış / External", Uygulama adı "Branda SEO", emailinizi seçip Kaydet deyin.)');
-        console.log('3. Uygulama türü olarak "Masaüstü Uygulaması" (Desktop app) seçin ve Oluştur deyin.');
-        console.log('4. İndirilen JSON dosyasını şu isimle projeye kaydedin:');
-        console.log(`   📂 ${projectRoot}\\oauth_credentials.json`);
-        console.log('\n✅ Dosyayı kaydettikten sonra terminalde "npm run gsc:sync" komutunu çalıştırın!\n');
+        console.log('YÖNTEM 1 (ÖNERİLEN - Kalıcı & Süresi Dolmaz): Service Account');
+        console.log('1. Google Cloud Console > "IAM & Yönetim" > "Hizmet Hesapları" (Service Accounts) sekmesine gidin.');
+        console.log('2. Bir hizmet hesabı oluşturup JSON anahtarını indirin.');
+        console.log('3. JSON dosyasını şu isimle projeye kaydedin: brandist-astro/service_account.json');
+        console.log('4. Google Search Console > Ayarlar > Kullanıcılar bölümünden bu hizmet hesabının e-postasını "Sahip" veya "Tam Yetkili" olarak ekleyin.');
+        console.log('---------------------------------------------------------------------------------');
+        console.log('YÖNTEM 2 (Masaüstü OAuth):');
+        console.log('1. Google Cloud Console > "API\'ler ve Hizmetler" > "Kimlik Bilgileri" sekmesine gidin.');
+        console.log('2. "OAuth İstemci Kimliği" > "Masaüstü Uygulaması" seçip JSON indirin.');
+        console.log('3. Dosyayı "brandist-astro/oauth_credentials.json" olarak kaydedin.\n');
         process.exit(1);
     }
 
@@ -136,8 +149,19 @@ async function runSync() {
 
         // 1. Check verified sites
         console.log('📋 Yetkili mülkler taranıyor...');
-        const sitesRes = await searchconsole.sites.list();
-        const siteList = sitesRes.data.siteEntry || [];
+        let siteList = [];
+        try {
+            const sitesRes = await searchconsole.sites.list();
+            siteList = sitesRes.data.siteEntry || [];
+        } catch (listErr) {
+            if (listErr.message && listErr.message.includes('invalid_grant')) {
+                console.log('\n⚠️ invalid_grant hatası alındı. Eski token siliniyor...');
+                if (fs.existsSync(tokenPath)) fs.unlinkSync(tokenPath);
+                console.log('👉 Lütfen komutu tekrar çalıştırarak tarayıcıdan izin verin: npm run gsc:sync\n');
+                process.exit(1);
+            }
+            throw listErr;
+        }
 
         if (siteList.length === 0) {
             console.log('\n⚠️ Uyarı: Giriş yaptığınız Google hesabında doğrulanmış Search Console mülkü bulunamadı!');
