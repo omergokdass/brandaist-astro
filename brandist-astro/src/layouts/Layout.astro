@@ -19,7 +19,7 @@ const {
     title = "Amir Branda | En İyi Tente ve Branda Sistemleri",
     description = "İstanbul'un lider tente ve branda üreticisi Amir Branda ile mekanlarınızı dört mevsim yaşanabilir kılın.",
     ogTitle,
-    ogImage = "https://www.branda.ist/images/amir-branda-logo.jpg",
+    ogImage = "https://www.branda.ist/style/brand/img/branda-logo.webp",
     ogType = "website",
     customCanonical,
     preloadImage,
@@ -83,7 +83,7 @@ const localBusinessSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: "Amir Branda",
-    image: "https://www.branda.ist/style/brand/img/logo-amir-branda.png",
+    image: "https://www.branda.ist/style/brand/img/branda-logo.webp",
     "@id": "https://www.branda.ist",
     url: "https://www.branda.ist",
     telephone: "+905386044851",
@@ -142,7 +142,7 @@ const serviceSchema = isServicePage
           provider: {
               "@type": "HomeAndConstructionBusiness",
               name: "Amir Branda",
-              image: "https://www.branda.ist/style/brand/img/logo-amir-branda.png",
+              image: "https://www.branda.ist/style/brand/img/branda-logo.webp",
               url: "https://www.branda.ist",
               telephone: "+905386044851",
           },
@@ -453,15 +453,6 @@ import "../styles/global.css";
                 ]
             }
         </script>
-        {
-            breadcrumbSchema && (
-                <script
-                    is:inline
-                    type="application/ld+json"
-                    set:html={breadcrumbSchema}
-                />
-            )
-        }
     </head>
     <body class="overflow-x-hidden w-full m-0 p-0">
         <div class="floating-action-container">

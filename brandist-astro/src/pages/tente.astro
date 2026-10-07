@@ -1,101 +1,716 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
+import ModernGallery from "../components/ModernGallery.astro";
+
+// Tente Modelleri Veri Listesi
+const motorluModeller = [
+    {
+        name: "Pergola Tente",
+        url: "/pergola-tente/",
+        img: "/style/brand/img/pergola-tente1.webp",
+        badge: "En Çok Satan",
+        badgeColor: "bg-red-600",
+        features: ["LED Aydınlatmalı", "Blackout Kumaş", "Somfy Motor", "Dört Mevsim Yalıtım"],
+        desc: "Kafe, restoran ve villa terasları için kumandalı, alüminyum raylı ve su tahliyeli lüks açılır kapanır tavan sistemi.",
+        priceHint: "Orta / Üst Segment",
+    },
+    {
+        name: "Bioklimatik Tente",
+        url: "/bioklimatik-tente/",
+        img: "/style/brand/img/bioklimatik-tente.webp",
+        badge: "Premium Lüks",
+        badgeColor: "bg-slate-900",
+        features: ["Dönebilen Lameller", "Doğal Havalandırma", "Ağır Kar Yükü Mukavemeti", "Tam Otomasyon"],
+        desc: "Kendi ekseninde dönen ve geriye katlanan alüminyum panelleriyle mimari gölgelendirmenin zirvesi.",
+        priceHint: "Premium Segment",
+    },
+    {
+        name: "Kasetli Tente",
+        url: "/kasetli-tente/",
+        img: "/style/brand/img/yeni-kasetli-tente.webp",
+        badge: "Uzun Ömürlü",
+        badgeColor: "bg-blue-600",
+        features: ["Tam Korumalı Kaset", "Kumaş Koruma Sistemi", "Kompakt Şık Tasarım", "Rüzgar Sensörü Uyumlu"],
+        desc: "Kapandığında kumaşını ve kollarını tamamen alüminyum gövde içine hapsederek kumaş ömrünü 3 kat uzatır.",
+        priceHint: "Orta Segment",
+    },
+    {
+        name: "Motorlu Tente",
+        url: "/motorlu-tente/",
+        img: "/style/brand/img/pergola-tente2.webp",
+        badge: "Akıllı Otomasyon",
+        badgeColor: "bg-indigo-600",
+        features: ["Uzaktan Kumanda", "Rüzgar / Yağmur Sensörü", "Zaman Ayarı", "Akıllı Ev Entegrasyonu"],
+        desc: "Tüm tente çeşitlerine entegre edilebilen, tek tuşla açılıp kapanan konforlu motorlu mekanizma sistemleri.",
+        priceHint: "Opsiyona Göre",
+    },
+    {
+        name: "Zip Tente (Dikey)",
+        url: "/zip-tente/",
+        img: "/style/brand/img/yeni-zip-tente.webp",
+        badge: "Rüzgar Kesici",
+        badgeColor: "bg-emerald-600",
+        features: ["Fermuarlı Ray Sistemi", "120 km/s Rüzgar Direnci", "Mikro Delikli Kumaş", "Isı Bloke Etme"],
+        desc: "Yan raylara kilitlenen fermuarlı kumaş yapısıyla rüzgarı, tozu ve güneşi tamamen kesen dikey perde sistemi.",
+        priceHint: "Orta / Üst Segment",
+    },
+    {
+        name: "Winted Tente",
+        url: "/winted-tente/",
+        img: "/style/brand/img/winted-tente1.webp",
+        badge: "Pencere Tipi",
+        badgeColor: "bg-amber-600",
+        features: ["0-180° Açı Ayarı", "Kasetli Kumaş Koruması", "Balkon & Pencere Uyumlu", "Estetik Kompakt"],
+        desc: "Pencereler ve balkon parapetleri için 180 dereceye kadar eğim açısı ayarlanabilen modern kasetli tente.",
+        priceHint: "Ekonomik / Orta",
+    },
+];
+
+const klasikModeller = [
+    {
+        name: "Mafsallı Tente",
+        url: "/mafsalli-tente/",
+        img: "/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp",
+        badge: "En Ekonomik",
+        badgeColor: "bg-green-600",
+        features: ["Manuel veya Motorlu", "İthal Akrilik Kumaş", "Eğim Ayarlı Dirsek", "Hızlı Montaj"],
+        desc: "Ev balkonları ve dükkan önleri için Türkiye'nin en popüler, pratik ve en uygun maliyetli gölgelendirme çözümü.",
+        priceHint: "En Uygun Bütçeli",
+    },
+    {
+        name: "Körüklü Tente",
+        url: "/koruklu-tente/",
+        img: "/style/brand/img/koruklu-tente1.webp",
+        badge: "Nostaljik Şıklık",
+        badgeColor: "bg-purple-600",
+        features: ["Akordiyon Açılım", "Yan Güneş Koruması", "İp Mekanizmalı", "Zengin Renk Seçeneği"],
+        desc: "Yan kanatları sayesinde yatay gelen güneş ışınlarını engelleyen klasik ve nostaljik vitrin tentesi.",
+        priceHint: "Ekonomik",
+    },
+    {
+        name: "Karpuz Tente",
+        url: "/karpuz-tente/",
+        img: "/style/brand/img/karpuz-tente1.webp",
+        badge: "Dekoratif Butik",
+        badgeColor: "bg-pink-600",
+        features: ["Kubbeli Tasarım", "Özel Kavisli İskelet", "Baskılı Saçak İmkanı", "Otel & Kafe Vitrini"],
+        desc: "Yuvarlak hatları ve kubbe formuyla pencerelere, villa kapılarına ve butik mağazalara eşsiz mimari hava katar.",
+        priceHint: "Ekonomik / Orta",
+    },
+    {
+        name: "Sabit Tente",
+        url: "/sabit-tente/",
+        img: "/style/brand/img/sabit-tente1.webp",
+        badge: "Fırtınaya Dayanıklı",
+        badgeColor: "bg-teal-600",
+        features: ["Çelik/Alüminyum Konstrüksiyon", "Sıfır Mekanik Arıza", "Giriş Sundurması", "Özel Geometrik Formlar"],
+        desc: "Açılıp kapanma mekanizması olmadan, sabit çelik iskelet üzerine gerilen sağlam ve uzun ömürlü giriş tentesi.",
+        priceHint: "Ekonomik",
+    },
+    {
+        name: "Çift Açılır Tente",
+        url: "/cift-acilir-tente/",
+        img: "/style/brand/img/cift-acilir-tente1.webp",
+        badge: "Geniş Alan",
+        badgeColor: "bg-cyan-600",
+        features: ["T Ayaklı Taşıyıcı", "Tekerlekli / Sabit Seçenek", "İki Yöne 6 Metre Açılım", "Restoran Bahçesi"],
+        desc: "Merkezi bir çelik direk üzerinden her iki yöne doğru açılan, geniş açık bahçeler ve kafeler için ideal sistem.",
+        priceHint: "Orta Segment",
+    },
+    {
+        name: "Stor Tente",
+        url: "/stor-tente/",
+        img: "/style/brand/img/mafsalli-tente13.webp",
+        badge: "Dikey Gölgelik",
+        badgeColor: "bg-orange-600",
+        features: ["Dikey İniş Mekanizması", "Balkon Korkuluğu Kilidi", "Güneş & Rüzgar Kalkanı", "Kompakt Rulo"],
+        desc: "Tavandan balkona dikey olarak inen, balkon mahremiyetini ve gölgesini sağlayan ekonomik makaralı sistem.",
+        priceHint: "En Uygun Bütçeli",
+    },
+    {
+        name: "Yarasa Tente",
+        url: "/yarasa-tente/",
+        img: "/style/brand/img/yarasa-tente1.webp",
+        badge: "Asma-Germe Mimari",
+        badgeColor: "bg-violet-600",
+        features: ["PVC Membran Kumaş", "Çelik Halat Gergi", "Modern Heykelsi Görünüm", "Geniş Park & Tesis"],
+        desc: "Geniş açık alanlar, havuz başları ve otel bahçeleri için yüksek mukavemetli asma germe membran yapılar.",
+        priceHint: "Proje Bazlı",
+    },
+];
+
+const mekanModelleri = [
+    {
+        name: "Balkon Tentesi",
+        url: "/balkon-tentesi/",
+        img: "/style/brand/img/mafsalli-tente13.webp",
+        badge: "Konut Çözümleri",
+        desc: "Apartman, rezidans ve villa balkonları için mafsallı, kasetli veya stor tente seçenekleri.",
+    },
+    {
+        name: "Bahçe Tentesi",
+        url: "/bahce-tentesi/",
+        img: "/style/brand/img/bahce.webp",
+        badge: "Açık Alan",
+        desc: "Geniş müstakil bahçeler, teraslar ve havuz kenarları için su geçirmez gölgelendirme sistemleri.",
+    },
+    {
+        name: "İstanbul Tenteci & İmalat",
+        url: "/istanbul-tenteci/",
+        img: "/style/brand/img/istanbul-tenteci.webp",
+        badge: "Kurumsal & Ticari",
+        desc: "İstanbul'un 39 ilçesinde ücretsiz keşif, imalattan montaja dükkan ve vitrin tente projeleri.",
+    },
+    {
+        name: "Tente Tamiri ve Bakımı",
+        url: "/tente-tamiri-bakimi/",
+        img: "/style/brand/img/amir-branda-tente-montaj-istanbul.webp",
+        badge: "Teknik Servis",
+        desc: "Yırtık tente kumaşı değişimi, motor yenileme, kırık mafsal kol tamiri ve periyodik mekanizma bakımı.",
+    },
+];
+
+const galleryImages = [
+    { src: "/style/brand/img/pergola-tente1.webp", alt: "İstanbul Motorlu Alüminyum Pergola Tente Montajı" },
+    { src: "/style/brand/img/bioklimatik-tente.webp", alt: "Lüks Bioklimatik Tente Sistemi Uygulaması" },
+    { src: "/style/brand/img/yeni-kasetli-tente.webp", alt: "Kadıköy Kasetli Tente Balkon Kurulumu" },
+    { src: "/style/brand/img/ucuz-mafsalli-tente-modelleri-istanbul.webp", alt: "İstanbul Mafsallı Tente Dükkan Önü Gölgelik" },
+    { src: "/style/brand/img/cift-acilir-tente1.webp", alt: "Beşiktaş Restoran Çift Açılır T Ayaklı Tente" },
+    { src: "/style/brand/img/koruklu-tente1.webp", alt: "Şişli Mağaza Vitrini Körüklü Akordiyon Tente" },
+    { src: "/style/brand/img/karpuz-tente1.webp", alt: "Fatih Butik Otel Girişi Karpuz Tente" },
+    { src: "/style/brand/img/sabit-tente1.webp", alt: "Bakırköy Sabit Çelik İskeletli Giriş Sundurma Tente" },
+    { src: "/style/brand/img/yeni-zip-tente.webp", alt: "Ümraniye Dış Mekan Rüzgar Kesici Zip Perde Tente" },
+    { src: "/style/brand/img/winted-tente1.webp", alt: "Ataşehir Açılı Kasetli Winted Pencere Tentesi" },
+    { src: "/style/brand/img/yarasa-tente1.webp", alt: "Beylikdüzü Asma Germe Membran Yarasa Tente" },
+    { src: "/style/brand/img/pergola-tente2.webp", alt: "Sarıyer LED Aydınlatmalı Motorlu Raylı Tente" },
+];
 ---
 
 <PageLayout
-    title="Tente Modelleri | En Uygun Tente Fiyatları ve İmalatı | Amir Branda"
-    description="Amir Branda güvencesiyle pergola, mafsallı, motorlu ve kasetli tente sistemleri. İstanbul'da en uygun tente fiyatları ve ücretsiz keşif için bize ulaşın."
-    headerTitle="Tente Sistemleri ve Modelleri"
+    title="Tente Modelleri ve Fiyatları 2026 | İstanbul Tente İmalatı | Amir Branda"
+    description="İstanbul'da en uygun tente modelleri ve m2 fiyatları! Motorlu pergola, kasetli, mafsallı, balkon ve bahçe tentesi imalatı. Ücretsiz keşif ve 5 yıl garanti."
+    ogTitle="Tente Modelleri, Sistemleri ve 2026 Fiyatları | Amir Branda"
+    ogImage="https://www.branda.ist/style/brand/img/pergola-tente1.webp"
+    headerTitle="Tente Sistemleri, Modelleri ve 2026 Fiyatları"
     headerTitleTag="h1"
-    headerSubtitle="Güneşe, yağmura karşı kalıcı ve estetik gölgelendirme uygulamaları."
+    headerSubtitle="İstanbul'un Lider İmalatçısından Dört Mevsim Dayanıklı, Özel Ölçü Üretim ve Motorlu Tente Çözümleri"
     headerBgImage="/style/brand/img/kategori-arkasi-pp.webp"
     sidebarCategory="tente"
-    schemaPriceLow="4500"
-    schemaPriceHigh="125000"
+    schemaPriceLow="3500"
+    schemaPriceHigh="145000"
     faqData={[
         {
-            question: "Mafsallı tente ile kasetli tente arasındaki fark nedir?",
-            answer: "Mafsallı tente en ekonomik ve klasik koldan açılır modeldir, ancak mekanizması dışarıda durur. Kasetli tente ise kapandığında kumaşı ve mekanizmayı tam korumalı alüminyum bir 'kaset' içine saklar. Bu sayede kışın kumaş kirlenmez, ömrü mafsallı tenteye göre çok daha uzundur."
+            question: "Tente fiyatları metrekare (m2) başına nasıl hesaplanır?",
+            answer: "Tente fiyatları seçilen modele (mafsallı, kasetli, pergola, bioklimatik vb.), cephe genişliği (en) ve öne doğru açılım (boy) ölçülerine göre projelendirilir. Klasik mafsallı ve körüklü modeller en ekonomik başlangıç fiyatlarına sahipken; alüminyum ekstrüzyon profilli, Somfy motorlu ve blackout kumaşlı otomatik pergola sistemleri m2 bazında hesaplanmaktadır. İstanbul içi adresinize gelerek tamamen ücretsiz keşif yapıyor ve net bütçe teklifi sunuyoruz."
         },
         {
-            question: "Pergola tente m2 fiyatları ortalama ne kadar?",
-            answer: "Motorlu ve LED aydınlatmalı alüminyum pergola (raylı) tente sistemlerinin m2 fiyatı, kullanılacak motorun markasına (Somfy vb.) ve kumaş türüne (Blockout kumaş) göre projelendirilir. Standart tente modellerine göre daha lüks bir yatırım olup mekanınıza ciddi bir kapalı alan kazandırır."
+            question: "Mafsallı tente ile kasetli tente arasındaki temel fark nedir?",
+            answer: "Mafsallı tente en popüler ve ekonomik koldan açılır modeldir ancak kapandığında kumaşı ve mekanizması açıkta kalır. Kasetli tente ise kapandığı an hem kumaşı hem motoru hem de taşıyıcı kolları tam sızdırmaz alüminyum bir kaset gövde içine kilitler. Bu sayede kumaş tozdan, kış yağışlarından ve kuş pisliğinden etkilenmez; kullanım ömrü 3 katına çıkar."
         },
         {
-            question: "Tente kumaşları güneşte solar mı veya yağmur geçirir mi?",
-            answer: "İmalatını yaptığımız tüm tentelerde UV ışınlarına karşı solmaya dayanıklı, 5 yıl Avrupa garantili ithal akrilik veya polyester kumaşlar kullanmaktayız. Ayrıca su itici kaplamaları sayesinde yağmur sularını kesinlikle alt tarafa sızdırmaz."
+            question: "Tente kumaşları su geçirir mi veya güneşte solar mı?",
+            answer: "İmalatını yaptığımız tüm tente sistemlerinde %100 su itici kaplamalı, UV filtreli ve 5 yıl solmazlık garantili Avrupa/İthal akrilik ve blackout membran kumaşlar kullanmaktayız. Şiddetli yağmur ve kavurucu yaz güneşine karşı kesinlikle su sızdırmaz ve rengini korur."
         },
         {
-            question: "Uygun fiyatlı tente modelleri hangileridir?",
-            answer: "Tente fiyatları kullanılacak modele göre değişir. En uygun fiyatlı tente modellerimiz arasında klasik mafsallı tenteler ve sabit tenteler yer alır. İstanbul'da güvenilir bir tenteci arıyorsanız, balkon veya mağaza önü projeleriniz için en uygun bütçeli teklifleri bizimle iletişime geçerek alabilirsiniz."
+            question: "Dükkan veya evimin önüne tente yaptırmak için belediye ruhsatı gerekir mi?",
+            answer: "Mafsallı, körüklü, karpuz veya kasetli gibi açılır-kapanır hafif tente sistemleri bina taşıyıcı sistemine kalıcı yük bindirmediği ve taşınabilir hafif yapı sayıldığı için genellikle imar ruhsatı gerektirmez. Ancak ticari işletmelerde caddeye taşma payı ve bina ortak karar defteri gibi yerel belediye düzenlemelerine dikkat edilmelidir."
+        },
+        {
+            question: "Motorlu tente sistemlerinde hangi motor markaları kullanılmaktadır?",
+            answer: "Motorlu ve kumandalı tente, pergola ve zip perde sistemlerimizde dünya lideri Somfy ve Becker tüp motorları ile yerli güçlü motor seçeneklerini entegre ediyoruz. Sistemlere ek olarak rüzgar, güneş ve yağmur sensörleri takılarak fırtına anında tentenin otomatik kapanması sağlanabilmektedir."
+        },
+        {
+            question: "Eski tentemin sadece kumaşını veya motorunu değiştirebilir miyim?",
+            answer: "Evet! İskeleti sağlam olan mevcut tenteleriniz için kumaş değişimi, motor arızası tamiri, mafsal kol yenilemesi ve kışlık bakım servisimiz mevcuttur. Komple sıfırdan sistem yaptırmaya kıyasla çok daha ekonomik bir şekilde tentenizi ilk günkü haline getiriyoruz."
         }
     ]}
 >
-<article class="post"> 
-    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 text-center">Dört Mevsim Mekan Keyfi: İstanbul Tente Modelleri</h2> 
-    
-    <p class="text-lg text-gray-700 leading-relaxed mb-8">Mekanlarınıza değer katmak, kullanılmayan alanları değerlendirmek ve misafirlerinize konfor sunmak kaliteli bir gölgelendirme sisteminden geçer. <strong>Tente sistemleri</strong> konusunda İstanbul'un açık ara en çok tercih edilen üretici firmalarından biri olan <strong>Amir Branda</strong>, tamamen mekana özel ölçülerle ürettiği fonksiyonel yapılarla öne çıkar. Evlerin balkonlarından büyük restoranların kış bahçelerine varana kadar geliştirdiğimiz yalıtım çözümlerinde; güneş ışığını engelleyen ve %100 su tutmayan ithal (Avrupa) kumaşlar tercih ediyoruz.</p> 
+    <!-- ItemList Schema for Google Product/Catalog Rich Snippets -->
+    <script slot="json-ld" type="application/ld+json" is:inline>
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Amir Branda Tente Sistemleri ve Modelleri Kataloğu",
+            "description": "İstanbul genelinde imalatı ve montajı yapılan kaliteli tente modelleri listesi.",
+            "numberOfItems": 16,
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Pergola Tente", "url": "https://www.branda.ist/pergola-tente/" },
+                { "@type": "ListItem", "position": 2, "name": "Bioklimatik Tente", "url": "https://www.branda.ist/bioklimatik-tente/" },
+                { "@type": "ListItem", "position": 3, "name": "Kasetli Tente", "url": "https://www.branda.ist/kasetli-tente/" },
+                { "@type": "ListItem", "position": 4, "name": "Mafsallı Tente", "url": "https://www.branda.ist/mafsalli-tente/" },
+                { "@type": "ListItem", "position": 5, "name": "Motorlu Tente", "url": "https://www.branda.ist/motorlu-tente/" },
+                { "@type": "ListItem", "position": 6, "name": "Zip Tente", "url": "https://www.branda.ist/zip-tente/" },
+                { "@type": "ListItem", "position": 7, "name": "Körüklü Tente", "url": "https://www.branda.ist/koruklu-tente/" },
+                { "@type": "ListItem", "position": 8, "name": "Karpuz Tente", "url": "https://www.branda.ist/karpuz-tente/" },
+                { "@type": "ListItem", "position": 9, "name": "Sabit Tente", "url": "https://www.branda.ist/sabit-tente/" },
+                { "@type": "ListItem", "position": 10, "name": "Çift Açılır Tente", "url": "https://www.branda.ist/cift-acilir-tente/" },
+                { "@type": "ListItem", "position": 11, "name": "Winted Tente", "url": "https://www.branda.ist/winted-tente/" },
+                { "@type": "ListItem", "position": 12, "name": "Stor Tente", "url": "https://www.branda.ist/stor-tente/" },
+                { "@type": "ListItem", "position": 13, "name": "Yarasa Tente", "url": "https://www.branda.ist/yarasa-tente/" },
+                { "@type": "ListItem", "position": 14, "name": "Balkon Tentesi", "url": "https://www.branda.ist/balkon-tentesi/" },
+                { "@type": "ListItem", "position": 15, "name": "Bahçe Tentesi", "url": "https://www.branda.ist/bahce-tentesi/" },
+                { "@type": "ListItem", "position": 16, "name": "Tente Tamiri & Bakımı", "url": "https://www.branda.ist/tente-tamiri-bakimi/" }
+            ]
+        }
+    </script>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <!-- Motorlu Pergola -->
-        <a href="/pergola-tente/" class="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-            <div class="h-48 overflow-hidden bg-gray-200">
-                <img src="/style/brand/img/pergola-tente1.webp" alt="Motorlu Pergola Tente" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    <article class="post">
+        <!-- Trust Badges Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 not-prose">
+            <div class="flex items-center p-4 bg-blue-50/70 border border-blue-100 rounded-xl">
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center flex-shrink-0 mr-3">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 m-0">5 Yıl Garanti</h4>
+                    <p class="text-xs text-gray-600 m-0">İthal Kumaş & Motor</p>
+                </div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">Motorlu Pergola Tente</h3>
-                <p class="text-gray-600 text-sm">Lüks kafe, otel restoranları veya özel konutların vazgeçilmezi olan led aydınlatmalı ve motorlu alüminyum raylı tente sistemidir. Mekanınıza kalıcı değer katar.</p>
-                <span class="mt-4 inline-block font-bold text-blue-600 text-sm">İncele & Fiyat Al &rarr;</span>
-            </div>
-        </a>
 
-        <!-- Mafsallı Tente -->
-        <a href="/mafsalli-tente/" class="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-            <div class="h-48 overflow-hidden bg-gray-200">
-                <img src="/style/brand/img/mafsalli-tente.webp" alt="Mafsallı Tente" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="flex items-center p-4 bg-emerald-50/70 border border-emerald-100 rounded-xl">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 mr-3">
+                    <i class="fa-solid fa-ruler-combined text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 m-0">Ücretsiz Keşif</h4>
+                    <p class="text-xs text-gray-600 m-0">İstanbul Tüm İlçeler</p>
+                </div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">Mafsallı Tente</h3>
-                <p class="text-gray-600 text-sm">Balkonunuzu gölgelemek veya butik mağazanızın vitrinini korumak için en ekonomik ve klasik manuel koldan açılır tente çözümümüzdür.</p>
-                <span class="mt-4 inline-block font-bold text-blue-600 text-sm">İncele & Fiyat Al &rarr;</span>
-            </div>
-        </a>
 
-        <!-- Bioklimatik Tente -->
-        <a href="/bioklimatik-tente/" class="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-            <div class="h-48 overflow-hidden bg-gray-200">
-                <img src="/style/brand/img/bioklimatik-tente.webp" alt="Bioklimatik Tente" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="flex items-center p-4 bg-amber-50/70 border border-amber-100 rounded-xl">
+                <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center flex-shrink-0 mr-3">
+                    <i class="fa-solid fa-industry text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 m-0">İmalattan Satış</h4>
+                    <p class="text-xs text-gray-600 m-0">Aracısız En Uygun Fiyat</p>
+                </div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">Bioklimatik Pergola</h3>
-                <p class="text-gray-600 text-sm">Kendi etrafında dönen veya tamamen açılan alüminyum panellerle doğal havalandırma sunan, pazarın en lüks ve teknolojik tavan kapamasıdır.</p>
-                <span class="mt-4 inline-block font-bold text-blue-600 text-sm">İncele & Fiyat Al &rarr;</span>
-            </div>
-        </a>
 
-        <!-- Kasetli Tente -->
-        <a href="/kasetli-tente/" class="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-            <div class="h-48 overflow-hidden bg-gray-200">
-                <img src="/style/brand/img/yeni-kasetli-tente.webp" alt="Kasetli Tente" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="flex items-center p-4 bg-purple-50/70 border border-purple-100 rounded-xl">
+                <div class="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center flex-shrink-0 mr-3">
+                    <i class="fa-solid fa-truck-fast text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 m-0">Hızlı Montaj</h4>
+                    <p class="text-xs text-gray-600 m-0">3-5 Günde Teslimat</p>
+                </div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">Kasetli Tente</h3>
-                <p class="text-gray-600 text-sm">Kapandığında kumaşını ve mekanizmasını tam korumalı alüminyum kasetine saklayarak ömrünü 3 kat uzatan estetik şaheseridir.</p>
-                <span class="mt-4 inline-block font-bold text-blue-600 text-sm">İncele & Fiyat Al &rarr;</span>
-            </div>
-        </a>
-    </div>
-
-    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-600 p-8 rounded-r-xl mb-12">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-0">Uzmanından Tente İmalatı İstanbul'da Nasıl İşliyor?</h3> 
-        <p class="text-gray-700 leading-relaxed mb-4">Kusursuz bir işleyiş için ölçünün ve mekan rüzgar/güneş açılarının doğru tahlil edilmesi şarttır. Bizim en büyük avantajımız, sektördeki diğer aracı (komisyoncu) firmaların aksine <strong>doğrudan üretici ve alanında 30 yıllık uzman bir tenteci</strong> olmamızdır.</p>
-        <p class="text-gray-700 leading-relaxed mb-6">Ev veya işletmenize tamamen ücretsiz olarak bir keşif ustası gönderir, şeffaf <strong>tente fiyat listesi</strong> üzerinden kullanılacak modelin en optimal ve cebinizi yormayacak fiyatını çıkartır, söz verdiğimiz günde takarak projeyi noktalarız.</p>
-        <div class="text-center md:text-left">
-            <a href="/iletisim/" class="inline-flex items-center justify-center bg-blue-700 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-800 transition-colors shadow-lg">
-                <i class="fa-solid fa-phone mr-2"></i> Ücretsiz Keşif Hattı
-            </a>
         </div>
-    </div>
-</article> 
-<div class="space30"></div>
+
+        <!-- Main Introduction Text -->
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            İstanbul Tente Modelleri: Dört Mevsim Estetik ve Fonksiyonel Gölgelendirme
+        </h2>
+
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Açık yaşam alanlarını güneşe, şiddetli rüzgara ve sağanak yağışa karşı koruma altına alarak dört mevsim konforlu bir alana dönüştürmenin en estetik yolu <strong>profesyonel tente sistemleri</strong> kurulumudur. 30 yılı aşkın imalat tecrübesiyle sektörün öncüsü olan <strong>Amir Branda</strong>; evlerin balkonlarından lüks villa verandalarına, butik kafe vitrinlerinden devasa restoran teraslarına kadar her mekana özel ölçülü ve garantili tente çözümleri üretmektedir.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed mb-10">
+            Tüm imalatlarımızda paslanmaz ekstrüzyon alüminyum profiller, elektrostatik fırın toz boya, çelik destekli mafsal eklemleri ve UV filtreli %100 su geçirmez <strong>ithal akrilik / blackout kumaşlar</strong> kullanılmaktadır. İhtiyacınıza en uygun tente modelini aşağıdan inceleyebilir veya uzman ustalarımızdan ücretsiz keşif randevusu alabilirsiniz.
+        </p>
+
+        <!-- KATEGORİ 1: OTOMATİK VE MOTORLU TENTE SİSTEMLERİ -->
+        <div class="not-prose mb-14">
+            <div class="border-b-2 border-primary/20 pb-3 mb-8 flex items-center justify-between">
+                <div>
+                    <span class="text-xs uppercase tracking-widest font-bold text-primary">Lüks & Modern Teknoloji</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 m-0">Otomatik ve Motorlu Tente Sistemleri</h2>
+                </div>
+                <span class="hidden sm:inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">Kumandalı & Sensörlü</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {motorluModeller.map((item) => (
+                    <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden">
+                        <div class="relative h-52 overflow-hidden bg-gray-100">
+                            <img
+                                src={item.img}
+                                alt={`${item.name} Modelleri ve İmalatı`}
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                            />
+                            <span class={`absolute top-3 right-3 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md ${item.badgeColor}`}>
+                                {item.badge}
+                            </span>
+                            <div class="absolute bottom-2 left-3 bg-black/60 backdrop-blur-sm text-white text-[11px] px-2.5 py-0.5 rounded font-medium">
+                                {item.priceHint}
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                                <a href={item.url} class="hover:text-primary transition-colors">{item.name}</a>
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
+                                {item.desc}
+                            </p>
+                            <ul class="space-y-1.5 mb-5 text-xs text-gray-600">
+                                {item.features.map((feat) => (
+                                    <li class="flex items-center">
+                                        <i class="fa-solid fa-check text-primary text-xs mr-2 flex-shrink-0"></i>
+                                        <span>{feat}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <a
+                                href={item.url}
+                                class="mt-auto inline-flex items-center justify-between w-full py-2.5 px-4 bg-gray-50 hover:bg-primary text-gray-800 hover:text-white font-bold text-sm rounded-xl transition-all duration-200"
+                            >
+                                <span>Detaylı İncele & Fiyat Al</span>
+                                <span>&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- KATEGORİ 2: KLASİK VE MEKANİK TENTE SİSTEMLERİ -->
+        <div class="not-prose mb-14">
+            <div class="border-b-2 border-primary/20 pb-3 mb-8 flex items-center justify-between">
+                <div>
+                    <span class="text-xs uppercase tracking-widest font-bold text-primary">Ekonomik & Pratik Çözümler</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 m-0">Klasik ve Mekanik Tente Sistemleri</h2>
+                </div>
+                <span class="hidden sm:inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">Bütçe Dostu</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {klasikModeller.map((item) => (
+                    <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden">
+                        <div class="relative h-52 overflow-hidden bg-gray-100">
+                            <img
+                                src={item.img}
+                                alt={`${item.name} İmalatı ve Fiyatları`}
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                            />
+                            <span class={`absolute top-3 right-3 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md ${item.badgeColor}`}>
+                                {item.badge}
+                            </span>
+                            <div class="absolute bottom-2 left-3 bg-black/60 backdrop-blur-sm text-white text-[11px] px-2.5 py-0.5 rounded font-medium">
+                                {item.priceHint}
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                                <a href={item.url} class="hover:text-primary transition-colors">{item.name}</a>
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
+                                {item.desc}
+                            </p>
+                            <ul class="space-y-1.5 mb-5 text-xs text-gray-600">
+                                {item.features.map((feat) => (
+                                    <li class="flex items-center">
+                                        <i class="fa-solid fa-check text-primary text-xs mr-2 flex-shrink-0"></i>
+                                        <span>{feat}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <a
+                                href={item.url}
+                                class="mt-auto inline-flex items-center justify-between w-full py-2.5 px-4 bg-gray-50 hover:bg-primary text-gray-800 hover:text-white font-bold text-sm rounded-xl transition-all duration-200"
+                            >
+                                <span>Detaylı İncele & Fiyat Al</span>
+                                <span>&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- KATEGORİ 3: KULLANIM ALANINA ÖZEL VE SERVİS ÇÖZÜMLERİ -->
+        <div class="not-prose mb-14">
+            <div class="border-b-2 border-primary/20 pb-3 mb-8">
+                <span class="text-xs uppercase tracking-widest font-bold text-primary">Mekana Göre Çözümler & Servis</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 m-0">Kullanım Alanına Özel Tente ve Bakım Hizmetleri</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {mekanModelleri.map((item) => (
+                    <a
+                        href={item.url}
+                        class="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-300 flex flex-col"
+                    >
+                        <div class="h-36 rounded-xl overflow-hidden mb-4 bg-gray-100">
+                            <img
+                                src={item.img}
+                                alt={item.name}
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                            />
+                        </div>
+                        <span class="text-xs font-bold text-primary mb-1">{item.badge}</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                            {item.name}
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed flex-grow mb-3">
+                            {item.desc}
+                        </p>
+                        <span class="text-xs font-bold text-primary flex items-center">
+                            Sayfayı İncele <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </span>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <!-- 2026 TENTE FİYATLARI VE MODEL KARŞILAŞTIRMA TABLOSU (SEO FEATURED SNIPPET) -->
+        <div class="not-prose my-14 bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-sm">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="text-xs font-bold text-primary uppercase tracking-widest">Şeffaf Maliyet & Kılavuz</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1 mb-3">
+                    2026 Tente Modelleri ve Fiyat Karşılaştırma Tablosu
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    İstanbul tente imalatı piyasasında modellerin çalışma prensipleri, rüzgar dayanımları ve ortalama fiyat aralıklarının güncel karşılaştırması:
+                </p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-900 text-white">
+                            <th class="py-4 px-4 font-bold rounded-tl-xl">Tente Modeli</th>
+                            <th class="py-4 px-4 font-bold">Açılma Mekanizması</th>
+                            <th class="py-4 px-4 font-bold">Rüzgar Dayanımı</th>
+                            <th class="py-4 px-4 font-bold">İdeal Kullanım Alanı</th>
+                            <th class="py-4 px-4 font-bold rounded-tr-xl">Ortalama Fiyat Skalası</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-gray-700">
+                        <tr class="hover:bg-blue-50/40 transition-colors">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/mafsalli-tente/" class="text-primary hover:underline">Mafsallı Tente</a></td>
+                            <td class="py-4 px-4">Manuel / Motorlu Eklemli Kol</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">Orta (40-50 km/s)</span></td>
+                            <td class="py-4 px-4">Balkonlar, Dükkan Vitrinleri</td>
+                            <td class="py-4 px-4 font-bold text-emerald-600">₺₺ (En Ekonomik)</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/40 transition-colors bg-gray-50/50">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/kasetli-tente/" class="text-primary hover:underline">Kasetli Tente</a></td>
+                            <td class="py-4 px-4">Motorlu Tam Korumalı Kaset</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">Yüksek (60 km/s)</span></td>
+                            <td class="py-4 px-4">Lüks Villalar, Modern Kafeler</td>
+                            <td class="py-4 px-4 font-bold text-blue-600">₺₺₺ (Orta / Üst)</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/40 transition-colors">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/pergola-tente/" class="text-primary hover:underline">Pergola Tente</a></td>
+                            <td class="py-4 px-4">Motorlu Alüminyum Raylı Tavan</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">Çok Yüksek (100-120 km/s)</span></td>
+                            <td class="py-4 px-4">Restoranlar, Teraslar, Kış Bahçesi</td>
+                            <td class="py-4 px-4 font-bold text-indigo-600">₺₺₺₺ (Proje Bazlı m2)</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/40 transition-colors bg-gray-50/50">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/bioklimatik-tente/" class="text-primary hover:underline">Bioklimatik Pergola</a></td>
+                            <td class="py-4 px-4">Dönen/Katlanan Alüminyum Panel</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">Maksimum (Ağır Kar Yükü)</span></td>
+                            <td class="py-4 px-4">Prestijli Mekanlar, Lüks Konutlar</td>
+                            <td class="py-4 px-4 font-bold text-purple-600">₺₺₺₺₺ (Premium Lüks)</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/40 transition-colors">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/koruklu-tente/" class="text-primary hover:underline">Körüklü Tente</a></td>
+                            <td class="py-4 px-4">Akordiyon İpli Manuel</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">Orta (Yan Korumalı)</span></td>
+                            <td class="py-4 px-4">Pencereler, Butik Mağazalar</td>
+                            <td class="py-4 px-4 font-bold text-emerald-600">₺₺ (Ekonomik)</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/40 transition-colors bg-gray-50/50">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/cift-acilir-tente/" class="text-primary hover:underline">Çift Açılır Tente</a></td>
+                            <td class="py-4 px-4">T Ayaklı Çift Yönlü Mafsal</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">Orta / Yüksek</span></td>
+                            <td class="py-4 px-4">Açık Bahçeler, Havuz Kenarı</td>
+                            <td class="py-4 px-4 font-bold text-blue-600">₺₺₺ (Orta Segment)</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/40 transition-colors">
+                            <td class="py-4 px-4 font-bold text-gray-900"><a href="/zip-tente/" class="text-primary hover:underline">Zip Tente (Dikey)</a></td>
+                            <td class="py-4 px-4">Fermuarlı Raylı Motorlu Perde</td>
+                            <td class="py-4 px-4"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">Çok Yüksek (120 km/s)</span></td>
+                            <td class="py-4 px-4">Pergola Yanları, Verandalar</td>
+                            <td class="py-4 px-4 font-bold text-indigo-600">₺₺₺ (Metretül / m2)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50/60 border-l-4 border-primary rounded-r-xl text-xs sm:text-sm text-gray-700 leading-relaxed">
+                <strong>💡 Tente Fiyatı Nasıl Belirlenir?</strong> Net tente fiyat teklifi; alanın en-boy ölçüsü, seçilecek kumaş türü (İthal Akrilik, Blackout karartma veya Polyester), motor ve otomasyon markası (Somfy, Becker), uzaktan kumanda ve rüzgar sensörü gibi donanımlara göre hesaplanır. Net ölçü ve yerinde keşif için bizi arayabilirsiniz.
+            </div>
+        </div>
+
+        <!-- SEO REHBER İÇERİK BÖLÜMÜ (H2, H3 SEMANTİK HİYERARŞİ) -->
+        <div class="prose-headings:text-gray-900 prose-p:text-gray-700 leading-relaxed mb-12">
+            <h2>Hangi Tente Modelini Seçmelisiniz? İhtiyaç Analizi Rehberi</h2>
+            <p>
+                Doğru bir tente seçimi yapmak, mekanınızın fiziki koşullarını, kullanım amacınızı ve bütçenizi doğru analiz etmekten geçer. Farklı kullanım senaryolarına göre en ideal tente alternatifleri şunlardır:
+            </p>
+            <ul>
+                <li>
+                    <strong>Ev Balkonları ve Daireler:</strong> Bütçe dostu ve pratik bir gölgelik için <a href="/mafsalli-tente/">mafsallı tente</a> veya dikey gölgelendirme sağlayan <a href="/stor-tente/">stor tente</a> modelleri en çok tercih edilenlerdir. Eğer modern bir görünüm ve uzun kumaş ömrü isteniyorsa <a href="/kasetli-tente/">kasetli tente</a> mükemmel bir yatırımdır.
+                </li>
+                <li>
+                    <strong>Kafe, Restoran ve Ticari Teraslar:</strong> Ticari alanlarda mekanın dört mevsim tam kapasite çalışabilmesi için LED ışıklı <a href="/pergola-tente/">otomatik pergola tente</a> veya <a href="/bioklimatik-tente/">bioklimatik tente</a> sistemleri kurulmalıdır. Yan cephelerin de kapanması için <a href="/zip-tente/">zip perdeler</a> veya cam balkon entegrasyonu önerilir.
+                </li>
+                <li>
+                    <strong>Müstakil Bahçeler ve Havuz Kenarları:</strong> Duvar montajı imkanı olmayan geniş açıklıklarda tekerlekli veya sabit ayaklı <a href="/cift-acilir-tente/">çift açılır tente</a> modelleri her iki yöne gölge sağlayarak ferah bir kullanım sunar.
+                </li>
+                <li>
+                    <strong>Mağaza Vitrinleri ve Butik Oteller:</strong> Mekana nostaljik ve şık bir kurumsal kimlik kazandırmak için yanları kapalı <a href="/koruklu-tente/">körüklü tente</a> ve kubbeli <a href="/karpuz-tente/">karpuz tente</a> modelleri üzerine saçak logo baskısı yapılabilmektedir.
+                </li>
+            </ul>
+
+            <h2>Tente Kumaşı Seçimi: Akrilik, Blackout ve Polyester Kumaşların Farkları</h2>
+            <p>
+                Bir tentenin ömrünü ve performansını belirleyen en kritik unsur kumaş kalitesidir. Amir Branda olarak tente üretiminde kullandığımız kumaş standartları:
+            </p>
+            <ul>
+                <li>
+                    <strong>İthal Akrilik Kumaş:</strong> İspanya ve Avrupa'dan ithal edilen %100 su itici kaplamalı ve teflon özellikli kumaşlardır. Güneş ışınlarına karşı solmaya 5 yıl garantilidir. Yağmur suyunu sızdırmaz, nefes alan dokusu sayesinde altındaki alanı sera gibi bunaltmaz.
+                </li>
+                <li>
+                    <strong>3 Boyutlu Blackout (Karartma) Kumaş:</strong> Genellikle raylı pergola sistemlerinde kullanılan 850 gr/m2 ağırlığında alev yürütmez, sıfır ışık geçirgenlikli membran kumaştır. Dışarıdaki soğuk havayı veya kavurucu sıcaklığı %100 bloke eder.
+                </li>
+                <li>
+                    <strong>Polyester ve Pilsa Kumaşlar:</strong> Ekonomik sınıf gölgeliklerde ve endüstriyel örtülerde kullanılan su geçirmez dayanıklı dokulardır.
+                </li>
+            </ul>
+
+            <h2>Motor ve Otomasyon Teknolojileri: Akıllı Tente Sistemleri</h2>
+            <p>
+                Gelişen mimari otomasyon sayesinde tente sistemleri artık tek tuşla veya akıllı telefonlar üzerinden kontrol edilebilmektedir. <strong>Somfy</strong> ve <strong>Becker</strong> gibi dünya devi motor markalarıyla güçlendirilen sistemlerimize entegre edilebilen akıllı sensörler:
+            </p>
+            <ul>
+                <li><strong>Rüzgar & Titreşim Sensörü:</strong> Şiddetli fırtına çıktığında rüzgar şiddetini algılayarak tenteyi otomatik olarak kapatır ve kırılmasını önler.</li>
+                <li><strong>Güneş Sensörü:</strong> Sabah güneş doğduğunda belirlenen eşik değerine göre tenteyi kendiliğinden açarak mekanın serin kalmasını sağlar.</li>
+                <li><strong>Yağmur Sensörü:</strong> Yağış başladığı anda tente yüzeyini kapatarak kumaşı ve altındaki mobilyaları koruma altına alır.</li>
+            </ul>
+
+            <h2>5 Adımda Kusursuz İmalat ve Montaj Süreci</h2>
+            <ol>
+                <li><strong>1. Ücretsiz Yerinde Keşif & Ölçü:</strong> İstanbul'un neresinde olursanız olun uzman teknik ekibimiz adresinize gelerek mekanın rüzgar açısını, montaj yüzeyini ve net ölçülerini alır.</li>
+                <li><strong>2. 3D Modelleme & Şeffaf Fiyat Teklifi:</strong> Mekanınıza en uygun model belirlenir, kumaş kartelası seçilir ve tek kuruş sürpriz maliyet içermeyen resmi teklif sunulur.</li>
+                <li><strong>3. Kendi Atölyemizde İmalat:</strong> 1. sınıf ekstrüzyon alüminyum ve ithal kumaşlar son teknoloji dikiş ve montaj bantlarımızda milimetrik olarak üretilir.</li>
+                <li><strong>4. Hızlı ve Temiz Montaj:</strong> Söz verilen günde (ortalama 3-5 iş günü) deneyimli montaj ustalarımız tarafından sıfır hata ile kurulum tamamlanır.</li>
+                <li><strong>5. Garanti Belgesi & Satış Sonrası Destek:</strong> Ürününüz 5 yıl kumaş ve mekanizma garantisiyle teslim edilir; periyodik bakım ve yedek parça desteği sağlanır.</li>
+            </ol>
+        </div>
+
+        <!-- UYGULAMA GALERİSİ -->
+        <div class="not-prose my-14">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-xs font-bold text-primary uppercase tracking-widest">Referanslarımız</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1 mb-2">
+                    Tente İmalat ve Uygulama Galerimiz
+                </h2>
+                <p class="text-gray-600 text-sm">
+                    İstanbul genelinde imalatını ve montajını başarıyla tamamladığımız projelerden bazı kareler:
+                </p>
+            </div>
+            <ModernGallery images={galleryImages} />
+        </div>
+
+        <!-- İSTANBUL İLÇELERİ YEREL SEO HUB (LOCAL SEO SILO) -->
+        <div class="not-prose my-14 bg-gradient-to-br from-slate-900 to-gray-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl">
+            <div class="max-w-3xl">
+                <span class="text-xs uppercase tracking-widest font-bold text-primary">İstanbul Geneli Hizmet Ağı</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1 mb-4">
+                    İstanbul'un 39 İlçesinde Ücretsiz Tente Keşif Hizmeti
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+                    Amir Branda olarak Anadolu ve Avrupa yakasındaki tüm ilçelere tam donanımlı mobil servis araçlarımızla ulaşıyor, aynı gün içinde ücretsiz keşif ve ölçü hizmeti sunuyoruz.
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                    <a href="/kadikoy-tenteci/" class="px-3.5 py-1.5 bg-white/10 hover:bg-primary text-white text-xs font-bold rounded-lg transition-colors border border-white/10">Kadıköy Tenteci</a>
+                    <a href="/besiktas-tenteci/" class="px-3.5 py-1.5 bg-white/10 hover:bg-primary text-white text-xs font-bold rounded-lg transition-colors border border-white/10">Beşiktaş Tenteci</a>
+                    <a href="/sisli-tenteci/" class="px-3.5 py-1.5 bg-white/10 hover:bg-primary text-white text-xs font-bold rounded-lg transition-colors border border-white/10">Şişli Tenteci</a>
+                    <a href="/fatih-tenteci/" class="px-3.5 py-1.5 bg-white/10 hover:bg-primary text-white text-xs font-bold rounded-lg transition-colors border border-white/10">Fatih Tenteci</a>
+                    <a href="/bakirkoy-tenteci/" class="px-3.5 py-1.5 bg-white/10 hover:bg-primary text-white text-xs font-bold rounded-lg transition-colors border border-white/10">Bakırköy Tenteci</a>
+                    <a href="/istanbul-tenteci/" class="px-3.5 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-blue-600 transition-colors shadow">Tüm Hizmet Bölgeleri &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- İLGİLİ BLOG VE BİLGİ BANKASI KÖPRÜLERİ -->
+        <div class="not-prose my-14">
+            <div class="border-b border-gray-200 pb-3 mb-6">
+                <span class="text-xs font-bold text-primary uppercase tracking-widest">Bilgi Bankası</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 m-0">Tente Seçimi ve Bakımı Hakkında Rehberler</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/blog/mafsalli-ile-kasetli-tente-farklari/" class="p-5 bg-gray-50 hover:bg-blue-50/50 border border-gray-100 rounded-2xl transition-all group flex flex-col">
+                    <span class="text-xs font-bold text-primary mb-1">Karşılaştırma</span>
+                    <h4 class="text-base font-bold text-gray-900 group-hover:text-primary transition-colors mb-2">Mafsallı Tente ile Kasetli Tente Arasındaki 5 Kritik Fark</h4>
+                    <p class="text-xs text-gray-600 flex-grow">Hangi model sizin mekanınıza daha uygun? Dayanıklılık, estetik ve fiyat analizi.</p>
+                    <span class="text-xs font-bold text-primary mt-3 inline-block">Rehberi Oku &rarr;</span>
+                </a>
+                <a href="/blog/pergola-tente-fiyatlari/" class="p-5 bg-gray-50 hover:bg-blue-50/50 border border-gray-100 rounded-2xl transition-all group flex flex-col">
+                    <span class="text-xs font-bold text-primary mb-1">Fiyat Analizi</span>
+                    <h4 class="text-base font-bold text-gray-900 group-hover:text-primary transition-colors mb-2">Pergola Tente m2 Fiyatları Nasıl Hesaplanır?</h4>
+                    <p class="text-xs text-gray-600 flex-grow">Motorlu ve LED ışıklı pergola tente yaptırırken dikkat edilmesi gereken maliyet faktörleri.</p>
+                    <span class="text-xs font-bold text-primary mt-3 inline-block">Rehberi Oku &rarr;</span>
+                </a>
+                <a href="/blog/dukkan-onu-tente-yasak-mi/" class="p-5 bg-gray-50 hover:bg-blue-50/50 border border-gray-100 rounded-2xl transition-all group flex flex-col">
+                    <span class="text-xs font-bold text-primary mb-1">Yasal Düzenleme</span>
+                    <h4 class="text-base font-bold text-gray-900 group-hover:text-primary transition-colors mb-2">Dükkan Önü Tente Yasak mı? Belediye Ruhsat Rehberi</h4>
+                    <p class="text-xs text-gray-600 flex-grow">İşletmeler ve mağazalar için tente montajında imar mevzuatı ve izin şartları.</p>
+                    <span class="text-xs font-bold text-primary mt-3 inline-block">Rehberi Oku &rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- HIZLI İLETİŞİM & KEŞİF CTA BANNER -->
+        <div class="not-prose mt-14 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-6 sm:p-8 md:p-10 rounded-3xl text-white shadow-2xl border border-blue-500/20">
+            <!-- Arka plan ışık efektleri -->
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col gap-6 text-center sm:text-left">
+                <div>
+                    <span class="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 text-blue-200 border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Aynı Gün Ücretsiz Keşif
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 mt-1 leading-tight">
+                        Mekanınıza Özel Tente İçin Hemen Fiyat Teklifi Alın
+                    </h3>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed m-0">
+                        İstanbul'un tüm ilçelerine ücretsiz keşif ekibimizi yönlendiriyor, net ölçüye göre en uygun imalat fiyatını anında sunuyoruz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pt-1">
+                    <!-- WhatsApp Butonu -->
+                    <a
+                        href="https://api.whatsapp.com/send?phone=905386044851"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex items-center justify-center gap-3 px-4 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white shadow-lg shadow-emerald-950/40 hover:shadow-emerald-500/30 hover:-translate-y-0.5 transition-all duration-300 border border-emerald-400/30 w-full"
+                    >
+                        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-[11px] font-semibold text-emerald-100 uppercase tracking-wider">Hızlı Canlı Destek</span>
+                            <span class="block text-sm sm:text-base font-extrabold text-white">WhatsApp ile Fiyat Al</span>
+                        </div>
+                    </a>
+
+                    <!-- Telefon Arama Butonu -->
+                    <a
+                        href="tel:+905386044851"
+                        class="group flex items-center justify-center gap-3 px-4 py-4 rounded-2xl bg-white hover:bg-blue-50 text-gray-900 shadow-lg hover:shadow-white/20 hover:-translate-y-0.5 transition-all duration-300 border border-gray-100 w-full"
+                    >
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-[11px] font-bold text-primary uppercase tracking-wider">Ücretsiz Keşif Hattı</span>
+                            <span class="block text-sm sm:text-base font-extrabold text-gray-900">0538 604 48 51</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
 </PageLayout>
