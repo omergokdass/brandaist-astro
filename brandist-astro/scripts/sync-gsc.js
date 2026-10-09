@@ -259,6 +259,23 @@ async function runSync() {
         });
         const topQueries7 = queries7Res.data.rows || [];
 
+        // ⚡ Son 24 - 48 Saat Taze Veriler (Fresh Data / dataState: 'ALL')
+        let freshQueries = [];
+        try {
+            const todayStr = new Date().toISOString().split('T')[0];
+            const freshRes = await searchconsole.searchanalytics.query({
+                siteUrl: targetSite,
+                requestBody: {
+                    startDate: endDate,
+                    endDate: todayStr,
+                    dimensions: ['query'],
+                    dataState: 'ALL',
+                    rowLimit: 1000,
+                },
+            });
+            freshQueries = freshRes.data.rows || [];
+        } catch (e) {}
+
         // Sitemaps
         let sitemapsData = [];
         try {
@@ -285,6 +302,7 @@ async function runSync() {
                 }
             },
             opportunities,
+            freshQueries24to48Hours: freshQueries,
             topQueries28Days: topQueries,
             topQueries7Days: topQueries7,
             topPages28Days: topPages,
@@ -311,6 +329,13 @@ async function runSync() {
 
 ---
 
+## ⚡ Son 24 - 48 Saatlik Taze Canlı Sorgular (Fresh Data / Dünden Bugüne Arama Trendleri)
+| Anahtar Kelime | Tıklama | Gösterim | Sıra |
+|---|---|---|---|
+${freshQueries.slice(0, 15).map(q => `| **${q.keys[0]}** | ${q.clicks} | ${q.impressions} | ${q.position.toFixed(1)} |`).join('\n')}
+
+---
+
 ## 🚀 En Yüksek Potansiyelli Sıralama Fırsatları (İlk Sayfaya / İlk 3'e Çıkabilecekler)
 | Anahtar Kelime | Gösterim | Tıklama | Ortalama Pozisyon | TO |
 |---|---|---|---|---|
@@ -318,14 +343,14 @@ ${opportunities.map(o => `| **${o.keys[0]}** | ${o.impressions} | ${o.clicks} | 
 
 ---
 
-## 🏆 En Çok Tıklama Alan İlk 15 Kelime
+## 🏆 En Çok Tıklama Alan İlk 15 Kelime (Son 28 Gün)
 | Sıra | Anahtar Kelime | Tıklama | Gösterim | Pozisyon |
 |---|---|---|---|---|
 ${topQueries.slice(0, 15).map((q, i) => `| ${i + 1} | **${q.keys[0]}** | ${q.clicks} | ${q.impressions} | ${q.position.toFixed(1)} |`).join('\n')}
 
 ---
 
-## 📄 En Çok Trafik Alan İlk 15 Sayfa
+## 📄 En Çok Trafik Alan İlk 15 Sayfa (Son 28 Gün)
 | Sayfa URL | Tıklama | Gösterim | Ort. Pozisyon |
 |---|---|---|---|
 ${topPages.slice(0, 15).map(p => `| [${p.keys[0].replace('https://www.branda.ist', '')}](${p.keys[0]}) | ${p.clicks} | ${p.impressions} | ${p.position.toFixed(1)} |`).join('\n')}
