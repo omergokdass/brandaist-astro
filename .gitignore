@@ -13,3 +13,8 @@ search_console_data.json
 deep_site_audit.json
 search_console.txt
 search_console_summary.md
+cloudflare_config.json
+cloudflare_analytics_data.json
+cloudflare_analytics_summary.md
+.env
+.env.*
