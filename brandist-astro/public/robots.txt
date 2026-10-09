@@ -1,5 +1,5 @@
 # ==============================================================================
-# robots.txt for branda.ist (Amir Branda & Şeffaf Branda Sistemleri)
+# robots.txt for branda.ist (Amir Branda)
 # Optimized for Google, Bing, Yandex and AI Search Engines (SearchGPT, Gemini, Claude, Perplexity)
 # ==============================================================================
 

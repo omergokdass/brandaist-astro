@@ -1,7 +1,8 @@
-# Amir Branda & Şeffaf Branda Sistemleri (branda.ist) - Kapsamlı Dokümantasyon
+# Amir Branda (branda.ist) - Kapsamlı Kurumsal Dokümantasyon
 
 ## 1. İşletme Kimliği ve Kurumsal Bilgiler
-- **Marka Adları:** Amir Branda, Şeffaf Branda Sistemleri, Amir Branda Çadır Tente Sistemleri
+- **Ana Marka:** Amir Branda (Resmi Unvan: Amir Branda Çadır Tente Sistemleri)
+- **Özel Hizmet Hattı:** Şeffaf Branda Sistemleri (Amir Branda bünyesinde kış bahçesi, mika ve şeffaf balkon kapama uzmanlık birimi)
 - **Resmi Web Sitesi:** https://www.branda.ist
 - **Şeffaf Branda Özel Açılış Sayfası:** https://www.branda.ist/seffaf-branda/
 - **Fiziksel Konum:** Ayvansaray Mahallesi, Esnaf Loncası Sokak No:27, Fatih / İstanbul, Türkiye
