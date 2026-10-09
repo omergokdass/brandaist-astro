@@ -192,50 +192,50 @@ async function runSync() {
 
         console.log(`⏳ Veriler çekiliyor (${startDate28} - ${endDate})...`);
 
-        // Queries (28 days)
+        // Queries (28 days) - Tüm kelimeler
         const queriesRes = await searchconsole.searchanalytics.query({
             siteUrl: targetSite,
             requestBody: {
                 startDate: startDate28,
                 endDate: endDate,
                 dimensions: ['query'],
-                rowLimit: 500,
+                rowLimit: 5000,
             },
         });
         const topQueries = queriesRes.data.rows || [];
 
-        // Pages (28 days)
+        // Pages (28 days) - Tüm sayfalar
         const pagesRes = await searchconsole.searchanalytics.query({
             siteUrl: targetSite,
             requestBody: {
                 startDate: startDate28,
                 endDate: endDate,
                 dimensions: ['page'],
-                rowLimit: 250,
+                rowLimit: 5000,
             },
         });
         const topPages = pagesRes.data.rows || [];
 
-        // Query + Page
+        // Query + Page kombinasyonları
         const queryPageRes = await searchconsole.searchanalytics.query({
             siteUrl: targetSite,
             requestBody: {
                 startDate: startDate28,
                 endDate: endDate,
                 dimensions: ['query', 'page'],
-                rowLimit: 500,
+                rowLimit: 5000,
             },
         });
         const queryPageRows = queryPageRes.data.rows || [];
 
-        // Queries (7 days)
+        // Queries (7 days) - Son 7 gün
         const queries7Res = await searchconsole.searchanalytics.query({
             siteUrl: targetSite,
             requestBody: {
                 startDate: startDate7,
                 endDate: endDate,
                 dimensions: ['query'],
-                rowLimit: 250,
+                rowLimit: 2000,
             },
         });
         const topQueries7 = queries7Res.data.rows || [];
