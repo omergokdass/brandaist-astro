@@ -178,19 +178,38 @@ async function runSync() {
             || siteList[0].siteUrl;
         console.log(`\n🎯 Hedef Mülk: ${targetSite}`);
 
-        const formatDate = (d) => d.toISOString().split('T')[0];
-        const today = new Date();
-        const daysAgo = (n) => {
-            const d = new Date();
-            d.setDate(today.getDate() - n);
-            return formatDate(d);
-        };
+        console.log(`⏳ Google veritabanındaki son aktif tarihler tespit ediliyor...`);
 
-        const startDate28 = daysAgo(28);
-        const startDate7 = daysAgo(7);
-        const endDate = daysAgo(2);
+        // Google veritabanındaki son güncel tarihleri dinamik olarak tespit et (GSC veri gecikmesi ~3 gündür)
+        const checkDatesRes = await searchconsole.searchanalytics.query({
+            siteUrl: targetSite,
+            requestBody: {
+                startDate: '2026-08-15',
+                endDate: new Date().toISOString().split('T')[0],
+                dimensions: ['date'],
+                rowLimit: 60,
+            },
+        });
+        const allAvailableDates = checkDatesRes.data.rows || [];
+        if (allAvailableDates.length === 0) {
+            console.log('⚠️ Tarih verisi alınamadı.');
+            process.exit(1);
+        }
 
-        console.log(`⏳ Veriler çekiliyor (${startDate28} - ${endDate})...`);
+        const last28Dates = allAvailableDates.slice(-28);
+        const startDate28 = last28Dates[0].keys[0];
+        const endDate = last28Dates[last28Dates.length - 1].keys[0];
+        const last7Dates = allAvailableDates.slice(-7);
+        const startDate7 = last7Dates[0].keys[0];
+
+        // GSC Dashboard skor kartları (birebir UI ile aynı genel mülk toplamı)
+        const totalClicks28 = last28Dates.reduce((s, r) => s + (r.clicks || 0), 0);
+        const totalImpressions28 = last28Dates.reduce((s, r) => s + (r.impressions || 0), 0);
+        const avgCtr28 = totalImpressions28 > 0 ? ((totalClicks28 / totalImpressions28) * 100).toFixed(1) : '0';
+        const avgPosition28 = totalImpressions28 > 0 ? (last28Dates.reduce((s, r) => s + (r.position * r.impressions), 0) / totalImpressions28).toFixed(1) : '0';
+
+        console.log(`📅 Veri Aralığı: ${startDate28} - ${endDate} (Search Console'daki Son 28 Gün)`);
+        console.log(`⏳ Sorgular ve Sayfalar çekiliyor...`);
 
         // Queries (28 days) - Tüm kelimeler
         const queriesRes = await searchconsole.searchanalytics.query({
@@ -247,10 +266,6 @@ async function runSync() {
             sitemapsData = sitemapsRes.data.sitemap || [];
         } catch (e) {}
 
-        const totalClicks28 = topPages.reduce((sum, r) => sum + (r.clicks || 0), 0);
-        const totalImpressions28 = topPages.reduce((sum, r) => sum + (r.impressions || 0), 0);
-        const avgCtr28 = totalImpressions28 > 0 ? ((totalClicks28 / totalImpressions28) * 100).toFixed(2) : '0';
-
         const opportunities = topQueries
             .filter(q => q.position >= 3.5 && q.position <= 25 && q.impressions >= 5)
             .sort((a, b) => b.impressions - a.impressions)
@@ -286,10 +301,11 @@ async function runSync() {
 **Son Güncelleme:** ${new Date().toLocaleString('tr-TR')}
 **Tarih Aralığı:** ${startDate28} ile ${endDate} arası (Son 28 Gün)
 
-## 📊 Genel Performans Özeti
+## 📊 Genel Performans Özeti (Search Console Skor Kartları)
 - **Toplam Tıklama:** ${totalClicks28}
 - **Toplam Gösterim:** ${totalImpressions28.toLocaleString('tr-TR')}
 - **Ortalama TO (CTR):** %${avgCtr28}
+- **Ortalama Konum:** ${avgPosition28}
 - **Trafik Alan Farklı Kelime Sayısı:** ${topQueries.length}
 - **Trafik Alan Farklı Sayfa Sayısı:** ${topPages.length}
 
